@@ -1,0 +1,23 @@
+[
+  {
+    "type": "all",
+    "replace": "trim",
+    "is_callback": "y"
+  },
+  {
+    "match": ",\r\n?,S",
+    "replace": "\n"
+  },
+  {
+    "match": "\/\n[\\s]*\n\/Su",
+    "replace": "\n&nbsp;\n"
+  },
+  {
+    "match": "\/\n+\/",
+    "replace": "<\/div>\n<div>"
+  },
+  {
+    "type": "all",
+    "replace": "<blockquote class=\"spip_poesie\">\n\n<div>$0<\/div>\n<\/blockquote>\n\n"
+  }
+]

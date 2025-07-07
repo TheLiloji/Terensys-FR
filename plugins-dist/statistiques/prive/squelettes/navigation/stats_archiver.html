@@ -1,0 +1,17 @@
+
+#BOITE_OUVRIR{'', info}
+<p><:statistiques:admin_description:></p>
+<p><strong><:statistiques:admin_operations_irreversibles:></strong></p>
+<p><:statistiques:admin_conseil_sauvegarde:></p>
+#BOITE_FERMER
+
+[(#BOITE_OUVRIR{<:statistiques:archiver_nombre_lignes:>, simple})]
+<dl class='spip'>
+
+	<dt>spip_visites_articles</dt>
+	<dd>[(#VAL{count(*)}|sql_getfetsel{spip_visites_articles})]</dd>
+
+	<dt>spip_referers_articles</dt>
+	<dd>[(#VAL{count(*)}|sql_getfetsel{spip_referers_articles})]</dd>
+</dl>
+#BOITE_FERMER

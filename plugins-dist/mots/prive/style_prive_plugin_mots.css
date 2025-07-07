@@ -1,0 +1,28 @@
+.mots .groupe_mots .groupe_mots-edit-24 {
+	margin-inline-start: 30px;
+}
+.mots .groupe_mots #wysiwyg {
+	clear: none;
+}
+
+.formulaire_editer_liens .associer_mot.obligatoire.nonvu {
+	background-color: #FFCDAF;
+}
+.formulaire_editer_liens .associer_mot .bouton-inline {
+	display: flex;
+}
+.formulaire_editer_liens .associer_mot .bouton-inline select.avec-bouton,
+.formulaire_editer_liens .associer_mot .bouton-inline input.text {
+	border-end-end-radius: 0;
+	border-start-end-radius: 0;
+	border-inline-end: 0;
+}
+.formulaire_editer_liens .associer_mot .bouton-inline .btn {
+	border-end-start-radius: 0;
+	border-start-start-radius: 0;
+	flex: 0 0 auto;
+}
+.formulaire_editer_liens .associer_mot .submit {
+	float: var(--spip-right);
+	margin: 0;
+}

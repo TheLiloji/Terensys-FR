@@ -1,0 +1,50 @@
+{
+  "bt-echappe-backticks": {
+    "if_str": "\\`",
+    "priority": -20,
+    "match": [
+      "\\\\",
+      "\\`"
+    ],
+    "replace": [
+      "\u0001\u0010",
+      "\u0001\u0015"
+    ],
+    "type": "str"
+  },
+  "bt-echappe-tags": {
+    "match": ",</?[a-z!][^<>]*?[`][^<>]*>,imsS",
+    "if_chars": "<`",
+    "priority": -20,
+    "is_callback": "Y",
+	"replace": "echappe_tags_sub_backticks"
+  },
+  "bt-backticks": {
+    "if_str": "`",
+    "type": "all",
+    "is_callback": "Y",
+    "replace": "replace_backticks"
+  },
+  "bt-restaure-ticks": {
+    "if_chars": "\u0001",
+    "match": [
+      "\u0001\u0010",
+      "\u0001\u0015"
+    ],
+    "replace": [
+      "\\",
+      "`"
+    ],
+    "type": "str"
+  },
+  "bt-restaure-tags": {
+    "if_chars": "\u0002",
+    "match": [
+      "\u0002\u0015"
+    ],
+    "replace": [
+      "`"
+    ],
+    "type": "str"
+  }
+}

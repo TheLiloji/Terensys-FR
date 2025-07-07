@@ -1,0 +1,11 @@
+#LARGEUR_ECRAN{pleine_largeur}
+[(#REM) <!-- Barre d'onglets de premier niveau --> ]
+[(#VAL{fabrique}|barre_onglets{fabrique})]
+<div class="cartouche center">
+<h1 class="grostitre"><:fabrique:fabrique_titre:>
+<small class="muted" style="opacity: 0.5;font-size: 0.6em"><:fabrique:fabrique_intro:></small>
+</h1>
+[(#SET{plugin,[(#SESSION{#CONST{FABRIQUE_ID}}|table_valeur{paquet/nom})]})]
+
+[(#GET{plugin}|oui)<h2><:fabrique:fabrique_plugin{plugin=#GET{plugin}}:></h2>]
+</div>

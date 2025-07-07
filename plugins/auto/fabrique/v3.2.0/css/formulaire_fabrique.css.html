@@ -1,0 +1,117 @@
+[(#REM)
+<style>
+]#HTTP_HEADER{Content-Type: text/css; charset=iso-8859-15}
+#HTTP_HEADER{Vary: Accept-Encoding}
+[(#REM) dans spip_prive.css ]
+#SET{font-size,#ENV{font-size,0.8125em}}
+#SET{line-height,#ENV{line-height,1.385em}}
+#SET{margin-bottom,#ENV{margin-bottom,#GET{line-height}}}
+:root {
+	--spip-color-experimental--hsl: 34, 84%, 100%;
+	--spip-color-experimental--h: 34;
+	--spip-color-experimental--s: 84%;
+	--spip-color-experimental--l: 100%;
+}
+/* Code en developpement .experimental */
+.msg-alert.experimental {
+	color: rgba(255, 131, 42, 0.99);
+	color:            hsl(var(--spip-color-experimental--h), var(--spip-color-experimental--s), 18%);
+	background-color: hsl(var(--spip-color-experimental--h), 90%, 88%);
+	border-color:     hsl(var(--spip-color-experimental--h), 100%, 48%);
+	background-image:url(#CHEMIN_IMAGE{experimental-xx.svg});
+}
+
+.formulaire_fabriquer_plugin .fabrique-tabs .onglets_simple ul {margin-bottom: calc(var(--spip-tabs-border-width) * -1) !important;}
+.formulaire_fabriquer_plugin .onglets_simple li strong,
+.formulaire_fabriquer_plugin .onglets_simple li.active a  {
+  color: var(--spip-color-theme-dark);
+  border-bottom-color: var(--spip-color-theme-dark);
+  z-index: 2;
+}
+.fabrique-tabs .onglets-head li a img {
+	vertical-align: bottom;
+	margin-left:.5em;max-width: 24px;height: auto;
+}
+.fabrique-tabs .onglets-head li .sort-handle {display: none}
+.fabrique-tabs .onglets-head .sortable-active li {position: relative}
+.fabrique-tabs .onglets-head .sortable-active li a {padding-left: 1.5em;}
+.fabrique-tabs .onglets-head .sortable-active li .sort-handle {display: block !important;position: absolute;left: 0;top:50%;margin-top: -8px;z-index: 3}
+.fabrique-tabs .onglets-head .sortable-active .deplacer-onglet-placeholder {box-shadow: 0 0 10px var(--spip-color-info) !important; z-index: 10;}
+.fabrique-tabs .onglets-content .onglet-content {display: none}
+.fabrique-tabs .onglets-content .onglet-content.active {display: block}
+
+.formulaire_fabriquer_plugin .en_colonne .editer-groupe {display: flex;flex-wrap: wrap;justify-content: space-between}
+.formulaire_fabriquer_plugin .en_colonne .editer {width:48.5%; flex-basis: 48.5%; max-width: 48.5%;}
+
+
+/* titre du plugin */
+.formulaire_fabriquer_plugin > .h2 {margin-top:[(#GET{margin-bottom}|floatval|div{2})em];}
+
+/* coloration code reduit */
+.formulaire_fabriquer_plugin .coloration_code li {padding:0;}
+.formulaire_fabriquer_plugin .reponse_formulaire_diff {border:2px solid #ccc; padding:.8em 1em .3em;}
+.formulaire_fabriquer_plugin .reponse_formulaire_diff h4 {margin-bottom:.3em; color:#666;}
+.formulaire_fabriquer_plugin .reponse_formulaire_diff h4:hover {text-decoration:underline; cursor:pointer;}
+.formulaire_fabriquer_plugin .reponse_formulaire_diff .cadre {border:1px solid #ccc; background:white; margin:.8em 0 .5em; border-radius:5px;}
+.formulaire_fabriquer_plugin .reponse_formulaire_diff .notice p  {margin-bottom:0;}
+.formulaire_fabriquer_plugin .reponse_formulaire_diff .notice li {margin:0; padding:0 0 0 1em; list-style:inside square;}
+
+/* saisie oui non en ligne */
+.formulaire_fabriquer_plugin .saisie_choisir_objets .choix {display:inline; float:left; min-width:200px;}
+.formulaire_fabriquer_plugin input[list] {width:95%;}
+.formulaire_fabriquer_plugin .datalist_aide {position:relative; top:3px;}
+.formulaire_fabriquer_plugin input.submit.left {float:left;}
+.formulaire_fabriquer_plugin input.submit.right {float:right;}
+.formulaire_fabriquer_plugin input.submit.action {margin:1em .5em .5em;}
+.formulaire_fabriquer_plugin .parties fieldset:not(.editer) { padding-left: 0px; padding-right: 0px; margin-left: 0; margin-right: 0;}
+.formulaire_fabriquer_plugin .parties fieldset:not(.editer) .legend { margin-left: 0px; margin-right: 0px; padding-left:.5em; padding-right:.5em; }
+.formulaire_fabriquer_plugin .parties .editer-groupe { margin-left: 0px; margin-right: 0px; }
+/* separer les explications en entete des accordions */
+.formulaire_fabriquer_plugin .sous_parties>.explication {margin-bottom:1em;}
+
+/* code utilisateur avec vignette */
+.formulaire_fabriquer_plugin .box.surveiller .box__header,
+.formulaire_fabriquer_plugin h3.surveiller a,
+.formulaire_fabriquer_plugin h4.surveiller a {
+	background-image:url([(#CHEMIN_IMAGE{eyes-xx.svg}|url_absolue)]);
+	background-position: 99% 50%;
+	background-repeat: no-repeat;
+    background-size: 24px;
+}
+/* erreurs en couleurs */
+.formulaire_fabriquer_plugin #tabs .tabs li.erreur,
+.formulaire_fabriquer_plugin h3.erreur,
+.formulaire_fabriquer_plugin h4.erreur{
+	background-image:url([(#CHEMIN{css/images/ui-bg_glass_75_e6e6e6_1x400.png}|image_sepia{F00}
+		|extraire_attribut{src}|url_absolue)]);
+}
+
+/* Taille automatique en hauteur */
+.CodeMirror { border: 1px solid #bbb; border-radius:5px; margin: 0.5em 0;}
+.CodeMirror-gutter { border-radius:5px 0 0 5px;}
+.CodeMirror-scroll {
+	height: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+	font-size:120%;
+	line-height:1.4em;
+}
+
+
+.accordion-boxes>.box:not(:last-child) { margin-bottom: 0; border-bottom-left-radius: 0;border-bottom-right-radius: 0}
+.accordion-boxes>.box+.box { margin-top: -1px;border-top-left-radius: 0;border-top-right-radius: 0}
+
+.accordion-boxes>.box>.box__body {display: none}
+.accordion-boxes>.box.active>.box__header, .accordion-boxes>.box.opening>.box__header {background-color: var(--spip-color-theme-light);}
+.accordion-boxes>.box.active.closing>.box__header {background-color: transparent;}
+.accordion-boxes>.box.active>.box__body {display: block;box-shadow: 0 0 8px var(--spip-color-theme-light);z-index: 10;}
+
+.accordion-boxes>.box>.box__header {padding-left: calc(var(--spip-box-spacing-x) + 1.5em);position:relative;}
+.accordion-boxes>.box>.box__header::before {content:'';display: block;position: absolute;left:var(--spip-box-spacing-x);top:50%;width: 0.75em;height: 0.75em;margin-top: -0.375em;background-image:url(#CHEMIN_IMAGE{opendown-xx.svg});background-position: center;background-size:100%;background-repeat:no-repeat;z-index: 2;opacity: 50%;}
+.accordion-boxes>.box.active>.box__header::before,.accordion-boxes>.box.opening>.box__header::before {transform: rotate(0deg);}
+.accordion-boxes>.box>.box__header::before,.accordion-boxes>.box.active.closing>.box__header::before {transform: rotate(-90deg);transition: transform 0.2s linear;}
+
+.accordion-boxes .box .box__header h4 {font-size: var(--spip-box-heading-fontsize);font-weight: var(--spip-box-heading-fontweight);}
+.accordion-boxes .box .box__header h4 code {font-size: 0.9em;opacity: 0.9;}
+.accordion-boxes .box .box__header .sort-handle {position: absolute; right: 1em;top:50%;margin-top: -10px;}
+.accordion-boxes .box.deplacer-box-placeholder {box-shadow: 0 0 10px var(--spip-color-info) !important; z-index: 10;}

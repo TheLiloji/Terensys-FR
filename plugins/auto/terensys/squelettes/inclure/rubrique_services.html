@@ -1,0 +1,75 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terensys - #TITRE</title>
+    <INCLURE{fond=inclure/head}/>
+    [<link rel="stylesheet" href="(#CHEMIN{assets/css/rubrique.css}|direction_css|timestamp)" type="text/css" />]
+</head>
+<body>
+    <header>
+        <INCLURE{fond=inclure/nav,env} />
+    </header>
+
+    <main id="main">
+        <div class="rubrique-container">
+            <div class="main-container">
+                <div class="description">
+                    <div class="title-container">
+                        <h2>#TITRE</h2>
+                        <div class="tree">
+                            <a href="#URL_SITE_SPIP/"><:accueil_site:></a> 
+                            <BOUCLE_ariane(HIERARCHIE){id_rubrique}> 
+                                <p>></p>
+                                <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a> 
+                            </BOUCLE_ariane> 
+                            <p>></p>
+                            <p>[(#TITRE|couper{80})]</p>
+                        </div>
+                    </div>
+        
+                    [(#TEXTE|oui)
+                        <div class="text-container">
+                            #TEXTE
+                        </div>
+                    ]
+                </div>
+    
+                <B_articles>
+                    <div id="article-container">
+                        <BOUCLE_articles(ARTICLES) {id_rubrique} {par rang}>
+                            <a href="#URL_ARTICLE" class="article-content">
+                                <h4>#TITRE</h4>
+                                #INTRODUCTION
+                            </a>
+                        </BOUCLE_articles>
+                    </div>
+                </B_articles>
+            </div>
+
+            <B_sous_rubriques>
+                <div class="menu-container">
+                    <h3>Nos rubriques</h3>
+                    <div class="menu">
+                        <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre}{!par date}>
+                            <a href="#URL_RUBRIQUE">#TITRE</a>
+                        </BOUCLE_sous_rubriques>
+                    </div>
+                </div>
+                </B_sous_rubriques>
+            <//B_sous_rubriques>
+        </div>
+    </main>
+
+    <footer>
+        <INCLURE{fond=inclure/footer} />
+    </footer>
+
+    <!-- <div class="blurry-circle-1"></div>
+    <div class="blurry-circle-2"></div>
+    <div class="blurry-circle-3"></div> -->
+</body>
+</html>
+</BOUCLE_principale>

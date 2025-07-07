@@ -1,0 +1,25 @@
+{
+    "autoload-dev": {
+        "psr-4": {
+            "Spip\\Saisies\\Tests\\": "tests/"
+        }
+    },
+		"minimum-stability": "dev",
+    "require-dev": {
+        "phpunit/phpunit": "^10.1",
+        "symfony/yaml": "^6.2",
+        "spip/ecrire": "^5.0-dev",
+        "rector/rector": "dev-main"
+    },
+    "repositories": {
+        "spip": {
+            "type": "composer",
+            "url": "https://get.spip.net/composer/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "spip-league/composer-installer": true
+        }
+    }
+}

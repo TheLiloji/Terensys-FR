@@ -1,0 +1,16 @@
+<BOUCLE_sousrub(RUBRIQUES){id_rubrique}>
+  	<div class="texte-sousrubrique">
+		#TEXTE
+	</div>
+
+  	<div class="articles-sousrubrique-container">
+    	<BOUCLE_articles(ARTICLES) {id_rubrique} {par date} {inverse}>
+      		<div class="articles-sousrubrique">
+				<h3 class="article-title">
+					#TITRE
+				</h3>
+        		<div class="intro">#TEXTE</div>
+      		</div>
+    	</BOUCLE_articles>
+	</div>
+</BOUCLE_sousrub>

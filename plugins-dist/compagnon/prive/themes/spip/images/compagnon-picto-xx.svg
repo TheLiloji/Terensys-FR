@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <circle class="fond" cx="32" cy="32" r="32"/>
+  <g transform="rotate(-25 405.661 21.073) scale(.66695)">
+    <circle class="visage" cx="93.5" cy="-190.3" r="22.5" />
+    <circle class="visage-trait" cx="85.8" cy="-199.2" r="3.6"/>
+    <circle class="visage-trait" cx="101.3" cy="-199.2" r="3.6"/>
+    <path class="visage-trait" d="M93.5-176.1c-7.3 0-13.2-5.9-13.2-13.2h4.4c0 4.8 3.9 8.8 8.8 8.8 4.8 0 8.8-3.9 8.8-8.8h4.4c0 7.3-5.9 13.2-13.2 13.2z"/>
+  </g>
+</svg>

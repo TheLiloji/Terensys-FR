@@ -1,0 +1,253 @@
+[(#REM)<script>]
+jQuery(function($){
+
+	function formulaire_fabrique_interactions($is_ajax) {
+		/* Cette variable permet de savoir si on est en ajax, et si du coup il nous faudra repositionner
+		   le navigateur. On dit que la variable est a true par defaut
+		   (plus pratique pour l'appel de onAjaxLoad)
+		*/
+		if (typeof $is_ajax == 'undefined') {
+			$is_ajax = true;
+		}
+
+		/* Faire remonter les erreurs sur l'accordion et l'onglet */
+		$(".formulaire_fabriquer_plugin .sous_parties div.erreur").parent().parent()
+			.prev('h4').addClass('erreur')
+			.closest('.sous_parties').prev('h3').addClass('erreur')
+			.closest('.parties').parent().parent().each(function(){
+				id = $(this).attr('id');
+				$('#tabs .tabs a[href="#' + id + '"]').parent().addClass('erreur');
+			});
+		$(".formulaire_fabriquer_plugin .parties div.erreur").parent().parent()
+			.prev('h3').addClass('erreur')
+			.parent().parent().each(function(){
+				id = $(this).attr('id');
+				$('#tabs .tabs a[href="#' + id + '"]').parent().addClass('erreur');
+			});
+
+		/* Deplier ou replier le diff */
+		$(".formulaire_fabriquer_plugin .reponse_formulaire_diff").find('>div.diff').hide();
+		/* TODO: la class .clicable est temporaire (bug spip qui double onAjaxLoad en 3.1-dev ?) */
+		$(".formulaire_fabriquer_plugin .reponse_formulaire_diff h4:not(.clicable)")
+			.addClass('clicable').on("click", function(){
+				$(this).parent().find('>div.diff').toggle();
+		});
+
+		function accordion_box_close($box) {
+			$box.addClass('closing').find('>.box__body').hide('fast');
+			setTimeout(function(){$box.removeClass('active closing');}, 200);
+		}
+		function accordion_box_open($box) {
+			$box.addClass('opening').find('>.box__body').show('fast');
+			setTimeout(function(){$box.addClass('active').removeClass('opening');}, 200);
+			$box.siblings('.box.active').each(function(){
+				accordion_box_close($(this));
+			});
+		}
+		function accordion_init($node) {
+			var accordion_id = null;
+			if ($node.attr('id')) {
+				accordion_id = $node.attr('id').substring(10);
+				if ($("#open_accordion_" + accordion_id).length) {
+					var active_index = Number($("#open_accordion_" + accordion_id).val());
+					$node.find('>.box').each(function(index){
+						$(this).data('accordion-index', index);
+						if (index === active_index) {
+							$(this).addClass('active').siblings().removeClass('active');
+						}
+					});
+				}
+				else {
+					accordion_id = null;
+				}
+			}
+			$node.find('>.box>.box__header').on('click', function(){
+				var $box = $(this).parent();
+				if ($box.is('.active')) {
+					accordion_box_close($box);
+				} else {
+					accordion_box_open($box);
+					if (accordion_id) {
+						$('#open_accordion_' + accordion_id).val( $box.data('accordion-index'));
+					}
+				}
+				return false;
+			});
+		}
+		$('.accordion-boxes').each(function(){accordion_init($(this));});
+
+		function tab_show_content($tabs_container, target) {
+			$tabs_container.find('>.onglets-content ' + target).addClass('active').siblings().removeClass('active');
+		}
+		function tabs_init($node) {
+			var tab_id = null;
+			if ($node.attr('id')) {
+				tab_id = $node.attr('id').substring(4);
+				if ($("#open_tab_" + tab_id).length) {
+					var active_index = Number($("#open_tab_" + tab_id).val());
+					$node.find('>.onglets-head li').each(function(index){
+						$(this).data('tab-index', index);
+						if (index === active_index) {
+							$(this).addClass('active').siblings().removeClass('active');
+							var target = $(this).find('>a').attr('href');
+							tab_show_content($node, target);
+						}
+					});
+				}
+			}
+			$node.find('>.onglets-head li a').on('click', function(){
+				var $me = $(this);
+				var $tab = $me.closest('li');
+				if ($tab.is('.active')) {
+					// do noting : on ne desactive pas un tab en recliquant dessus
+				} else {
+					$tab.addClass('active').siblings().removeClass('active');
+					var target = $me.attr('href');
+					tab_show_content($node, target);
+					if (tab_id) {
+						$('#open_tab_' + tab_id).val( $tab.data('tab-index'));
+					}
+				}
+				return false;
+			});
+		}
+		$('.fabrique-tabs').each(function(){tabs_init($(this));});
+
+
+		if (typeof Sortable === 'function') {
+			function sortable_init($sortables) {
+				// pas de tri possible s'il n'y a qu'un seul élément.
+				if ($sortables.length < 2) {
+					$sortables.find('.sort-handle').hide();
+					return false;
+				} else {
+					$sortables.find('.sort-handle').show();
+				}
+				$sortables.each(function(){
+					var id = $(this).attr('id');
+					if (id && !$(this).attr('data-id')) {
+						$(this).attr('data-id', id);
+					}
+				});
+				return true;
+			}
+			$(".accordion-sortable").each(function () {
+				// détruire / recréer le sortable à chaque appel ajax
+				if (Sortable.get(this)) {
+					Sortable.get(this).destroy();
+				}
+				var $me = $(this);
+				var $sortables = $me.find('> .box');
+				if (!sortable_init($sortables)) {
+					return true; // continue
+				}
+				$me.addClass('sortable-active');
+				new Sortable(this, {
+					direction: 'vertical',
+					swapThreshold: .8,
+					ghostClass: "deplacer-box-placeholder",
+					handle: '.sort-handle',
+					onStart: function(event) {
+						$(event.item).addClass('box-en-mouvement');
+					},
+					onEnd: function(event) {
+						$(event.item).removeClass('box-en-mouvement');
+					},
+					onUpdate: function (event) {
+						var tab = $(event.item).parent().data('tab');
+						var champOrder = this.toArray();
+						var form = $(event.item).closest('form');
+						// on génère un hidden tu type
+						// <input type="hidden" name="f_action[champorder][0]" value="objet0-champ0,objet0-champ1,objet0-champ2,objet0-champ3,objet0-champ4,objet0-champ5,objet0-champ6,objet0-champ7,objet0-champ9,objet0-champ8,objet0-champ10,objet0-champ11,objet0-champ12,objet0-champ13,objet0-champ14,objet0-champ15,objet0-champ16,objet0-champ17">
+						form.find('div:first')
+							.prepend('<input type="hidden" name="f_action[champorder][' + tab + ']" value="'+ champOrder + '">');
+						form.submit();
+					}
+				});
+			});
+			$("#tab_main>.onglets-head>ul").each(function(){
+				// détruire / recréer le sortable à chaque appel ajax
+				if (Sortable.get(this)) {
+					Sortable.get(this).destroy();
+				}
+				var $me = $(this);
+				var $sortables = $me.find('> li');
+				if (!sortable_init($sortables)) {
+					return true; // continue
+				}
+				$me.addClass('sortable-active');
+				new Sortable(this, {
+					direction: 'horizontal',
+					swapThreshold: .8,
+					ghostClass: "deplacer-onglet-placeholder",
+					onStart: function(event) {
+						$(event.item).addClass('onglet-en-mouvement');
+					},
+					onEnd: function(event) {
+						$(event.item).removeClass('onglet-en-mouvement');
+					},
+					onUpdate: function (event) {
+						var tabOrder = this.toArray();
+						console.log(this);
+						console.log(tabOrder);
+						var form = $(event.item).closest('form');
+						// on génère un hidden tu type
+						form.find('div:first')
+							.prepend('<input type="hidden" name="f_action[taborder]" value="' + tabOrder + '">');
+						form.submit();
+					}
+				});
+			});
+		}
+
+		<BOUCLE_skeleditor(CONDITION){si #PLUGIN{skeleditor}}>
+		/* un peu de coloration syntaxique */
+		$(".colorier textarea").focus(function() {
+			if (!$(this).data('coloriage')) {
+				code = $(this).closest('div.editer-groupe').data('code');
+				fabrique_coloriage(this, code);
+				$(this).data('coloriage', 1);
+			}
+		});
+
+		function fabrique_coloriage(textarea, code) {
+			$.getScript("#CHEMIN{codemirror/lib/codemirror.js}", function(){
+			$.getScript("#CHEMIN{codemirror/mode/xml/xml.js}", function(){
+			$.getScript("#CHEMIN{codemirror/mode/xml/xml.js}", function(){
+			$.getScript("#CHEMIN{codemirror/mode/javascript/javascript.js}", function(){
+			$.getScript("#CHEMIN{codemirror/mode/css/css.js}", function(){
+			$.getScript("#CHEMIN{codemirror/mode/clike/clike.js}", function(){
+			$.getScript("#CHEMIN{codemirror/mode/php/php.js}", function(){
+					var cm_options = {
+						lineNumbers: true,
+						matchBrackets: true,
+						indentUnit: 4,
+						tabSize: 4,
+						indentWithTabs: true,
+						enterMode: "keep",
+						tabMode: "shift",
+						width: "95%",
+						minHeight: 60
+					};
+
+					if (code.length) {
+						cm_options.mode = code;
+						/* Ouvrir automatiquement les scripts PHP */
+						if (code == 'php') {
+							cm_options.mode = 'text/x-php';
+						}
+					}
+					CodeMirror.fromTextArea(textarea, cm_options);
+			})})})})})})});
+		}
+		</BOUCLE_skeleditor>
+
+	}
+
+	formulaire_fabrique_interactions(false); /* ici, on n'est pas ajax */
+	onAjaxLoad(formulaire_fabrique_interactions);
+
+});
+function fabrique_remove_required(node) {
+	$(node).find("input[required]").prop("required", false);
+}

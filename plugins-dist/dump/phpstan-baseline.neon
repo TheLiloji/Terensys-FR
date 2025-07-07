@@ -1,0 +1,537 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 1
+			path: action/restaurer.php
+
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 2
+			path: action/restaurer.php
+
+		-
+			message: "#^Function generer_url_ecrire not found\\.$#"
+			count: 1
+			path: action/restaurer.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 3
+			path: action/restaurer.php
+
+		-
+			message: "#^Function joli_repertoire not found\\.$#"
+			count: 1
+			path: action/restaurer.php
+
+		-
+			message: "#^Function lire_fichier not found\\.$#"
+			count: 1
+			path: action/restaurer.php
+
+		-
+			message: "#^Function redirige_formulaire not found\\.$#"
+			count: 1
+			path: action/restaurer.php
+
+		-
+			message: "#^Function utiliser_langue_visiteur not found\\.$#"
+			count: 1
+			path: action/restaurer.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 1
+			path: action/sauvegarder.php
+
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 2
+			path: action/sauvegarder.php
+
+		-
+			message: "#^Function generer_action_auteur not found\\.$#"
+			count: 1
+			path: action/sauvegarder.php
+
+		-
+			message: "#^Function generer_url_ecrire not found\\.$#"
+			count: 1
+			path: action/sauvegarder.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 3
+			path: action/sauvegarder.php
+
+		-
+			message: "#^Function parametre_url not found\\.$#"
+			count: 1
+			path: action/sauvegarder.php
+
+		-
+			message: "#^Function redirige_formulaire not found\\.$#"
+			count: 1
+			path: action/sauvegarder.php
+
+		-
+			message: "#^Function utiliser_langue_visiteur not found\\.$#"
+			count: 1
+			path: action/sauvegarder.php
+
+		-
+			message: "#^Function autoriser not found\\.$#"
+			count: 1
+			path: action/supprimer_dump.php
+
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 1
+			path: action/supprimer_dump.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 3
+			path: action/supprimer_dump.php
+
+		-
+			message: "#^Function spip_unlink not found\\.$#"
+			count: 1
+			path: action/supprimer_dump.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 2
+			path: action/telecharger_dump.php
+
+		-
+			message: "#^Function autoriser not found\\.$#"
+			count: 1
+			path: action/telecharger_dump.php
+
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 1
+			path: action/telecharger_dump.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 3
+			path: action/telecharger_dump.php
+
+		-
+			message: "#^Function minipres not found\\.$#"
+			count: 1
+			path: action/telecharger_dump.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 2
+			path: base/restaurer.php
+
+		-
+			message: "#^Function base_copier_tables not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function chemin_image not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function chercher_filtre not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function generer_action_auteur not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function generer_url_ecrire not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function http_script not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 4
+			path: base/restaurer.php
+
+		-
+			message: "#^Function install_debut_html not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function install_fin_html not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function lire_fichier not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function lister_tables_noerase not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function parametre_url not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function redirige_formulaire not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function spip_connect not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function sql_getfetsel not found\\.$#"
+			count: 1
+			path: base/restaurer.php
+
+		-
+			message: "#^Function sql_updateq not found\\.$#"
+			count: 2
+			path: base/restaurer.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: connect/dump.php
+
+		-
+			message: "#^Function autoriser not found\\.$#"
+			count: 1
+			path: dump_autoriser.php
+
+		-
+			message: "#^Function base_dump_meta_name not found\\.$#"
+			count: 1
+			path: exec/base_restaurer.php
+
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 1
+			path: exec/base_restaurer.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: exec/base_restaurer.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: formulaires/inc-lister-sauvegardes_fonctions.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 9
+			path: formulaires/restaurer.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 16
+			path: formulaires/restaurer.php
+
+		-
+			message: "#^Function base_dump_meta_name not found\\.$#"
+			count: 1
+			path: formulaires/restaurer.php
+
+		-
+			message: "#^Function base_lister_toutes_tables not found\\.$#"
+			count: 2
+			path: formulaires/restaurer.php
+
+		-
+			message: "#^Function base_saisie_tables not found\\.$#"
+			count: 1
+			path: formulaires/restaurer.php
+
+		-
+			message: "#^Function generer_action_auteur not found\\.$#"
+			count: 1
+			path: formulaires/restaurer.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 4
+			path: formulaires/restaurer.php
+
+		-
+			message: "#^Function joli_repertoire not found\\.$#"
+			count: 1
+			path: formulaires/restaurer.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 2
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 8
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function base_dump_meta_name not found\\.$#"
+			count: 1
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function base_liste_table_for_dump not found\\.$#"
+			count: 2
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function base_lister_toutes_tables not found\\.$#"
+			count: 2
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function base_prefixe_tables not found\\.$#"
+			count: 1
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function base_saisie_tables not found\\.$#"
+			count: 1
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function generer_action_auteur not found\\.$#"
+			count: 1
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 4
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function joli_repertoire not found\\.$#"
+			count: 2
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function lister_tables_noexport not found\\.$#"
+			count: 2
+			path: formulaires/sauvegarder.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 5
+			path: inc/dump.php
+
+		-
+			message: "#^Function base_liste_table_for_dump not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function couper not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function ecrire_fichier not found\\.$#"
+			count: 2
+			path: inc/dump.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 2
+			path: inc/dump.php
+
+		-
+			message: "#^Function lire_fichier not found\\.$#"
+			count: 3
+			path: inc/dump.php
+
+		-
+			message: "#^Function lister_tables_noexport not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function preg_files not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function sous_repertoire not found\\.$#"
+			count: 2
+			path: inc/dump.php
+
+		-
+			message: "#^Function spip_connect not found\\.$#"
+			count: 2
+			path: inc/dump.php
+
+		-
+			message: "#^Function spip_log not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function sql_create not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function sql_delete not found\\.$#"
+			count: 2
+			path: inc/dump.php
+
+		-
+			message: "#^Function sql_insertq not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function sql_showtable not found\\.$#"
+			count: 3
+			path: inc/dump.php
+
+		-
+			message: "#^Function translitteration not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function typo not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function unique not found\\.$#"
+			count: 1
+			path: inc/dump.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function base_copier_tables not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function chemin_image not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function chercher_filtre not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function http_script not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function inc_sauvegarder_dist\\(\\) should return bool but return statement is missing\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 2
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function install_debut_html not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function install_fin_html not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function lire_fichier not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function lister_tables_noerase not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function spip_connect not found\\.$#"
+			count: 1
+			path: inc/sauvegarder.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 3
+			path: prive/squelettes/contenu/restaurer_fonctions.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: prive/squelettes/contenu/restaurer_fonctions.php
+
+		-
+			message: "#^Function sql_countsel not found\\.$#"
+			count: 1
+			path: prive/squelettes/contenu/restaurer_fonctions.php
+
+		-
+			message: "#^Function sql_showtable not found\\.$#"
+			count: 1
+			path: prive/squelettes/contenu/restaurer_fonctions.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 1
+			path: prive/squelettes/contenu/sauvegarder_fonctions.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: prive/squelettes/contenu/sauvegarder_fonctions.php
+
+		-
+			message: "#^Function spip_connect not found\\.$#"
+			count: 1
+			path: prive/squelettes/contenu/sauvegarder_fonctions.php
+
+		-
+			message: "#^Function sql_countsel not found\\.$#"
+			count: 1
+			path: prive/squelettes/contenu/sauvegarder_fonctions.php
+

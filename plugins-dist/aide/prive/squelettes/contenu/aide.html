@@ -1,0 +1,107 @@
+
+
+<style>
+.aide_conteneur {
+	display: flex;
+	min-height: 80vh;
+}
+.aide_menu {
+	flex: 0 0 20%;
+	min-width: 100px;
+	padding: var(--spip-spacing-y) var(--spip-spacing-x);
+}
+.aide_contenu {
+	padding: var(--spip-spacing-y) var(--spip-spacing-x);
+	max-width: 60em;
+}
+.aide_menu .navigation {
+	position: sticky; top: 1em;
+}
+
+.aide_contenu .aide_code .precode pre {
+	margin-bottom: 0;
+}
+.aide_contenu .aide_code_result {
+	padding: var(--spip-box-spacing-y) var(--spip-box-spacing-x);
+	margin-left: calc(-1 * var(--spip-box-spacing-x));
+	margin-right: calc(-1 * var(--spip-box-spacing-x));
+	background-color: hsla(var(--spip-color-gray-lightest--hsl), 40%);
+	margin-bottom: var(--spip-box-spacing-y);
+	border-bottom: 1px solid var(--spip-box-border-color);
+	background-clip: padding-box;
+}
+.aide_contenu .aide_code_result p:last-child {
+	margin-bottom: 0;
+}
+
+.aide_contenu pre {
+	padding: var(--spip-box-spacing-y) var(--spip-box-spacing-x);
+	margin: var(--spip-box-spacing-y) calc(-1 * var(--spip-box-spacing-x));
+	white-space: break-spaces;
+	border-radius: 0;
+	border-left: none;
+	border-right: none;
+	border-color: var(--spip-box-border-color);
+
+}
+
+.aide_contenu pre.spip_code_block,
+.aide_contenu pre.spip_cadre_block {
+	width: auto;
+	padding: var(--spip-box-spacing-y) var(--spip-box-spacing-x);
+	margin: var(--spip-box-spacing-y) calc(-1 * var(--spip-box-spacing-x));
+}
+/* sans coloration code */
+.aide_contenu pre:not([data-highlight]) {
+	background-clip: padding-box;
+	background-color: var(--spip-color-gray-lightest);
+	border-top: 1px solid var(--spip-box-border-color);
+	border-bottom: 1px solid var(--spip-box-border-color);
+}
+/* avec coloration code */
+.aide_contenu pre[data-highlight] { padding: 0; }
+.aide_contenu pre[data-highlight] code { padding: var(--spip-box-spacing-y) var(--spip-box-spacing-x); }
+
+.aide_contenu .texte > .aide_code:first-child,
+.aide_contenu .texte > .aide_code:first-child pre,
+.aide_contenu .texte > pre:first-child,
+.aide_contenu .texte > .precode:first-child pre {
+	margin-top: calc(-1 * var(--spip-box-spacing-y));
+	border-top:0;
+}
+</style>
+<div class="aide_conteneur">
+	#SET{data,#ENV{aide}|aide_data}
+	[(#GET{data}|oui)
+	<div class="aide_menu">
+		<div class="navigation">
+			<h3>#GET{data/titre}</h3>
+			<ul class="liste_items">
+			<BOUCLE_menu_entrees(DATA){source table, #GET{data/entrees}}>
+				<li class='item[ (#ENV{entree}|=={#CLE})on]'>
+					<a href='#aide-#SLUG'>#TITRE</a>
+				</li>
+			</BOUCLE_menu_entrees>
+			</ul>
+		</div>
+	</div>
+	<div class="aide_contenu">
+		<h1>#GET{data/titre}</h1>
+		[<div class="introduction">(#GET{data/intro}|propre)</div>]
+
+		<BOUCLE_content_entrees(DATA){source table, #GET{data/entrees}}>
+			<div id="aide-#SLUG"></div>
+			[(#SET{titre,[(#LINK|?{<a href="#LINK" class="ajax">#TITRE</a>,#TITRE})]})]
+			#BOITE_OUVRIR{#GET{titre},simple}
+				[<div class="texte">(#TEXTE)</div>]
+				[<div class="notes">(#NOTES)</div>]
+			#BOITE_FERMER
+		</BOUCLE_content_entrees>
+		</div>
+	</div>
+	]
+</div>
+
+
+
+

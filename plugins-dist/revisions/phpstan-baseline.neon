@@ -1,0 +1,733 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: afficher_diff/champ.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: afficher_diff/champ.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: afficher_diff/id_rubrique.php
+
+		-
+			message: '#^Function generer_objet_info not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: afficher_diff/id_rubrique.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: afficher_diff/id_rubrique.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: afficher_diff/jointure.php
+
+		-
+			message: '#^Function generer_objet_info not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: afficher_diff/jointure.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: afficher_diff/jointure.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: afficher_diff/jointure.php
+
+		-
+			message: '#^Function objet_info not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: afficher_diff/jointure.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: afficher_diff/jointure.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_revisions_objets.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_revisions_objets.php
+
+		-
+			message: '#^Function ecrire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_revisions_objets.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_revisions_objets.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_revisions_objets.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function parametre_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function self not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/reviser.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/optimiser_revisions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/optimiser_revisions.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_free not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_optimize not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_table_exists not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/revisions_optimiser_revisions.php
+
+		-
+			message: '#^Call to function unset\(\) contains undefined variable \$i_old\.$#'
+			identifier: unset.variable
+			count: 1
+			path: inc/diff.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: inc/diff.php
+
+		-
+			message: '#^Function charset2unicode not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/diff.php
+
+		-
+			message: '#^Function html2unicode not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/diff.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/diff.php
+
+		-
+			message: '#^Function unicode_to_utf_8 not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/diff.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/revisions.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function importer_charset not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/revisions.php
+
+		-
+			message: '#^Function interdire_scripts not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function is_utf8 not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function lister_tables_objets_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function objet_associable not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/revisions.php
+
+		-
+			message: '#^Function objet_trouver_liens not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/revisions.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function propre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 20
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_replace not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/revisions.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/revisions.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/revisions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/suivi_versions.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/suivi_versions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/suivi_versions.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/suivi_versions.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/suivi_versions.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/suivi_versions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/objets/contenu/revision_fonctions.php
+
+		-
+			message: '#^Function objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/objets/contenu/revision_fonctions.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/objets/contenu/revision_fonctions.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/objets/contenu/revision_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/objets/liste/versions_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: prive/squelettes/contenu/revision_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/transmettre/rss/revisions_fonctions.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function effacer_meta not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function maj_plugin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function sql_drop_table not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: revisions_administrations.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_autoriser.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_autoriser.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_autoriser.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_autoriser.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_autoriser.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_autoriser.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_autoriser.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_ieconfig.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function icone_horizontale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 12
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function session_get not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: revisions_pipeline.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: revisions_pipeline.php

@@ -1,0 +1,28 @@
+{
+    "name": "spip/images",
+    "description": "Filtres de transformation d'image et de couleurs",
+    "license": "GPL-3.0-or-later",
+    "type": "spip-plugin",
+    "authors": [
+        {
+            "name": "Collectif SPIP",
+            "homepage": "https://discuter.spip.net/c/spip-dev/5",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0 <=8.4"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "spip/coding-standards": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "7.4.33"
+        }
+    }
+}

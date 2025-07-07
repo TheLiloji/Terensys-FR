@@ -1,0 +1,59 @@
+[(#AUTORISER{voir,client,#ID_CLIENT}|sinon_interdire_acces)]
+[(#SET{url_voir,#VAL{client}|objet_info{url_voir}})]
+[(#SET{url_edit,#VAL{client}|objet_info{url_edit}})]
+<BOUCLE_client(CLIENTS){id_client}{si #ENV{exec}|=={#GET{url_voir}}}>
+[(#BOITE_OUVRIR{[
+	[(#AUTORISER{modifier,client,#ID_CLIENT})
+		[(#ID_CLIENT|afficher_qui_edite{client}|non)
+			[(#URL_ECRIRE{#GET{url_edit},id_client=#ID_CLIENT}|icone_verticale{<:client:icone_modifier_client:/>,client,edit,right ajax preload})]
+		]
+		[(#ID_CLIENT|afficher_qui_edite{client}|oui)
+			[(#URL_ECRIRE{#GET{url_edit},id_client=#ID_CLIENT}|icone_verticale{#ID_CLIENT|afficher_qui_edite{client},warning-24,'',right edition_deja ajax preload})]
+		]
+	]
+
+	<h1>[(#RANG). ](#NOM|sinon{<:info_sans_titre:/>})[(#CHEMIN_IMAGE{client-24.png}|balise_img{client,cadre-icone})]</h1>
+
+],simple fiche_objet})]
+
+<div class="ajax">
+	#FORMULAIRE_DATER{client,#ID_CLIENT}
+</div>
+
+<!--affiche_milieu-->
+
+<div id="wysiwyg">
+<INCLURE{fond=prive/objets/contenu/client,id=#ID_CLIENT,id_client=#ID_CLIENT,virtuel=oui,ajax=wysiwyg,wysiwyg=1}>
+</div>
+
+<div class="nettoyeur"></div>
+
+[(#AUTORISER{modifier,client,#ID_CLIENT})
+	[(#ID_CLIENT|afficher_qui_edite{client}|non)
+		[(#URL_ECRIRE{#GET{url_edit},id_client=#ID_CLIENT}|icone_verticale{<:client:icone_modifier_client:/>,client,edit,right ajax preload})]
+	]
+	[(#ID_CLIENT|afficher_qui_edite{client}|oui)
+		[(#URL_ECRIRE{#GET{url_edit},id_client=#ID_CLIENT}|icone_verticale{#ID_CLIENT|afficher_qui_edite{client},warning-24,'',right edition_deja ajax preload})]
+	]
+]
+
+<div class="nettoyeur"></div>
+
+
+#PIPELINE{afficher_complement_objet,#ARRAY{args,#ARRAY{type,client,id,#ID_CLIENT},data,'<div class="nettoyeur"></div>'}}
+
+#BOITE_FERMER
+
+
+#SET{enfants,''}
+[(#VAL{prive/objets/contenu/client-enfants}|trouver_fond|oui)
+	[(#SET{enfants,[(#INCLURE{fond=prive/objets/contenu/client-enfants,id_client,env})]})]
+]
+[(#PIPELINE{affiche_enfants,[(#ARRAY{args,#ARRAY{exec,client,id_client,#ID_CLIENT,objet,client,id_objet,#ID_CLIENT},data,#GET{enfants}})]})]
+
+[(#CONST{_AJAX}|oui)
+	<script type="text/javascript">/*<!\\[CDATA\\[*/reloadExecPage('#ENV{exec}','#navigation,#chemin,#extra');/*\\]\\]>*/</script>
+]
+</BOUCLE_client>
+[(#ENV**{exec}|=={#GET{url_edit}}|?{#INCLURE{fond=prive/squelettes/contenu/#GET{url_edit},redirect='',env,retourajax=oui},#REM|sinon_interdire_acces})]
+<//B_client>

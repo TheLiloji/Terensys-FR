@@ -1,0 +1,33 @@
+<BOUCLE_articles(ARTICLES) {id_article}>
+    <div class="article-content-offer">
+        <div class="offer-title">
+            <h4>#TITRE</h4>
+            #TEXTE
+        </div>
+
+        <div id="subarticle-container">
+            <BOUCLE_subarticle(ARTICLES) {id_article IN #SOUS_ARTICLE|picker_selected{article}} {statut IN publie,prepa}>
+                <div class="subarticle">
+                    <h4>#TITRE</h4>
+                    #TEXTE
+                </div>
+
+                [(#TOTAL_BOUCLE|>{4}|oui)
+                    <style>
+                        #subarticle-container {
+                            --offers: 4;
+                        }
+                    </style>
+                ]
+
+                [(#TOTAL_BOUCLE|<={4}|oui) 
+                    <style>
+                        #subarticle-container {
+                        --offers: [(#TOTAL_BOUCLE)];
+                        }
+                    </style>
+                ]
+            </BOUCLE_subarticle>
+        </div>
+    </div>
+</BOUCLE_articles>

@@ -1,0 +1,12 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 8
+			path: inc/archives.php
+
+		-
+			message: "#^Parameter \\#3 \\$alias of class PharData constructor expects string, null given\\.$#"
+			count: 1
+			path: src/TarArchive.php
+

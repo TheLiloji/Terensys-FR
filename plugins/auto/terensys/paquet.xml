@@ -1,0 +1,45 @@
+<paquet
+	prefix="terensys"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[4.4.3;4.4.*]"
+	logo="prive/themes/spip/images/terensys-64.png"
+	documentation=""
+	schema="1.0.0" 
+>
+	<!--
+		Paquet généré le 2025-04-25 08:06:28
+	-->
+
+	<nom>Terensys</nom>
+	
+
+	<auteur>Terensys</auteur>
+
+	<licence>GNU/GPL</licence>
+	<necessite nom="saisies" compatibilite="[3.50.1;]" /> 
+	<necessite nom="rang" />
+
+
+	<pipeline nom="autoriser" inclure="terensys_autorisations.php" /> 
+
+	<pipeline nom="declarer_tables_objets_sql" inclure="base/terensys.php" /> 
+	<pipeline nom="declarer_tables_interfaces" inclure="base/terensys.php" /> 
+	<pipeline nom="declarer_tables_auxiliaires" inclure="base/terensys.php" /> 
+	<pipeline nom="affiche_milieu" inclure="terensys_pipelines.php" /> 
+	<pipeline nom="optimiser_base_disparus" inclure="terensys_pipelines.php" /> 
+	<pipeline nom="declarer_champs_extras" inclure="terensys_pipelines.php" />
+	<pipeline nom="recuperer_fond" inclure="terensys_pipelines.php" />
+
+
+	<menu nom="articles_editoriaux" titre="articles_editorial:titre_articles_editoriaux" parent="menu_edition" icone="images/articles_editorial-16.png" action="articles_editoriaux" /> 
+	<menu nom="clients" titre="client:titre_clients" parent="menu_edition" icone="images/client-16.png" action="clients" /> 
+	<menu nom="client_creer" titre="client:icone_creer_client" parent="outils_rapides" icone="images/client-new-16.png" action="client_edit" parametres="new=oui" /> 
+	<menu nom="personnes" titre="personne:titre_personnes" parent="menu_edition" icone="images/personne-16.png" action="personnes" /> 
+	<menu nom="personne_creer" titre="personne:icone_creer_personne" parent="outils_rapides" icone="images/personne-new-16.png" action="personne_edit" parametres="new=oui" /> 
+	<menu nom="partenaires" titre="partenaire:titre_partenaires" parent="menu_edition" icone="images/partenaire-16.png" action="partenaires" /> 
+	<menu nom="partenaire_creer" titre="partenaire:icone_creer_partenaire" parent="outils_rapides" icone="images/partenaire-new-16.png" action="partenaire_edit" parametres="new=oui" /> 
+
+	<menu nom="terensys_doc" titre="terensys:menu_terensys_doc" parent="menu_developpement" icone="images/terensys-64.png" />
+	
+</paquet>

@@ -1,0 +1,191 @@
+#HTTP_HEADER{Content-Type: text/javascript; charset=#CHARSET}
+[(#REM)<script>/*
+
+	Gestion des listes de documents :
+	- Choix des modes d'affichage (grand, case, liste courte)
+	- Gestion du tri par glisser-déposer
+	- Rechargement du conteneur des listes quand l'une d'elle est vidée
+
+	Markup :
+	- Conteneur principal : .portfolios
+	- Listes              : .liste_items.documents
+	- Listes ordonnables  : .liste_items.documents.ordonner_rang_lien\[data-lien\]
+
+*/]
+
+/* Choix du mode affichage des documents (grand, en case, en liste courte) */
+function choix_affichages_documents() {
+	$('.portfolios__titre:not(:has(.affichages))').each(function () {
+		var titre = $(this);
+		var liste = titre.next('.liste_items.documents');
+		var identifiant = liste.data('cookie-affichage');
+
+		titre.append(
+			"<div class='affichages'>"
+			+ "<span class='icone grand on' title='<:medias:affichage_documents_en_grand|attribut_html:>'></span>"
+			+ "<span class='icone cases' title='<:medias:affichage_documents_en_cases|attribut_html:>'></span>"
+			+ "<span class='icone liste' title='<:medias:affichage_documents_en_liste_compacte|attribut_html:>'></span>"
+			+ "</div>"
+		);
+
+		var changer_affichage_documents = function (me, bouton, classe) {
+			$(me).parent().find('.icone').removeClass('on').end().end().addClass('on');
+			var liste = $(me).parents('h3').next('.liste_items.documents');
+			liste.removeClass('documents_cases').removeClass('documents_liste');
+			if (classe) {
+				liste.addClass(classe);
+			}
+			if (identifiant) {
+				Cookies.set('affichage-' + identifiant, bouton, {SameSite: 'Strict'});
+			}
+
+			liste.trigger('affichage.documents.change', {
+				'liste': liste,
+				'icone': me,
+				'bouton': bouton,
+				'classe': classe,
+				'identifiant': identifiant
+			});
+
+		};
+
+		titre.find('.affichages > .grand').click(function () {
+			changer_affichage_documents(this, 'grand', null);
+		});
+
+		titre.find('.affichages > .cases').click(function () {
+			changer_affichage_documents(this, 'cases', 'documents_cases');
+		});
+
+		titre.find('.affichages > .liste').click(function () {
+			changer_affichage_documents(this, 'liste', 'documents_liste');
+		});
+
+		if (identifiant) {
+			var defaut = Cookies.get('affichage-' + identifiant);
+			if (defaut) {
+				titre.find('.affichages > .' + defaut).trigger('click');
+			}
+			liste.trigger('affichage.documents.charge', {
+				'liste': liste,
+				'identifiant': identifiant,
+				'defaut': defaut
+			});
+		}
+	});
+}
+
+/* Gestion du tri des listes de documents et de leur enregistrement */
+function ordonner_listes_documents() {
+
+	if (typeof Sortable === 'function') {
+		$(".liste_items.documents.ordonner_rang_lien[data-lien]").find('> .sortable').each(function () {
+			// détruire / recréer le sortable à chaque appel ajax
+			if (Sortable.get(this)) {
+				Sortable.get(this).destroy();
+			}
+			// pas de tri possible s'il n'y a qu'un seul élément.
+			if ($(this).find('> .item').length < 2) {
+				$(this).find('.deplacer-document').hide();
+				$(this).parent().find('.tout_desordonner').hide();
+				return true; // continue
+			} else {
+				$(this).find('.deplacer-document').show();
+			}
+			new Sortable(this, {
+				/*direction: 'vertical',*/ /* minidoc a un affichage en case */
+				swapThreshold: .8,
+				ghostClass: "deplacer-document-placeholder",
+				onStart: function(event) {
+					$(event.item).addClass('document-en-mouvement');
+				},
+				onEnd: function(event) {
+					$(event.item).removeClass('document-en-mouvement');
+				},
+				onUpdate: function (event) {
+					const ordre = this.toArray();
+					const $items = $(event.from);
+					const $item = $(event.item);
+
+					// l'objet lié est indiqué dans l'attribut data-lien sur la liste
+					const [objet_lie, id_objet_lie] = $items.parents(".liste_items.documents").data("lien").split("/");
+					const action = '[(#VAL{ordonner_liens_documents}|generer_url_action{"", 1})]';
+					const params = {
+						objet_source: 'document',
+						objet_lie: objet_lie,
+						id_objet_lie: id_objet_lie,
+						ordre: ordre,
+					};
+
+					$item.animateLoading();
+
+					$.post({
+						url: action,
+						data: params,
+						dataType: 'json',
+						cache: false,
+					}).done(function(data) {
+
+						const couleur_origine = $item.css('background-color');
+						const couleur_erreur = $("<div class='remove'></div>").css('background-color');
+						const couleur_succes = $("<div class='append'></div>").css('background-color');
+						$item.endLoading(true);
+
+						if (data.errors.length) {
+							$item.css({backgroundColor: couleur_erreur}).animate({backgroundColor: couleur_origine}, 'normal', () => {
+								$item.css({backgroundColor: ''});
+							});
+						} else {
+							$item.css({backgroundColor: couleur_succes}).animate({backgroundColor: couleur_origine}, 'normal', () => {
+								$item.css({backgroundColor: ''});
+							});
+							$items.parent().find('.tout_desordonner').show();
+						}
+					});
+				}
+			});
+
+			// bouton "désordonner"
+			if ($(this).parent().find('.deplacer-document[data-rang!=0]').length) {
+				$(this).parent().find('.tout_desordonner').show();
+			} else {
+				$(this).parent().find('.tout_desordonner').hide();
+			}
+		});
+	}
+}
+
+/* Recharger le conteneur des listes de documents si l'une d'elle est vide */
+function check_reload_page(){
+	var reload = false;
+	$('.portfolios').each(function(){
+		$(this).find('.liste-items.documents').each(function() {
+			if ($(this).length && !$(this).find('.item').length) {
+				$(this).parents('.portfolios').ajaxReload();
+				reload = true;
+				return false; // break each
+			}
+		});
+	});
+	if (reload) {
+		jQuery('#navigation .box.info').ajaxReload();
+	}
+}
+
+/* Initialisation et relance en cas de chargement ajax */
+if (window.jQuery) {
+	jQuery(function($){
+		if (!$.js_portfolio_documents_charge) {
+			$.js_portfolio_documents_charge = true;
+			onAjaxLoad(check_reload_page);
+			choix_affichages_documents();
+			onAjaxLoad(choix_affichages_documents);
+			if (typeof Sortable === "undefined") {
+				jQuery.getScript('[(#CHEMIN{prive/javascript/Sortable.js}|timestamp)]').done(ordonner_listes_documents);
+			} else {
+				ordonner_listes_documents();
+			}
+			onAjaxLoad(ordonner_listes_documents);
+		}
+	});
+}

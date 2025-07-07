@@ -1,0 +1,299 @@
+{
+  "math": {
+    "if_str": "<math>",
+    "type": "all",
+    "is_callback": "y",
+    "replace": "replace_math",
+    "priority": -50
+  },
+  "traiter_retours_chariots_1": {
+    "if_chars": "\r",
+    "match": ",\r\n?,S",
+    "replace": "\n",
+    "priority": -40
+  },
+  "init-trim": {
+    "type": "all",
+    "is_callback": "y",
+    "replace": "trim",
+    "priority": -40
+  },
+  "init-saut": {
+    "type": "all",
+    "replace": "\n$0",
+    "priority": -40
+  },
+  "lignes-vides": {
+    "match": ",^[ \\t]+$,m",
+    "replace": "",
+    "priority": -35
+  },
+  "tableaux": {
+    "type": "all",
+    "replace": "spip\/spip-tableaux.json",
+    "is_wheel": "Y",
+    "if_str": "\n|",
+    "priority": -30
+  },
+  "listes": {
+    "if_str": "\n-",
+    "is_wheel": "Y",
+    "type": "all",
+    "replace": "spip\/spip-listes.json",
+    "priority": -20
+  },
+  "echappe-tags": {
+    "match": ",<\/?[a-z!][^<>]*?[{}_-][^<>]*>,imsS",
+    "if_chars": "{}_-",
+    "priority": -20,
+    "is_wheel": "Y",
+    "replace": {
+      "echappe-tags-sub": {
+        "if_match": "\/[{}]|\n[_-]|--\/",
+        "match": [
+          "{",
+          "}",
+          "_",
+          "-"
+        ],
+        "replace": [
+          "\u0001\u0001",
+          "\u0001\u0002",
+          "\u0001\u0003",
+          "\u0001\u0004"
+        ],
+        "type": "str"
+      }
+    }
+  },
+  "echappe-raccourcis": {
+    "if_str": "\\",
+    "priority": -20,
+    "match": [
+      "\\{",
+      "\\}",
+      "\\_",
+      "\\-",
+      "\\[",
+      "\\]",
+      "\\|",
+      "\\<",
+      "\\>",
+      "\\\\",
+      "\\*",
+      "\\#",
+      "\\+",
+      "\\~"
+    ],
+    "replace": [
+      "\u0001\u0001",
+      "\u0001\u0002",
+      "\u0001\u0003",
+      "\u0001\u0004",
+      "\u0001\u0005",
+      "\u0001\u0006",
+      "\u0001\u0007",
+      "\u0001\b",
+      "\u0001\t",
+      "\u0001\u0010",
+      "\u0001\u0011",
+      "\u0001\u0012",
+      "\u0001\u0013",
+      "\u0001\u0014"
+    ],
+    "type": "str"
+  },
+  "ligne-horizontale": {
+    "match": "\/\n(----+|____+)\/S",
+    "replace": "\n\n\n<hr class=\"spip\" \/>\n\n\n",
+    "if_chars": "\n",
+    "priority": -20
+  },
+  "alinea": {
+    "match": "\/\n-- *\/",
+    "replace": "\n<br \/>&mdash;&nbsp;",
+    "if_str": "\n--",
+    "priority": -20
+  },
+  "puce": {
+    "match": "\/\n- *\/S",
+    "replace": "replace_puce",
+    "if_str": "\n-",
+    "is_callback": "Y",
+    "priority": -20
+  },
+  "br-inutile": {
+    "match": "\/(^|^\n|\n\n)_ +\/S",
+    "replace": "$1",
+    "if_str": "_ ",
+    "priority": -20
+  },
+  "br": {
+    "match": "\/\n_ +\/S",
+    "replace": "<br class='manualbr' \/>",
+    "if_str": "\n_",
+    "priority": -20
+  },
+  "abbr": {
+    "if_chars": "[|",
+    "match": "\/\\[([^\\|\\[\\]>]+)\\|([^\\|\\]\\{>]+)(?:\\{([a-z]+)\\})?\\]\/S",
+    "is_callback": "Y",
+    "replace": "inserer_abbr"
+  },
+  "intertitres-compliques": {
+    "match": [
+      "\/(^|[^{])[{][{][{]\/S",
+      "\/[}][}][}]($|[^}])\/S"
+    ],
+    "replace": [
+      "$1\n\n\n<h2 class=\"spip\">",
+      "<\/h2>\n\n\n$1"
+    ],
+    "if_str": "}}}}"
+  },
+  "intertitres": {
+    "match": [
+      "{{{",
+      "}}}"
+    ],
+    "replace": [
+      "\n\n\n<h2 class=\"spip\">",
+      "<\/h2>\n\n\n"
+    ],
+    "if_str": "{{{",
+    "type": "str"
+  },
+  "gras-vide": {
+    "match": "{{}}",
+    "replace": "\u0001\u0001\u0001\u0001\u0001\u0002\u0001\u0002",
+    "type": "str",
+    "if_str": "{{"
+  },
+  "gras": {
+    "match": [
+      "{{",
+      "}}"
+    ],
+    "replace": [
+      "<strong>",
+      "<\/strong>"
+    ],
+    "type": "str",
+    "if_str": "{{"
+  },
+  "italiques-vide": {
+    "match": "{}",
+    "replace": "\u0001\u0001\u0001\u0002",
+    "type": "str",
+    "if_str": "{"
+  },
+  "italiques": {
+    "match": [
+      "{",
+      "}"
+    ],
+    "replace": [
+      "<i>",
+      "<\/i>"
+    ],
+    "type": "str",
+    "if_str": "{"
+  },
+  "paragraphes": {
+    "match": [
+      "\/ *\n(?: *\n)+(?:<br ?\\\/?>)*\/S",
+      "\/(?:<br\\b[^>]*>){2,}\\s*\/S",
+      "\/(<p\\b[^>]*>)\n*(?:<br ?\\\/?>\n*)+\/S"
+    ],
+    "replace": [
+      "<p>",
+      "<p>",
+      "$1"
+    ],
+    "priority": 0
+  },
+  "quote": {
+    "match": [
+      "<quote>",
+      "<\/quote>"
+    ],
+    "replace": [
+      "<blockquote class=\"spip\"><p>",
+      "<\/blockquote>"
+    ],
+    "if_str": "<quote>",
+    "type": "str"
+  },
+  "intro": {
+    "match": [
+      "<intro>",
+      "<\/intro>"
+    ],
+    "replace": [
+      "",
+      ""
+    ],
+    "if_str": "<intro>",
+    "type": "str"
+  },
+  "br-restant": {
+    "match": "@^\n<br \/>@S",
+    "replace": "",
+    "if_str": "\n<br",
+    "priority": -20
+  },
+  "poesie": {
+    "match": ",<poe(sie|try)>(.*)<\/poe(sie|try)>,UimsS",
+    "replace": "spip\/spip-poesie.json",
+    "pick_match": 2,
+    "is_wheel": "Y",
+    "if_str": "<poe",
+    "priority": -40
+  },
+  "restaure-tags": {
+    "if_chars": "\u0001",
+    "match": [
+      "\u0001\u0001",
+      "\u0001\u0002",
+      "\u0001\u0003",
+      "\u0001\u0004",
+      "\u0001\u0005",
+      "\u0001\u0006",
+      "\u0001\u0007",
+      "\u0001\b",
+      "\u0001\t",
+      "\u0001\u0010",
+      "\u0001\u0011",
+      "\u0001\u0012",
+      "\u0001\u0013",
+      "\u0001\u0014"
+    ],
+    "replace": [
+      "{",
+      "}",
+      "_",
+      "-",
+      "[",
+      "]",
+      "|",
+      "<",
+      ">",
+      "\\",
+      "*",
+      "#",
+      "+",
+      "~"
+    ],
+    "type": "str"
+  },
+  "echappe-chevron-solitaire": {
+    "type": "preg",
+    "match": "\/<(?=[^a-z\\\/!])\/Uims",
+    "replace": "&lt;"
+  },
+  "echappe-chevron-pas-ferme": {
+    "type": "preg",
+    "match": "\/<([^><\"'!]*)(?=<|$)\/Uims",
+    "replace": "&lt;$1"
+  }
+}

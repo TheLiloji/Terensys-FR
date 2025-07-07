@@ -1,0 +1,34 @@
+<paquet
+	prefix="rang"
+	categorie="navigation"
+	version="2.1.0"
+	etat="stable"
+	compatibilite="[4.0.0;4.*]"
+	logo="prive/themes/spip/images/rang-64.png"
+	documentation="https://contrib.spip.net/4994"
+	schema="1.0.3"
+>
+	<nom>Rang</nom>
+	<!-- Permet de réordonner les tables de SPIP par drag'n'drop -->
+
+	<auteur>peetdu</auteur>
+	<auteur>nicod_</auteur>
+	<credit>Logo : Erational</credit>
+
+	<licence>GNU/GPL</licence>
+
+	<necessite nom="saisies" compatibilite="[5.0.0;]" />
+	<utilise nom="mots" compatibilite="[3.0.1;]" />
+	<utilise nom="breves" compatibilite="[2.0.0;]" />
+
+
+	<!-- Déclaration des pipelines du Core utiles au plugin Rang -->
+	<pipeline nom="autoriser" inclure="rang_autorisations.php" />
+	<pipeline nom="declarer_tables_objets_sql" inclure="rang_pipelines.php" />
+	<pipeline nom="recuperer_fond" inclure="rang_pipelines.php" />
+	<pipeline nom="pre_edition" inclure="rang_pipelines.php" />
+
+	<!-- Pipeline spécifique à Rang : donner un contrôle sur la liste des pages (exec) sur lesquelles activer le drag’n’drop -->
+	<pipeline nom="rang_declarer_contexte" action="" />
+
+</paquet>

@@ -1,0 +1,41 @@
+\<BOUCLE_#TYPE\(#MOBJET\){#ID_OBJET=\#ENV{id}}[(#OBJET|champ_present{statut}|?{'{statut?}'})]>
+<div class="infos">
+\[(\#SET\{texte_objet,\<:#TYPE:titre_#TYPE:/>\})\]
+<div class="numero">\<:titre_cadre_numero_objet{objet=\#GET{texte_objet}}:/><p>\##MID_OBJET</p></div>
+<BOUCLE_statut(CONDITION){si (#OBJET|champ_present{statut})}>
+\[(\#FORMULAIRE_INSTITUER_OBJET{#TYPE,\##MID_OBJET})\]
+
+<div class='nb_elements'><!--nb_elements--></div>
+
+\[(\#REM)
+
+	Bouton voir en ligne
+
+\]
+\<BOUCLE_publie\(#MOBJET\){#ID_OBJET}>
+	\[(\#VAL{redirect}
+		|generer_url_action{type=#TYPE&id=\##MID_OBJET}
+		|parametre_url{var_mode,calcul}
+		|icone_horizontale{\<:icone_voir_en_ligne:>,racine})\]
+\</BOUCLE_publie>
+	\[(\#AUTORISER{previsualiser,#TYPE,\##MID_OBJET,'',\#ARRAY{statut,\#STATUT}})
+		\[(\#VAL{redirect}
+			|generer_url_action{type=#TYPE&id=\##MID_OBJET}
+			|parametre_url{var_mode,preview}
+			|icone_horizontale{\<:previsualiser:>,preview})\]
+	\]
+\<//B_publie>
+</BOUCLE_statut>
+	<div class='nb_elements'><!--nb_elements--></div>
+
+	\[(\#VAL{redirect}
+		|generer_url_action{type=#TYPE&id=\##MID_OBJET}
+		|parametre_url{var_mode,calcul}
+		|icone_horizontale{\<:icone_voir_en_ligne:>,racine})\]
+
+	[(\#AUTORISER{supprimer, #TYPE, \##MID_OBJET}|oui)
+		[(\#URL_ACTION_AUTEUR{supprimer_#TYPE, \##MID_OBJET, \#URL_ECRIRE{#LOBJET}}|bouton_action_horizontal{\<:#TYPE:supprimer_#TYPE:/>,\#TYPE,del,'',\<:#TYPE:confirmer_supprimer_#TYPE:/>})]
+	]
+<//B_statut>
+</div>
+\</BOUCLE_#TYPE>

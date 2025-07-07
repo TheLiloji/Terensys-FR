@@ -1,0 +1,122 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 1
+			path: action/compagnon.php
+
+		-
+			message: "#^Function ecrire_config not found\\.$#"
+			count: 1
+			path: action/compagnon.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 2
+			path: action/compagnon.php
+
+		-
+			message: "#^Function minipres not found\\.$#"
+			count: 1
+			path: action/compagnon.php
+
+		-
+			message: "#^Function ecrire_config not found\\.$#"
+			count: 2
+			path: compagnon_administrations.php
+
+		-
+			message: "#^Function effacer_meta not found\\.$#"
+			count: 2
+			path: compagnon_administrations.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 2
+			path: compagnon_administrations.php
+
+		-
+			message: "#^Function maj_plugin not found\\.$#"
+			count: 1
+			path: compagnon_administrations.php
+
+		-
+			message: "#^Function sql_getfetsel not found\\.$#"
+			count: 1
+			path: compagnon_administrations.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 1
+			path: compagnon_fonctions.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 14
+			path: compagnon_messages.php
+
+		-
+			message: "#^Function sql_countsel not found\\.$#"
+			count: 3
+			path: compagnon_messages.php
+
+		-
+			message: "#^Function sql_getfetsel not found\\.$#"
+			count: 1
+			path: compagnon_messages.php
+
+		-
+			message: "#^Function find_in_path not found\\.$#"
+			count: 1
+			path: compagnon_pipelines.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: compagnon_pipelines.php
+
+		-
+			message: "#^Function lire_config not found\\.$#"
+			count: 2
+			path: compagnon_pipelines.php
+
+		-
+			message: "#^Function pipeline not found\\.$#"
+			count: 1
+			path: compagnon_pipelines.php
+
+		-
+			message: "#^Function recuperer_fond not found\\.$#"
+			count: 2
+			path: compagnon_pipelines.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 1
+			path: formulaires/reinitialiser_compagnon.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 1
+			path: formulaires/reinitialiser_compagnon.php
+
+		-
+			message: "#^Function ecrire_config not found\\.$#"
+			count: 1
+			path: formulaires/reinitialiser_compagnon.php
+
+		-
+			message: "#^Function effacer_config not found\\.$#"
+			count: 2
+			path: formulaires/reinitialiser_compagnon.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: formulaires/reinitialiser_compagnon.php
+
+		-
+			message: "#^Function lire_config not found\\.$#"
+			count: 1
+			path: formulaires/reinitialiser_compagnon.php
+

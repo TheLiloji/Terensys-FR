@@ -1,0 +1,9 @@
+<BOUCLE_texthtml (DOCUMENTS types_documents) {id_document=#ID} {tout}
+>[(#SET{legende,#INCLURE{fond=modeles/document_legende, env}|trim})][(#REM)
+][<div
+  class="[(#ID_DOCUMENT|medias_modele_document_standard_classes{text_html})]"[ 
+  (#ID_DOCUMENT|medias_modele_document_standard_attributs{text_html})
+]><figure class="spip_doc_inner"><object data="(#URL_DOCUMENT_FICHIER|attribut_url)" width="100%" height="400"><a href="[(#URL_DOCUMENT|attribut_url)]">#FICHIER</a></object>
+[(#GET{legende})
+]</figure></div>
+]</BOUCLE_texthtml>

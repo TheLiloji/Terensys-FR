@@ -1,0 +1,27 @@
+.minipage #actionner .fail {color:#c30000;}
+.minipage #actionner ul {margin-left: 0.5em;}
+.minipage #actionner li {list-style-type:square; margin-left: 0.5em;}
+
+.minipage .derniere_action { font-weight:bold; }
+.minipage div {
+	line-height:140%;
+}
+.minipage .progression {
+	margin-top:2em;
+	font-weight:bold;
+	font-size:1.4em;
+	text-align:center;
+}
+.minipage #progression_bar {
+	width: 100%;
+	border-radius: 0.5em;
+}
+.minipage #progression_bar::-webkit-progress-bar {
+	background-color: rgba(0, 0, 0, 0.25);
+}
+.minipage #progression_bar::-webkit-progress-value {
+	background-color: var(--minipres-color-theme);
+}
+.minipage #progression_bar::-moz-progress-bar {
+	background-color: var(--minipres-color-theme);
+}

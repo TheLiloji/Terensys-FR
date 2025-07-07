@@ -1,0 +1,31 @@
+<paquet
+	prefix="fabrique"
+	version="3.2.0"
+	etat="stable"
+	compatibilite="[4.0.0;4.*]"
+	logo="fabrique.svg"
+	documentation="https://contrib.spip.net/?article4134"
+	schema="1.0.0"
+>
+
+	<nom>Fabrique</nom>
+
+	<auteur>Matthieu Marcillaud</auteur>
+	<credit lien="https://www.flaticon.com/authors/dinosoftlabs">Icône de DinosoftLabs depuis Flaticon</credit>
+	<licence>GNU/GPL</licence>
+
+	<necessite nom="saisies" compatibilite="[4.0.0;]" />
+
+	<utilise nom="skeleditor" compatibilite="[3.1.0;]" />
+	<utilise nom="coloration_code" compatibilite="[0.10.8;]" />
+	<utilise nom="yaml" compatibilite="[3.0.0;]" />
+
+	<pipeline nom="compagnon_messages" inclure="fabrique_pipelines.php" />
+
+	<menu nom="fabrique" titre="fabrique:fabrique_titre" parent="menu_developpement"  icone="images/fabrique-16.png" />
+
+	<onglet nom="fabrique" titre="fabrique:onglet_fabrique" parent="fabrique" icone="images/fabrique-24.png" />
+	<onglet nom="fabrique_restaurer" titre="fabrique:onglet_fabrique_restaurer" parent="fabrique" icone="images/fabrique_restaurer-24.png" />
+	<onglet nom="fabrique_outils" titre="fabrique:onglet_fabrique_outils" parent="fabrique" icone="images/fabrique_outils-24.png" />
+
+</paquet>

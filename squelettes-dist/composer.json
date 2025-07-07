@@ -1,0 +1,13 @@
+{
+    "name": "spip/dist",
+    "description": "Squelettes par défaut de SPIP 4.0",
+    "license": "GPL-3.0-or-later",
+    "type": "spip-plugin",
+    "authors": [
+        {
+            "name": "Collectif SPIP",
+            "homepage": "https://discuter.spip.net/c/spip-dev/5",
+            "role": "Maintainer"
+        }
+    ]
+}

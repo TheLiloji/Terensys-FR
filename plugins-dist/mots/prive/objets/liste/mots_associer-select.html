@@ -1,0 +1,15 @@
+#SET{selected,''}
+<B_mots>
+	<div class="bouton-inline">
+		<select name="ajouter_lien[groupe#ID_GROUPE]" id="ajouter_lien-groupe#ID_GROUPE"
+			onchange="jQuery(this).addClass('avec-bouton').siblings('button.submit').css('visibility','visible');"
+		>
+		<option value="x">&nbsp;</option>
+		<BOUCLE_mots(MOTS){id_groupe}{id_mot !IN #ENV{exclus}}{par num titre, multi titre}>
+			#SET{value,mot-#ID_MOT-#OBJET-#ID_OBJET}
+			<option value="#GET{value}"[(#GET{value}|=={#ENV{ajouter_lien/groupe#ID_GROUPE}}|oui)selected="selected"#SET{selected,' '}]>[(#RANG). ]#TITRE</option>
+		</BOUCLE_mots>
+		</select>
+		<button type="submit" class="btn submit btn_secondaire" name="groupe#ID_GROUPE" value="+"[(#GET{selected}|non)style="visibility:hidden;"]><:bouton_ajouter:>[ (#CHEMIN_IMAGE{add-12.svg}|balise_img)]</button>
+	</div>
+</B_mots>

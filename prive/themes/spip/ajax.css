@@ -1,0 +1,27 @@
+/**
+ * Conteneurs ajax
+ * Ils sont ajoutés autour des éléments ajaxés
+ */
+div.ajaxbloc,
+div.ajax,
+div.ajax-form-container {
+	position: relative;
+}
+
+/* Picto de chargement */
+.image_loading {
+	float: inset-inline-end;
+}
+div.ajaxbloc > .image_loading,
+div.ajax > .image_loading,
+.formulaire_spip > .image_loading,
+div.ajax-form-container > .image_loading {
+	position: absolute;
+	right: 0;
+	float: none;
+}
+
+/* Bug IE/Win lol */
+.bugajaxie {
+	display: none;
+}

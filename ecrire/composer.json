@@ -1,0 +1,44 @@
+{
+    "name": "spip/ecrire",
+    "description": "Noyau de SPIP",
+    "license": "GPL-3.0-only",
+    "type": "spip-ecrire",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "ext-json": "*",
+        "ext-sodium": "*",
+        "ext-xml": "*",
+        "ext-zip": "*",
+        "algo26-matthias/idna-convert": "^3.1",
+        "symfony/deprecation-contracts": "^2.5",
+        "symfony/polyfill-mbstring": "^1.31",
+        "symfony/polyfill-php80": "^1.31",
+        "symfony/polyfill-php81": "^1.31",
+        "symfony/polyfill-php82": "^1.31",
+        "symfony/polyfill-php83": "^1.31",
+        "symfony/polyfill-php84": "^1.31"
+    },
+    "require-dev": {
+        "spip-league/kernel": "^1.x-dev",
+        "symplify/easy-coding-standard": "^12.3"
+    },
+    "repositories": {
+        "spip": {
+            "type": "composer",
+            "url": "https://get.spip.net/composer"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Spip\\": "src/"
+        },
+        "files": [
+            "bootstrap/deprecations.php"
+        ]
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.33"
+        }
+    }
+}

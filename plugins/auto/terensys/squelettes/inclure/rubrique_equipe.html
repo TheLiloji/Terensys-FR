@@ -1,0 +1,55 @@
+<BOUCLE_rubrique(RUBRIQUES) {id_rubrique}>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L'équipe</title>
+        <INCLURE{fond=inclure/head}/>
+        [<link rel="stylesheet" href="(#CHEMIN{assets/css/rubrique_equipe.css}|direction_css|timestamp)" type="text/css" />]
+        [<link rel="stylesheet" href="(#CHEMIN{assets/css/rubrique.css}|direction_css|timestamp)" type="text/css" />]
+    </head>
+    <body>
+        <header>
+            <INCLURE{fond=inclure/nav,env} />
+        </header>
+        <main>
+            <div class="teams-container">
+                <div class="title-container">
+                    <h2>#TITRE</h2>
+                    <div class="tree">
+                        <a href="#URL_SITE_SPIP/"><:accueil_site:></a> 
+                        <BOUCLE_ariane(HIERARCHIE){id_rubrique}> 
+                            <p>></p>
+                            <a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a> 
+                        </BOUCLE_ariane> 
+                        <p>></p>
+                        <p>[(#TITRE|couper{80})]</p>
+                    </div>
+                </div>
+                <div class="people-container">
+                    <BOUCLE_personnes(PERSONNES)>            
+                        <div class="card">
+                            <div class="member-img">
+                                <BOUCLE_document(DOCUMENTS) {id_document = #IMAGE} {statut IN publie, prop}>
+                                    <img src="#FICHIER" alt="#NOM">
+                                </BOUCLE_document>
+                            </div>
+                            <div class="member-info">
+                                <p class="nom">#NOM</p>
+                                <p class="fonction">#FONCTION</p>
+                                <div class="texte">
+                                    <p>#TEXTE</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </BOUCLE_personnes>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <INCLURE{fond=inclure/footer} />
+        </footer>      
+    </body>
+    </html>
+</BOUCLE_rubrique>

@@ -1,0 +1,34 @@
+<traduction
+	module="aide"
+	id="aide--aide-37701"
+	gestionnaire="salvatore"
+	url="https://trad.spip.net"
+	source="https://git.spip.net/spip/aide.git"
+	reference="fr">
+	<langue code="ar" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=ar" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
+	</langue>
+	<langue code="de" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=de" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="Torsten Willmann" lien="https://trad.spip.net/auteur/torsten-willmann" />
+	</langue>
+	<langue code="en" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=en" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
+	</langue>
+	<langue code="es" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=es" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
+	<langue code="fr" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=fr" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
+	<langue code="fr_tu" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=fr_tu" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
+	</langue>
+	<langue code="it" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=it" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="Alberto" lien="https://trad.spip.net/auteur/alberto" />
+	</langue>
+	<langue code="mg" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=mg" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="iBesorongola" lien="https://trad.spip.net/auteur/ibesorongola" />
+	</langue>
+	<langue code="pt" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=pt" total="11" traduits="9" relire="2" modifs="0" nouveaux="0" pourcent="81.82">
+		<traducteur nom="Jorge Paulo Malveira Pimentel Dos Santos" lien="https://trad.spip.net/auteur/jorge-paulo-malveira-pimentel-dos-santos" />
+	</langue>
+	<langue code="pt_br" url="https://trad.spip.net/tradlang_module/aide-aide?lang_cible=pt_br" total="11" traduits="11" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="Ricardo Porto" lien="https://trad.spip.net/auteur/ricardo-porto" />
+	</langue>
+</traduction>

@@ -1,0 +1,40 @@
+[(#SET{defaut_tri,#ARRAY{
+	rang,1,
+	nom,1,
+	id_personne,1,
+	points,-1
+}})]
+#SET{activer_rang, #VAL{personnes}|in_array{#RANG_LISTE_OBJETS} }
+[(#GET{activer_rang}|oui) [(#VAL{rang}|setenv{par})] #SET{tri,rang} ]
+<B_liste_personnes>
+#ANCRE_PAGINATION
+<div class="liste-objets personnes">
+<table class="spip liste" data-objet="personnes">
+	[<caption><strong class="caption">(#ENV*{titre,#GRAND_TOTAL|singulier_ou_pluriel{personne:info_1_personne,personne:info_nb_personnes}})</strong></caption>]
+	<thead>
+		<tr class="first_row">
+			[(#GET{activer_rang}|oui)<th class="rang" scope="col">[(#TRI{rang,<span title="<:rang:lien_trier_rang|attribut_html:>"><:rang:info_rang_abbr:></span>,ajax})]</th>]
+			<th class="picto" scope="col"></th>
+			<th class="nom" scope="col">[(#TRI{nom,<:personne:champ_nom_label:/>,ajax})]</th>
+			<th class="id" scope="col">[(#TRI{id_personne,<:info_numero_abbreviation:/>,ajax})]</th>
+		</tr>
+	</thead>
+	<tbody>
+	<BOUCLE_liste_personnes(PERSONNES){id_mot?}{id_auteur?}{where?}{recherche?}{tri #ENV{par,num nom},#GET{defaut_tri}}{par nom}{pagination #ENV{nb,10}}>
+		<tr [(#GET{activer_rang}|oui)data-id_objet="#ID_PERSONNE"] class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
+			[(#GET{activer_rang}|oui)<td class="rang">[(#RANG).]</td>]
+			<td class="picto">[(#CHEMIN_IMAGE{personne-16.png}|balise_img)]</td>
+			<td class="nom principale">[(#LOGO_PERSONNE|image_reduire{20,26})]<a href="[(#ID_PERSONNE|generer_url_entite{personne})]" title="<:info_numero_abbreviation|attribut_html:/> #ID_PERSONNE">#NOM</a></td>
+			<td class="id">[(#AUTORISER{modifier,personne,#ID_PERSONNE}|?{
+				<a href="[(#URL_ECRIRE{personne_edit,id_personne=#ID_PERSONNE})]">#ID_PERSONNE</a>,
+				#ID_PERSONNE
+			})]</td>
+		</tr>
+	</BOUCLE_liste_personnes>
+	</tbody>
+</table>
+[<nav role="navigation" class="pagination">(#PAGINATION{prive})</nav>]
+</div>
+</B_liste_personnes>[
+<div class="liste-objets personnes caption-wrap"><strong class="caption">(#ENV*{sinon,''})</strong></div>
+]<//B_liste_personnes>

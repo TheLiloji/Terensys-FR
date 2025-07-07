@@ -1,0 +1,17 @@
+<BOUCLE_personne(PERSONNES){id_personne}>
+[<div class="champ contenu_nom[ (#NOM*|strlen|?{'',vide})]">
+	<div class="label"><:personne:champ_nom_label:/> : </div>
+	<span dir="#LANG_DIR" class="#EDIT{nom} nom">(#NOM)</span>
+</div>]
+
+[<div class="champ contenu_fonction[ (#FONCTION*|strlen|?{'',vide})]">
+	<div class="label"><:personne:champ_fonction_label:/> : </div>
+	<span dir="#LANG_DIR" class="#EDIT{fonction} fonction">(#FONCTION)</span>
+</div>]
+
+[<div class="champ contenu_texte[ (#TEXTE*|strlen|?{'',vide})]">
+	<div class="label"><:personne:champ_texte_label:/> : </div>
+	<span dir="#LANG_DIR" class="#EDIT{texte} texte">(#TEXTE)</span>
+</div>]
+
+</BOUCLE_personne>

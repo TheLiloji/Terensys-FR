@@ -1,0 +1,374 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function ecrire_fichier_calcule_si_modifie not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function inserer_attribut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function supprimer_timestamp not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function svg_nettoyer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function url_absolue_css not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_ieconfig.php
+
+		-
+			message: '#^Function protocole_implicite not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_options.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_pipeline.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: compresseur_pipeline.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compresseur.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_compresseur.php
+
+		-
+			message: '#^Function appliquer_modifs_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compresseur.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compresseur.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_compresseur.php
+
+		-
+			message: '#^Function tester_url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compresseur.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function chercher_filtre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function ecrire_fichier_calcule_si_modifie not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function erreur_squelette not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function extraire_balises not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function generer_url_public not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function protocole_implicite not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function recuperer_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function suivre_lien not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function timestamp not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function url_de_base not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/compresseur.php
+
+		-
+			message: '#^Function ecrire_fichier_calcule_si_modifie not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/compresseur_concatener.php
+
+		-
+			message: '#^Function generer_url_public not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_concatener.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_concatener.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_concatener.php
+
+		-
+			message: '#^Function self not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_concatener.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_concatener.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_concatener.php
+
+		-
+			message: '#^Function url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_concatener.php
+
+		-
+			message: '#^Function chercher_filtre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_embarquer.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#000080$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#008000$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#008080$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#800000$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#800080$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#808000$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#808080$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#c0c0c0$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#f00$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+
+		-
+			message: '#^Regex pattern is invalid\: No ending delimiter ''\#'' found in pattern\: \#ffa500$#'
+			identifier: regexp.pattern
+			count: 1
+			path: inc/compresseur_minifier.php
+

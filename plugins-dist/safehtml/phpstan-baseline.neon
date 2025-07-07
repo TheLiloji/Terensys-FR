@@ -1,0 +1,92 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function charset2unicode not found\\.$#"
+			count: 1
+			path: inc/safehtml.php
+
+		-
+			message: "#^Function echappe_html not found\\.$#"
+			count: 1
+			path: inc/safehtml.php
+
+		-
+			message: "#^Function echappe_retour not found\\.$#"
+			count: 1
+			path: inc/safehtml.php
+
+		-
+			message: "#^Function find_in_path not found\\.$#"
+			count: 1
+			path: inc/safehtml.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 3
+			path: inc/safehtml.php
+
+		-
+			message: "#^Function require_spip not found\\.$#"
+			count: 3
+			path: inc/safehtml.php
+
+		-
+			message: "#^Function sous_repertoire not found\\.$#"
+			count: 1
+			path: inc/safehtml.php
+
+		-
+			message: "#^Function unicode2charset not found\\.$#"
+			count: 1
+			path: inc/safehtml.php
+
+		-
+			message: "#^Function ecrire_fichier not found\\.$#"
+			count: 1
+			path: sanitizer/svg.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 2
+			path: sanitizer/svg.php
+
+		-
+			message: "#^Function spip_log not found\\.$#"
+			count: 2
+			path: sanitizer/svg.php
+
+		-
+			message: "#^Function svg_charger not found\\.$#"
+			count: 1
+			path: sanitizer/svg.php
+
+		-
+			message: "#^Function svg_force_viewBox_px not found\\.$#"
+			count: 1
+			path: sanitizer/svg.php
+
+		-
+			message: "#^Call to an undefined method Textwheel\\\\Texte\\\\Collecteur\\\\MetasMicroData\\:\\:collecteur\\(\\)\\.$#"
+			count: 1
+			path: src/Texte/Collecteur/MetasMicroData.php
+
+		-
+			message: "#^Function attribut_html not found\\.$#"
+			count: 2
+			path: src/Texte/Collecteur/MetasMicroData.php
+
+		-
+			message: "#^Function extraire_attribut not found\\.$#"
+			count: 2
+			path: src/Texte/Collecteur/MetasMicroData.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: src/Texte/Collecteur/MetasMicroData.php
+
+		-
+			message: "#^Function vider_attribut not found\\.$#"
+			count: 2
+			path: src/Texte/Collecteur/MetasMicroData.php
+

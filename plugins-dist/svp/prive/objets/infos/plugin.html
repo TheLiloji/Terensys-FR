@@ -1,0 +1,56 @@
+<BOUCLE_infos_plugin(PLUGINS) {id_plugin=#ENV{id}}{0, 1}>
+<div class="infos">
+	[(#REM) <!-- La reference du depot --> ]
+	#SET{titre_info, #ENV{type}|objet_info{texte_objet}|_T}
+	<div class="numero">
+		<:titre_cadre_numero_objet{objet=#GET{titre_info}}:>
+		<p>#ID_PLUGIN</p>
+	</div>
+	
+	[(#REM) <!-- Le prefixe --> ]
+	<div class="numero">
+		<:svp:label_prefixe:>&nbsp;:
+		<p class="prefixe"><span>#PREFIXE</span></p>
+	</div>
+
+	[(#REM) <!-- Les branches SPIP compatibles --> ]
+	<div class="branches">
+		<B_branches>
+			<div class='label'><:svp:label_branches_spip:>&nbsp;:</div>
+			<div class="texte">
+				<BOUCLE_branches(DATA){liste #BRANCHES_SPIP}{', '}>
+				#VALEUR
+				</BOUCLE_branches>
+			</div>
+		</B_branches>
+	</div>
+
+	[(#REM) <!-- La derniere mise a jour, le nombre de paquets du plugin et les stats d'utilisation --> ]
+	<div class="liste actualite">
+		<ul class="liste-items">
+			[<li>
+				<:svp:label_actualise_le:> (#DATE_MODIF|affdate)
+			</li>]
+
+		<BOUCLE_nbr_paquets(PAQUETS) {id_plugin}> </BOUCLE_nbr_paquets>
+			<li>
+				[(#TOTAL_BOUCLE|singulier_ou_pluriel{svp:info_1_paquet, svp:info_nb_paquets})]
+			</li>
+		</B_nbr_paquets>
+
+		[(#REM) <!-- Si le plugin SVP Statistiques est activé on peut afficher les stats du plugin --> ]
+		[(#PLUGIN{SVPSTATS}|oui)
+			<li>
+				[(#NBR_SITES|?{
+					[(#NBR_SITES|singulier_ou_pluriel{svpstats:info_nbr_sites_1, svpstats:info_nbr_sites_n})],
+					<:svpstats:info_nbr_sites_0:>
+				})]
+			</li>]
+
+		</ul>
+	</div>
+	
+	[(#REM) <!-- Le bouton d'affichage de la page publique du plugin si un squelette public existe --> ]
+	<INCLUDE{fond=prive/squelettes/inclure/voir_en_ligne, type=#ENV{type}, id=#ID_PLUGIN} />
+</div>
+</BOUCLE_infos_plugin>

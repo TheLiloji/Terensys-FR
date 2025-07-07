@@ -1,0 +1,836 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function sql_insertq_multi not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function sql_optimize not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/statistiques_archiver.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/delete_referers.php
+
+		-
+			message: '#^Function base_delete_referers_dist\(\) should return string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: base/delete_referers.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/delete_referers.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: base/delete_referers.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/delete_referers.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/delete_stats.php
+
+		-
+			message: '#^Function base_delete_stats_dist\(\) should return string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: base/delete_stats.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/delete_stats.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/delete_stats.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: base/delete_stats.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/delete_stats.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_referers.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_referers.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_referers.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: exec/base_delete_referers.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_referers.php
+
+		-
+			message: '#^Function redirige_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_referers.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_stats.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_stats.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_stats.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: exec/base_delete_stats.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_stats.php
+
+		-
+			message: '#^Function redirige_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/base_delete_stats.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compteur.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compteur.php
+
+		-
+			message: '#^Function appliquer_modifs_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compteur.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compteur.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_compteur.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: genie/popularites.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/popularites.php
+
+		-
+			message: '#^Function spip_query not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/popularites.php
+
+		-
+			message: '#^Function sql_alter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/popularites.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/popularites.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/popularites.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/visites.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: genie/visites.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/visites.php
+
+		-
+			message: '#^Function preg_files not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/visites.php
+
+		-
+			message: '#^Function purger_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/visites.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/visites.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: genie/visites.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/visites.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: genie/visites.php
+
+		-
+			message: '#^Function sql_hex not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: genie/visites.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: genie/visites.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: genie/visites.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: genie/visites.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function entites_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function importer_charset not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function spip_substr not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function typo not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Undefined variable\: \$ie$#'
+			identifier: variable.undefined
+			count: 1
+			path: inc/referenceurs.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/statistiques.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/statistiques.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/statistiques.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/stats_referers_to_array.php
+
+		-
+			message: '#^Function interdire_scripts not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_referers_to_array.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_referers_to_array.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_referers_to_array.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_referers_to_array.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/stats_visites_to_array.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_visites_to_array.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_visites_to_array.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_visites_to_array.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_visites_to_array.php
+
+		-
+			message: '#^Function sql_date_proche not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_visites_to_array.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_visites_to_array.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/stats_visites_to_array.php
+
+		-
+			message: '#^Function chemin_image not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/squelettes/contenu/stats_lang_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_lang_fonctions.php
+
+		-
+			message: '#^Function lang_dir not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_lang_fonctions.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_lang_fonctions.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_lang_fonctions.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_lang_fonctions.php
+
+		-
+			message: '#^Function traduire_nom_langue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_lang_fonctions.php
+
+		-
+			message: '#^Function attribut_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function bouton_block_depliable not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function chemin_image not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function couper not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function debut_block_depliable not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function fin_block not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function typo not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/squelettes/contenu/stats_repartition_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/squelettes/inclure/stats-visites-data_fonctions.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/inclure/stats-visites-data_fonctions.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/inclure/stats-visites-jours-resume_fonctions.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/inclure/stats-visites-jours-resume_fonctions.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: prive/squelettes/inclure/stats-visites-jours-resume_fonctions.php
+
+		-
+			message: '#^Function generer_url_api_low_sec not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/inclure/stats-visites-jours_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/squelettes/inclure/stats-visites-jours_fonctions.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/transmettre/json/statistiques.json_fonctions.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/stats.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/stats.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: public/stats.php
+
+		-
+			message: '#^Function url_de_base not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/stats.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_administrations.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_administrations.php
+
+		-
+			message: '#^Function effacer_meta not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: stats_administrations.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_administrations.php
+
+		-
+			message: '#^Function maj_plugin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_administrations.php
+
+		-
+			message: '#^Function sql_drop_table not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: stats_administrations.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: stats_autoriser.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_ieconfig.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_pipelines.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_pipelines.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: stats_pipelines.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_pipelines.php
+
+		-
+			message: '#^Function chercher_filtre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_pipelines.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: stats_pipelines.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: stats_pipelines.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_pipelines.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: stats_pipelines.php
+

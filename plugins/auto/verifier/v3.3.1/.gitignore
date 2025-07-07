@@ -1,0 +1,6 @@
+/.idea
+/.php_cs.cache
+/.php_cs.txt
+/.phpunit.cache
+/vendor
+/coverage

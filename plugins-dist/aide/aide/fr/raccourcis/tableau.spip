@@ -1,0 +1,38 @@
+Réaliser des tableaux simples dans SPIP se fait avec des lignes dont les «cases» sont séparées par le symbole `|` ({pipe}, un trait vertical), lignes commençant et se terminant par des traits verticaux. Il est impératif de laisser des lignes vides avant et après ce tableau.
+
+<aide:code>
+| {{Nom}} | {{Prénom}} | {{Age}} |
+| Marso | Ben | 23 ans |
+| Capitaine | | non connu |
+| Philant | Philippe | 46 ans |
+| Cadoc | Bébé | 4 mois |
+</aide:code>
+
+Remarquez que toutes les entrées de la première ligne sont placées en gras. SPIP identifie ainsi qu’il s’agit d’une ligne d’entête, et lui attribue une présentation différente des autres lignes. La présence d’une telle ligne n’est pas obligatoire.
+
+{{{Légende et résumé}}}
+
+On peut aussi ajouter une légende et un résumé au tableau. Ces deux informations sont optionnelles mais sont très importantes pour rendre le tableau accessible aux personnes mal-voyantes, le résumé donnant une meilleure idée de son contenu. Ces informations sont spécifiées entre double trait vertical `||` avant le tableau.
+
+<aide:code>
+||Légende|Résumé||
+| {{Nom}} | {{Date de naissance}} | {{Ville}} |
+| Jacques | 5/10/1970 | Paris |
+| Claire | 12/2/1975 | Belfort |
+| Martin | 1/31/1957 | Nice |
+| Marie | 23/12/1948 | Perpignan |
+</aide:code>
+
+On peut ne pas spécifier l’une ou l’autre des informations, mais il faut bien penser à mettre un trait vertical simple devant le résumé si vous ne spécifiez que celui-ci : `|| | résumé ||`
+
+{{{Fusion de cellules}}}
+
+Il est également possible de fusionner une case avec d’autres, en réduisant son contenu à `|<|` pour la fusionner avec la case qui la précède horizontalement ; ou à `|^|` pour la fusionner avec la case qui la précède verticalement.
+
+<aide:code>
+||Tableau avec fusion| Raccourci de fusion||
+| {{Colonne 1}} | {{Colonne 2}} | {{Colonne 3}} |
+| Ligne 1 | L1C2 et L1C3 |<|
+| Ligne 2 | L2C2 et L3C2|L2C3|
+| Ligne 3 |^| L3C3 |
+</aide:code>

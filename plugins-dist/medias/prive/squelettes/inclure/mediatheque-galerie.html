@@ -1,0 +1,156 @@
+#SET{editable,#ENV{editable,oui}|=={non}|non}
+
+<div class="liste-objets galerie[ media-(#ENV{media,''})]">
+	[(#SET{poids_total,0})]<BOUCLE_poids_total(DOCUMENTS){id_rubrique ?}{id_article ?}{id_breve ?}{id_document ?}{recherche ?}{media?}{extension?}{distant?}{brise?}{statut==#ENV{statut,.*}}{orphelins?}{titre==(#ENV{sanstitre}|?{'^$','.*'})}{id_vignette==(#ENV{sansvignette}|?{'^0','.*'})}>[(#SET{poids_total,#GET{poids_total}|plus{#TAILLE}})]</BOUCLE_poids_total>
+	<B_galerie>
+	<table class="spip liste">
+		<caption>
+			<strong class="caption">[(#GRAND_TOTAL|singulier_ou_pluriel{#VAL{medias:un_}|concat{#ENV{media,document}},#VAL{medias:des_}|concat{#ENV{media,document},s}})][ - (#GET{poids_total}|taille_en_octets)]</strong>
+		</caption>
+	<thead>
+		<tr>
+			<th colspan="7">
+				<nav class='pagination tri'>
+					[(#TRI{id_document,<:medias:par_id:>}) |]
+					[(#TRI{date,<:medias:par_date:>}) |]
+					[(#TRI{taille,<:medias:par_taille:>}) |]
+					[(#TRI{largeur,<:medias:par_largeur:>}) |]
+					[(#TRI{hauteur,<:medias:par_hauteur:>}) |]
+					[(#TRI{titre,<:medias:par_titre:>}) |]
+					[<:medias:label_paginer_par:> (#GRAND_TOTAL|>{100}|oui)
+						[(#SELF|parametre_url{pagination,''}|lien_ou_expose{10,#ENV{pagination,10}|=={10},ajax})]
+						[<span class="sep">|</span> (#SELF|parametre_url{pagination,50}|lien_ou_expose{50,#ENV{pagination,10}|=={50},ajax})]]
+					[(#GRAND_TOTAL|>{500}|oui)
+						[<span class="sep">|</span> (#SELF|parametre_url{pagination,100}|lien_ou_expose{100,#ENV{pagination,10}|=={100},ajax})]
+					]
+					[(#GRAND_TOTAL|>{5000}|oui)
+						[<span class="sep">|</span> (#SELF|parametre_url{pagination,500}|lien_ou_expose{500,#ENV{pagination,10}|=={500},ajax})]
+					]
+				</nav>
+			</th>
+		</tr>
+		[<tr>
+			<th colspan="7">
+				<nav class="pagination">(#PAGINATION{prive})</nav>
+			</th>
+		</tr>]
+		<tr class="first_row">
+			<th class="id"><:medias:id:></th>
+			<th class="logo"><:medias:logo:></th>
+			<th class="infos"></th>
+			<th class="statut"></th>
+			<th class="exif"><:medias:infos:></th>
+			<th class="editorial"><:medias:descriptif:></th>
+			<th class="action"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<BOUCLE_galerie(DOCUMENTS) {id_rubrique ?}{id_article ?}{id_breve ?}{id_document ?}{recherche ?} {tri id_document,inverse}{media?}{extension?}{distant?}{brise?}{statut==#ENV{statut,.*}}{orphelins?}{titre==(#ENV{sanstitre}|?{'^$','.*'})}{id_vignette==(#ENV{sansvignette}|?{'^0','.*'})}{pagination #ENV{pagination,10}}>
+		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})][ (#ENV{media}|non)[ media-(#MEDIA)]]" id="#ENV{iddoc,media}#ID_DOCUMENT">
+			<td class="id">#ID_DOCUMENT</td>
+			<td class="logo">
+				#SET{fichier,#DISTANT|=={oui}|?{#FICHIER,#FICHIER|basename}}
+				[(#MEDIA|=={image}|oui)[
+					<a href="#URL_DOCUMENT_FICHIER" type="#MIME_TYPE" rel="mediatheque-galerie" [ title="(#GET{fichier})"]>(#LOGO_DOCUMENT{apercu,250,100}|inserer_attribut{alt,[(#TITRE|couper{60}|texte_backend)]})</a>
+				]]
+				[(#MEDIA|=={image}|non)[<div class="#EDIT{vignette} resize-250">
+					<a href="#URL_DOCUMENT_FICHIER" type="#MIME_TYPE"[ title="(#GET{fichier})"]>(#LOGO_DOCUMENT{auto,250,100}|inserer_attribut{alt,[(#TITRE|couper{60}|texte_backend)]})</a>
+				</div>]]
+			</td>
+			<td class='infos'>
+				[(#DISTANT|=={oui}|non)#SET{missing,#FICHIER|file_exists|non}]
+				[(#ENV{media}|non|et{#MEDIA|!={file}})[(#CHEMIN_IMAGE{media-#MEDIA|concat{-32.png}}|balise_img{[(#VAL{medias:media_#MEDIA}|_T)],type-media}|inserer_attribut{title,#VAL{medias:media_#MEDIA}|_T})]]
+				[<div class="extension">(#EXTENSION)</div>]
+				[(#GET{missing}|oui)[(#CHEMIN_IMAGE{document-manquant-32.png}|balise_img{<:medias:fichier_manquant:>}|inserer_attribut{title,<:medias:fichier_manquant:>})]]
+				[(#DISTANT|=={oui}|oui)[(#CHEMIN_IMAGE{document-distant-32.png}|balise_img{<:medias:fichier_distant:>}|inserer_attribut{title,<:medias:fichier_distant:>})]]
+			</td>
+			<td class='statut'>
+				[(#ID_DOCUMENT|medias_puce_statut_document{#STATUT})]
+			</td>
+			<td class="exif">
+
+				[(#REM) Infos résumées ]
+				[<div class="fichier" title="[(#GET{fichier}|attribut_html)]">(#GET{fichier})</div>]
+				[<div class="taille">(#TAILLE|taille_en_octets)</div>]
+
+				[(#REM) Infos détaillées ]
+				<a
+					role="button"
+					href="#"
+					class="btn btn_link btn_toggle"
+					title="<:medias:details_document_afficher_masquer|attribut_html:>"
+					onclick="jQuery(this).next().toggle();return false;"
+				><span class="sp-icone">+</span> <:medias:details_document:></a>
+				<dl class="detaillees" style="display:none;">
+					[<dt class="detaillees__label"><:medias:label_fichier:></dt>
+					<dd class="detaillees__valeur fichier">(#GET{fichier})</dd>]
+					[<dt class="detaillees__label"><:medias:label_titre_mimetype:></dt>
+					<dd class="detaillees__valeur mimetype">(#ID_DOCUMENT|titre_mime_type{#EXTENSION})</dd>]
+					[(#LARGEUR|ou{#HAUTEUR}|et{#MEDIA|=={image}})
+					[<dt class="detaillees__label"><:medias:info_dimensions_image:></dt>
+					<dd class="detaillees__valeur dimensions">(#VAL{info_largeur_vignette}|_T{#ARRAY{largeur_vignette,#LARGEUR,hauteur_vignette,#HAUTEUR}})</dd>]
+					[<dt class="detaillees__label"><:medias:info_resolution_image:></dt>
+					<dd class="detaillees__valeur resolution">(#VAL{medias:info_resolution_mpx}|_T{#ARRAY{resolution,#LARGEUR|mult{#HAUTEUR}|div{1000000}|round{1}|number_format{1}}})</dd>]
+					]
+					[(#MEDIA|in_array{#LISTE{audio,video}}|et{#DUREE|intval}|oui)
+					[<dt class="detaillees__label"><:medias:info_duree:></dt>
+					<dd class="detaillees__valeur duree">(#DUREE|duree_en_secondes)</dd>]
+					]
+					[<dt class="detaillees__label"><:medias:info_taille:></dt>
+					<dd class="detaillees__valeur taille">(#TAILLE|taille_en_octets)</dd>]
+					[<dt class="detaillees__label"><:date:></dt>
+					<dd class="detaillees__valeur date">(#DATE|affdate{d/m/Y})</dd>]
+				</dl>
+
+				[(#PIPELINE{afficher_metas_document,#ARRAY{args,#ARRAY{'quoi','galerie','id_document',#ID_DOCUMENT},data,''}})]
+
+				<B_utilisations>
+				[(#TOTAL_BOUCLE|>{1}|oui)
+				<a role="button" class="btn btn_link btn_toggle" href='#' onclick="jQuery(this).next().toggle();/*$(this).hide();*/return false;">
+					<span class="sp-icone">+</span> [(#TOTAL_BOUCLE|singulier_ou_pluriel{medias:une_utilisation,medias:des_utilisations})]
+				</a>
+				]
+				<ul class="utilisations"[ (#TOTAL_BOUCLE|>{1}|oui)style="display:none"]>
+					<BOUCLE_utilisations(documents_liens) {id_document} {fusion objet} {fusion id_objet}>
+					[<li class="utilisations__item">
+						<a class="" href="(#ID_OBJET|generer_objet_url{#OBJET})">[(#CHEMIN_IMAGE{vu-16.png}|balise_img{'',sp-icone}) ][(#INFO_TITRE{#OBJET,#ID_OBJET}|couper{50})]</a>
+					</li>]
+					</BOUCLE_utilisations>
+				</ul>
+				</B_utilisations>
+
+			</td>
+			<td class="editorial wysiwyg">
+				[<strong class="titre #EDIT{titre}">(#TITRE|sinon{#VAL{<i class="sans-titre">}|concat{<:info_sans_titre:>,'</i>'}})</strong>]
+				[<div class="descriptif #EDIT{descriptif}">(#DESCRIPTIF)</div>]
+				[<p class="credits #EDIT{credits}">[<span class="label">(#VAL{medias:label_credits}|_T|label_nettoyer|label_ponctuer)</span> ]<span class="valeur">(#CREDITS)</span></p>]
+				[<p class="alt #EDIT{alt}">[<span class="label">(#VAL{medias:label_alt}|_T|label_nettoyer|label_ponctuer)</span> ]<span class="valeur">(#ALT)</span></p>]
+			</td>
+			<td class="action">
+				[(#REM) Utilisation de la galerie en mode portfolio, avec renvoi vers l'edition]
+				[(#GET{editable}|oui)
+					<div class="groupe-btns groupe-btns_vertical">
+						[(#AUTORISER{modifier,document,#ID_DOCUMENT})<a class="btn" href='#URL_ECRIRE{document_edit,id_document=#ID_DOCUMENT}'><:bouton_modifier:></a>]
+						[(#AUTORISER{supprimer,document,#ID_DOCUMENT})[(#BOUTON_ACTION{<:medias:bouton_supprimer:>,#URL_ACTION_AUTEUR{supprimer_document,#ID_DOCUMENT,#SELF},ajax btn btn_secondaire btn_supprimer,'','',[(function(){jQuery("##ENV{iddoc,media}(#ID_DOCUMENT)").animateRemove();return true;})()]})]]
+					</div>
+				]
+				[(#REM) On ne sait pas si le contenu ajouté par le pipeline consiste en des boutons, donc pas inclus dans le groupe. ]
+				[(#PIPELINE{document_desc_actions,#ARRAY{args,#ARRAY{id_document,#ID_DOCUMENT,position,galerie},data,''}})]
+			</td>
+		</tr>
+		</BOUCLE_galerie>
+		</tbody>
+	</table>
+	[<nav class='pagination'>(#PAGINATION{prive})</nav>]
+	#SET{nb_orphelins,#GRAND_TOTAL}
+	</B_galerie>
+
+	<div class="liste-objets galerie caption-wrap">
+		<h2 class="caption">[(#VAL{medias:aucun_}|concat{#ENV{media,document}}|_T)]</h2>
+	</div>
+	<//B_galerie>
+
+	[(#ENV{orphelins}|et{#AUTORISER{supprimer,orphelins,'',#SESSION{id_auteur}}})
+	[(#INCLURE{fond=prive/squelettes/inclure/bouton-supprimer-orphelins,env,nb_orphelins=#GET{nb_orphelins}})]
+	]
+</div><!--#galerie-->

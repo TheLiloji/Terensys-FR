@@ -1,0 +1,156 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+
+[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+	
+<form method="post" action="#ENV{action}"><div>
+	#ACTION_FORMULAIRE
+	<div class="editer-groupe">
+		<div class="editer editer_active[ (#ENV*{erreurs/active}|oui)erreur]">
+			<div class="choix">
+				<input type="checkbox" name="active" class="checkbox" id="active_on" value="oui" [(#ENV{active,oui}|=={oui}|oui) checked="checked"]
+					onclick="jQuery(this).blur();"
+					onchange="var t=jQuery(this).parents('.editer').eq(0).siblings('.fieldset');if (jQuery(this).prop('checked')) t.show('fast'); else t.hide('fast');"
+				/>
+				<label for='active_on'><strong><:mediabox:label_active:></strong></label>
+			</div>
+		</div>
+		<div class="fieldset[(#ENV{active,oui}|=={oui}|non)none]">
+			<div class="editer-groupe">
+				<div class="editer editer_selecteur_commun[ (#ENV*{erreurs/selecteur_commun}|oui)erreur]">
+					<label for="selecteur_commun"><:mediabox:label_selecteur_commun:></label>
+					[<span class='erreur'>(#ENV*{erreurs/selecteur_commun})</span>]
+					<p class="explication"><:mediabox:explication_selecteur:></p>
+					<input type="text" name="selecteur_commun" class="text" id="selecteur_commun" size="60" value="#ENV*{selecteur_commun}" />
+				</div>
+				<div class="editer editer_selecteur_galerie[ (#ENV*{erreurs/selecteur_galerie}|oui)erreur]">
+					<label for="selecteur_galerie"><:mediabox:label_selecteur_galerie:></label>
+					[<span class='erreur'>(#ENV*{erreurs/selecteur_galerie})</span>]
+					<p class="explication"><:mediabox:explication_selecteur_galerie:></p>
+					<input type="text" name="selecteur_galerie" class="text" id="selecteur_galerie" size="60" value="#ENV*{selecteur_galerie}" />
+				</div>
+
+				<div class="editer editer_traiter_toutes_images[ (#ENV*{erreurs/traiter_toutes_images}|oui)erreur]">
+					<label><:mediabox:label_traiter_toutes_images:></label>
+					<p class="explication"><:mediabox:explication_traiter_toutes_images:></p>
+					<div class="choix">
+						<input type="radio" name="traiter_toutes_images" class="radio" id="traiter_images_on" value="oui" [(#ENV{traiter_toutes_images,oui}|=={oui}|oui) checked="checked"] />
+						<label for='traiter_images_on'><:item_oui:></label>
+					</div>
+					<div class="choix">
+						<input type="radio" name="traiter_toutes_images" class="radio" id="traiter_images_off" value="non" [(#ENV{traiter_toutes_images,oui}|=={non}|oui) checked="checked"] />
+						<label for='traiter_images_off'><:item_non:></label>
+					</div>
+				</div>
+
+				<BOUCLE_boxtypes(DATA){source table, #ENV{_libs}}>
+					#SET{name,box_type}#SET{obli,''}#SET{defaut,colorbox}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+					<div class="editer pleine_largeur editer_box_type editer_box_type_#CLE[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+						<div class="choix" style="overflow: hidden">
+							<input type="radio" name="box_type" id="box_type_#CLE" value="#CLE" [(#ENV{#GET{name},#GET{defaut}}|=={#CLE}|oui)checked="checked"]/>
+							<label for="box_type_#CLE">#VALEUR{nom}</label>
+							#SET{fond,formulaires/inc-configurer_mediabox-#CLE}
+							[(#GET{fond}|trouver_fond|oui)
+							<div class="fieldset suite"[(#ENV{#GET{name},#GET{defaut}}|=={#CLE}|non) style="display: none"]>
+								<fieldset><legend><:mediabox:label_apparence:></legend>
+									<INCLURE{fond=#GET{fond},env} />
+								</fieldset>
+							</div>]
+						</div>
+					</div>
+				</BOUCLE_boxtypes>
+
+
+				<div class="fieldset"><fieldset><legend><:mediabox:label_splash:></legend>
+				<div class="editer-groupe">
+					<div class="editer editer_splash_url[ (#ENV*{erreurs/splash_url}|oui)erreur]">
+						<label for="splash_url"><:mediabox:label_splash_url:></label>
+						[<span class='erreur'>(#ENV*{erreurs/splash_url})</span>]
+						<p class="explication"><:mediabox:explication_splash_url:></p>
+						<input type="text" name="splash_url" class="text" id="splash_url" size="60" value="#ENV*{splash_url}" />
+					</div>
+					<div class="editer splash_width[ (#ENV*{erreurs/splash_width}|oui)erreur]">
+						<label for='splash_width'><:mediabox:label_splash_width:></label>
+						<input type="text" name="splash_width" class="text" id="splash_width" size="10" value="#ENV*{splash_width}" />
+					</div>
+					<div class="editer splash_height[ (#ENV*{erreurs/splash_height}|oui)erreur]">
+						<label for='splash_height'><:mediabox:label_splash_height:></label>
+						<input type="text" name="splash_height" class="text" id="splash_height" size="10" value="#ENV*{splash_height}" />
+					</div>
+				</div></fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<p class="boutons">
+		<input type="submit" name="enregistrer" class="over" value="<:bouton_valider:>" />
+		<input type="submit" name="reinit" class="btn submit" value="<:mediabox:bouton_reinitialiser:>" />
+		<input type="submit" name="enregistrer" class="btn submit" value="<:bouton_valider:>" />
+	</p>
+</div></form>
+</div>
+<script type="application/javascript">
+	function update_visibilite_suite() {
+		jQuery('.choix .fieldset.suite').each(function(){
+			var $me = jQuery(this);
+			var $radio = $me.siblings('input[type=radio]');
+			if ($radio.prop('checked')) {
+				if ($me.not(':visible')) {
+					$me.show('fast');
+				}
+			}
+			else {
+				if ($me.is(':visible')) {
+					$me.hide('fast');
+				}
+			}
+		});
+	}
+	jQuery(function() {
+		update_visibilite_suite();
+		jQuery('.choix .fieldset.suite').siblings('input[type=radio]').on('change',update_visibilite_suite);
+	});
+</script>
+<style type="text/css">
+	.editer_skin>.choix {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0 !important;
+	}
+	.editer_skin>.choix .choix-skin {
+		flex-basis: 33%;
+		box-sizing: border-box;
+		padding: 10px;
+		background-color: transparent;
+		border:0 !important;
+		margin: 0;
+		display: flex;
+		align-items: center;
+	}
+	.choix-skin:hover,.choix-skin:focus {
+		background: rgba(0,0,0,0.05) !important;
+	}
+	.choix-skin label { width: auto !important;max-width: 85%}
+	.choix-skin label,
+	.choix-skin a,
+	.choix-skin input { display: inline-block !important; width:auto; vertical-align: middle}
+	.choix-skin a {position: relative;border:1px solid #ccc;}
+	.choix-skin a img {display: block;}
+	.choix-skin a[title]::after {
+		content:attr(title);
+		position: absolute;
+		display: block;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(255,255,255, 0.85);
+		padding: 2px 5px;
+		color: #333;
+		font-size: 0.8em;
+		text-align: center;
+	}
+
+/*	.editer_skin .choix input { float: #LANG_LEFT; }
+	.editer_skin .choix label img { float: #LANG_LEFT; border: 1px solid #ddd; }*/
+</style>

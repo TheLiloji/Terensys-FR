@@ -1,0 +1,18 @@
+#SET{multiple,#ENV{multiple}|=={oui}}
+
+[(#INCLURE{fond=saisies/inc-bigup_liste_fichiers, nom, multiple, fichiers=#ENV{fichiers,#ENV{_bigup_fichiers}}})]
+
+<input type="file"
+	name="[(#ENV{nom}|bigup_nom2name)][(#GET{multiple}|?{\[\]})]"
+	class="file bigup[ (#ENV{class})]"
+	[(#GET{multiple}|oui)multiple ]
+	[accept="(#ENV{accept}|attribut_html)"]
+	data-token="[(#ENV{token,#BIGUP_TOKEN}|attribut_html)]"[
+	data-maxFiles="(#ENV{maxFiles}|attribut_html)"][
+	data-maxFileSize="(#ENV{maxFileSize}|attribut_html)"][
+	data-clientWidth="(#ENV{clientWidth}|attribut_html)"][
+	data-clientHeight="(#ENV{clientHeight}|attribut_html)"][
+	data-clientQuality="(#ENV{clientQuality}|attribut_html)"][
+	data-previsualiser="(#ENV{previsualiser}|?{oui})"][
+	data-drop-zone-extended="(#ENV{drop_zone_extended}|attribut_html)"]
+/>

@@ -1,0 +1,1064 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_site.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/editer_site.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_site.php
+
+		-
+			message: '#^Function collecter_requests not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_site.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_site.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: action/editer_site.php
+
+		-
+			message: '#^Function logo_modifier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_site.php
+
+		-
+			message: '#^Function objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_site.php
+
+		-
+			message: '#^Function objet_instituer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_site.php
+
+		-
+			message: '#^Function objet_modifier_champs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_site.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_site.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_site.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/editer_site.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_site.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/exporter_bookmarks.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/exporter_bookmarks.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/exporter_bookmarks.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function extraire_balise not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function rubrique_inserer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function rubrique_modifier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function textebrut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/importer_bookmarks_netscape.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_opml.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_opml.php
+
+		-
+			message: '#^Function rubrique_inserer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/importer_bookmarks_opml.php
+
+		-
+			message: '#^Function rubrique_modifier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/importer_bookmarks_opml.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_opml.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/importer_bookmarks_opml.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_syndic_article.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_syndic_article.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_syndic_article.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_syndic_article.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/purger_site.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/purger_site.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/purger_site.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/purger_site.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/syndiquer_site.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/syndiquer_site.php
+
+		-
+			message: '#^Function job_queue_add not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/syndiquer_site.php
+
+		-
+			message: '#^Function queue_schedule not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/syndiquer_site.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/syndiquer_site.php
+
+		-
+			message: '#^Function calculer_balise_dynamique not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: balise/formulaire_site.php
+
+		-
+			message: '#^Function erreur_squelette not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: balise/formulaire_site.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_sites.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_sites.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_sites.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function formulaires_editer_objet_charger not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function formulaires_editer_objet_traiter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function formulaires_editer_objet_verifier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function titre_automatique not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function vider_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_site.php
+
+		-
+			message: '#^Function entites_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_site_fonctions.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/exporter_sites.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/exporter_sites.php
+
+		-
+			message: '#^Function generer_action_auteur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/exporter_sites.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/exporter_sites.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/importer_sites.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/importer_sites.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/importer_sites.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/importer_sites.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/importer_sites.php
+
+		-
+			message: '#^Function singulier_ou_pluriel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/importer_sites.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/regler_moderation_site.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/regler_moderation_site.php
+
+		-
+			message: '#^Function formulaires_editer_objet_charger not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/regler_moderation_site.php
+
+		-
+			message: '#^Function formulaires_editer_objet_traiter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/regler_moderation_site.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/regler_moderation_site.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/regler_moderation_site.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: formulaires/site.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: formulaires/site.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/site.php
+
+		-
+			message: '#^Function recuperer_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/site.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/site.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/site.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/site.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function couper not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: genie/syndic.php
+
+		-
+			message: '#^Function job_queue_add not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: genie/syndic.php
+
+		-
+			message: '#^Function liens_absolus not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function objet_modifier_champs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: genie/syndic.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_date_proche not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: genie/syndic.php
+
+		-
+			message: '#^Function supprimer_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function textebrut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/syndic.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/feedfinder.php
+
+		-
+			message: '#^Function extraire_balises not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/feedfinder.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/feedfinder.php
+
+		-
+			message: '#^Function is_feed\(\) should return int\|string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: inc/feedfinder.php
+
+		-
+			message: '#^Function suivre_lien not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/feedfinder.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/site.php
+
+		-
+			message: '#^Function extraire_balise not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/site.php
+
+		-
+			message: '#^Function extraire_balises not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/site.php
+
+		-
+			message: '#^Function filtrer_entites not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/site.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/site.php
+
+		-
+			message: '#^Function recuperer_infos_distantes not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/site.php
+
+		-
+			message: '#^Function recuperer_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/site.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/site.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/site.php
+
+		-
+			message: '#^Function supprimer_tags not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/site.php
+
+		-
+			message: '#^Function url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/site.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/syndic.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: liens/implicite_site.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: puce_statut/site.php
+
+		-
+			message: '#^Function http_img_pack not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: puce_statut/site.php
+
+		-
+			message: '#^Function puce_statut_changement_rapide not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: puce_statut/site.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: puce_statut/site.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_administrations.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_administrations.php
+
+		-
+			message: '#^Function effacer_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_administrations.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_administrations.php
+
+		-
+			message: '#^Function maj_plugin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_administrations.php
+
+		-
+			message: '#^Function sql_drop_table not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: sites_administrations.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: sites_autoriser.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_autoriser.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_autoriser.php
+
+		-
+			message: '#^Function verifier_table_non_vide not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: sites_autoriser.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: sites_fonctions.php
+
+		-
+			message: '#^Function index_pile not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: sites_fonctions.php
+
+		-
+			message: '#^Function interprete_argument_balise not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_ieconfig.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function afficher_plus_info not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function icone_verticale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function optimiser_sansref not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function singulier_ou_pluriel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function trouver_objet_exec not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: sites_pipelines.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function afficher_enclosures not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function changer_langue not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 16
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function extraire_balise not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function extraire_balises not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function filtrer_entites not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function inserer_attribut not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function recuperer_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function suivre_lien not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function supprimer_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function textebrut not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: syndic/atomrss.php
+
+		-
+			message: '#^Function url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: syndic/atomrss.php
+

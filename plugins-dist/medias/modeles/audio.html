@@ -1,0 +1,34 @@
+[(#REM)
+
+	Modele pour les sons
+  Filtrer en acceptant uniquement les extensions jouables par le player ?
+
+]<BOUCLE_audio(DOCUMENTS types_documents) {media=audio} {id_document=#ENV{id,#ENV{id_document}}} {inclus=embed} {tout}>
+[(#SET{legende,#INCLURE{fond=modeles/document_legende, env}|trim})]
+#SET{largeur,#ENV{largeur, #LARGEUR|?{#LARGEUR,400}}|max{120}}
+#SET{duree,#ENV{duree,#DUREE}}[(#SET{duree,[(#GET{duree}|intval|?{[(#GET{duree}|intval)],''})]})]
+<div
+  class="[(#ID_DOCUMENT|medias_modele_document_standard_classes{audio})]"[
+  (#ID_DOCUMENT|medias_modele_document_standard_attributs{audio})
+]>
+<figure class="spip_doc_inner">
+	[(#LOGO_DOCUMENT{vignette}|image_reduire{#GET{largeur},0}|vider_attribut{class})]
+  <div class="audio-wrapper"[ style='width:(#GET{largeur})px;max-width:100%;']>
+  	<audio class="mejs mejs-#ID_DOCUMENT [ mejs-(#ENV{skin})]"
+  	       data-id="[(#VAL{mejs-#ID_DOCUMENT}|concat{#ENV{skin}}|md5)]"
+  	       src="[(#URL_DOCUMENT_FICHIER|attribut_url)]"
+  	       type="#MIME_TYPE"
+  	       preload="none"
+  	       data-mejsoptions='{["iconSprite": "(#CHEMIN{lib/mejs/mejs-controls.svg})",]"alwaysShowControls": true[,"loop":(#ENV{loop}|?{true,false})],"audioWidth":"100%"[,"audioHeight":"(#ENV{hauteur})"][,"startVolume":"(#ENV{volume})"][,"duration":(#GET{duree})]}'
+  	       controls="controls"
+  				 [autoplay="autoplay"(#ENV{autoplay}|oui)]></audio>
+  </div>
+#GET{legende}
+[<script> var mejspath='[(#CHEMIN{lib/mejs/mediaelement-and-player.min.js}|timestamp)]',mejscss='[(#CHEMIN{lib/mejs/mediaelementplayer.min.css}|timestamp)]';
+(#INCLURE{javascript/mejs-init.min.js})</script>]
+[(#ENV{skin}|oui)[<style>(#INCLURE{#CHEMIN{css/mejs-skin-#ENV{skin}.css}|sinon{#CHEMIN{lib/mejs/mejs-skins.css}}|url_absolue_css})</style>]]
+</figure>
+</div>
+</BOUCLE_audio>
+<INCLURE{fond=modeles/file,env} />
+<//B_audio>

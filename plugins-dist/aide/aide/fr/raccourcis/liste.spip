@@ -1,0 +1,20 @@
+- On peut faire des {{énumérations imbriquées}} en ajoutant des étoiles après le tiret d’énumération.
+
+<aide:code>
+-* Ton cheval est:
+-** alezan;
+-** bai;
+-** noir;
+-* mais mon lapin est:
+-** blanc;
+-*** angora;
+-*** ou à poil ras.
+</aide:code>
+
+- Enfin, on peut faire des {{listes numérotées}} en utilisant le `#` à la place de l’étoile:
+
+<aide:code>
+-# premier
+-# deuxieme
+-# troisieme
+</aide:code>

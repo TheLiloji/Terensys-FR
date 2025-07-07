@@ -1,0 +1,300 @@
+#PHP
+
+[(#INCLURE{fond=fabrique/entetes/php,env,
+	description=Gestion du formulaire de d'édition de #TYPE,
+	package=Formulaires})]
+
+include_spip('inc/actions');
+include_spip('inc/editer');
+
+[(#REM)
+
+	Y a t'il un champ de parent à prendre en compte ?
+
+][(#SET{id_parent,#ENV{parent/id_objet}})][    (#REM)
+][(#SET{id_parent_param,#GET{id_parent}|?{#VAL{'$'}|concat{#GET{id_parent}}|concat{' = 0,'}}})][     (#REM)
+][(#SET{id_parent_val,#GET{id_parent}|?{$#GET{id_parent}, "''"}})][    (#REM)
+
+	Y a t'il une association a prendre en compte ?
+
+][(#SET{associer,[(#OBJET|option_presente{vue_liens})]})][     (#REM)
+][(#SET{associer_param,#GET{associer}|?{"$associer_objet = '',"}})][   (#REM)
+][(#SET{associer_val,#GET{associer}|?{'$associer_objet'}})][    (#REM)
+
+	Y a t'il des champs obligatoire a verifier ?
+	Il faut qu'il soit obligatoire et dispose d'une saisie
+
+][(#SET{obligatoires,[(#ENV{objet/champs}|champs_options_presentes{#LISTE{obligatoire,saisie},champ})]})][    (#REM)
+][(#OBJET|option_presente{liaison_directe}|?{#SET{obligatoires,#GET{obligatoires}|push{#GET{id_parent}}}})][    (#REM)
+
+	On essaie de placer le formulaire de rubrique (s'il est demandé)
+	apres le titre, s'il est saisissable, sinon en 2e position
+
+][(#SET{titre,''})][(#REM)
+][(#SET{parent,[(#OBJET|champ_present{id_rubrique}|ou{#OBJET|option_presente{liaison_directe}})]})][(#REM)
+]<BOUCLE_un_titre(DATA) {source tableau,#ENV{objet/champs}} {saisie != ''} {champ=#ENV{objet/champ_titre}} {si #ENV{objet/champ_titre}}>#SET{titre,' '}</BOUCLE_un_titre>[    (#REM)
+
+	Champs de date à normaliser
+
+][(#SET{champs_date,#ENV{objet/champs}|champs_saisie_presente{date, champ}|sinon{#ARRAY}})][   (#REM)
+
+
+Fonctions de chargement de l'objet
+
+
+]<BOUCLE_si_saisies_php(CONDITION) {si #ENV{paquet/saisies_mode,html}|=={php}}>[(#REM)
+]/**
+ * Déclaration des saisies de #TYPE
+ *
+ * @param int|string $#ID_OBJET
+ *     Identifiant du #TYPE. 'new' pour un nouveau #TYPE.[
+ * @param int $(#GET{id_parent}|?{#GET{id_parent}})
+ *     Identifiant de l'objet parent (si connu)]
+ * @param string $retour
+ *     URL de redirection après le traitement[
+ * @param string $(#GET{associer}|?{associer_objet})
+ *     Éventuel `objet|x` indiquant de lier le #TYPE créé à cet objet,
+ *     tel que `article|3`]
+ * @param int $lier_trad
+ *     Identifiant éventuel d'un #TYPE source d'une traduction
+ * @param string $config_fonc
+ *     Nom de la fonction ajoutant des configurations particulières au formulaire
+ * @param array $row
+ *     Valeurs de la ligne SQL du #TYPE, si connu
+ * @param string $hidden
+ *     Contenu HTML ajouté en même temps que les champs cachés du formulaire.
+ * @return array[]
+ *     Saisies du formulaire
+ */
+function formulaires_editer_[(#TYPE)]_saisies_dist($#ID_OBJET = 'new',[ (#GET{id_parent_param})] $retour = '',[ (#GET{associer_param})] $lier_trad = 0, $config_fonc = '', $row = \[\], $hidden = '') {
+	$saisies = \[[(#REM)
+]<BOUCLE_saisies(DATA) {source tableau,#ENV{objet/champs}} {saisie != ''}>[(#REM)
+]<BOUCLE_si_editable(CONDITION) {si #VALEUR|champ_option_presente{editable}|oui}>
+		\[
+			'saisie' => '[(#VALEUR{saisie})]',
+			'options' => \[
+				'nom' => '[(#CHAMP)]',
+				[(#VALEUR|champ_option_presente{obligatoire}|oui)'obligatoire' => 'oui',]
+				'label' => _T\('[(#TYPE)]:champ_[(#CHAMP)]_label'\),
+				[(#EXPLICATION|oui)'explication' => _T\('[(#TYPE)]:champ_[(#CHAMP)]_explication'\),]
+				<BOUCLE_options(DATA) {source table, #SAISIE_OPTIONS|trim|explode{','}} {si #SAISIE_OPTIONS|trim}>[(#REM)
+				][(#SET{option,#VALEUR|trim|explode{=}})][(#REM)
+				]'[(#GET{option/0})]' => '[(#GET{option/1})]',
+				</BOUCLE_options>
+			\],[
+
+			(#REM) Une date à normaliser ?
+
+			][(#CHAMP|in_any{#GET{champs_date}}|oui)
+			'verifier' => \[
+				'type' => 'date',
+				'options' => \[
+					'normaliser' => 'datetime',
+				\],
+			\],]
+		\],[
+
+		(#REM) On teste donc s'il faut placer le formulaire de parentée ici
+
+]<BOUCLE_si_parent(CONDITION) {si #GET{parent}} {si (#GET{titre}|et{#ENV{objet/champ_titre}|=={#CHAMP}}|ou{#GET{titre}|non|et{#_saisies:COMPTEUR_BOUCLE|=={1}}})}>[(#REM)
+]<BOUCLE_si_rubrique(CONDITION) {si #OBJET|champ_present{id_rubrique}}>
+		\[
+			'saisie' => 'selecteur_rubrique',
+			'options' => \[
+				'nom' => 'id_parent',
+				'label' => _T('entree_interieur_rubrique'),
+				'conteneur_class' => 'editer_parent',
+			\],
+		\],
+</BOUCLE_si_rubrique>[(#REM)
+]<BOUCLE_si_liaison_directe(CONDITION) {si #OBJET|option_presente{liaison_directe}}>
+		\[
+			'saisie' => '[(#ENV{parent/objet})]',
+			'options' => \[
+				'nom' => '[(#ENV{parent/id_objet})]',
+				'obligatoire' => 'oui',
+				'label' => _T\('[(#ENV{parent/type})]:titre_[(#ENV{parent/type})]'\),
+			\],
+		\],
+</BOUCLE_si_liaison_directe>[(#REM)
+]</BOUCLE_si_parent>[(#REM)
+]</BOUCLE_si_editable>
+</BOUCLE_saisies>
+	\];
+	return $saisies;
+}</BOUCLE_si_saisies_php>
+
+/**
+ * Identifier le formulaire en faisant abstraction des paramètres qui ne représentent pas l'objet edité
+ *
+ * @param int|string $#ID_OBJET
+ *     Identifiant du #TYPE. 'new' pour un nouveau #TYPE.[
+ * @param int $(#GET{id_parent}|?{#GET{id_parent}})
+ *     Identifiant de l'objet parent (si connu)]
+ * @param string $retour
+ *     URL de redirection après le traitement[
+ * @param string $(#GET{associer}|?{associer_objet})
+ *     Éventuel `objet|x` indiquant de lier le #TYPE créé à cet objet,
+ *     tel que `article|3`]
+ * @param int $lier_trad
+ *     Identifiant éventuel d'un #TYPE source d'une traduction
+ * @param string $config_fonc
+ *     Nom de la fonction ajoutant des configurations particulières au formulaire
+ * @param array $row
+ *     Valeurs de la ligne SQL du #TYPE, si connu
+ * @param string $hidden
+ *     Contenu HTML ajouté en même temps que les champs cachés du formulaire.
+ * @return string
+ *     Hash du formulaire
+ */
+function formulaires_editer_[(#TYPE)]_identifier_dist($#ID_OBJET = 'new',[ (#GET{id_parent_param})] $retour = '',[ (#GET{associer_param})] $lier_trad = 0, $config_fonc = '', $row = \[\], $hidden = '') {
+	return json_encode(\[intval($#ID_OBJET)[, (#GET{associer_val})]\]);
+}
+
+/**
+ * Chargement du formulaire d'édition de #TYPE
+ *
+ * Déclarer les champs postés et y intégrer les valeurs par défaut
+ *
+ * @uses formulaires_editer_objet_charger()
+ *
+ * @param int|string $#ID_OBJET
+ *     Identifiant du #TYPE. 'new' pour un nouveau #TYPE.[
+ * @param int $(#GET{id_parent}|?{#GET{id_parent}})
+ *     Identifiant de l'objet parent (si connu)]
+ * @param string $retour
+ *     URL de redirection après le traitement[
+ * @param string $(#GET{associer}|?{associer_objet})
+ *     Éventuel `objet|x` indiquant de lier le #TYPE créé à cet objet,
+ *     tel que `article|3`]
+ * @param int $lier_trad
+ *     Identifiant éventuel d'un #TYPE source d'une traduction
+ * @param string $config_fonc
+ *     Nom de la fonction ajoutant des configurations particulières au formulaire
+ * @param array $row
+ *     Valeurs de la ligne SQL du #TYPE, si connu
+ * @param string $hidden
+ *     Contenu HTML ajouté en même temps que les champs cachés du formulaire.
+ * @return array
+ *     Environnement du formulaire
+ */
+function formulaires_editer_[(#TYPE)]_charger_dist($#ID_OBJET = 'new',[ (#GET{id_parent_param})] $retour = '',[ (#GET{associer_param})] $lier_trad = 0, $config_fonc = '', $row = \[\], $hidden = '') {
+	$valeurs = formulaires_editer_objet_charger('#TYPE', $#ID_OBJET, #GET{id_parent_val}, $lier_trad, $retour, $config_fonc, $row, $hidden);[(#OBJET|option_presente{liaison_directe}|oui)
+	if (![(#VAL{"$valeurs\['"}|concat{#GET{id_parent}}|concat{"'\]"})]) {
+		[(#VAL{"$valeurs\['"}|concat{#GET{id_parent}}|concat{"'\] = "}|concat{#GET{id_parent_val};})]
+	}]
+	return $valeurs;
+}
+
+/**
+ * Vérifications du formulaire d'édition de #TYPE
+ *
+ * Vérifier les champs postés et signaler d'éventuelles erreurs
+ *
+ * @uses formulaires_editer_objet_verifier()
+ *
+ * @param int|string $#ID_OBJET
+ *     Identifiant du #TYPE. 'new' pour un nouveau #TYPE.[
+ * @param int $(#GET{id_parent}|?{#GET{id_parent}})
+ *     Identifiant de l'objet parent (si connu)]
+ * @param string $retour
+ *     URL de redirection après le traitement[
+ * @param string $(#GET{associer}|?{associer_objet})
+ *     Éventuel `objet|x` indiquant de lier le #TYPE créé à cet objet,
+ *     tel que `article|3`]
+ * @param int $lier_trad
+ *     Identifiant éventuel d'un #TYPE source d'une traduction
+ * @param string $config_fonc
+ *     Nom de la fonction ajoutant des configurations particulières au formulaire
+ * @param array $row
+ *     Valeurs de la ligne SQL du #TYPE, si connu
+ * @param string $hidden
+ *     Contenu HTML ajouté en même temps que les champs cachés du formulaire.
+ * @return array
+ *     Tableau des erreurs
+ */
+function formulaires_editer_[(#TYPE)]_verifier_dist($#ID_OBJET = 'new',[ (#GET{id_parent_param})] $retour = '',[ (#GET{associer_param})] $lier_trad = 0, $config_fonc = '', $row = \[\], $hidden = '') {
+<BOUCLE_si_saisie_date_html(CONDITION){si #ENV{objet/champs}|champs_saisie_presente{date}|et{#ENV{paquet/saisies_mode,html}|=={html}}}>
+	$erreurs = \[\];
+
+	// Normaliser les dates
+	$verifier = charger_fonction('verifier', 'inc');
+
+	foreach ([(#ENV{objet/champs}|champs_saisie_presente{date, champ}|ecrire_tableau)] AS $champ) {
+		$normaliser = null;
+		if ($erreur = $verifier(_request($champ), 'date', ['normaliser'=>'datetime'], $normaliser)) {
+			$erreurs[$champ] = $erreur;
+		// si une valeur de normalisation a ete transmis, la prendre.
+		} elseif (!is_null($normaliser)) {
+			set_request($champ, $normaliser);
+		// si pas de normalisation ET pas de date soumise, il ne faut pas tenter d'enregistrer ''
+		} else {
+			set_request($champ, null);
+		}
+	}
+
+	$erreurs += formulaires_editer_objet_verifier('#TYPE', $#ID_OBJET[, (#GET{obligatoires}|ecrire_tableau_sinon_rien)]);
+</BOUCLE_si_saisie_date_html>
+	$erreurs = formulaires_editer_objet_verifier('#TYPE', $#ID_OBJET[, (#GET{obligatoires}|ecrire_tableau_sinon_rien)]);
+<//B_si_saisie_date_html>
+<BOUCLE_si_saisie_rubrique_php(CONDITION) {si #OBJET|champ_present{id_rubrique}|et{#ENV{paquet/saisies_mode,html}|=={php}}}>
+	// Normaliser la rubrique si le champ n'est pas en erreur :
+	// le picker ajax du sélecteur générique retourne un tableau de la forme \['rubrique|1'\]
+	if (
+		empty($erreurs['id_parent'])
+		and $picker_id_parent = _request('id_parent')
+		and is_numeric($id_parent = array_shift(picker_selected($picker_id_parent, 'rubrique')))
+	) {
+		set_request('id_parent', $id_parent);
+	}
+</BOUCLE_si_saisie_rubrique_php>
+	return $erreurs;
+}
+
+/**
+ * Traitement du formulaire d'édition de #TYPE
+ *
+ * Traiter les champs postés
+ *
+ * @uses formulaires_editer_objet_traiter()
+ *
+ * @param int|string $#ID_OBJET
+ *     Identifiant du #TYPE. 'new' pour un nouveau #TYPE.[
+ * @param int $(#GET{id_parent}|?{#GET{id_parent}})
+ *     Identifiant de l'objet parent (si connu)]
+ * @param string $retour
+ *     URL de redirection après le traitement[
+ * @param string $(#GET{associer}|?{associer_objet})
+ *     Éventuel `objet|x` indiquant de lier le #TYPE créé à cet objet,
+ *     tel que `article|3`]
+ * @param int $lier_trad
+ *     Identifiant éventuel d'un #TYPE source d'une traduction
+ * @param string $config_fonc
+ *     Nom de la fonction ajoutant des configurations particulières au formulaire
+ * @param array $row
+ *     Valeurs de la ligne SQL du #TYPE, si connu
+ * @param string $hidden
+ *     Contenu HTML ajouté en même temps que les champs cachés du formulaire.
+ * @return array
+ *     Retours des traitements
+ */
+function formulaires_editer_[(#TYPE)]_traiter_dist($#ID_OBJET = 'new',[ (#GET{id_parent_param})] $retour = '',[ (#GET{associer_param})] $lier_trad = 0, $config_fonc = '', $row = \[\], $hidden = '') {
+	$retours = formulaires_editer_objet_traiter('#TYPE', $#ID_OBJET, #GET{id_parent_val}, $lier_trad, $retour, $config_fonc, $row, $hidden);[
+(#GET{associer}|oui)
+	// Un lien a prendre en compte ?
+	if ($associer_objet and $#ID_OBJET = $retours\['#ID_OBJET'\]) {
+		list($objet, $id_objet) = explode('|', $associer_objet);
+
+		if ($objet and $id_objet and autoriser('modifier', $objet, $id_objet)) {
+			include_spip('action/editer_liens');
+
+			objet_associer(\['#TYPE' => $#ID_OBJET\], \[$objet => $id_objet\]);
+
+			if (isset($retours\['redirect'\])) {
+				$retours\['redirect'\] = parametre_url($retours\['redirect'\], 'id_lien_ajoute', $#ID_OBJET, '&');
+			}
+		}
+	}
+]
+	return $retours;
+}

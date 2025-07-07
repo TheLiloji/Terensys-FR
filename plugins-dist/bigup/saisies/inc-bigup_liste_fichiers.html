@@ -1,0 +1,37 @@
+[(#REM)
+	Affichage de la liste des fichiers d'un champ.
+
+	Paramètres :
+	- nom : texte du name de l'input
+	- fichiers : La liste décrivant chaque fichier
+	- multiple : L'input file d'origine était multiple ?
+
+]<B_fichiers>
+	<div class='bigup_fichiers fichiers_[(#ENV{nom}|concat{#ENV{multiple}|=={oui}|?{\[\]}}|bigup_nom2classe)]'>
+		<BOUCLE_fichiers(DATA){source table, #FICHIERS|bigup_lister_fichiers{#ENV{nom},#ENV{multiple}}}>
+		<div class='fichier'>
+			<div class='description'>
+				[(#VALEUR{bigup/vignette/data}|oui)
+				<div class="previsualisation #VALEUR{bigup/extension}" title="[(#NAME|attribut_html)] ([(#SIZE|taille_en_octets)])">
+					<span style="background-image:url([(#VALEUR{bigup/vignette/data})]);"></span>
+				</div>]
+				[(#VALEUR{bigup/vignette/data}|non)
+				<div class="vignette_extension #VALEUR{bigup/extension}" title="[(#TYPE|attribut_html)]"><span></span></div>]
+				<div class='infos'>
+					<span class='name'><strong>#NAME</strong></span>
+					<span class='size'>[(#SIZE|taille_en_octets)]</span>
+				</div>
+				[(#ENV{mode}|=={liste}|non)
+				<div class='actions'>
+					<button class='submit' type='submit'
+							name='bigup_enlever_fichier' value="#VALEUR{bigup/identifiant}"
+							onclick="jQuery(this).parents('form').find('input,textarea,select').filter('\[required\]').prop('required', false); return true;">
+						<:bigup:bouton_enlever:>
+					</button>
+				</div>
+				]
+			</div>
+		</div>
+		</BOUCLE_fichiers>
+	</div>
+</B_fichiers>

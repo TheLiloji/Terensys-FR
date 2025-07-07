@@ -1,0 +1,20 @@
+<BOUCLE_test_multiple(CONDITION){si #ENV{multiple}|=={on}|oui}>
+	[(#SET{valeur,[(#ENV*{valeur}|is_array|?{[(#ENV*{valeur})],[(#ENV*{valeur}|explode{','})]})]})]
+	<B_articles_editoriaux_selectionnes>
+	<ul>
+	<BOUCLE_articles_editoriaux_selectionnes(ARTICLES_EDITORIAUX){id_articles_editorial IN #GET*{valeur}}
+		{par num titre, titre}{statut?}{tout}>
+		<li class="choix">#TITRE (#ID_ARTICLES_EDITORIAL)</li>
+	</BOUCLE_articles_editoriaux_selectionnes>
+	</ul>
+	</B_articles_editoriaux_selectionnes>
+   	[(#ENV*{sans_reponse}|propre)]
+	<//B_articles_editoriaux_selectionnes>
+</BOUCLE_test_multiple>
+	<BOUCLE_articles_editorial_selectionne(ARTICLES_EDITORIAUX){id_articles_editorial=#ENV{valeur}}
+		{par num titre, titre}{statut?}{tout}>
+	  	<p>#TITRE (#ID_ARTICLES_EDITORIAL)</p>
+	</BOUCLE_articles_editorial_selectionne>
+   	[(#ENV*{sans_reponse}|propre)]
+	<//B_articles_editorial_selectionne>
+<//B_test_multiple>

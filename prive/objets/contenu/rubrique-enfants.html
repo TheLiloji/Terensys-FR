@@ -1,0 +1,71 @@
+[(#ID_RUBRIQUE|afficher_enfant_rub|image_reduire{245,0})]
+[(#AUTORISER{creerrubriquedans,rubrique,#ID_RUBRIQUE}|oui)
+	[(#ID_RUBRIQUE|?{
+	[(#URL_ECRIRE{rubrique_edit,new=oui&id_parent=#ID_RUBRIQUE}|icone_verticale{<:icone_creer_sous_rubrique:>,rubrique,new,right clearright})]
+	,
+	[(#URL_ECRIRE{rubrique_edit,new=oui}|icone_verticale{<:icone_creer_rubrique:>,secteur,new,right clearright})]
+		})]
+]
+<div class="nettoyeur"></div>
+[(#ID_RUBRIQUE|oui)
+
+	[(#REM)
+
+		Les articles a valider
+	]
+	[
+		[(#BOITE_OUVRIR{<:texte_en_cours_validation:>,'basic note'})]
+		(#PIPELINE{rubrique_encours,#ARRAY{args,#ARRAY{type,rubrique,id_objet,#ID_RUBRIQUE},data,#INCLURE{fond=prive/objets/liste/articles,chaine_titre_singulier=info_1_article_propose,chaine_titre_pluriel=info_nb_articles_proposes,statut=prop,id_rubrique,par=date,ajax,env}}})
+		#BOITE_FERMER
+	]
+
+	[(#REM)
+
+		Les articles en cours de redaction, limités à ceux du visiteur si pas autorisé à publier dans la rubrique
+	]
+	<INCLURE{
+		fond=prive/objets/liste/articles,
+		chaine_titre_singulier=info_1_article_redac,
+		chaine_titre_pluriel=info_nb_articles_redacs,
+		id_auteur=#AUTORISER{publierdans,rubrique,#ID_RUBRIQUE}|?{'',#SESSION{id_auteur}},
+		statut=prepa,
+		id_rubrique,
+		par=date,
+		ajax,
+		env,
+	}>
+
+	[(#REM)
+
+		Les articles publiés
+	]
+	<INCLURE{
+		fond=prive/objets/liste/articles,
+		chaine_titre_singulier=info_1_article_publie,
+		chaine_titre_pluriel=info_nb_articles_publies,
+		statut=publie,
+		id_rubrique,
+		par=date,
+		ajax,
+		env,
+	}>
+
+	[(#REM)
+
+		Les articles refusés
+	]
+	<INCLURE{
+		fond=prive/objets/liste/articles,
+		chaine_titre_singulier=info_1_article_refuse,
+		chaine_titre_pluriel=info_nb_articles_refuses,
+		statut=refuse,
+		id_rubrique,
+		par=date,
+		ajax,
+		env,
+	}>
+]
+<BOUCLE_verifierrub(RUBRIQUES){id_rubrique}{statut==.*}{si #AUTORISER{creerarticledans,rubrique,#ID_RUBRIQUE}}{0,1}>
+	[(#URL_ECRIRE{article_edit,new=oui}|parametre_url{id_rubrique,#ENV{id_rubrique}}|icone_verticale{<:icone_ecrire_article:>,article,new,right})]
+	<div class="nettoyeur"></div>
+</BOUCLE_verifierrub>

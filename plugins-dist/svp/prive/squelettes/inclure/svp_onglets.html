@@ -1,0 +1,37 @@
+[(#REM)
+
+	Navigation des pages admin_plugin, ajouter_plugin et depots.
+
+]
+[(#SET{actif_defaut,#ENV{voir}|non
+	|et{#ENV{verrouille}|non}
+	|et{#ENV{exec}|=={admin_plugin}}
+	|?{actif}})]
+<div class="onglets_simple onglets_simple--svp">
+	<ul>
+		<li class="onglet_actif">
+			[(#URL_ECRIRE{admin_plugin}|parametre_url{voir,actif}|parametre_url{verrouille,''}|lien_ou_expose{<:plugins_actifs_liste:>,#ENV{voir,#GET{actif_defaut}}|=={actif}})]
+		</li>
+		<li class="onglet_inactif">
+			[(#URL_ECRIRE{admin_plugin}|parametre_url{voir,inactif}|parametre_url{verrouille,''}|lien_ou_expose{<:svp:plugins_inactifs_liste:>,#ENV{voir}|=={inactif}})]
+		</li>
+		<li class="onglet_verrouille">
+			[(#URL_ECRIRE{admin_plugin}|parametre_url{verrouille,oui}|parametre_url{voir,''}|lien_ou_expose{<:svp:plugins_verrouilles_liste:>,#ENV{verrouille}|=={oui}})]
+		</li>
+		<li class="onglet_tous">
+			[(#URL_ECRIRE{admin_plugin}|parametre_url{voir,tous}|parametre_url{verrouille,''}|lien_ou_expose{<:plugins_tous_liste:>,#ENV{voir}|=={tous}})]
+		</li>
+	</ul>
+	[(#AUTORISER{ajouter,_plugins}|ou{#AUTORISER{ajouter,_depots}})
+	<ul>
+		[(#AUTORISER{ajouter,_plugins}|oui)
+		<li class="onglet_ajouter">
+			[(#URL_ECRIRE{charger_plugin}|lien_ou_expose{<:plugin_titre_automatique_ajouter:>,#ENV{exec}|=={charger_plugin}})]
+		</li>]
+		[(#AUTORISER{ajouter,_depots}|oui)
+		<li class="onglet_depots">
+			[(#URL_ECRIRE{depots}|lien_ou_expose{<:svp:titre_depots:>,#ENV{exec}|=={depots}})]
+		</li>]
+	</ul>
+	]
+</div>

@@ -1,0 +1,12 @@
+#CACHE{3600}
+[(#HTTP_HEADER{Content-type: text/xml[; charset=(#CHARSET)]})]<?xml version="1.0" encoding="#CHARSET"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <BOUCLE_articles(ARTICLES) {tout} {par date} {inverse}>
+        <url>
+          <loc>#URL_ARTICLE</loc>
+          <lastmod>#DATE</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.5</priority>
+        </url>
+        </BOUCLE_articles>        
+</urlset>

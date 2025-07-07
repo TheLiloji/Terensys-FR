@@ -1,0 +1,36 @@
+[(#ID_PARTENAIRE|oui)
+	[(#AUTORISER{modifier,partenaire,#ID_PARTENAIRE}|sinon_interdire_acces)]
+	[(#SET{id_parent,#INFO_{partenaire,#ID_PARTENAIRE}})]
+]
+
+
+[(#ID_PARTENAIRE|non)
+	[(#AUTORISER{creer,partenaire}|sinon_interdire_acces)]
+]
+
+#SET{redirect,#ENV{redirect}|sinon{#ID_PARTENAIRE|?{#ID_PARTENAIRE|generer_url_entite{partenaire},#URL_ECRIRE{partenaires}}}}
+
+
+
+<div class="cadre-formulaire-editer">
+<div class="entete-formulaire">
+	[(#ID_PARTENAIRE|oui)
+	[(#GET{redirect}|icone_verticale{<:icone_retour:/>,partenaire,'',left retour[(#ENV{retourajax,''}|oui)ajax preload]})]
+	]
+	[
+		[(#ID_PARTENAIRE|?{<:partenaire:icone_modifier_partenaire:/>,<:partenaire:icone_creer_partenaire:/>})]
+		<h1>(#ENV*{titre,#INFO_NOM{partenaire,#ID_PARTENAIRE}|sinon{<:info_sans_titre:/>}})</h1>
+	]
+</div>
+
+#SET{redirect,#ENV{redirect,#ID_PARTENAIRE|generer_url_entite{partenaire}}}
+[(#ENV{retourajax,''}|oui)
+	#SET{redirect,'javascript:if (window.jQuery) jQuery(".entete-formulaire .retour a").followLink();'}
+	<div class="ajax">
+]
+		[(#FORMULAIRE_EDITER_PARTENAIRE{#ENV{id_partenaire,oui}, #GET{redirect}, #ENV{associer_objet}})]
+[(#ENV{retourajax,''}|oui)
+	</div>
+	<script type="text/javascript">/*<!\[CDATA\[*/reloadExecPage('#ENV{exec}');/*\]\]>*/</script>
+]
+</div>

@@ -1,0 +1,53 @@
+<BOUCLE_principale(FORUMS){id_forum}>
+<!DOCTYPE html>
+<html dir="#LANG_DIR" lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js">
+<head>
+	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
+	<title><:forum:forum:> #ID_FORUM - [(#NOM_SITE_SPIP|textebrut)]</title>
+	<INCLURE{fond=inclure/head,robots=none} />
+</head>
+
+<body class="pas_surlignable page_forum">
+<div class="page">
+
+	<INCLURE{fond=inclure/header} />
+	<INCLURE{fond=inclure/nav,env} />
+	
+	<main class="main" role="main">
+		[(#REM) Contenu principal : message de forum ]
+		<div class="wrapper">
+		<div class="content" id="content">
+			<p class="arbo"><a href="#URL_SITE_SPIP/"><:accueil_site:></a> &gt; ... &gt; <strong class="on"><:forum:forum:> #ID_FORUM</strong></p><!--.arbo-->
+	
+			<div class="cartouche">
+				[<h1>(#TITRE|sinon{<:forum:forum:> #ID_FORUM})</h1>]
+			</div>
+			<p class="comment-meta">
+				<small><abbr class="dtreviewed"[ title="(#DATE|date_iso)"]>[(#DATE|affdate_jourcourt)][, (#DATE|heures)][:(#DATE|minutes)]</abbr>[<span class="sep">, </span><:par_auteur:> <span class="#EDIT{qui}">(#NOM|couper{80})</span>]</small>
+			</p>
+			<div class="comment-content">
+				[<div class="#EDIT{texte} comment-texte">(#TEXTE)</div>]
+				[<div class="comment-notes">(#NOTES)</div>]
+				[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE|attribut_html)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+				[<div class="comment-doc"><:medias:info_document:> : (#ENV{ajouter_document}|table_valeur{name})</div>]
+				<B_mots><p class="comment-mots"><:forum:forum_avez_selectionne:> <BOUCLE_mots(MOTS?){id_mot IN #ENV**{ajouter_mot}}{par num type}{par type}{par num titre}{par titre}{', '}>#TITRE</BOUCLE_mots></p></B_mots>
+			</div>
+			
+			[<h2><:forum:form_pet_message_commentaire:></h2>
+			(#FORMULAIRE_FORUM)]
+	
+		</div><!--.content-->
+		</div><!--.wrapper-->
+	
+		<aside class="aside" role="complementary">
+			<INCLURE{fond=inclure/navsub} />
+			#FORMULAIRE_RECHERCHE
+		</aside><!--.aside-->
+	</main><!--.main-->
+
+	<INCLURE{fond=inclure/footer,self=#SELF} />
+
+</div><!--.page-->
+</body>
+</html>
+</BOUCLE_principale>

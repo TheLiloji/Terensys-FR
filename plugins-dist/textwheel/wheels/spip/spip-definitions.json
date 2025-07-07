@@ -1,0 +1,38 @@
+{
+  "definitions-disabled": {
+    "if_match": "\/\n-(&nbsp;)?[\\?!]\\s\/S",
+    "type": "all",
+    "disabled": "Y",
+    "is_wheel": "Y",
+    "replace": {
+      "listes-decoupe-para2": {
+        "match": "\n\n",
+        "type": "split",
+        "is_wheel": "Y",
+        "replace": {
+          "def-check": {
+            "if_str": "-",
+            "if_match": "\/-(&nbsp;)?[!\\?]\\s\/S",
+            "is_wheel": "Y",
+            "type": "all",
+            "replace": {
+              "def-wrap": {
+                "type": "all",
+                "is_callback": "Y",
+                "replace": "tw_def_wrap"
+              },
+              "def-p-titre": {
+                "match": ",(\n-(&nbsp;)?\\?\\s+)(.*)(?=(\\z|\n-)),UsS",
+                "replace": "<dt>$3<\/dt>"
+              },
+              "def-p-desc": {
+                "match": ",(\n-(&nbsp;)?!\\s+)(.*)(?=(<dt>|<\/dl>|\\z|\n-)),UsS",
+                "replace": "<dd>$3<\/dd>"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

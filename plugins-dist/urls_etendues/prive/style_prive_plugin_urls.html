@@ -1,0 +1,36 @@
+[(#REM)
+
+	Ce squelette definit les styles de l'espace prive
+
+	Note: l'entete "Vary:" sert a repousser l'entete par
+	defaut "Vary: Cookie,Accept-Encoding", qui est (un peu)
+	genant en cas de "rotation du cookie de session" apres
+	un changement d'IP (effet de clignotement).
+	<style>
+]
+#CACHE{3600*100,cache-client}
+#HTTP_HEADER{Content-Type: text/css; charset=utf-8}
+#HTTP_HEADER{Vary: Accept-Encoding}
+
+.fiche_objet .editer_urls .btn_link {
+	color:#999;
+	display: block;
+	margin-inline-end: 100px;
+	padding-inline-start: 20px;
+	background: url("#CHEMIN_IMAGE{url-xx.svg}") no-repeat var(--spip-left) 0.4em;
+	background-size:16px;
+	text-align: start;
+	user-select: text;
+}
+.fiche_objet .editer_urls .btn_link .url {color: #999; text-decoration: none; white-space: break-spaces; }
+.fiche_objet .editer_urls .btn_link .edit {visibility: hidden;float: inline-end;margin-inline-start:1em;margin-top:-0.2em}
+
+.fiche_objet .editer_urls .edition {display:none;}
+.fiche_objet .editer_urls.open .edition {display:block;}
+.fiche_objet .editer_urls .btn_link:hover,
+.fiche_objet .editer_urls.open .btn_link {color: inherit;}
+.fiche_objet .editer_urls .btn_link:hover .edit,
+.fiche_objet .editer_urls.open .btn_link .edit {visibility: visible;}
+.fiche_objet .editer_urls .liste-objets .objet {display: none;}
+.fiche_objet .editer_urls .liste-objets {margin-bottom: 0; overflow:auto; width:100%; }
+.fiche_objet .editer_urls .formulaire_spip {margin-top:0;border:0;border-top: 1px solid #EEE;}

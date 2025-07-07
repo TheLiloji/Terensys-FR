@@ -1,0 +1,42 @@
+{
+    "name": "spip/svp",
+    "description": "SerVeur d'information et de téléchargement des Plugins",
+    "license": "GPL-3.0-or-later",
+    "type": "spip-plugin",
+    "authors": [
+        {
+            "name": "Collectif SPIP",
+            "homepage": "https://discuter.spip.net/c/spip-dev/5",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Eric Lupinacci",
+            "homepage": "https://blog.smellup.net/",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "spip/archiviste": "^2.2"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "phpcompatibility/php-compatibility": "^10.x-dev",
+        "spip-league/kernel": "^1.x-dev",
+        "spip/coding-standards": "^1.3"
+    },
+    "repositories": {
+        "spip": {
+            "type": "composer",
+            "url": "https://get.spip.net/composer"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "7.4.33"
+        }
+    }
+}

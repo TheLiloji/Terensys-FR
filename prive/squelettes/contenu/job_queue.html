@@ -1,0 +1,11 @@
+#CACHE{0}
+[(#AUTORISER{administrer,queue}|sinon_interdire_acces)]
+[(#REM|job_queue_block_and_watch)]
+<h1 class="grostitre"><:queue_titre:></h1>
+
+<INCLURE{fond=prive/objets/liste/jobs, ajax, env} />
+
+<script>
+function queue_reload(){jQuery('h1').ajaxReload();}
+if (window.jQuery) setTimeout(queue_reload,60000);
+</script>

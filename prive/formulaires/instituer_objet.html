@@ -1,0 +1,89 @@
+<div class="instituer_objet[ (#PUBLIE{#ENV{_objet}, #ENV{_id_objet}})objet_publie]">
+	[(#REM) Dans tous les cas on commence par afficher le statut actuel ]
+
+	<div class="statut_actuel">
+		<strong class="editer-label">[(#ENV{_label}|_T)][(#ENV{_aide}|oui)#AIDER{#ENV{_aide}}]</strong>
+		<div class="statut statut--#ENV{statut}">
+			[<span class="statut-icone">(#ENV{statut}|puce_statut{#ENV{_objet}})</span>]
+			[<span class="statut-label">(#ENV{_statuts}|table_valeur{#ENV{statut}}|_T)</span>]
+		</div>
+	</div>
+
+	[(#ENV{_publiable}|non|et{#ENV{statut}|=={prepa}|oui})
+	<p class="small"><:texte_proposer_publication:></p>
+	]
+	[(#ENV{editable}|oui)
+	<div class="formulaire_spip formulaire_editer formulaire_instituer[ formulaire_#FORM formulaire_#FORM-(#ENV{_objet})][ formulaire_#FORM-#ENV{_objet}-(#ENV{_id_objet})]">
+		[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV**{message_ok})</div>]
+		[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+		<form method='post' action='#ENV{action}'><div>
+			#ACTION_FORMULAIRE
+
+			#SET{name,statut}#SET{obli,'obligatoire'}#SET{erreurs,#ENV**{erreurs}|table_valeur{#GET{name}}}
+			<div class="editer-groupe">
+				<fieldset class="editer editer_[(#GET{name})] statut_#ENV{#GET{name}}[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+					<legend class="editer-label"><:info_modifier_statut:></legend>
+					[<span class='erreur_message'>(#GET{erreurs})</span>]
+					<BOUCLE_choix(DATA){source table, #ENV{_statuts}}{cle != #ENV{statut}}>
+					<div class="choix">
+						<input
+							type="radio" class="radio"
+							name="#GET{name}"
+							id="instituer_#ENV{_objet}_#ENV{_id_objet}_choix_#CLE"
+							[(#ENV{#GET{name}}|=={#CLE}|oui)selected="selected"]
+							value="#CLE"
+						>
+						<label for="instituer_#ENV{_objet}_#ENV{_id_objet}_choix_#CLE">
+							<span class="statut">
+								[<span class="statut-icone">(#CLE|puce_statut{#ENV{_objet}})</span>]
+								[<span class="statut-label">(#VALEUR|_T)</span>]
+							</span>
+						</label>
+					</div>
+					</BOUCLE_choix>
+				</fieldset>
+			</div>
+			<!--extra-->
+			<div class='boutons'>
+				<span class='image_loading'>&nbsp;</span>
+				<div class="groupe-btns">
+					<button type='button' class='btn submit btn_secondaire' name='annuler'><:bouton_annuler:></button>
+					<button type='submit' class='btn submit' name='changer'><:bouton_changer:></button>
+				</div>
+			</div>
+		</div></form>
+	</div>
+	]
+</div>
+
+<script>
+	;(function($){
+		[(#REM) Seulement si éditable et que sans erreur, on masque le form par défaut ]
+		[(#ENV{editable}|oui)
+			var form = $('.formulaire_#FORM-#ENV{_objet}-#ENV{_id_objet}');
+
+			// Un bouton pour afficher le form pour modifier
+			var bouton_modifier =
+				$('<button class="btn_mini btn_secondaire btn_modifier float-end" aria-expanded="false"><:bouton_changer:></button>')
+				.click(function() {
+					form.slideDown().closest('.instituer_objet').removeClass('form-closed');
+					/*$(this).slideUp().attr('aria-expanded', 'true');*/
+				})
+			;
+
+			// On ajoute ce bouton dynamiquement
+			$('.instituer_objet .statut_actuel .editer-label').after(bouton_modifier);
+			$('.instituer_objet button\[name=annuler\]').on('click', function() {
+				form.find('input\[type=radio\]:checked').prop('checked', false);
+				form.slideUp().closest('.instituer_objet').addClass('form-closed');
+			});
+
+			[(#ENV**{erreurs}|non)
+				// On masque au départ le form pour modifier
+				form.closest('.instituer_objet').addClass('form-closed');
+			][(#ENV**{erreurs}|oui)
+				form.css('display','block');
+			]
+		]
+	})(jQuery);
+</script>

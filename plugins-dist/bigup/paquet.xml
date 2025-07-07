@@ -1,0 +1,41 @@
+<paquet
+	prefix="bigup"
+	categorie="multimedia"
+	version="3.3.7"
+	schema="1.0.1"
+	etat="stable"
+	compatibilite="[4.4.0-dev;4.*]"
+	logo="prive/themes/spip/images/bigup-64.png"
+	documentation=""
+>
+
+	<nom>Big Upload</nom>
+	<!-- Téléverser des gros fichiers -->
+
+	<auteur>Matthieu Marcillaud</auteur>
+	<credit lien='https://www.iconfinder.com/icons/48761/add_file_upload_icon'>Neurovit (logo)</credit>
+	<credit lien='http://resumablejs.com'>23 Company (resumable.js)</credit>
+	<credit lien='https://github.com/flowjs/flow.js'>Flow.js</credit>
+
+	<licence>GNU/GPL</licence>
+
+	<pipeline nom="bigup_preparer_input_options" action="" />
+	<pipeline nom="insert_head" inclure="bigup_pipelines.php" />
+	<pipeline nom="insert_head_css" inclure="bigup_pipelines.php" />
+	<pipeline nom="header_prive" inclure="bigup_pipelines.php" />
+	<pipeline nom="header_prive_css" inclure="bigup_pipelines.php" />
+	<pipeline nom="jquery_plugins" inclure="bigup_pipelines.php" />
+	<pipeline nom="formulaire_fond" action="medias_formulaire_fond" inclure="bigup_pipelines.php" />
+	<pipeline nom="formulaire_charger" action="medias_formulaire_charger" inclure="bigup_pipelines.php" />
+	<pipeline nom="formulaire_charger" inclure="bigup_pipelines.php" />
+	<pipeline nom="formulaire_receptionner" inclure="bigup_pipelines.php" />
+	<pipeline nom="formulaire_verifier" inclure="bigup_pipelines.php" />
+	<pipeline nom="formulaire_traiter" inclure="bigup_pipelines.php" />
+	<pipeline nom="affiche_milieu" inclure="bigup_pipelines.php" />
+
+	<utilise nom="saisies" compatibilite="[2.17.1;]" />
+	<necessite nom="php" compatibilite="[7.4.0;[" />
+
+	<genie nom="nettoyer_repertoire_upload" periode="86400" />
+
+</paquet>

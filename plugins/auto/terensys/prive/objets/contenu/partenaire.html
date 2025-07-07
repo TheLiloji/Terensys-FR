@@ -1,0 +1,12 @@
+<BOUCLE_partenaire(PARTENAIRES){id_partenaire}>
+[<div class="champ contenu_nom[ (#NOM*|strlen|?{'',vide})]">
+	<div class="label"><:partenaire:champ_nom_label:/> : </div>
+	<span dir="#LANG_DIR" class="#EDIT{nom} nom">(#NOM)</span>
+</div>]
+
+[<div class="champ contenu_description[ (#DESCRIPTION*|strlen|?{'',vide})]">
+	<div class="label"><:partenaire:champ_description_label:/> : </div>
+	<span dir="#LANG_DIR" class="#EDIT{description} description">(#DESCRIPTION)</span>
+</div>]
+
+</BOUCLE_partenaire>

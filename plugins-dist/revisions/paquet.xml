@@ -1,0 +1,39 @@
+<paquet
+	prefix="revisions"
+	categorie="edition"
+	version="3.1.9"
+	etat="stable"
+	compatibilite="[4.2.0;4.*]"
+	logo="prive/themes/spip/images/revision-32.png"
+	schema="1.2.0"
+>
+
+	<nom>Révisions</nom>
+	<!-- Suivi des modifications des objets éditoriaux -->
+
+	<auteur>Collectif SPIP</auteur>
+
+	<traduire module="revisions" reference="fr" gestionnaire="salvatore" />
+
+	<pipeline nom="autoriser"                   inclure="revisions_autoriser.php" />
+	<pipeline nom="pre_insertion"              inclure="revisions_pipeline.php" />
+	<pipeline nom="post_insertion"              inclure="revisions_pipeline.php" />
+	<pipeline nom="pre_edition"                 inclure="revisions_pipeline.php" />
+	<pipeline nom="pre_edition_lien"            inclure="revisions_pipeline.php" />
+	<pipeline nom="post_edition"                inclure="revisions_pipeline.php" />
+	<pipeline nom="post_edition_lien"           inclure="revisions_pipeline.php" />
+	<pipeline nom="boite_infos"                 inclure="revisions_pipeline.php" />
+	<pipeline nom="affiche_milieu"              inclure="revisions_pipeline.php" />
+	<pipeline nom="configurer_liste_metas"      inclure="revisions_pipeline.php" />
+	<pipeline nom="formulaire_charger"          inclure="revisions_pipeline.php" />
+	<pipeline nom="declarer_tables_interfaces"  inclure="base/revisions.php" />
+	<pipeline nom="declarer_tables_auxiliaires" inclure="base/revisions.php" />
+	<pipeline nom="declarer_tables_objets_sql"  inclure="base/revisions.php" />
+	<pipeline nom="ieconfig_metas"              inclure="revisions_ieconfig.php" />
+	<pipeline nom="revisions_chercher_label"	action="" />
+
+	<menu nom="revisions" titre="revisions:info_historique_titre" parent="menu_publication" icone="images/revision-16.png" />
+	<menu nom="configurer_revisions" titre="revisions:titre_revisions" parent="menu_configuration" icone="images/revision-16.png" />
+
+	<genie nom="optimiser_revisions" periode="86400" />
+</paquet>

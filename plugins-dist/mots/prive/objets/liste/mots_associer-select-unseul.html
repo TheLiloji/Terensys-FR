@@ -1,0 +1,27 @@
+#SET{selected,''}
+<div class="bouton-inline">
+	<select
+	<BOUCLE_remplacer(MOTS){id_groupe}{id_mot IN #ENV{exclus}}{0,1}>
+		#SET{changer,1}
+		#SET{expose,mot-#ID_MOT-#OBJET-#ID_OBJET}
+		name="remplacer_lien[mot-#ID_MOT-#OBJET-#ID_OBJET][groupe#ID_GROUPE]"
+	</BOUCLE_remplacer>
+		#SET{changer,0}
+		#SET{expose,#ENV{ajouter_lien/groupe#ID_GROUPE,''}|trim{x}}
+		#SET{selected,#GET{expose}|oui}
+		name="ajouter_lien[groupe#ID_GROUPE]"
+	<//B_remplacer>
+	id="ajouter_lien-groupe#ID_GROUPE"
+		onchange="jQuery(this).addClass('avec-bouton').siblings('button.submit').css('visibility','visible');"
+	>
+	<option value="x">&nbsp;</option>
+	<BOUCLE_mots(MOTS){id_groupe}{par num titre, multi titre}>
+		#SET{value,mot-#ID_MOT-#OBJET-#ID_OBJET}
+		<option value="#GET{value}"[(#GET{value}|=={#GET{expose}}|oui)selected="selected" class="on"]>[(#RANG). ]#TITRE</option>
+	</BOUCLE_mots>
+	</select>
+	<button type="submit" class="btn submit btn_secondaire" name="groupe#ID_GROUPE" value="+"[(#GET{selected}|non)style="visibility:hidden;"]>
+		[(#GET{changer}|oui)<:bouton_changer:>[ (#CHEMIN_IMAGE{actualiser-12.svg}|balise_img)]]
+		[(#GET{changer}|non)<:bouton_ajouter:>[ (#CHEMIN_IMAGE{add-12.svg}|balise_img)]]
+	</button>
+</div>

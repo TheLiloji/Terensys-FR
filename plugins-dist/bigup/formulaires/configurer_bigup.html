@@ -1,0 +1,94 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+
+	<h3 class="titrem">[<img src="(#CHEMIN_IMAGE{bigup-xx.svg})" class="cadre-icone" />]<:bigup:cfg_titre_parametrages:></h3>
+
+	<p class="explication"><:bigup:cfg_explication_parametrages:></p>
+
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+
+	<form method="post" action="#ENV{action}">
+	<div>
+		#ACTION_FORMULAIRE{#ENV{action}}
+		<div class="editer-groupe">
+			#SET{name,charger_public}#SET{obli,''}#SET{defaut,0}#SET{erreurs,#ENV*{erreurs/#GET{name}}}
+			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+				<label><:bigup:cfg_charger_public:></label>[
+				<span class='erreur_message'>(#GET{erreurs})</span>
+				]
+				<div class="choix">
+					#SET{val,0}
+					<input type="hidden" name="#GET{name}" value="#GET{val}" />
+					#SET{val,1}
+					<input type="checkbox" name="#GET{name}" class="checkbox" id="#GET{name}_#GET{val}" value="#GET{val}" aria-describedby="#GET{name}_explication" [(#ENV{#GET{name},#GET{defaut}}|=={#GET{val}}|oui)checked="checked"] />
+					<label for="#GET{name}_#GET{val}"><:bigup:cfg_charger_public_case:></label>
+				</div>
+			</div>
+
+			#SET{name,max_file_size}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV*{erreurs/#GET{name}}}
+			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+				<label for="#GET{name}"><:bigup:cfg_max_file_size:></label>[
+				<span class='erreur_message'>(#GET{erreurs})</span>
+				]<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{name}" [(#HTML5|et{#GET{obli}})required='required']/>
+				<p class="explication"><:bigup:cfg_max_file_size_explication:></p>
+			</div>
+
+		</div>
+
+		#SET{retaillageIsActif,''}
+		[(#CONST{_IMG_MAX_WIDTH}|ou{#CONST{_IMG_MAX_HEIGHT}}|oui) #SET{retaillageIsActif,oui}]
+
+		[(#GET{retaillageIsActif}|non)
+			<h3 class="titrem"><:bigup:cfg_titre_retailler_image:></h3>
+			<p class="explication"><:bigup:cfg_explication_retailler_image:></p>
+		]
+		[(#GET{retaillageIsActif}|oui)
+			<h3 class="titrem"><:bigup:cfg_titre_retailler_image_actif:></h3>
+		]
+
+		<div class="editer-groupe">
+			#SET{name,client_width}#SET{defaut,''}#SET{erreurs,#ENV*{erreurs/#GET{name}}}
+			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+				<label for="#GET{name}"><:bigup:cfg_client_width:></label>
+				[<span class='erreur_message'>(#GET{erreurs})</span>]
+				[(#GET{retaillageIsActif}|oui)
+					<input type="text" class="text" value="#CONST{_IMG_MAX_WIDTH}" id="#GET{name}" disabled/>
+				]
+				[(#GET{retaillageIsActif}|non)
+					<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{name}"/>
+				]
+				<p class="explication"><:bigup:cfg_client_width_explication:></p>
+			</div>
+
+			#SET{name,client_height}#SET{obli,''}#SET{defaut,''}#SET{erreurs,#ENV*{erreurs/#GET{name}}}
+			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+				<label for="#GET{name}"><:bigup:cfg_client_height:></label>
+				[<span class='erreur_message'>(#GET{erreurs})</span>]
+				[(#GET{retaillageIsActif}|oui)
+					<input type="text" class="text" value="#CONST{_IMG_MAX_HEIGHT}" id="#GET{name}" disabled/>
+				]
+				[(#GET{retaillageIsActif}|non)
+					<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{name}"/>
+				]
+				<p class="explication"><:bigup:cfg_client_height_explication:></p>
+			</div>
+
+			#SET{name,client_quality}#SET{obli,''}#SET{defaut,85}#SET{erreurs,#ENV*{erreurs/#GET{name}}}
+			<div class="editer editer_[(#GET{name})][ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+				<label for="#GET{name}"><:bigup:cfg_client_quality:></label>
+				[<span class='erreur_message'>(#GET{erreurs})</span>]
+				[(#GET{retaillageIsActif}|oui)
+					<input type="text" class="text" value="[(#CONST{_IMG_GD_QUALITE}|sinon{85})]" id="#GET{name}" disabled/>
+				]
+				[(#GET{retaillageIsActif}|non)
+					<input type="text" name="#GET{name}" class="text" value="#ENV*{#GET{name},#GET{defaut}}" id="#GET{name}"/>
+				]
+				<p class="explication"><:bigup:cfg_client_quality_explication:></p>
+			</div>
+		</div>
+
+		<input type="hidden" name="_meta_casier" value="bigup" />
+		<p class="boutons"><span class="image_loading">&nbsp;</span><input type="submit" class="submit" value="<:bouton_enregistrer|attribut_html:>" /></p>
+	</div>
+	</form>
+</div>

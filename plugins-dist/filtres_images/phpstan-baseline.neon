@@ -1,0 +1,404 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function _couleur_dec_to_hex not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: filtres/couleurs.php
+
+		-
+			message: '#^Function _couleur_hex_to_dec not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: filtres/couleurs.php
+
+		-
+			message: '#^Function _couleur_hsl_to_rgb not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: filtres/couleurs.php
+
+		-
+			message: '#^Function _couleur_rgb_to_hsl not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: filtres/couleurs.php
+
+		-
+			message: '#^Function couleur_eclaircir not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/couleurs.php
+
+		-
+			message: '#^Function couleur_foncer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/couleurs.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: filtres/couleurs.php
+
+		-
+			message: '#^Function _couleur_dec_to_hex not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: filtres/images_lib.php
+
+		-
+			message: '#^Function _couleur_hsl_to_rgb not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_lib.php
+
+		-
+			message: '#^Function _couleur_rgb_to_hsl not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_lib.php
+
+		-
+			message: '#^Function _image_valeurs_trans not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_lib.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_lib.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_lib.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_lib.php
+
+		-
+			message: '#^Function svg_extract_couleurs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_lib.php
+
+		-
+			message: '#^Function _L not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function _couleur_hex_to_dec not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function _image_ecrire_tag not found\.$#'
+			identifier: function.notFound
+			count: 16
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function _image_gd_output not found\.$#'
+			identifier: function.notFound
+			count: 30
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function _image_tag_changer_taille not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function _image_valeurs_trans not found\.$#'
+			identifier: function.notFound
+			count: 23
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function erreur_squelette not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function hauteur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function image_reduire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function largeur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 14
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function spip_timer not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function str_contains not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_ajouter_background not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_ajouter_voile not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_charger not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_filter_blur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_filter_grayscale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_filter_sepia not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_flip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_recadrer not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_rotate not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function svg_transformer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function taille_image not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: filtres/images_transforme.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function _image_gd_output not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function couleur_html_to_hex not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function html2unicode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function init_mb_string not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function inserer_attribut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function spip_getimagesize not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function spip_strlen not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function spip_substr not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function trigger_deprecation not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: filtres/images_typo.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: images_fonctions.php
+
+		-
+			message: '#^Function trigger_deprecation not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: images_fonctions.php
+
+		-
+			message: '#^Access to an undefined property Spip\\Cli\\Command\\ImagesPurger\:\:\$io\.$#'
+			identifier: property.notFound
+			count: 8
+			path: spip-cli/ImagesPurger.php
+
+		-
+			message: '#^Access to constant VALUE_REQUIRED on an unknown class Symfony\\Component\\Console\\Input\\InputOption\.$#'
+			identifier: class.notFound
+			count: 1
+			path: spip-cli/ImagesPurger.php
+
+		-
+			message: '#^Access to undefined constant Spip\\Cli\\Command\\ImagesPurger\:\:FAILURE\.$#'
+			identifier: classConstant.notFound
+			count: 2
+			path: spip-cli/ImagesPurger.php
+
+		-
+			message: '#^Access to undefined constant Spip\\Cli\\Command\\ImagesPurger\:\:SUCCESS\.$#'
+			identifier: classConstant.notFound
+			count: 1
+			path: spip-cli/ImagesPurger.php
+
+		-
+			message: '#^Call to an undefined method Spip\\Cli\\Command\\ImagesPurger\:\:setName\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: spip-cli/ImagesPurger.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: spip-cli/ImagesPurger.php
+
+		-
+			message: '#^Function taille_en_octets not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: spip-cli/ImagesPurger.php
+
+		-
+			message: '#^Parameter \$input of method Spip\\Cli\\Command\\ImagesPurger\:\:execute\(\) has invalid type Symfony\\Component\\Console\\Input\\InputInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: spip-cli/ImagesPurger.php
+
+		-
+			message: '#^Parameter \$output of method Spip\\Cli\\Command\\ImagesPurger\:\:execute\(\) has invalid type Symfony\\Component\\Console\\Output\\OutputInterface\.$#'
+			identifier: class.notFound
+			count: 1
+			path: spip-cli/ImagesPurger.php
+

@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<rdf:RDF  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:dc="http://purl.org/dc/elements/1.1/"  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/"  xmlns:cc="http://web.resource.org/cc/"  xmlns:content="http://purl.org/rss/1.0/modules/content/"  xmlns="http://purl.org/rss/1.0/">
+<channel rdf:about="http://www.agendadulibre.org">
+ <title>Agenda du Libre [  ]</title>
+ <description>Agenda des évènements autour du Logiciel Libre</description>
+ <link>http://www.agendadulibre.org</link>
+ <dc:language>fr</dc:language>
+ <dc:creator>AgendaDuLibre.org</dc:creator>
+ <items>
+  <rdf:Seq>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1105"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1106"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1107"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1057"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1108"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1109"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1080"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1110"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1048"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1111"/>
+   <rdf:li rdf:resource="http://www.agendadulibre.org/showevent.php?id=1144"/>
+  </rdf:Seq>
+ </items>
+</channel>
+
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1105">
+  <title>Gradignan : Atelier &#171; Pack Libre &#187;, le mardi 20 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1105</link>
+   <guid>1105@agendadulibre.org</guid>   <dc:date>2007-03-20T14:00+01:00</dc:date>
+   <description>
+Gradignan : Atelier &#171; Pack Libre &#187;
+
+Date et lieu
+Le mardi 20 mars 2007, de 14h00 &#224; 16h00.
+&#192; Gradignan, Aquitaine
+
+Description
+
+
+  &#192; l'occasion du Libre en
+  F&#234;te, la m&#233;diath&#232;que de la
+  ville de Gradignan (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.
+
+  Dans ce cadre, un atelier &#171; Pack Libre &#187; est organis&#233; le
+  mardi 20 mars. Vous pourrez y d&#233;couvrir le monde des Logiciels
+  Libres pour Windows et repartir avec votre pack de Logiciels Libres
+  grav&#233; du CD-ROM (amenez un CD-ROM vierge). Cet atelier a lieu sur
+  inscription, 16 places sont disponibles.
+
+  De plus, durant toute la semaine, l'exposition &#171; L'histoire
+  des logiciels libres &#187;, une remarquable r&#233;alisation de M&#233;dias-Cit&#233;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.
+
+  La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.
+
+
+ 
+
+Informations
+Site Web: http://scideralle.org/article.php3?id_article=269
+Contact: lamediathequemultimedia CHEZ ville-gradignan POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Gradignan&#60;/i&#62; : Atelier &#171; Pack Libre &#187;&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le mardi 20 mars 2007, de 14h00 &#224; 16h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Gradignan&#34;&#62;Gradignan&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+
+
+  &#60;p&#62;&#192; l'occasion du &#60;a href=&#34;http://www.libre-en-fete.net&#34;&#62;Libre en
+  F&#234;te&#60;/a&#62;, la &#60;a
+  href=&#34;http://www.lamediathequedegradignan.fr/&#34;&#62;m&#233;diath&#232;que de la
+  ville de Gradignan&#60;/a&#62; (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.&#60;/p&#62;
+
+  &#60;p&#62;Dans ce cadre, un atelier &#60;i&#62;&#171; Pack Libre &#187;&#60;/i&#62; est organis&#233; le
+  mardi 20 mars. Vous pourrez y d&#233;couvrir le monde des Logiciels
+  Libres pour Windows et repartir avec votre pack de Logiciels Libres
+  grav&#233; du CD-ROM (amenez un CD-ROM vierge). Cet atelier a lieu sur
+  inscription, 16 places sont disponibles.&#60;/p&#62;
+
+  &#60;p&#62;De plus, durant toute la semaine, l'exposition &#60;i&#62;&#171; L'histoire
+  des logiciels libres &#187;&#60;/i&#62;, une remarquable r&#233;alisation de &#60;a
+  href=&#34;http://www.medias-cite.org/&#34;&#62;M&#233;dias-Cit&#233;&#60;/a&#62;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.&#60;/p&#62;
+
+  &#60;p&#62;La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.&#60;/p&#62;
+
+
+ 
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://scideralle.org/article.php3?id_article=269&#34;&#62;http://scideralle.org/article.php3?id_article=269&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:lamediathequemultimedia CHEZ ville-gradignan POINT fr&#34;&#62;lamediathequemultimedia CHEZ ville-gradignan POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1106">
+  <title>Gradignan : Atelier &#171; Vid&#233;o Libre &#187;, le mercredi 21 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1106</link>
+   <guid>1106@agendadulibre.org</guid>   <dc:date>2007-03-21T10:00+01:00</dc:date>
+   <description>
+Gradignan : Atelier &#171; Vid&#233;o Libre &#187;
+
+Date et lieu
+Le mercredi 21 mars 2007, de 10h00 &#224; 12h00.
+&#192; Gradignan, Aquitaine
+
+Description
+
+
+  &#192; l'occasion du Libre en
+  F&#234;te, la m&#233;diath&#232;que de la
+  ville de Gradignan (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.
+
+  Dans ce cadre, un atelier &#171; Vid&#233;o Libre &#187; est organis&#233; le
+  mercredi 21 mars de 10h &#224; 12h. Cet atelier a lieu sur inscription,
+  16 places sont disponibles.
+
+  De plus, durant toute la semaine, l'exposition &#171; L'histoire
+  des logiciels libres &#187;, une remarquable r&#233;alisation de M&#233;dias-Cit&#233;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.
+
+  La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.
+
+
+ 
+
+Informations
+Site Web: http://scideralle.org/article.php3?id_article=269
+Contact: lamediathequemultimedia CHEZ ville-gradignan POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Gradignan&#60;/i&#62; : Atelier &#171; Vid&#233;o Libre &#187;&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le mercredi 21 mars 2007, de 10h00 &#224; 12h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Gradignan&#34;&#62;Gradignan&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+
+
+  &#60;p&#62;&#192; l'occasion du &#60;a href=&#34;http://www.libre-en-fete.net&#34;&#62;Libre en
+  F&#234;te&#60;/a&#62;, la &#60;a
+  href=&#34;http://www.lamediathequedegradignan.fr/&#34;&#62;m&#233;diath&#232;que de la
+  ville de Gradignan&#60;/a&#62; (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.&#60;/p&#62;
+
+  &#60;p&#62;Dans ce cadre, un atelier &#60;i&#62;&#171; Vid&#233;o Libre &#187;&#60;/i&#62; est organis&#233; le
+  mercredi 21 mars de 10h &#224; 12h. Cet atelier a lieu sur inscription,
+  16 places sont disponibles.&#60;/p&#62;
+
+  &#60;p&#62;De plus, durant toute la semaine, l'exposition &#60;i&#62;&#171; L'histoire
+  des logiciels libres &#187;&#60;/i&#62;, une remarquable r&#233;alisation de &#60;a
+  href=&#34;http://www.medias-cite.org/&#34;&#62;M&#233;dias-Cit&#233;&#60;/a&#62;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.&#60;/p&#62;
+
+  &#60;p&#62;La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.&#60;/p&#62;
+
+
+ 
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://scideralle.org/article.php3?id_article=269&#34;&#62;http://scideralle.org/article.php3?id_article=269&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:lamediathequemultimedia CHEZ ville-gradignan POINT fr&#34;&#62;lamediathequemultimedia CHEZ ville-gradignan POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1107">
+  <title>Gradignan : Atelier &#171; Musique Libre &#187;, le mercredi 21 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1107</link>
+   <guid>1107@agendadulibre.org</guid>   <dc:date>2007-03-21T15:00+01:00</dc:date>
+   <description>
+Gradignan : Atelier &#171; Musique Libre &#187;
+
+Date et lieu
+Le mercredi 21 mars 2007, de 15h00 &#224; 17h00.
+&#192; Gradignan, Aquitaine
+
+Description
+
+
+  &#192; l'occasion du Libre en
+  F&#234;te, la m&#233;diath&#232;que de la
+  ville de Gradignan (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.
+
+  Dans ce cadre, un atelier &#171; Musique Libre &#187; est organis&#233;
+  le mercredi 21 mars de 15h &#224; 17h. Venez remplir votre baladeur
+  num&#233;rique &#224; partir de sites r&#233;f&#233;renc&#233;s pour vous permettre de
+  d&#233;couvrir des auteurs et de t&#233;l&#233;charger leurs albums. Cet atelier a
+  lieu sur inscription, 16 places sont disponibles.
+
+  De plus, durant toute la semaine, l'exposition &#171; L'histoire
+  des logiciels libres &#187;, une remarquable r&#233;alisation de M&#233;dias-Cit&#233;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.
+
+  La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.
+
+
+ 
+
+Informations
+Site Web: http://scideralle.org/article.php3?id_article=269
+Contact: lamediathequemultimedia CHEZ ville-gradignan POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Gradignan&#60;/i&#62; : Atelier &#171; Musique Libre &#187;&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le mercredi 21 mars 2007, de 15h00 &#224; 17h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Gradignan&#34;&#62;Gradignan&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+
+
+  &#60;p&#62;&#192; l'occasion du &#60;a href=&#34;http://www.libre-en-fete.net&#34;&#62;Libre en
+  F&#234;te&#60;/a&#62;, la &#60;a
+  href=&#34;http://www.lamediathequedegradignan.fr/&#34;&#62;m&#233;diath&#232;que de la
+  ville de Gradignan&#60;/a&#62; (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.&#60;/p&#62;
+
+  &#60;p&#62;Dans ce cadre, un atelier &#60;i&#62;&#171; Musique Libre &#187;&#60;/i&#62; est organis&#233;
+  le mercredi 21 mars de 15h &#224; 17h. Venez remplir votre baladeur
+  num&#233;rique &#224; partir de sites r&#233;f&#233;renc&#233;s pour vous permettre de
+  d&#233;couvrir des auteurs et de t&#233;l&#233;charger leurs albums. Cet atelier a
+  lieu sur inscription, 16 places sont disponibles.&#60;/p&#62;
+
+  &#60;p&#62;De plus, durant toute la semaine, l'exposition &#60;i&#62;&#171; L'histoire
+  des logiciels libres &#187;&#60;/i&#62;, une remarquable r&#233;alisation de &#60;a
+  href=&#34;http://www.medias-cite.org/&#34;&#62;M&#233;dias-Cit&#233;&#60;/a&#62;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.&#60;/p&#62;
+
+  &#60;p&#62;La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.&#60;/p&#62;
+
+
+ 
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://scideralle.org/article.php3?id_article=269&#34;&#62;http://scideralle.org/article.php3?id_article=269&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:lamediathequemultimedia CHEZ ville-gradignan POINT fr&#34;&#62;lamediathequemultimedia CHEZ ville-gradignan POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1057">
+  <title>Pau : Install party Linux et Jeux Libres, le jeudi 22 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1057</link>
+   <guid>1057@agendadulibre.org</guid>   <dc:date>2007-03-22T14:00+01:00</dc:date>
+   <description>
+Pau : Install party Linux et Jeux Libres
+
+Date et lieu
+Le jeudi 22 mars 2007, de 14h00 &#224; 22h00.
+&#192; Pau, Aquitaine
+
+Description
+Envie de d&#233;couvrir un syst&#232;me alternatif &#224; Windows, libre et gratuit? D&#233;j&#224; initi&#233; et envie de partager tes connaissances? Soit le bienvenu &#224; notre Install Party qui aura lieu le jeudi 22 mars &#224; partir de 14h dans le hall de Sciences de l'UPPA &#224; Pau.
+
+Les distributions mises &#224; l'honneur seront cette fois Mandriva One 2007, Ubuntu 6.10 Edgy Eft, Fedora Core 6, mais d'autres distributions seront &#233;galement disponibles.
+
+Au programme:
+
+ Installation de Linux
+ D&#233;couverte des jeux libres &#224; travers des ateliers, tels que Xmoto, Frozen Bubble 2, Battle for Wesnoth, et bien d'autres...
+ Initiation &#224; la musique libre grace &#224; Jamendo et &#224; la pr&#233;sence d'un groupe de musique adh&#233;rent: Anthares
+ Et pour finir une LAN party le soir... 
+
+
+Cette manifestation est organis&#233;e par un groupe d'&#233;tudiants, en partenariat avec PauLLA, Luztic, et tous les autres lugs d'Aquitaine.
+
+Informations
+Site Web: http://sciences.univ-pau.fr/IP
+Contact: alexfeugas CHEZ gmail POINT com
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Pau&#60;/i&#62; : Install party Linux et Jeux Libres&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le jeudi 22 mars 2007, de 14h00 &#224; 22h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Pau&#34;&#62;Pau&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+&#60;p&#62;Envie de d&#233;couvrir un syst&#232;me alternatif &#224; Windows, libre et gratuit? D&#233;j&#224; initi&#233; et envie de partager tes connaissances? Soit le bienvenu &#224; notre Install Party qui aura lieu le jeudi 22 mars &#224; partir de 14h dans le hall de Sciences de l'&#60;a href=&#34;www.univ-pau.fr&#34;&#62;UPPA&#60;/a&#62; &#224; Pau.&#60;/p&#62;
+
+&#60;p&#62;Les distributions mises &#224; l'honneur seront cette fois Mandriva One 2007, Ubuntu 6.10 Edgy Eft, Fedora Core 6, mais d'autres distributions seront &#233;galement disponibles.&#60;/p&#62;
+
+&#60;p&#62;Au programme:&#60;/p&#62;
+&#60;ul&#62;
+ &#60;li&#62;Installation de Linux&#60;/li&#62;
+ &#60;li&#62;D&#233;couverte des jeux libres &#224; travers des ateliers, tels que Xmoto, Frozen Bubble 2, Battle for Wesnoth, et bien d'autres...&#60;/li&#62;
+ &#60;li&#62;Initiation &#224; la musique libre grace &#224; Jamendo et &#224; la pr&#233;sence d'un groupe de musique adh&#233;rent: &#60;a href=&#34;http://www.antarhes.com&#34;&#62;Anthares&#60;/a&#62;
+ &#60;li&#62;Et pour finir une LAN party le soir... &#60;/li&#62;
+&#60;/ul&#62;
+
+&#60;p&#62;Cette manifestation est organis&#233;e par un groupe d'&#233;tudiants, en partenariat avec &#60;a href=&#34;http://www.paulla.asso.fr&#34;&#62;PauLLA&#60;/a&#62;, &#60;a href=&#34;www.luztic.org&#34;&#62;Luztic&#60;/a&#62;, et tous les autres lugs d'Aquitaine.&#60;/p&#62;
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://sciences.univ-pau.fr/IP&#34;&#62;http://sciences.univ-pau.fr/IP&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:alexfeugas CHEZ gmail POINT com&#34;&#62;alexfeugas CHEZ gmail POINT com&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1108">
+  <title>Gradignan : Atelier &#171; Photo Libre &#187;, le jeudi 22 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1108</link>
+   <guid>1108@agendadulibre.org</guid>   <dc:date>2007-03-22T14:00+01:00</dc:date>
+   <description>
+Gradignan : Atelier &#171; Photo Libre &#187;
+
+Date et lieu
+Le jeudi 22 mars 2007, de 14h00 &#224; 16h00.
+&#192; Gradignan, Aquitaine
+
+Description
+
+
+  &#192; l'occasion du Libre en
+  F&#234;te, la m&#233;diath&#232;que de la
+  ville de Gradignan (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.
+
+  Dans ce cadre, un atelier &#171; Photo Libre &#187; est organis&#233; le
+  jeudi 22 mars de 14h &#224; 16h. Des images sous licence libre. Prenez-en
+  plein les yeux ! Cet atelier a lieu sur inscription, 16 places sont
+  disponibles.
+
+  De plus, durant toute la semaine, l'exposition &#171; L'histoire
+  des logiciels libres &#187;, une remarquable r&#233;alisation de M&#233;dias-Cit&#233;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.
+
+  La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.
+
+
+ 
+
+Informations
+Site Web: http://scideralle.org/article.php3?id_article=269
+Contact: lamediathequemultimedia CHEZ ville-gradignan POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Gradignan&#60;/i&#62; : Atelier &#171; Photo Libre &#187;&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le jeudi 22 mars 2007, de 14h00 &#224; 16h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Gradignan&#34;&#62;Gradignan&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+
+
+  &#60;p&#62;&#192; l'occasion du &#60;a href=&#34;http://www.libre-en-fete.net&#34;&#62;Libre en
+  F&#234;te&#60;/a&#62;, la &#60;a
+  href=&#34;http://www.lamediathequedegradignan.fr/&#34;&#62;m&#233;diath&#232;que de la
+  ville de Gradignan&#60;/a&#62; (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.&#60;/p&#62;
+
+  &#60;p&#62;Dans ce cadre, un atelier &#60;i&#62;&#171; Photo Libre &#187;&#60;/i&#62; est organis&#233; le
+  jeudi 22 mars de 14h &#224; 16h. Des images sous licence libre. Prenez-en
+  plein les yeux ! Cet atelier a lieu sur inscription, 16 places sont
+  disponibles.&#60;/p&#62;
+
+  &#60;p&#62;De plus, durant toute la semaine, l'exposition &#60;i&#62;&#171; L'histoire
+  des logiciels libres &#187;&#60;/i&#62;, une remarquable r&#233;alisation de &#60;a
+  href=&#34;http://www.medias-cite.org/&#34;&#62;M&#233;dias-Cit&#233;&#60;/a&#62;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.&#60;/p&#62;
+
+  &#60;p&#62;La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.&#60;/p&#62;
+
+
+ 
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://scideralle.org/article.php3?id_article=269&#34;&#62;http://scideralle.org/article.php3?id_article=269&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:lamediathequemultimedia CHEZ ville-gradignan POINT fr&#34;&#62;lamediathequemultimedia CHEZ ville-gradignan POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1109">
+  <title>Gradignan : Atelier &#171; Litt&#233;rature Libre &#187;, le vendredi 23 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1109</link>
+   <guid>1109@agendadulibre.org</guid>   <dc:date>2007-03-23T14:00+01:00</dc:date>
+   <description>
+Gradignan : Atelier &#171; Litt&#233;rature Libre &#187;
+
+Date et lieu
+Le vendredi 23 mars 2007, de 14h00 &#224; 16h00.
+&#192; Gradignan, Aquitaine
+
+Description
+
+
+  &#192; l'occasion du Libre en
+  F&#234;te, la m&#233;diath&#232;que de la
+  ville de Gradignan (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.
+
+  Dans ce cadre, un atelier &#171; Litt&#233;rature Libre &#187; est
+  organis&#233; le vendredi 23 mars de 14h &#224; 16h. Une biblioth&#232;que en
+  ligne... et libre... Cet atelier a lieu sur inscription, 16 places
+  sont disponibles.
+
+  De plus, durant toute la semaine, l'exposition &#171; L'histoire
+  des logiciels libres &#187;, une remarquable r&#233;alisation de M&#233;dias-Cit&#233;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.
+
+  La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.
+
+
+ 
+
+Informations
+Site Web: http://scideralle.org/article.php3?id_article=269
+Contact: lamediathequemultimedia CHEZ ville-gradignan POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Gradignan&#60;/i&#62; : Atelier &#171; Litt&#233;rature Libre &#187;&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le vendredi 23 mars 2007, de 14h00 &#224; 16h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Gradignan&#34;&#62;Gradignan&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+
+
+  &#60;p&#62;&#192; l'occasion du &#60;a href=&#34;http://www.libre-en-fete.net&#34;&#62;Libre en
+  F&#234;te&#60;/a&#62;, la &#60;a
+  href=&#34;http://www.lamediathequedegradignan.fr/&#34;&#62;m&#233;diath&#232;que de la
+  ville de Gradignan&#60;/a&#62; (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.&#60;/p&#62;
+
+  &#60;p&#62;Dans ce cadre, un atelier &#60;i&#62;&#171; Litt&#233;rature Libre &#187;&#60;/i&#62; est
+  organis&#233; le vendredi 23 mars de 14h &#224; 16h. Une biblioth&#232;que en
+  ligne... et libre... Cet atelier a lieu sur inscription, 16 places
+  sont disponibles.&#60;/p&#62;
+
+  &#60;p&#62;De plus, durant toute la semaine, l'exposition &#60;i&#62;&#171; L'histoire
+  des logiciels libres &#187;&#60;/i&#62;, une remarquable r&#233;alisation de &#60;a
+  href=&#34;http://www.medias-cite.org/&#34;&#62;M&#233;dias-Cit&#233;&#60;/a&#62;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.&#60;/p&#62;
+
+  &#60;p&#62;La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.&#60;/p&#62;
+
+
+ 
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://scideralle.org/article.php3?id_article=269&#34;&#62;http://scideralle.org/article.php3?id_article=269&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:lamediathequemultimedia CHEZ ville-gradignan POINT fr&#34;&#62;lamediathequemultimedia CHEZ ville-gradignan POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1080">
+  <title>Langon : Libre en f&#234;te, le samedi 24 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1080</link>
+   <guid>1080@agendadulibre.org</guid>   <dc:date>2007-03-24T09:00+01:00</dc:date>
+   <description>
+Langon : Libre en f&#234;te
+
+Date et lieu
+Le samedi 24 mars 2007, de 09h00 &#224; 18h00.
+&#192; Langon, Aquitaine
+
+Description
+Cerell et le Club Informatique du Langonnais co-organisent, dans la cadre de Libre en F&#234;te et de la F&#234;te de l'Internet, une journ&#233;e de pr&#233;sentations des Logiciels Libres le samedi 24 mars.
+Destin&#233;e &#224; d&#233;couvrir les Logiciels Libres sous de multiples facettes, deux &#233;quipes associatives vous encadrent. Au programme :
+
+Les logiciels libres en entreprises et collectivit&#233;s locales
+
+Les gestionnaires de contenus : spip, dotclear
+Les r&#233;seaux d'entreprises enfin lib&#233;r&#233;s
+Les outils libre de gestion d'entreprises
+
+Les logiciels libres pour une pratique de la musique
+
+D&#233;couvrir les &#233;diteurs de partitions ; Lilypond, ABC
+Encoder un disque, r&#233;aliser des captures audio
+
+Les logiciels libres pour une utilisation quotidienne de l'informatique
+
+Naviguer sur internet ; lire ses courriels ; pratiquer la bureautique
+Pour les plus courageux pourquoi ne pas migrer &#224; Gnu/Linux :-)
+
+
+
+Pour ceux qui d&#233;sirent &#234;tre aid&#233;s &#224; installer Gnu Linux, venez avec votre PC et beaucoup de bonne volont&#233; ;-). Une collection de logiciels libres sera mis &#224; votre disposition, n'oubliez pas vos clefs USB et CDROM.
+
+L'&#233;v&#232;nement aura lieu au Club Informatique du Langonnais, 20 Rue Abel Gourgues 33210 Langon.
+
+Informations
+Site Web: http://www.cerell.fr/spip/spip.php?article17
+Contact: contact CHEZ cerell POINT fr
+Tags: club-informatique-du-langonnais, cerell, libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Langon&#60;/i&#62; : Libre en f&#234;te&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le samedi 24 mars 2007, de 09h00 &#224; 18h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Langon&#34;&#62;Langon&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+&#60;p&#62;&#60;a href=&#34;http://www.cerell.fr&#34;&#62;Cerell&#60;/a&#62; et le &#60;a href=&#34;http://www.cil-langon.net/&#34;&#62;Club Informatique du Langonnais&#60;/a&#62; co-organisent, dans la cadre de Libre en F&#234;te et de la F&#234;te de l'Internet, une journ&#233;e de pr&#233;sentations des Logiciels Libres le samedi 24 mars.&#60;/p&#62;
+&#60;p&#62;Destin&#233;e &#224; d&#233;couvrir les Logiciels Libres sous de multiples facettes, deux &#233;quipes associatives vous encadrent. Au programme :&#60;/p&#62;
+&#60;ul&#62;
+&#60;li&#62;Les logiciels libres en entreprises et collectivit&#233;s locales&#60;/li&#62;
+&#60;ul&#62;
+&#60;li&#62;Les gestionnaires de contenus : spip, dotclear&#60;/li&#62;
+&#60;li&#62;Les r&#233;seaux d'entreprises enfin lib&#233;r&#233;s&#60;/li&#62;
+&#60;li&#62;Les outils libre de gestion d'entreprises&#60;/li&#62;
+&#60;/ul&#62;
+&#60;li&#62;Les logiciels libres pour une pratique de la musique&#60;/li&#62;
+&#60;ul&#62;
+&#60;li&#62;D&#233;couvrir les &#233;diteurs de partitions ; Lilypond, ABC&#60;/li&#62;
+&#60;li&#62;Encoder un disque, r&#233;aliser des captures audio&#60;/li&#62;
+&#60;/ul&#62;
+&#60;li&#62;Les logiciels libres pour une utilisation quotidienne de l'informatique&#60;/li&#62;
+&#60;ul&#62;
+&#60;li&#62;Naviguer sur internet ; lire ses &#60;a href=&#34;http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique&#34;&#62;courriels&#60;/a&#62; ; pratiquer la bureautique&#60;/li&#62;
+&#60;li&#62;Pour les plus courageux pourquoi ne pas migrer &#224; Gnu/Linux :-)&#60;/li&#62;
+&#60;/ul&#62;
+&#60;/ul&#62;
+
+&#60;p&#62;Pour ceux qui d&#233;sirent &#234;tre aid&#233;s &#224; installer Gnu Linux, venez avec votre PC et beaucoup de bonne volont&#233; ;-). Une collection de logiciels libres sera mis &#224; votre disposition, n'oubliez pas vos clefs USB et CDROM.&#60;/p&#62;
+
+&#60;p&#62;L'&#233;v&#232;nement aura lieu au Club Informatique du Langonnais, 20 Rue Abel Gourgues 33210 Langon.&#60;/p&#62;
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://www.cerell.fr/spip/spip.php?article17&#34;&#62;http://www.cerell.fr/spip/spip.php?article17&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:contact CHEZ cerell POINT fr&#34;&#62;contact CHEZ cerell POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=club-informatique-du-langonnais&#34;&#62;club-informatique-du-langonnais&#60;/a&#62;, &#60;a href=&#34;listevents.php?tag=cerell&#34;&#62;cerell&#60;/a&#62;, &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1110">
+  <title>Gradignan : Atelier &#171; Les petits dessinent avec des outils libres &#187;, le samedi 24 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1110</link>
+   <guid>1110@agendadulibre.org</guid>   <dc:date>2007-03-24T10:00+01:00</dc:date>
+   <description>
+Gradignan : Atelier &#171; Les petits dessinent avec des outils libres &#187;
+
+Date et lieu
+Le samedi 24 mars 2007, de 10h00 &#224; 12h00.
+&#192; Gradignan, Aquitaine
+
+Description
+
+
+  &#192; l'occasion du Libre en
+  F&#234;te, la m&#233;diath&#232;que de la
+  ville de Gradignan (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.
+
+  Dans ce cadre, un atelier &#171; Les petits dessinent avec des outils
+  libres &#187; est organis&#233; le samedi 24 mars de 10h &#224; 12h. Une initiation
+  au dessin sur ordinateur avec des outils libres pour les enfants (3
+  ans et plus). Cet atelier a lieu sur inscription, 25 places sont
+  disponibles.
+
+  De plus, durant toute la semaine, l'exposition &#171; L'histoire
+  des logiciels libres &#187;, une remarquable r&#233;alisation de M&#233;dias-Cit&#233;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.
+
+  La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.
+
+
+ 
+
+Informations
+Site Web: http://scideralle.org/article.php3?id_article=269
+Contact: lamediathequemultimedia CHEZ ville-gradignan POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Gradignan&#60;/i&#62; : Atelier &#171; Les petits dessinent avec des outils libres &#187;&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le samedi 24 mars 2007, de 10h00 &#224; 12h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Gradignan&#34;&#62;Gradignan&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+
+
+  &#60;p&#62;&#192; l'occasion du &#60;a href=&#34;http://www.libre-en-fete.net&#34;&#62;Libre en
+  F&#234;te&#60;/a&#62;, la &#60;a
+  href=&#34;http://www.lamediathequedegradignan.fr/&#34;&#62;m&#233;diath&#232;que de la
+  ville de Gradignan&#60;/a&#62; (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.&#60;/p&#62;
+
+  &#60;p&#62;Dans ce cadre, un atelier &#171; Les petits dessinent avec des outils
+  libres &#187; est organis&#233; le samedi 24 mars de 10h &#224; 12h. Une initiation
+  au dessin sur ordinateur avec des outils libres pour les enfants (3
+  ans et plus). Cet atelier a lieu sur inscription, 25 places sont
+  disponibles.&#60;/p&#62;
+
+  &#60;p&#62;De plus, durant toute la semaine, l'exposition &#60;i&#62;&#171; L'histoire
+  des logiciels libres &#187;&#60;/i&#62;, une remarquable r&#233;alisation de &#60;a
+  href=&#34;http://www.medias-cite.org/&#34;&#62;M&#233;dias-Cit&#233;&#60;/a&#62;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.&#60;/p&#62;
+
+  &#60;p&#62;La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.&#60;/p&#62;
+
+
+ 
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://scideralle.org/article.php3?id_article=269&#34;&#62;http://scideralle.org/article.php3?id_article=269&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:lamediathequemultimedia CHEZ ville-gradignan POINT fr&#34;&#62;lamediathequemultimedia CHEZ ville-gradignan POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1048">
+  <title>Biscarrosse : D&#233;couverte Logiciels libres, le samedi 24 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1048</link>
+   <guid>1048@agendadulibre.org</guid>   <dc:date>2007-03-24T14:00+01:00</dc:date>
+   <description>
+Biscarrosse : D&#233;couverte Logiciels libres
+
+Date et lieu
+Le samedi 24 mars 2007, de 14h00 &#224; 18h00.
+&#192; Biscarrosse, Aquitaine
+
+Description
+Dans la cadre de Libre en F&#234;te, le club Allibis organise une initiation et une d&#233;couverte des logiciels libres pour un usage simplifi&#233; de l'informatique.
+Venez d&#233;couvrir et utiliser des logiciels pour la navigation internet, la bureautique, la retouche photo, le montage audio, la cr&#233;ation 3d...
+Toute une &#233;quipe de b&#233;n&#233;voles vous accueille pour vous renseigner et vous aider dans le choix de logiciels performants.
+Allibis vous aidera &#224; installer des programmes (gratuits dans la majorit&#233;) sur votre syst&#232;me actuel ou bien d'installer un syst&#232;me d'exploitation GNU/Linux (Mandriva, Ubuntu...). Ce sera pour vous l'occasion de repartir avec des logiciels (n'oubliez pas vos  CDS et vos cl&#233;s USB).
+Cet &#233;v&#232;nement aura lieu le samedi 24 mars, de 14h &#224; 18h, dans les locaux du Crabb, 21, avenue de Montbron &#224; Biscarosse.
+
+Informations
+Site Web: http://alibisca.free.fr
+Contact: alibisca CHEZ free POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Biscarrosse&#60;/i&#62; : D&#233;couverte Logiciels libres&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le samedi 24 mars 2007, de 14h00 &#224; 18h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Biscarrosse&#34;&#62;Biscarrosse&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+&#60;p&#62;Dans la cadre de Libre en F&#234;te, le club Allibis organise une initiation et une d&#233;couverte des logiciels libres pour un usage simplifi&#233; de l'informatique.&#60;/p&#62;
+&#60;p&#62;Venez d&#233;couvrir et utiliser des logiciels pour la navigation internet, la bureautique, la retouche photo, le montage audio, la cr&#233;ation 3d...
+Toute une &#233;quipe de b&#233;n&#233;voles vous accueille pour vous renseigner et vous aider dans le choix de logiciels performants.&#60;/p&#62;
+&#60;p&#62;Allibis vous aidera &#224; installer des programmes (gratuits dans la majorit&#233;) sur votre syst&#232;me actuel ou bien d'installer un syst&#232;me d'exploitation GNU/Linux (Mandriva, Ubuntu...). Ce sera pour vous l'occasion de repartir avec des logiciels (n'oubliez pas vos  CDS et vos cl&#233;s USB).&#60;/p&#62;
+&#60;p&#62;Cet &#233;v&#232;nement aura lieu le samedi 24 mars, de 14h &#224; 18h, dans les locaux du Crabb, 21, avenue de Montbron &#224; Biscarosse.&#60;/p&#62;
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://alibisca.free.fr&#34;&#62;http://alibisca.free.fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:alibisca CHEZ free POINT fr&#34;&#62;alibisca CHEZ free POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1111">
+  <title>Gradignan : Conf&#233;rence Logiciels Libres et atelier pratique, le samedi 24 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1111</link>
+   <guid>1111@agendadulibre.org</guid>   <dc:date>2007-03-24T15:00+01:00</dc:date>
+   <description>
+Gradignan : Conf&#233;rence Logiciels Libres et atelier pratique
+
+Date et lieu
+Le samedi 24 mars 2007, de 15h00 &#224; 18h00.
+&#192; Gradignan, Aquitaine
+
+Description
+
+
+  &#192; l'occasion du Libre en
+  F&#234;te, la m&#233;diath&#232;que de la
+  ville de Gradignan (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.
+
+  Dans ce cadre, une conf&#233;rence sur le th&#232;me &#171; Les logiciels
+  libres : une autre philosophie &#187; sera propos&#233;e &#224; 15h en
+  coop&#233;ration avec l'association Scideralle.
+
+  La conf&#233;rence sera suivie d'un atelier pratique samedi apr&#232;s-midi
+  anim&#233; par Scideralle et l'ABUL concernant l'usage des logiciels
+  libres multiplates-formes les plus couramment utilis&#233;s, et plus
+  particuli&#232;rement sur l'utilisation d'OpenOffice.org, suite
+  bureautique libre .
+
+  De plus, durant toute la semaine, l'exposition &#171; L'histoire
+  des logiciels libres &#187;, une remarquable r&#233;alisation de M&#233;dias-Cit&#233;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.
+
+  La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.
+
+
+ 
+
+Informations
+Site Web: http://scideralle.org/article.php3?id_article=269
+Contact: lamediathequemultimedia CHEZ ville-gradignan POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Gradignan&#60;/i&#62; : Conf&#233;rence Logiciels Libres et atelier pratique&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le samedi 24 mars 2007, de 15h00 &#224; 18h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Gradignan&#34;&#62;Gradignan&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+
+
+  &#60;p&#62;&#192; l'occasion du &#60;a href=&#34;http://www.libre-en-fete.net&#34;&#62;Libre en
+  F&#234;te&#60;/a&#62;, la &#60;a
+  href=&#34;http://www.lamediathequedegradignan.fr/&#34;&#62;m&#233;diath&#232;que de la
+  ville de Gradignan&#60;/a&#62; (Gironde), organise une semaine autour de
+  d&#233;couverte du monde du Libre: exposition, ateliers pratiques,
+  conf&#233;rences, du 17 au 24 mars.&#60;/p&#62;
+
+  &#60;p&#62;Dans ce cadre, une conf&#233;rence sur le th&#232;me &#60;b&#62;&#171; Les logiciels
+  libres : une autre philosophie &#187;&#60;/b&#62; sera propos&#233;e &#224; 15h en
+  coop&#233;ration avec l'association &#60;a
+  href=&#34;http://scideralle.org/&#34;&#62;Scideralle&#60;/a&#62;.&#60;/p&#62;
+
+  &#60;p&#62;La conf&#233;rence sera suivie d'un atelier pratique samedi apr&#232;s-midi
+  anim&#233; par &#60;a href=&#34;http://www.scideralle.org&#34;&#62;Scideralle&#60;/a&#62; et l'&#60;a
+  href=&#34;http://www.abul.org&#34;&#62;ABUL&#60;/a&#62; concernant l'usage des logiciels
+  libres multiplates-formes les plus couramment utilis&#233;s, et plus
+  particuli&#232;rement sur l'utilisation d'&#60;a
+  href=&#34;http://fr.openoffice.org&#34;&#62;OpenOffice.org&#60;/a&#62;, suite
+  bureautique libre .&#60;/p&#62;
+
+  &#60;p&#62;De plus, durant toute la semaine, l'exposition &#60;i&#62;&#171; L'histoire
+  des logiciels libres &#187;&#60;/i&#62;, une remarquable r&#233;alisation de &#60;a
+  href=&#34;http://www.medias-cite.org/&#34;&#62;M&#233;dias-Cit&#233;&#60;/a&#62;, sera accessible
+  en permanence &#224; la m&#233;diath&#232;que.&#60;/p&#62;
+
+  &#60;p&#62;La m&#233;diath&#232;que est situ&#233;e 32, route de L&#233;ognan &#224; Gradignan.&#60;/p&#62;
+
+
+ 
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://scideralle.org/article.php3?id_article=269&#34;&#62;http://scideralle.org/article.php3?id_article=269&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:lamediathequemultimedia CHEZ ville-gradignan POINT fr&#34;&#62;lamediathequemultimedia CHEZ ville-gradignan POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+  <item rdf:about="http://www.agendadulibre.org/showevent.php?id=1144">
+  <title>Anglet : Journ&#233;e e-education Pyr&#233;n&#233;es Atlantiques, le mercredi 28 mars 2007</title>
+   <link>http://www.agendadulibre.org/showevent.php?id=1144</link>
+   <guid>1144@agendadulibre.org</guid>   <dc:date>2007-03-28T09:00+02:00</dc:date>
+   <description>
+Anglet : Journ&#233;e e-education Pyr&#233;n&#233;es Atlantiques
+
+Date et lieu
+Le mercredi 28 mars 2007, de 09h00 &#224; 18h00.
+&#192; Anglet, Aquitaine
+
+Description
+La journ&#233;e e-education64 2007 avec le soutien du Conseil G&#233;n&#233;ral des Pyr&#233;n&#233;es-Atlantiques et du Rectorat de l’acad&#233;mie de Bordeaux rassemble des acteurs de l’&#233;ducation en &#233;cole et coll&#232;ge (enseignants, parents d’&#233;l&#232;ves) int&#233;ress&#233;s par les usages des technologies de l’information et de la communication pour l’enseignement (TICE) pour pr&#233;senter les nouveaux usages et outils mettant &#224; profit les nouveaux environnements de travail, qui tirent parti du r&#233;seau haut-d&#233;bit. L’acc&#232;s est gratuit. 
+
+Divers usages p&#233;dagogiques utilisant les logiciels libres sont pr&#233;sent&#233;s par des enseignants. De nombreuses solutions et ressources libres y seront pr&#233;sent&#233;es par des associations du Libre comme Scideralle, Euskalug, Ofset, S&#233;samath... 
+
+On pourra y d&#233;couvrir des usages d'Abul&#201;du, Audacity, Iconito, Ilias, Gimp, OpenOffice.org, Squeak, Wikip&#233;dia... et on y parlera anglais, basque, espagnol, fran&#231;ais, latin et occitan ! 
+
+Programme et inscription.
+
+Informations
+Site Web: http://scideralle.org/article.php3?id_article=259
+Contact: benoit POINT lacherez CHEZ numerique64 POINT fr
+Tags: libre-en-fete-2007   </description>
+   <content:encoded>
+&#60;h2&#62;&#60;i&#62;Anglet&#60;/i&#62; : Journ&#233;e e-education Pyr&#233;n&#233;es Atlantiques&#60;/h2&#62;
+
+&#60;h3&#62;Date et lieu&#60;/h3&#62;
+&#60;p&#62;Le mercredi 28 mars 2007, de 09h00 &#224; 18h00.&#60;/p&#62;
+&#60;p&#62;&#192; &#60;i&#62;&#60;a href=&#34;http://fr.wikipedia.org/wiki/Anglet&#34;&#62;Anglet&#60;/a&#62;&#60;/i&#62;, &#60;a href=&#34;http://fr.wikipedia.org/wiki/Aquitaine&#34;&#62;Aquitaine&#60;/a&#62;&#60;/p&#62;
+
+&#60;h3&#62;Description&#60;/h3&#62;
+&#60;p&#62;La &#60;a href=&#34;http://www.28mars.org/&#34;&#62;journ&#233;e e-education64 2007&#60;/a&#62; avec le soutien du Conseil G&#233;n&#233;ral des Pyr&#233;n&#233;es-Atlantiques et du Rectorat de l’acad&#233;mie de Bordeaux rassemble des acteurs de l’&#233;ducation en &#233;cole et coll&#232;ge (enseignants, parents d’&#233;l&#232;ves) int&#233;ress&#233;s par les usages des technologies de l’information et de la communication pour l’enseignement (TICE) pour pr&#233;senter les nouveaux usages et outils mettant &#224; profit les nouveaux environnements de travail, qui tirent parti du r&#233;seau haut-d&#233;bit. L’acc&#232;s est gratuit. &#60;/p&#62;
+
+&#60;p&#62;Divers usages p&#233;dagogiques utilisant les logiciels libres sont pr&#233;sent&#233;s par des enseignants. De nombreuses solutions et ressources libres y seront pr&#233;sent&#233;es par des associations du Libre comme &#60;a href=&#34;http://scideralle.org&#34;&#62;Scideralle&#60;/a&#62;, &#60;a href=&#34;http://euskalug.org&#34;&#62;Euskalug&#60;/a&#62;, &#60;a href=&#34;http://www.ofset.org&#34;&#62;Ofset&#60;/a&#62;, &#60;a href=&#34;http://sesamath.net&#34;&#62;S&#233;samath&#60;/a&#62;... &#60;/p&#62;
+
+&#60;p&#62;On pourra y d&#233;couvrir des usages d'Abul&#201;du, Audacity, Iconito, Ilias, Gimp, OpenOffice.org, Squeak, Wikip&#233;dia... et on y parlera anglais, basque, espagnol, fran&#231;ais, latin et occitan ! &#60;/p&#62;
+
+&#60;p&#62;&#60;a href=&#34;http://www.28mars.org/programme/fr&#34;&#62;Programme et inscription&#60;/a&#62;.&#60;/p&#62;
+
+&#60;h3&#62;Informations&#60;/h3&#62;
+&#60;p&#62;Site Web: &#60;a href=&#34;http://scideralle.org/article.php3?id_article=259&#34;&#62;http://scideralle.org/article.php3?id_article=259&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Contact: &#60;a href=&#34;mailto:benoit POINT lacherez CHEZ numerique64 POINT fr&#34;&#62;benoit POINT lacherez CHEZ numerique64 POINT fr&#60;/a&#62;&#60;/p&#62;
+&#60;p&#62;Tags: &#60;a href=&#34;listevents.php?tag=libre-en-fete-2007&#34;&#62;libre-en-fete-2007&#60;/a&#62;&#60;/p&#62;   </content:encoded>
+  </item>
+
+</rdf:RDF>

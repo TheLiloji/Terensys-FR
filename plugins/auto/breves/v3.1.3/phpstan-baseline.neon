@@ -1,0 +1,357 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 2
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 1
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function autoriser not found\\.$#"
+			count: 2
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function calculer_rubriques_if not found\\.$#"
+			count: 1
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 2
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function collecter_requests not found\\.$#"
+			count: 2
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 5
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function objet_info not found\\.$#"
+			count: 1
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function objet_modifier_champs not found\\.$#"
+			count: 1
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function pipeline not found\\.$#"
+			count: 4
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function sql_fetsel not found\\.$#"
+			count: 2
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function sql_getfetsel not found\\.$#"
+			count: 3
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function sql_insertq not found\\.$#"
+			count: 1
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function sql_updateq not found\\.$#"
+			count: 1
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function suivre_invalideur not found\\.$#"
+			count: 1
+			path: action/editer_breve.php
+
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 1
+			path: breves_administrations.php
+
+		-
+			message: "#^Function ecrire_meta not found\\.$#"
+			count: 1
+			path: breves_administrations.php
+
+		-
+			message: "#^Function effacer_meta not found\\.$#"
+			count: 2
+			path: breves_administrations.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: breves_administrations.php
+
+		-
+			message: "#^Function maj_plugin not found\\.$#"
+			count: 1
+			path: breves_administrations.php
+
+		-
+			message: "#^Function sql_drop_table not found\\.$#"
+			count: 1
+			path: breves_administrations.php
+
+		-
+			message: "#^Function autoriser not found\\.$#"
+			count: 3
+			path: breves_autoriser.php
+
+		-
+			message: "#^Function sql_countsel not found\\.$#"
+			count: 1
+			path: breves_autoriser.php
+
+		-
+			message: "#^Function sql_fetsel not found\\.$#"
+			count: 2
+			path: breves_autoriser.php
+
+		-
+			message: "#^Function verifier_table_non_vide not found\\.$#"
+			count: 1
+			path: breves_autoriser.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 1
+			path: breves_ieconfig.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 7
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function afficher_plus_info not found\\.$#"
+			count: 2
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function autoriser not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function charger_fonction not found\\.$#"
+			count: 3
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function generer_url_ecrire not found\\.$#"
+			count: 3
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function icone_verticale not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function optimiser_sansref not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function recuperer_fond not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function singulier_ou_pluriel not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_allfetsel not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_countsel not found\\.$#"
+			count: 3
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_delete not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_fetch not found\\.$#"
+			count: 4
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_getfetsel not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_in not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_quote not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_select not found\\.$#"
+			count: 5
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function sql_updateq not found\\.$#"
+			count: 2
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function trouver_objet_exec not found\\.$#"
+			count: 1
+			path: breves_pipelines.php
+
+		-
+			message: "#^Function _T not found\\.$#"
+			count: 1
+			path: formulaires/configurer_breves.php
+
+		-
+			message: "#^Function _request not found\\.$#"
+			count: 1
+			path: formulaires/configurer_breves.php
+
+		-
+			message: "#^Function ecrire_meta not found\\.$#"
+			count: 1
+			path: formulaires/configurer_breves.php
+
+		-
+			message: "#^Function autoriser not found\\.$#"
+			count: 1
+			path: formulaires/editer_breve.php
+
+		-
+			message: "#^Function formulaires_editer_objet_charger not found\\.$#"
+			count: 1
+			path: formulaires/editer_breve.php
+
+		-
+			message: "#^Function formulaires_editer_objet_traiter not found\\.$#"
+			count: 1
+			path: formulaires/editer_breve.php
+
+		-
+			message: "#^Function formulaires_editer_objet_verifier not found\\.$#"
+			count: 1
+			path: formulaires/editer_breve.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 2
+			path: formulaires/editer_breve.php
+
+		-
+			message: "#^Function sql_getfetsel not found\\.$#"
+			count: 1
+			path: formulaires/editer_breve.php
+
+		-
+			message: "#^Function titre_automatique not found\\.$#"
+			count: 1
+			path: formulaires/editer_breve.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 1
+			path: tests/unit/abstract_sql/99_sql_types_tables_id.php
+
+		-
+			message: "#^Function tester_fun not found\\.$#"
+			count: 1
+			path: tests/unit/abstract_sql/99_sql_types_tables_id.php
+
+		-
+			message: "#^Function find_in_path not found\\.$#"
+			count: 1
+			path: tests/unit/connect_sql/id_table_objet.php
+
+		-
+			message: "#^Function tester_fun not found\\.$#"
+			count: 1
+			path: tests/unit/connect_sql/id_table_objet.php
+
+		-
+			message: "#^Function find_in_path not found\\.$#"
+			count: 1
+			path: tests/unit/connect_sql/objet_type.php
+
+		-
+			message: "#^Function tester_fun not found\\.$#"
+			count: 1
+			path: tests/unit/connect_sql/objet_type.php
+
+		-
+			message: "#^Function find_in_path not found\\.$#"
+			count: 1
+			path: tests/unit/connect_sql/table_objet.php
+
+		-
+			message: "#^Function tester_fun not found\\.$#"
+			count: 1
+			path: tests/unit/connect_sql/table_objet.php
+
+		-
+			message: "#^Function find_in_path not found\\.$#"
+			count: 1
+			path: tests/unit/connect_sql/table_objet_sql.php
+
+		-
+			message: "#^Function tester_fun not found\\.$#"
+			count: 1
+			path: tests/unit/connect_sql/table_objet_sql.php
+
+		-
+			message: "#^Function PtoBR not found\\.$#"
+			count: 1
+			path: tests/unit/propre/liens_classes.php
+
+		-
+			message: "#^Function extraire_attribut not found\\.$#"
+			count: 1
+			path: tests/unit/propre/liens_classes.php
+
+		-
+			message: "#^Function include_spip not found\\.$#"
+			count: 2
+			path: tests/unit/propre/liens_classes.php
+
+		-
+			message: "#^Function propre not found\\.$#"
+			count: 2
+			path: tests/unit/propre/liens_classes.php
+
+		-
+			message: "#^Function sql_getfetsel not found\\.$#"
+			count: 1
+			path: tests/unit/propre/liens_classes.php
+

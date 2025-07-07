@@ -1,0 +1,35 @@
+{
+    "name": "spip/compresseur",
+    "description": "Compression des css et javascript",
+    "license": "GPL-3.0-or-later",
+    "type": "spip-plugin",
+    "authors": [
+        {
+            "name": "Collectif SPIP",
+            "homepage": "https://discuter.spip.net/c/spip-dev/5",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "spip-league/kernel": "^1.x-dev",
+        "spip/coding-standards": "^1.2"
+    },
+    "repositories": {
+        "spip": {
+            "type": "composer",
+            "url": "https://get.spip.net/composer"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "7.4.33"
+        }
+    }
+}

@@ -1,0 +1,82 @@
+
+<input type="hidden" name="_todo" class='hidden' value="[(#ENV{_todo})]" />
+
+<B_erreurs>
+	<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">
+<BOUCLE_erreurs(DATA){source table, #ENV*{erreurs/decideur_erreurs}}>
+		&bull;&nbsp;#VALEUR<br />
+</BOUCLE_erreurs>
+	</div>
+</B_erreurs>
+
+<B_demandes>
+<div id="charger_plugin_confirm_boutons_hidden"
+     style="position: absolute;left:-5000px;left:-200vw;width:1px;height1px;overflow: hidden">
+	<input type="submit" name="annuler_actions" class="btn submit annuler_actions" value="<:bouton_annuler:>" />
+	<input type="submit" name="valider_actions" class="btn submit valider_actions" value="<:bouton_valider:>" />
+</div>
+
+<div id="charger_plugin_confirm">
+	[<div class="reponse_formulaire notice">
+		(#ENV*{_notices/decideur_warning})
+	</div>]
+
+	<div class="reponse_formulaire reponse_formulaire_ok" role="status">
+		<strong><:svp:actions_demandees:></strong>
+		<ul>
+			<BOUCLE_demandes(DATA){source table, #ENV*{_libelles_actions/decideur_demandes}}>
+				<li>#VALEUR</li>
+			</BOUCLE_demandes>
+		</ul>
+	</div>
+	<B_propositions>
+		<div class="reponse_formulaire reponse_formulaire_ok" role="status">
+			<strong><:svp:actions_necessaires:></strong>
+			<ul>
+				<BOUCLE_propositions(DATA){source table, #ENV*{_libelles_actions/decideur_propositions}}>
+					<li>#VALEUR</li>
+				</BOUCLE_propositions>
+			</ul>
+		</div>
+	</B_propositions>
+	<p class="boutons">
+		<input type="submit" name="annuler_actions" class="btn submit annuler_actions" value="<:bouton_annuler:>" />
+		<input type="submit" name="valider_actions" class="btn submit valider_actions" value="<:bouton_valider:>" />
+	</p>
+	<script>
+		/*[(#REM)
+			Fonctionnement du JS.
+				- overlayClose // pas de click en dehors des éléments prévus
+
+				- onComplete   // le chargement et fait : si l'on clique les boutons du formulaire
+							   // mis dans la modale, on leur ajoute une classe 'fire'
+							   // et on lance la fermeture de la boite
+
+				- onClose	   // apres la fermeture, on clique le bouton ayant 'fire'
+
+		]*/
+		(function($){
+			$(function(){
+				if ($.modalbox !== 'undefined') {
+					$.modalboxload('#charger_plugin_confirm', {
+						overlayClose: false, // pas de click en dehors
+						onShow: function() {
+							$('.box_mediabox .boutons .submit').click(function(){
+								$(this).addClass('fire'); $.mediaboxClose();
+							});
+						},
+						onClose: function() {
+							var $action = $('#charger_plugin_confirm .submit.fire');
+							if (!$action.length) {
+								$action = $('#charger_plugin_confirm .boutons .submit.annuler_actions');
+							}
+							var name = $action.attr('name');
+							jQuery('#charger_plugin_confirm_boutons_hidden').find('input\[name='+name+'\]').click();
+						}
+					});
+				}
+			});
+		})(jQuery);
+	</script>
+</div>
+</B_demandes>

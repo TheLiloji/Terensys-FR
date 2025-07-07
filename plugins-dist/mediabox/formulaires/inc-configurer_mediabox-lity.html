@@ -1,0 +1,51 @@
+<div class="editer-groupe">
+	#SET{name,lity/skin}#SET{obli,''}#SET{defaut,_simple-dark}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+	[<div class="editer editer_skin editer_lity_skin[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+		<label><:mediabox:label_skin:></label>
+		(#VAL{lity}|mediabox_lister_skins|mediabox_presenter_selection_skins{#ENV{lity/skin,#GET{defaut}},'lity\[skin\]'})
+	</div>]
+	#SET{name,lity/minWidth}#SET{obli,''}#SET{defaut,400px}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+	<div class="editer editer_lity_minWidth[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+		<label for='lity_minWidth'><:mediabox:label_minwidth:></label>
+		<input type="text" name="lity[minWidth]" class="text" id="lity_minWidth" size="10" value="#ENV{#GET{name},#GET{defaut}}" />
+	</div>
+	#SET{name,lity/maxWidth}#SET{obli,''}#SET{defaut,90%}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+	<div class="editer editer_lity_maxWidth[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+		<label for='lity_maxWidth'><:mediabox:label_maxwidth:></label>
+		<input type="text" name="lity[maxWidth]" class="text" id="lity_maxWidth" size="10" value="#ENV{#GET{name},#GET{defaut}}" />
+	</div>
+	#SET{name,lity/minHeight}#SET{obli,''}#SET{defaut,''}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+	<div class="editer editer_lity_minHeight[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+		<label for='lity_minHeight'><:mediabox:label_minheight:></label>
+		<input type="text" name="lity[minHeight]" class="text" id="lity_minHeight" size="10" value="#ENV{#GET{name},#GET{defaut}}" />
+	</div>
+	#SET{name,lity/maxHeight}#SET{obli,''}#SET{defaut,90%}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+	<div class="editer editer_lity_maxHeight[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+		<label for='lity_maxHeight'><:mediabox:label_maxheight:></label>
+		<input type="text" name="lity[maxHeight]" class="text" id="lity_maxHeight" size="10" value="#ENV{#GET{name},#GET{defaut}}" />
+	</div>
+	#SET{name,lity/slideshow_speed}#SET{obli,''}#SET{defaut,2500}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+	<div class="editer editer_lity_slideshow_speed[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+		<label for='lity_slideshow_speed'><:mediabox:label_slideshow_speed:></label>
+		<input type="text" name="lity[slideshow_speed]" class="text" id="lity_slideshow_speed" size="10" value="#ENV{#GET{name},#GET{defaut}}" />
+	</div>
+	#SET{name,lity/opacite}#SET{obli,''}#SET{defaut,0.9}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+	<div class="editer editer_lity_opacite[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+		<label for='lity_opacite'><:mediabox:label_opacite:></label>
+		<input type="text" name="lity[opacite]" class="text" id="lity_opacite" size="10" value="#ENV{#GET{name},#GET{defaut}}" />
+	</div>
+	#SET{name,lity/defaultCaptionState}#SET{obli,''}#SET{defaut,expanded}#SET{erreurs, #ENV*{erreurs/#GET{name}}}
+	<div class="editer editer_lity_defaultCaptionState[ (#GET{obli})][ (#GET{erreurs}|oui)erreur]">
+		<label><:mediabox:label_defaultcaptionstate:></label>
+		<div class="choix">
+			<span class="choix">
+				<input type="radio" name="lity[defaultCaptionState]" class="radio" id="lity_defaultCaptionState_expanded" value="expanded" [(#ENV{#GET{name},#GET{defaut}}|=={min}|non) checked="checked"] />
+				<label for='lity_defaultCaptionState_expanded'><:mediabox:label_defaultcaptionstate_expanded:></label>
+			</span>
+			<span class="choix">
+				<input type="radio" name="lity[defaultCaptionState]" class="radio" id="lity_defaultCaptionState_min" value="min" [(#ENV{#GET{name},#GET{defaut}}|=={min}|oui) checked="checked"] />
+				<label for='lity_defaultCaptionState_min'><:mediabox:label_defaultcaptionstate_min:></label>
+			</span>
+		</div>
+	</div>
+</div>

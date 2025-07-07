@@ -1,0 +1,40 @@
+<BOUCLE_file (DOCUMENTS) {id_document=#ENV{id,#ENV{id_document}}} {tout}>
+[(#MEDIA|=={image}|oui)
+	#SET{fichier,#URL_DOCUMENT_FICHIER}
+	#SET{width,#LARGEUR}
+	#SET{height,#HAUTEUR}
+	#SET{url,#ENV{lien}}
+][(#MEDIA|=={image}|non)
+	#SET{image,#LOGO_DOCUMENT}
+	[(#SET{fichier,[(#GET{image}|extraire_attribut{src})]})]
+	[(#SET{width,[(#GET{image}|extraire_attribut{width})]})]
+	[(#SET{height,[(#GET{image}|extraire_attribut{height})]})]
+	#SET{url,#ENV{lien,#URL_DOCUMENT}}
+][<!--(#REM)
+
+
+	Si largeur ou hauteur fournit en parametre, redimensionner
+
+-->][
+(#ENV{largeur,0}|ou{#ENV{hauteur,0}})
+	#SET{fichier,#GET{fichier}|image_reduire{#ENV{largeur,0},#ENV{hauteur,0}}}
+	#SET{width,#GET{fichier}|largeur}
+	#SET{height,#GET{fichier}|hauteur}
+	#SET{fichier,#GET{fichier}|extraire_attribut{src}}
+]
+[(#SET{title,[(#TYPE_DOCUMENT) - [(#TAILLE|taille_en_octets)]]})]
+[(#SET{legende,#INCLURE{fond=modeles/document_legende, env}|trim})]
+[(#MEDIA|=={image}|oui) #SET{title,#TITRE|sinon{#GET{title}}}]
+<div
+  class="[(#ID_DOCUMENT|medias_modele_document_standard_classes{file}) ]spip_lien_ok"[
+  (#ID_DOCUMENT|medias_modele_document_standard_attributs{file})
+]>
+<figure class="spip_doc_inner">
+[<a href="(#GET{url}|attribut_url)"[
+	class="(#ENV{lien_class}|concat{' spip_doc_lien'}|attribut_html)"] title='[(#GET{title}|attribut_html)]'[
+	(#ENV{lien}|?{'',type="#MIME_TYPE"})]>]<img src='[(#GET{fichier}|attribut_url)]' width='[(#GET{width}|attribut_html)]' height='[(#GET{height}|attribut_html)]' alt='' />[(#GET{url}|?{</a>})]
+#GET{legende}
+</figure>
+</div>
+</BOUCLE_file>
+#FILTRE{trim}

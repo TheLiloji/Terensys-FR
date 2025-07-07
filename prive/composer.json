@@ -1,0 +1,15 @@
+{
+    "name": "spip/prive",
+    "description": "Squelettes de l'espace privé",
+    "license": "GPL-3.0-only",
+    "type": "spip-prive",
+    "require-dev": {
+        "spip-league/kernel": "^1.x-dev"
+    },
+    "repositories": {
+        "spip": {
+            "type": "composer",
+            "url": "https://get.spip.net/composer"
+        }
+    }
+}

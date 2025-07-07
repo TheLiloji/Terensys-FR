@@ -1,0 +1,31 @@
+<paquet
+	prefix="mediabox"
+	categorie="multimedia"
+	version="3.1.9"
+	etat="stable"
+	compatibilite="[4.2.0;4.*]"
+	logo="prive/themes/spip/images/mediabox-xx.svg"
+	documentation="https://contrib.spip.net/MediaBox"
+>
+
+	<nom>MediaBox</nom>
+	<!-- Boîte multimédia -->
+
+	<credit lien="https://sorgalla.com/lity/">Lity</credit>
+	<credit lien="http://www.freepik.com/">Icon made by Freepik www.flaticon.com</credit>
+
+	<auteur>Collectif SPIP</auteur>
+
+	<traduire module="mediabox" reference="fr" gestionnaire="salvatore" />
+
+	<pipeline nom="insert_head_css" inclure="mediabox_pipelines.php" />
+	<pipeline nom="header_prive_css" action="insert_head_css" inclure="mediabox_pipelines.php" />
+	<pipeline nom="insert_head" inclure="mediabox_pipelines.php" />
+	<pipeline nom="jquery_plugins" inclure="mediabox_pipelines.php" />
+	<pipeline nom="header_prive" action="insert_head" inclure="mediabox_pipelines.php" />
+	<pipeline nom="ieconfig_metas" inclure="mediabox_ieconfig.php" />
+
+	<pipeline nom="mediabox_config" action="" />
+
+	<menu nom="mediabox" titre="mediabox:titre_menu_box" parent="menu_squelette" icone="images/mediabox-xx.svg" action="configurer_mediabox" />
+</paquet>

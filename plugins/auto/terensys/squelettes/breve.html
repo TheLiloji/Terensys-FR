@@ -1,0 +1,54 @@
+<BOUCLE_principale(BREVES) {id_breve}>
+<!DOCTYPE html>
+<html dir="#LANG_DIR" lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js">
+<head>
+	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Terensys - [(#TITRE|couper{20}|textebrut)...]</title>
+        <INCLURE{fond=inclure/head}/>
+        [<link rel="stylesheet" href="(#CHEMIN{assets/css/rubrique.css}|direction_css|timestamp)" type="text/css" />]
+</head>
+<body>
+    <header>
+        <INCLURE{fond=inclure/nav,env} />
+    </header>
+	
+	<main id="main">
+        <div class="rubrique-container">
+            <div class="main-container">
+                <div class="description">
+                    <div class="title-container">
+                        <h2>#TITRE</h2>
+                        <div class="tree">
+                            <a href="#URL_SITE_SPIP/"><:accueil_site:></a> 
+                            <BOUCLE_ariane(RUBRIQUES){id_rubrique}> 
+                                <p>></p>
+                                <p>[(#TITRE|couper{80})]</p>
+                            </BOUCLE_ariane> 
+                            <p>></p>
+                            <p>[(#TITRE|couper{80})]</p>
+                        </div>
+                    </div>
+        
+                    [(#TEXTE|oui)
+                        <div class="text-container">
+                            #TEXTE
+                        </div>
+                    ]
+                </div>
+            </div>
+
+            <div class="spacer"></div>
+        </div> 
+	</main>
+
+	<footer>
+        <INCLURE{fond=inclure/footer} />
+    </footer>
+
+    <!-- <div class="blurry-circle-1"></div>
+    <div class="blurry-circle-2"></div>
+    <div class="blurry-circle-3"></div> -->
+</body>
+</html>
+</BOUCLE_principale>

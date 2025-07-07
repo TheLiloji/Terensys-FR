@@ -1,0 +1,138 @@
+:root {
+	--compagnon-picto-size: 2.5em;
+	--compagnon-border-radius: calc(var(--spip-border-radius) * 2);
+	--compagnon-border-width: 2px;
+	--compagnon-icon-spacing-x: 1em;
+}
+
+@media (min-width: 768px) {
+	:root {
+		--compagnon-picto-size: 4em;
+	}
+}
+.lat {
+	--compagnon-picto-size: 2.5em;
+}
+
+/**
+ * ===============
+ * Boîte compagnon
+ * ===============
+ */
+.box.compagnon {
+	border: var(--compagnon-border-width) solid var(--spip-color-theme);
+	border-radius: var(--compagnon-border-radius);
+	color: var(--spip-color-gray-darker);
+	background-color: var(--spip-color-theme-lightest);
+	overflow: hidden;
+}
+
+/* Picto */
+.box.compagnon .picto-compagnon {
+	position: absolute;
+	top: calc(var(--compagnon-picto-size) * 0.15 * -1);
+	inset-inline-start: calc(var(--compagnon-picto-size) * 0.15 * -1);
+	width: var(--compagnon-picto-size);
+	height: auto;
+}
+.rtl .box.compagnon .picto-compagnon {
+	transform: rotate(45deg);
+}
+
+.picto-compagnon .fond {
+	fill: var(--spip-color-theme-light);
+}
+.picto-compagnon .visage {
+	fill: var(--spip-color-theme-lightest);
+}
+.picto-compagnon .visage-trait {
+	fill: var(--spip-color-theme);
+}
+.picto-compagnon .ombre {
+	fill: hsl(var(--spip-color-theme--h),var(--spip-color-theme--s), 70%);
+}
+
+/* Header, body, footer */
+.box.compagnon .box__header,
+.box.compagnon .box__body {
+	padding-inline-start: calc(var(--compagnon-picto-size) + 0.5em);
+}
+.box.compagnon .box__header {
+	min-height: 2.5em;
+	padding-bottom: calc(var(--spip-box-spacing-y) / 2);
+	color: var(--spip-color-theme-dark);
+	border: 0;
+}
+.box.compagnon .box__body {
+	padding-top: calc(var(--spip-box-spacing-y) / 2);
+}
+.box.compagnon .box__footer {
+	background-color: transparent;
+	border-top: none;
+	padding: 0;
+}
+
+/* Bouton */
+.box.compagnon .box__header .bouton_action_post {
+	float: inline-end;
+}
+.box.compagnon .box__header button.submit {
+	opacity: .5;
+	margin-inline-end: calc(-1 * var(--spip-box-spacing-x));
+	margin-top: calc(-1 * var(--spip-box-spacing-y));
+	padding: .75em;
+	border-radius: var(--compagnon-border-radius);
+}
+.box.compagnon .box__header button.submit svg {
+	width: 1em;
+	height: 1em;
+}
+.box.compagnon .box__header button.submit svg circle {
+	fill: var(--spip-color-theme-dark);
+}
+.box.compagnon .box__header button.submit:hover,
+.box.compagnon .box__header button.submit:focus {
+	opacity: 1;
+}
+
+.box.compagnon .box__footer button.submit {
+	border: var(--compagnon-border-width) solid var(--spip-color-theme);
+	border-inline-end-width: 0;
+	border-bottom-width: 0;
+	border-start-start-radius: var(--compagnon-border-radius);
+	border-start-end-radius: 0;
+	border-end-end-radius: calc(var(--compagnon-border-radius) - var(--compagnon-border-width));
+	border-end-start-radius: 0;
+	margin: 0;
+	font-size: 1em;
+}
+.box.compagnon .box__footer button.submit:not(:hover):not(:focus) {
+	background-color: var(--spip-color-theme-lighter);
+	color: var(--spip-color-theme-dark);
+}
+.box.compagnon .box__footer button.submit:hover,
+.box.compagnon .box__footer button.submit:focus {
+	border-color: var(--spip-btn-color-main-hover-bg);
+}
+
+/* Cible dans le pied à gauche */
+.box.compagnon .target {
+	position: absolute;
+	bottom: 5px;
+	inset-inline-start: 5px;
+	display: block;
+	width: 32px;
+	height: 32px;
+	/* picto sous licence GPL source https://www.svgviewer.dev/s/395663/target */
+	mask: url('data:image/svg+xml,%3Csvg%20width%3D%2232px%22%20height%3D%2232px%22%20viewBox%3D%220%200%200.96%200.96%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%227%22%20stroke%3D%22%23222222%22%20d%3D%22M0.76%200.48A0.28%200.28%200%200%201%200.48%200.76A0.28%200.28%200%200%201%200.2%200.48A0.28%200.28%200%200%201%200.76%200.48z%22%20stroke-width%3D%220.04%22%2F%3E%3Cpath%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%222%22%20fill%3D%22%23222222%22%20stroke%3D%22%23222222%22%20d%3D%22M0.56%200.48A0.08%200.08%200%200%201%200.48%200.56A0.08%200.08%200%200%201%200.4%200.48A0.08%200.08%200%200%201%200.56%200.48z%22%20stroke-width%3D%220.04%22%2F%3E%3Cpath%20d%3D%22M0.282%200.282%200.16%200.16m0.518%200.122L0.8%200.16m0%200.64%20-0.122%20-0.122M0.16%200.8l0.122%20-0.122%22%20stroke%3D%22%23222222%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%220.04%22%2F%3E%3C%2Fsvg%3E');
+	background: var(--spip-color-theme);
+	cursor: crosshair;
+}
+
+/* Explications éventuelles */
+.box.compagnon .compagnon_helper {
+	padding: var(--spip-spacing-x);
+	margin: var(--spip-spacing-y) 0;
+	border-radius: var(--compagnon-border-radius);
+	background-color: var(--spip-color-theme-lighter);
+}

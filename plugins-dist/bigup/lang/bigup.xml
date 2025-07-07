@@ -1,0 +1,28 @@
+<traduction
+	module="bigup"
+	id="bigup--bigup-88e7b"
+	gestionnaire="salvatore"
+	url="https://trad.spip.net"
+	source="https://git.spip.net/spip/bigup.git"
+	reference="fr">
+	<langue code="ar" url="https://trad.spip.net/tradlang_module/bigup-bigup?lang_cible=ar" total="36" traduits="36" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
+	</langue>
+	<langue code="de" url="https://trad.spip.net/tradlang_module/bigup-bigup?lang_cible=de" total="36" traduits="35" relire="0" modifs="1" nouveaux="0" pourcent="97.22">
+		<traducteur nom="klaus++" lien="https://trad.spip.net/auteur/klaus" />
+		<traducteur nom="Torsten Willmann" lien="https://trad.spip.net/auteur/torsten-willmann" />
+	</langue>
+	<langue code="en" url="https://trad.spip.net/tradlang_module/bigup-bigup?lang_cible=en" total="36" traduits="36" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="Aku Marani" lien="https://trad.spip.net/auteur/akomarani" />
+		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
+		<traducteur nom="jack31" lien="https://trad.spip.net/auteur/jack31" />
+		<traducteur nom="jcvilleneuve" lien="https://trad.spip.net/auteur/jcvilleneuve" />
+		<traducteur nom="kent1" lien="https://trad.spip.net/auteur/kent1" />
+		<traducteur nom="tcharlss" lien="https://trad.spip.net/auteur/drbouvierleduc" />
+	</langue>
+	<langue code="fr" url="https://trad.spip.net/tradlang_module/bigup-bigup?lang_cible=fr" total="36" traduits="36" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
+	<langue code="pt_br" url="https://trad.spip.net/tradlang_module/bigup-bigup?lang_cible=pt_br" total="36" traduits="36" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="filipaun" lien="https://trad.spip.net/auteur/filipaun" />
+		<traducteur nom="Ricardo Porto" lien="https://trad.spip.net/auteur/ricardo-porto" />
+	</langue>
+</traduction>

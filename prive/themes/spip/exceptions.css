@@ -1,0 +1,91 @@
+/*************************************/
+/* directives specifiques a une page */
+#navigation .sous_navigation { margin-top: calc(var(--spip-spacing-y) * 1.75); }
+/* exec=admin_plugin */
+.liste-plugins.formulaire_spip {border:0;background:none;padding:0;}
+.liste-plugins .liens {padding:6px;background:#ddd; margin-inline-start: -6px; margin-inline-end: -7px;}
+#liste_plugins .boutons { margin: -6px; }
+.liste-plugins .liste-items {margin-left: -6px; margin-right: -6px;}
+.liste-plugins .liste-items .item {background:#f4f4f4;position:relative;padding-inline-start:76px; padding-inline-end: 10px;}
+.liste-plugins .liste-items .item.actif {background:#fff;}
+.liste-plugins .liste-items .item.actif:hover {background:#e8e8e8;}
+.liste-plugins .liste-items .item.on {background: var(--spip-color-theme-lighter);}
+.liste-plugins .liste-items .item.disabled .resume h3,
+.liste-plugins .liste-items .item.disabled .resume .version,
+.liste-plugins .liste-items .item.disabled .resume .etat,
+.liste-plugins .liste-items .item.disabled .resume .short,
+.liste-plugins .liste-items .item.disabled .resume .icon {filter: grayscale(100%);opacity: 0.8;}
+.liste-plugins .liste-items .item.error {margin:0;background-image:none;border:2px solid #8A1F11;}
+
+.liste-plugins .liste-items .item .resume {min-height:32px;}
+
+.liste-plugins .liste-items .item .short {color:#666;font-size:0.95em;}
+.liste-plugins .liste-items .item .check {float:inline-start;margin-inline-start:-70px;position:relative;display:inline;}
+.liste-plugins .liste-items .item .check input {margin:0;}
+.liste-plugins .liste-items .item .check label {display:none;}
+
+.liste-plugins .liste-items .item .download {float:inline-start;margin-inline-start:-70px;position:relative;display:inline;}
+
+.liste-plugins .liste-items .item h3 {display:inline;}
+.liste-plugins .liste-items .item h3 a {color:#444;}
+.liste-plugins .liste-items .item.actif h3 a {color:var(--spip-color-theme);}
+
+.liste-plugins .liste-items .item .icon {position:absolute;top:3px;inset-inline-start:34px;width:32px;height:32px;overflow:hidden;}
+.liste-plugins .liste-items .item .icon img {max-width: 32px;height: auto;}
+.liste-plugins .liste-items .item .icon.no-logo img {filter: grayscale(100%) blur(0.5px);}
+
+.liste-plugins .liste-items .item .actions {float:inline-end;visibility:hidden;}
+.liste-plugins .liste-items .item:hover .actions {visibility:visible;}
+
+.liste-plugins .liste-items .item .picto_err,
+.liste-plugins .liste-items .item .cfg_link { position:absolute; inset-inline-end:4px; top:4px; }
+.liste-plugins .liste-items .item .picto_err.picto_compat_forcee { opacity:0.5;filter: sepia(100%);inset-inline-end:36px;}
+
+.liste-plugins .liste-items .item .details dl {float:inline-start;width:62%;margin-bottom:0;}
+.liste-plugins .liste-items .item .details dl.tech {float:inline-end; width:32%;font-size:0.9em;overflow-wrap:break-word;text-align:end;}
+.liste-plugins .liste-items .item .details dl.description dt {float:inline-start;padding-inline-end:0.5em;}
+.liste-plugins .liste-items .item .details dd {margin-bottom:0;}
+
+.install-plugins {position: relative;}
+.install-plugins .result {font-weight: bold;}
+
+.erreur_message-plugins {border:1px solid red;background:#f0d0d0;font-weight:normal;padding:10px;font-size:0.9em;}
+.erreur_message-plugins >ul {list-style:none;}
+.erreur_message-plugins .info_todo {margin:10px 0;}
+
+#liste_plug { border: solid 1px var(--spip-color-theme); padding:3px; background-color:white; height: 200px; overflow:auto;overflow-y: auto; }
+
+
+/* editer_auteurs */
+.option_separateur_statut_auteur { background: var(--spip-color-theme-light); }
+.option_auteur { background: #e4e4e4; }
+
+/* exec/articles */
+
+/* exec/rubriques */
+#contenu div.gauche { width: 49%; float: inline-start; }
+#contenu div.droite { width: 49%; float: inline-end; }
+
+/* exec/auteur_infos */
+.auteur .infos .statut {margin:5px 0;border-bottom :1px solid #eee;}
+.auteur .infos .statut ul {margin-bottom:0;}
+
+.configurer_preferences #extra {display: none;}
+.configurer_preferences.large #extra {display: block;}
+
+/* exec/accueil/accueil-information (ticket #2598) */
+#navigation .accueil_informations .item:hover {background:none;}
+#navigation .accueil_informations .item.on:hover {background-color: var(--spip-color-theme-lightest);}
+#navigation .accueil_informations h4 .plus_info {display:none;}
+
+
+/* prive/accueil */
+.accueil_informations ul.liste-items {
+	margin-left: calc(-1 * var(--spip-box-spacing-x));
+	margin-right: calc(-1 * var(--spip-box-spacing-x));
+}
+
+.accueil_informations ul.liste-items li {
+	padding-left: var(--spip-box-spacing-x);
+	padding-right: var(--spip-box-spacing-x);
+}

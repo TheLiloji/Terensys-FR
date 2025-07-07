@@ -1,0 +1,7 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+    [(#TYPE|=={services}|oui) <INCLURE{fond=inclure/rubrique_services, env} />]
+    [(#TYPE|=={references}|oui) <INCLURE{fond=inclure/rubrique_references, env} />]
+    [(#TYPE|=={equipe}|oui) <INCLURE{fond=inclure/rubrique_equipe, env} />]
+    [(#TYPE|=={recrutement}|oui) <INCLURE{fond=inclure/rubrique_recrutement, env} />]
+    [(#TYPE|=={single}|oui) <INCLURE{fond=inclure/rubrique_single, env} />]
+</BOUCLE_principale>

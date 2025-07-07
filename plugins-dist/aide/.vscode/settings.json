@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"*.spip": "markdown"
+	},
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 80
+    }
+}

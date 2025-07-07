@@ -1,0 +1,17 @@
+<BOUCLE_principale(ARTICLES) {id_article}>
+    <div class="article-normal-container">
+        <div class="title-container">
+            <h4>#TITRE</h4>
+        </div>
+        
+        [(#TEXTE|oui)
+            <div class="text-container">
+                #TEXTE
+            </div>
+        ]
+
+        [(#TYPE|=={link}|oui)
+            <a class="button" href="#URL" target="_blank">#LABEL</a>
+        ]
+    </div>
+</BOUCLE_principale>

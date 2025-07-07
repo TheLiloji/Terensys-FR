@@ -1,0 +1,49 @@
+<BOUCLE_application(DOCUMENTS types_documents) {id_document=#ENV{id,#ENV{id_document}}} {inclus=embed} {mode?} {tout}>[
+(#REM) on trouvera plusieurs variable de hauteur/largeur
+- les balises #HAUTEUR et #LARGEUR
+- #ENV{hauteur} et {largeur} correspondant <emb|hauteur=xx...>
+- #GET{hauteur} et #GET{largeur} correspondent prioritairement a #ENV,
+  puis #LARGEUR/HAUTEUR sauf si il y a un controleur
+]
+#SET{hauteur,#ENV{hauteur,#HAUTEUR}} #SET{largeur,#ENV{largeur,#LARGEUR}}
+[(#ENV{controls}=={PlayButton}|?{#SET{hauteur,25},''})][
+ (#ENV{controls}=={PlayButton}|?{#SET{largeur,40},''})][
+ (#ENV{controls}=={PositionSlider}|?{#SET{hauteur,25},''})][
+ (#ENV{controls}=={PositionSlider}|?{#SET{largeur,#GET{largeur}|moins{40}},''})
+][(#ENV{controls,''}|non)
+[(#SET{legende,#INCLURE{fond=modeles/document_legende, env}|trim})]
+<div
+  class="[(#ID_DOCUMENT|medias_modele_document_standard_classes{application})]"[
+  (#ID_DOCUMENT|medias_modele_document_standard_attributs{application})
+]>
+<figure class="spip_doc_inner">
+][(#EXTENSION|=={swf}|oui)
+<object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000'
+ codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=#ENV{version,'6,0,0,0'}'
+ width='[(#GET{largeur}|attribut_html)]' height='[(#GET{hauteur}|attribut_html)]'>
+	<param name='movie' value='[(#URL_DOCUMENT_FICHIER|attribut_url)]' />
+	[(#ENV{quality,''}|non)<param name="quality" value="high" />]
+	[(#ENV*|env_to_params)]
+	<!--\[if !IE\]> <-->
+	<object data="[(#URL_DOCUMENT_FICHIER|attribut_url)]" width='[(#GET{largeur}|attribut_html)]' height='[(#GET{hauteur}|attribut_html)]' type="application/x-shockwave-flash">
+		[(#ENV{quality,''}|non)<param name="quality" value="high" />]
+		[(#ENV*|env_to_params)]
+		<param name="pluginurl" value="http://www.macromedia.com/go/getflashplayer" />
+	</object>
+	<!--> \[endif\]-->
+</object>
+#SET{done,1}
+][(#GET{done,0}|non)
+<object width='[(#GET{largeur}|attribut_html)]' height='[(#GET{hauteur}|attribut_html)]'>
+<param name='movie' value='[(#URL_DOCUMENT_FICHIER|attribut_url)]' />
+<param name='src' value='[(#URL_DOCUMENT_FICHIER|attribut_url)]' />
+[(#ENV*|env_to_params)]
+<embed src='[(#URL_DOCUMENT_FICHIER|attribut_url)]' [(#ENV*|env_to_attributs)] width='[(#GET{largeur}|attribut_html)]' height='[(#GET{hauteur}|attribut_html)]'></embed></object>
+][(#ENV{controls,''}|non)
+	#GET{legende}
+</figure>
+</div>
+]
+</BOUCLE_application>
+<INCLURE{fond=modeles/file,env} />
+<//B_application>

@@ -1,0 +1,81 @@
+Un lien hypertexte s’écrit avec le code `[titre->URL]`.
+
+<aide:code>
+SPIP est une initiative du [minirézo->https://www.spip.net/fr_rubrique91.html].
+</aide:code>
+
+
+L’adresse du lien peut être une adresse absolue (commençant, comme ici, par `https://`), une adresse relative (vers une autre page du même site), un lien vers un document utilisant un protocole de l’internet (`ftp://`...), une adresse email (`[->minirezo@rezo.net]`)...
+
+Vous pouvez afficher en toutes lettres un lien cliquable sous la forme d’une adresse URL, en n’indiquant rien dans la partie dédiée au titre.
+
+<aide:code>
+[->https://fr.wikipedia.org/wiki/Jeanne-Marie_Leprince_de_Beaumont]
+</aide:code>
+
+
+Notez que, dans le cas des URL très longues, l’affichage est tronqué (pour éviter de dégrader votre interface graphique), mais le lien hypertexte pointe vers la bonne adresse.
+
+Enfin, une URL écrite directement se transforme également en lien hypertexte automatiquement (celui ci n’est alors pas tronqué s’il est long).
+
+<aide:code>
+https://fr.wikipedia.org/wiki/Jeanne-Marie_Leprince_de_Beaumont
+</aide:code>
+
+
+[liensite<-]
+
+Il est possible de préciser la langue de la page vers laquelle le lien pointe, ce que les navigateurs afficheront à leur convenance. Pour cela, il faut mettre le code-langue entre accolades.
+
+<aide:code>
+[Un site en français{fr}->https://www.example.org]
+</aide:code>
+
+Cela est particulièrement recommandé lorsque la page de destination n’est pas dans la même langue que votre texte.
+
+Si l’on veut donner beaucoup d’informations sur le lien sans allonger excessivement la zone cliquable, on peut provoquer l’apparition d’une info-bulle en plaçant avant la flèche le signe `|` suivi du texte souhaité :
+
+<aide:code>
+[voir ici|Ce lien vous expliquera tout ce qu’il faut savoir->https://www.example.org]
+</aide:code>
+
+
+{{{Liens hypertextes à l’intérieur du site}}}
+
+Ce même système de liens hypertextes facilite, de plus, la création de liens à l’intérieur de votre site. La seule subtilité consiste à repérer le {numéro} de l’article, de la rubrique, ou autre objet éditorial vers lequel vous voulez mener votre lien hypertexte.
+
+Lorsque, par exemple, vous visitez un article dans l’espace privé, la colonne de gauche contient un pavé indiquant, en gros caractères, ce numéro.
+
+C’est ce numéro que vous allez indiquer dans le lien hypertexte.
+
+{{Lien vers l’article 342:}}
+
+<aide:code>
+- Lien vers [l’article->342]
+- Lien vers [l’article->art342]
+- Lien vers [l’article->article 342]
+- Lien vers [->art342]
+</aide:code>
+
+Si rien n’est précisé avant la flèche, comme dans `[->art342]`, le titre de l’objet éditorial, s’il existe, sera automatiquement utilisé comme texte du lien.
+
+{{Lien vers la rubrique 12:}}
+
+<aide:code>
+- Lien vers [la rubrique->rub12]
+- Lien vers [la rubrique->rubrique 12]
+</aide:code>
+
+
+{{Auteurs, mots-clés, sites, images, documents, brèves:}}
+<aide:code>
+- Lien vers [un auteur->aut13] ou [le même auteur->auteur13]
+- Lien vers [un mot->mot32]
+- Lien vers [un site syndiqué->site1]
+- Lien vers [un document joint->doc17] ou [le même document->document17]
+- Lien vers [une image->img13] ou [la même image->image13]
+</aide:code>
+
+Là aussi, sans rien spécifier avant la «flèche», comme dans `[->aut13]`, SPIP insérera automatiquement les informations nécessaires. Dans le cas d’un document joint ou d’une image, si l’on a indiqué un titre manuellement, c’est ce titre qui sera affiché; sinon c’est le nom du fichier lui-même qui sera utilisé.
+
+Les raccourcis pour mentionner la langue et créer une info-bulle, expliqués pour les liens externes, fonctionnent également pour les liens internes.

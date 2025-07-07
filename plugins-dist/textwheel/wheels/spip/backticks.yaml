@@ -1,0 +1,50 @@
+--- # Prise en charge des backticks code
+    #
+    # Si on nomme une regle, elle devient surchargeable
+
+bt-echappe-tags:
+  # voir bt-restaure-tags plus bas
+  match: ",</?[a-z!][^<>]*?[`][^<>]*>,imsS"
+  if_chars: "<`"
+  priority: -20
+  is_wheel: Y
+  replace:
+    bt-echappe-tags-sub:
+      match: ['`']
+      replace: ["\x1\x15"]
+      type: str
+
+bt-echappe-backticks:
+  if_str: '\`'
+  priority: -20 # avant !paragraphes
+  match: ['\\', '\`']
+  replace: ["\x1\x10", "\x1\x15"]
+  type: str
+
+bt-backticks-triples:
+  # raccourcis en ```..```
+  match: "@(?<!`)(```)([^`]|[^`].*?[^`])(```)($|[^`])@imsS"
+  replace: "replace_backticks"
+  if_str: '```'
+  type: str
+
+bt-backticks-doubles:
+  # raccourcis en ``..``
+  match: "@(?<!`)(``)([^`]|[^`].*?[^`])(``)($|[^`])@imsS"
+  replace: "replace_backticks"
+  if_str: '``'
+  type: str
+
+bt-backticks-simples:
+  # raccourcis en `..`
+  match: "@(?<!`)(`)([^`]|[^`].*?[^`])(`)($|[^`])@imsS"
+  replace: "replace_backticks"
+  if_str: '`'
+  type: str
+
+bt-restaure-tags:
+  # voir echappe-tags ci-dessus
+  if_chars: "\x1"
+  match: ["\x1\x10", "\x1\x15"]
+  replace: ['\', '`']
+  type: str

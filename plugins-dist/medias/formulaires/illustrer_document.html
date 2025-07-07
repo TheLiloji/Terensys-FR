@@ -1,0 +1,27 @@
+<div class='formulaire_spip formulaire_illustrer_document' id='formulaire_illustrer_document-#ENV{id,new}'>
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+	[(#ENV{editable})
+	<form action="#ENV{action}#formulaire_illustrer_document-#ENV{id,new}" method="post" enctype='multipart/form-data'><div>
+		#ACTION_FORMULAIRE
+		<div class="editer-groupe">
+			<div class="editer editer_fichier[ (#ENV*{erreurs/fichier}|oui)erreur]">
+				<label for="fichier"><:medias:label_fichier_vignette:></label>[
+				<span class='erreur_message'>(#ENV*{erreurs/fichier})</span>
+				][<tt>(#ENV{vignette}|set_spip_doc)</tt><br />][
+				(#CONFIG{taille_preview}|intval|?{#ENV*{vignette}|image_reduire{#CONFIG{taille_preview}},#ENV*{vignette}|balise_img})
+				][(#ENV*{vignette}|non)<:medias:aucune_vignette:>
+				[(#CONFIG{creer_preview}|=={oui}|et{#ENV{media}|=={image}})<br /><:medias:miniature_automatique_active:>]
+				]
+				<p class='actions float-end'>
+				[(#ENV{id_vignette}|oui|et{#AUTORISER{supprimer,document,#ENV{id_vignette}}}) <input type='submit' class='btn btn_mini btn_secondaire submit' name='supprimer' value='<:medias:bouton_supprimer|attribut_html:>' />]
+				[(#ENV{id_vignette}|non|ou{#AUTORISER{modifier,document,#ENV{id_vignette}}}) <a class="btn btn_mini btn_secondaire" href='#' onclick='jQuery("#illustrer_document").toggle("fast");return false;'><:bouton_changer:></a>]
+				<span class='image_loading'>&nbsp;</span>
+				</p>
+				<div id='illustrer_document' style='display:none;'>
+				[(#INCLURE{fond=formulaires/inc-upload_document, env, joindre_upload=oui})]
+				</div>
+			</div>
+		</div>
+	</div></form>]
+</div>

@@ -1,0 +1,11 @@
+[(#ENV{fermer}|non)
+[(#SET{action,#URL_ACTION_AUTEUR{compagnon,compris/#ID,#SELF|parametre_url{fermer,oui}}})]
+[(#SET{fermer,#CHEMIN_IMAGE{fermer-16.svg}|balise_svg{<:bouton_fermer:>,close}})]
+[(#BOITE_OUVRIR{[(#CHEMIN_IMAGE{compagnon-picto-xx.svg}|balise_svg{'',picto-compagnon}) ][(#ENV*{titre})][(#BOUTON_ACTION{#GET{fermer},#GET{action},btn_link ajax})],compagnon})]
+#ENV*{texte}
+
+#BOITE_PIED
+	[<span class="target" data-target="(#ENV{target,''})"></span>]
+	[(#BOUTON_ACTION{[(#VAL|ok_aleatoire)],#GET{action},ajax})]
+#BOITE_FERMER
+]

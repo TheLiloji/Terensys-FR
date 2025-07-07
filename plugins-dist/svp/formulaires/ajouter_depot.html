@@ -1,0 +1,39 @@
+<div class="formulaire_spip formulaire_ajouter_depot" id="formulaire_ajouter_depot">
+	<h3 class="titrem">[(#CHEMIN_IMAGE{depot-add-24.svg}|balise_img{icone ajouter_depot-24,cadre-icone})]<:svp:titre_form_ajouter_depot:></h3>
+
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+	<!-- <br class='bugajaxie' /> -->
+	[(#ENV{editable})
+	<form method="post" action="#ENV{action}">
+		[(#REM) <!-- declarer les hidden qui declencheront le service du formulaire
+		parametre : url d'action --> ]
+		#ACTION_FORMULAIRE
+		<div>
+			<p class="explication"><:svp:info_ajouter_depot:></p>
+			<div class="editer-groupe">
+				<div class="editer editer_password obligatoire[(#ENV{erreurs/password}|oui) erreur]">
+					<label for="password"><:entree_mot_passe:></label>
+					[<span class="erreur_message">(#ENV*{erreurs/password})</span>]
+					<input type="password" name="password" id="password" value="#ENV{password}" class="text" />
+					<p class='explication'><:svp:explication_mot_passe:></p>
+				</div>
+				<div class="editer editer_xml_paquets obligatoire[(#ENV{erreurs/xml_paquets}|oui) erreur]">
+					<label for="xml_paquets"><:svp:label_xml_depot:></label>
+					<p class="explication">
+						<:svp:info_fichier_depot:>
+						<a class="spip_out" title="<:svp:bulle_ajouter_spipzone:>" href="https://plugins.spip.net/depots/principal.xml" onclick="$('#xml_paquets').attr('value',$(this).attr('href')).focus();return false;"><:svp:info_adresse_spipzone:></a> <i>(<a class="spip_out" href="https://plugins.spip.net/spip.php?page=depots" onclick="window.open(this.href); return false;"><:svp:titre_liste_depots:></a>)</i>
+					</p>
+					[<span class="erreur_message">(#ENV*{erreurs/xml_paquets})</span>]
+					<input type="text" name="xml_paquets" id="xml_paquets" value="#ENV{xml_paquets}" class="text" />
+				</div>
+
+			</div>
+
+			<p class="boutons">
+				<input type="submit" class="btn submit" value="<:bouton_ajouter:>" />
+			</p>
+		</div>
+	</form>
+	]
+</div>

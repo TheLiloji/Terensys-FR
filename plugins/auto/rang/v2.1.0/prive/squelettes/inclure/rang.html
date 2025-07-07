@@ -1,0 +1,80 @@
+<script type="text/javascript">
+
+function rang() {
+	if (typeof Sortable === 'function') {
+
+		var $listes = $('.liste');
+		if (!$listes.length) {
+			return false;
+		}
+
+		$listes.find('tbody').each(function() {
+
+			// détruire / recréer le sortable à chaque appel ajax
+			if (Sortable.get(this)) {
+				Sortable.get(this).destroy();
+			}
+
+			// pas de tri possible s'il n'y a qu'un seul élément
+			var $trs = $(this).find('tr');
+			if ($trs.length < 2) {
+				return true; // continue
+			}
+
+			// ajouter la colonne avec le picto "draggable"
+			if(!$(this).find('img[src*=draggable]').length) {
+				$(this).parent('table').find('thead').find('tr').prepend("<th class='picto'>&nbsp;</th>");
+				$(this).find('tr').prepend("<td class='drag'>[(#CHEMIN_IMAGE{draggable-16.png}|balise_img|inserer_attribut{title, <:rang:ordonner:>})]</td>");
+			}
+
+			// ajouter le comportement "sortable"
+			new Sortable(this, {
+				dataIdAttr: 'data-id_objet',
+
+				onStart: function(event) {
+					$(event.item).addClass('deplacer-en-mouvement');
+				},
+				onEnd: function(event) {
+					$(event.item).removeClass('deplacer-en-mouvement');
+				},
+
+				onUpdate: function(event) {
+					const action = "[(#VAL{trier_items}|generer_url_action{"", 1})]";
+					const objet = $(event.item).parents('.spip.liste').attr('data-objet');
+					const ordre = this.toArray();
+					var pagination = parseInt(window.location.search.split('&debut_liste_#ENV{suffixe_pagination}=')[1]);
+
+					const params = {
+						objet: objet,
+						ordre: ordre,
+						pagination: pagination
+					};
+					
+					$.post({
+						url: action,
+						data: params
+					}).done(function(data) {
+						// recharger en ajax juste la liste sur laquelle on a fait un drag&drop
+						var liste = ".liste-objets." + objet;
+						$(liste).ajaxReload();
+					});
+				}
+			});
+		});
+	}
+}
+
+
+/* Initialisation et relance en cas de chargement ajax */
+if (window.jQuery) {
+	jQuery(function($){
+
+		if (typeof Sortable === "undefined") {
+			jQuery.getScript('[(#CHEMIN{prive/javascript/Sortable.js}|timestamp)]').done(rang);
+		} else {
+			rang();
+		}
+		onAjaxLoad(rang);
+	});
+}
+</script>

@@ -1,0 +1,78 @@
+<div class="formulaire_spip formulaire_charger_plugin" id="formulaire_charger_plugin">
+	<h3 class="titrem">[(#CHEMIN_IMAGE{plugin-add-xx.svg}|balise_img{icone ajouter_plugin-24,cadre-icone})]<:svp:titre_form_charger_plugin:></h3>
+
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+	[(#ENV*{_actions_realisees})]
+
+<BOUCLE_depot_existe(DEPOTS) {0,1}>
+	<form method="post" action="#ENV{action}">
+
+		<INCLURE{fond=formulaires/inc-confirmer_actions, env} />
+
+		[(#REM) <!-- declarer les hidden qui declencheront le service du formulaire
+		parametre : url d'action --> ]
+		#ACTION_FORMULAIRE
+		<input type="hidden" name="exclusion" class='hidden' value="oui" />
+
+		<div class="liste-recherche">
+			<fieldset>
+				<legend><:svp:legende_rechercher_plugins:></legend>
+				<p class="explication"><:svp:info_charger_plugin{version=#SPIP_VERSION}:></p>
+				<div class="editer-groupe">
+					<div class="editer editer_phrase obligatoire[(#ENV{erreurs/phrase}|oui) erreur]">
+						<label for="phrase"><:svp:label_critere_phrase:></label>
+						<p class="explication"><:svp:info_critere_phrase:></p>
+						[<span class="erreur_message">(#ENV{erreurs/phrase})</span>]
+						<input type="text" name="phrase" id="phrase" value="#ENV{phrase}" class="text" placeholder="<:svp:placeholder_phrase:>" />
+					</div>
+					<div class="editer editer_etat obligatoire[(#ENV{erreurs/etat}|oui) erreur]">
+						<label for="etat"><:svp:label_critere_etat:></label>
+						[<span class="erreur_message">(#ENV{erreurs/etat})</span>]
+						<select name="etat" id="etat">
+							<option value="tout_etat"[ (#ENV{etat,tout_etat}|=={tout_etat}|oui)selected="selected"]><:svp:option_etat_tout:></option>
+							<option value="stable"[ (#ENV{etat,tout_etat}|=={stable}|oui)selected="selected"]><:plugin_etat_stable|ucfirst:></option>
+							<option value="test"[ (#ENV{etat,tout_etat}|=={test}|oui)selected="selected"]><:plugin_etat_test|ucfirst:></option>
+							<option value="dev"[ (#ENV{etat,tout_etat}|=={dev}|oui)selected="selected"]><:plugin_etat_developpement|ucfirst:></option>
+							<option value="experimental"[ (#ENV{etat,tout_etat}|=={experimental}|oui)selected="selected"]><:plugin_etat_experimental|ucfirst:></option>
+						</select>
+					</div>
+					<div class="editer editer_depot obligatoire[(#ENV{erreurs/depot}|oui) erreur]">
+						<label for="depot"><:svp:label_critere_depot:></label>
+						[<span class="erreur_message">(#ENV{erreurs/depot})</span>]
+						<INCLURE{fond=formulaires/inc-select_depot, env} />
+					</div>
+					<div class="editer editer_doublon obligatoire[(#ENV{erreurs/doublon}|oui) erreur]">
+						<label for="doublon"><:svp:label_critere_doublon:></label>
+						[<span class="erreur_message">(#ENV{erreurs/doublon})</span>]
+						<select name="doublon" id="doublon">
+							<option value="non"[ (#ENV{doublon}|=={non}|oui)selected="selected"]><:svp:option_doublon_non:></option>
+							<option value="oui"[ (#ENV{doublon}|=={oui}|oui)selected="selected"]><:svp:option_doublon_oui:></option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+
+		<p class="boutons recherche">
+			<input type="submit" name="rechercher" class="btn submit" value="<:info_rechercher:>" />
+		</p>
+		</div>
+
+		[(#ENV{phrase}|ou{#ENV{depot}}|ou{#ENV{etat}|ou{#ENV{doublon}}}|oui)
+		<div class="liste-plugins">
+			<fieldset>
+				<legend><:svp:legende_installer_plugins:></legend>
+				<INCLURE{fond=formulaires/inc-plugins_trouves, plugins=#ENV*{message_ok/plugins}, env} />
+			</fieldset>
+			<p class="boutons actions"[(#ENV{ids_paquet}|non) style="display:none"]>
+				<input type="submit" name="telecharger" class="btn submit" value="<:bouton_telecharger:>" />
+				<input type="submit" name="installer" class="btn submit" value="<:svp:bouton_installer:>" />
+			</p>
+		</div>]
+	</form>
+</BOUCLE_depot_existe>
+	#ALERTE_OUVRIR{'','notice'}
+		<:svp:message_nok_aucun_depot_disponible:>
+	#ALERTE_FERMER
+<//B_depot_existe>
+</div>

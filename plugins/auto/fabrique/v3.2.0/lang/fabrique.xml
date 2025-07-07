@@ -1,0 +1,19 @@
+<traduction
+	module="fabrique"
+	id="fabrique--fabrique-c448a"
+	gestionnaire="salvatore"
+	url="https://trad.spip.net"
+	source="https://git.spip.net/spip-contrib-extensions/fabrique.git"
+	reference="fr">
+	<langue code="en" url="https://trad.spip.net/tradlang_module/fabrique?lang_cible=en" total="332" traduits="331" relire="0" modifs="0" nouveaux="1" pourcent="99.70">
+		<traducteur nom="jack31" lien="https://trad.spip.net/auteur/jack31" />
+	</langue>
+	<langue code="es" url="https://trad.spip.net/tradlang_module/fabrique?lang_cible=es" total="332" traduits="186" relire="0" modifs="0" nouveaux="146" pourcent="56.02">
+		<traducteur nom="Freddy" lien="https://trad.spip.net/auteur/freddy" />
+	</langue>
+	<langue code="fr" url="https://trad.spip.net/tradlang_module/fabrique?lang_cible=fr" total="332" traduits="332" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
+	<langue code="pt_br" url="https://trad.spip.net/tradlang_module/fabrique?lang_cible=pt_br" total="332" traduits="332" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="maieul" lien="https://trad.spip.net/auteur/maieul" />
+		<traducteur nom="Ricardo Porto" lien="https://trad.spip.net/auteur/ricardo-porto" />
+	</langue>
+</traduction>

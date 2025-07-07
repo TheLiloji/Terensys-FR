@@ -1,0 +1,43 @@
+<div class="formulaire_spip formulaire_#FORM"[ id="(#ENV{_id})"]>
+
+	<h3 class="titrem">Test de CVT avec upload de fichiers et zone étendue</h3>
+
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+
+
+	<div class="explication">
+		<p>Ce formulaire montre bigup avec des zones étendues.</p>
+		<p>S’il y a plusieurs déclarations identiques (par exemple plusieurs fois <code>#contenu</code>),
+		dans un ou plusieurs formulaires, la première à initialiser bigup compte, et les suivantes sont ignorées.</p>
+	</div>
+
+	<form method="post" action="#ENV{action}" enctype="multipart/form-data">
+	<div>
+		#ACTION_FORMULAIRE
+		<input type="submit" class="submit hidden" value="<:bouton_enregistrer|attribut_html:>" />
+
+		<div class='editer-groupe'>
+			[(#SAISIE{input, titre,
+				label=Titre,
+				obligatoire=oui})]
+
+			[(#SAISIE_FICHIER{bigup, images1,
+				label=Images 1,
+				accept=image/*,
+				multiple=oui,
+				drop_zone_extended=#ENV{drop_zone_extended}})]
+
+			[(#SAISIE_FICHIER{bigup, images2,
+				label=Images 2,
+				accept=image/*,
+				multiple=oui,
+				drop_zone_extended=#ENV{drop_zone_extended}})]
+		</div>
+
+		<div class="boutons">
+			<input type="submit" class="submit" value="<:bouton_enregistrer|attribut_html:>" />
+		</div>
+	</div>
+	</form>
+</div>

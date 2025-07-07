@@ -1,0 +1,145 @@
+[(#SET{plugins,#ARRAY})]
+[(#ENV{phrase}|ou{#ENV{depot}}|ou{#ENV{etat}}|ou{#ENV{exclusion}}|ou{#ENV{doublon}}|oui)
+	[(#SET{plugins,[(#ENV{phrase}|construire_recherche_plugins{#ENV{etat}, #ENV{depot}, #ENV{exclusion}, #ENV{doublon}})]})]
+	[(#SET{nb,[(#GET{plugins}|count)]})]
+	[(#SET{tri,[(#GET{phrase}|?{score,nom})]})]
+	[(#GET{nb}|oui)<p class="explication"><:svp:message_ok_plugins_trouves{nb_plugins=#GET{nb},tri=#GET{tri}}:></p>]
+	[(#GET{nb}|non)<p class="explication"><:svp:message_ok_aucun_plugin_trouve:></p>]
+]
+
+<B_plugins_trouves>
+<div class="liste plugins distants">
+	<ul class="liste-items">
+<BOUCLE_plugins_trouves(DATA){source table, #GET{plugins}}>
+		<li class="item [(#VALEUR{installe}|oui) installe]"[ id="(#VALEUR{prefixe}|strtolower)-#COMPTEUR_BOUCLE-#VALEUR{score}"]>
+			[(#REM) <!-- Checkbox action multiple -->]
+			<div class="col-check">
+			#SET{has_check,0}
+			[(#VALEUR{installe}|non|et{#VAL|test_plugins_auto})
+			#SET{has_check,1}
+				<div class="check">
+					<input type="checkbox" class="checkbox select_plugin" name="ids_paquet\[\]" value="#ID_PAQUET" id="check_plugin#ID_PAQUET"
+						[(#ID_PAQUET|in_any{#ENV{ids_paquet}}) checked="checked"] />
+				</div>
+			]
+			</div>
+
+			<div class="col-icon">[<div class="icon">(#VALEUR{logo}|balise_img)</div>]</div>
+
+			[(#REM) <!-- Resume du plugin -->]
+			<div class="resume">
+				[(#GET{has_check}|oui)<label for="check_plugin#ID_PAQUET">]
+				<h3 class="nom">[(#VALEUR{nom}|extraire_multi)]</h3>
+				<span class="version">[(#VALEUR{version}|denormaliser_version)]</span>
+				[(#GET{has_check}|oui)</label>]
+				<div class="short">[(#VALEUR{slogan}|extraire_multi)]</div>
+			</div>
+
+
+			[(#REM) Messages ]
+			[(#SET{messages, #ARRAY{
+				installe,     #VALEUR{installe}|oui|?{<:svp:info_plugin_installe:>},
+			}|array_filter})]
+			[(#GET{messages}|oui)
+				<div class="messages">
+					[<span class="svp_message installe important">(#GET{messages/installe})</span>]
+				</div>
+			]
+
+			[(#REM) Liens + boutons d'actions ]
+			<div class="footer">
+				[(#REM) Liens ]
+				#SET{liens,#ARRAY{
+					doc, #VAL{#LIEN_DOC|oui},
+					demo,#VAL{#LIEN_DEMO|oui},
+				}|array_filter}
+				<div class="links groupe-btns">
+					<a href="#" class="btn btn_link ouvrir" rel="info" role="button" aria-expanded="false" aria-controls="details_#KEY"><:svp:lien_details_plus:></a>
+					[(#GET{liens/doc}|oui)
+						[<a href="(#LIEN_DOC)" class="btn btn_link spip_out" title="<:svp:bulle_aller_documentation|attribut_html:>" rel="external"><:svp:lien_documentation:></a>]
+					][(#GET{liens/demo}|oui)
+						[<a href="(#LIEN_DEMO|svp_calculer_url_demo)" class="btn btn_link spip_out" title="<:svp:bulle_aller_demonstration|attribut_html:>" rel="external"><:svp:lien_demo:></a>]
+					]
+				</div>
+			</div>[(#REM) .footer ]
+
+
+			[(#REM) <!-- Details du plugin -->]
+			<div class="details none-js" id="details_#KEY">
+				<dl class="description">
+					<dd class="desc">
+						[(#VALEUR{description}|extraire_multi|propre)]
+					</dd>
+					[<dt class="auteurs"><:public:par_auteur:></dt>
+					<dd class="auteurs">(#AUTEUR*|svp_afficher_credits)</dd>]
+					[<dt class="licence"><:intitule_licence:></dt>
+					<dd class="licence">(#LICENCE|svp_afficher_credits{','})</dd>]
+				</dl>
+				<dl class="tech">
+					<dt class="etat"><:svp:label_etat:></dt>
+					<dd class="etat[(#VALEUR{etat}|=={stable}|non) svp_message]">[(#ETAT|svp_afficher_etat)]</dd>
+					<dt><:version:></dt>
+					<dd>[(#VERSION|denormaliser_version)]</dd>
+					<dt><:svp:label_prefixe:></dt>
+					<dd>[(#PREFIXE|strtolower)]</dd>
+				</dl>
+			</div>
+		</li>
+</BOUCLE_plugins_trouves>
+	</ul>
+</div>
+</B_plugins_trouves>
+
+
+<script>
+(function($){
+	$('.plugins').find('li.item .icon span[data-reload]').each(function(){
+		var ajaxbloc = $(this).closest('.ajaxbloc');
+		$.spip.ajaxReload(ajaxbloc, {args: {'afficher':1}});
+	});
+	$('.plugins').on('click','li.item a[rel=info]',function(){
+		var li = $(this).parents('li').eq(0);
+		var $bouton = $(this);
+		// clics suivants, masquer ou afficher les details
+		if ($('div.details',li).toggle().is(':visible')) {
+			li.addClass('on');
+			$bouton
+				.attr('aria-expanded', true)
+				.text("<:svp:lien_details_moins|texte_script:>")
+				.removeClass('ouvrir').addClass('fermer');
+		} else {
+			li.removeClass('on');
+			$bouton
+				.attr('aria-expanded', false)
+				.text("<:svp:lien_details_plus|texte_script:>")
+				.removeClass('fermer').addClass('ouvrir');
+		}
+		return false;
+	});
+	$('.plugins').on('click', 'li.item', function(e){
+		const li = $(this);
+		const checkbox = li.find('input.select_plugin');
+		const $target = $(e.target);
+		if (!$target.is('input') && !$target.is('a') && !$target.is('button')) { 
+			checkbox.prop("checked", !checkbox.prop("checked"));
+			checkbox.change();
+			return false;
+		}
+	});
+	[/* (#REM)
+		Déplier le bouton 'installer' et mettre le submit en premier dans le form
+		pour que l'appuie de la touche entree valide.
+		Le supprimer si l'on change un critere de recherche.
+	*/]
+	$('.plugins li.item input.checkbox').on('change', function(){
+		$form = $(this).parents('form').eq(0);
+		if (!$form.find('> input.submit').length) {
+			$form.find('.boutons.actions').slideDown().find('input.submit').clone().addClass('invisible').prependTo($form);
+			$form.find('.liste-recherche').change(function(){
+				$(this).parents('form').eq(0).find('> input.submit').remove();
+			});
+		}
+	});
+})(jQuery);
+
+</script>

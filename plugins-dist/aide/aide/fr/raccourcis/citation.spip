@@ -1,0 +1,11 @@
+Pour citer un extrait de texte, SPIP dispose du raccourci `<quote>...</quote>`.
+
+C’est par exemple utile pour des citations, des extraits de discours ou d’articles, pour citer un extrait du message auquel on répond dans un forum.
+
+<aide:code>
+<quote>
+<quote>C’est drôlement bien, SPIP.</quote>
+Kikou, je suis bien d’accord :-)
+</quote>
+</aide:code>
+

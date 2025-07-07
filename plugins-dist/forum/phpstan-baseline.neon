@@ -1,0 +1,1454 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function objet_modifier_champs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function session_get not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function vider_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_forum.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function suivre_invalideur not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/instituer_forum.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_lot_forum.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_lot_forum.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_lot_forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/instituer_lot_forum.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/instituer_lot_forum.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/instituer_lot_forum.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/instituer_lot_forum.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/instituer_lot_forum.php
+
+		-
+			message: '#^Function calculer_balise_dynamique not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: balise/formulaire_forum.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: balise/formulaire_forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: balise/formulaire_forum.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: balise/formulaire_forum.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: balise/formulaire_forum.php
+
+		-
+			message: '#^Function calculer_balise_dynamique not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: balise/formulaire_forum_prive.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: balise/formulaire_forum_prive.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function suivre_invalideur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/activer_forums_objet.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_forums_contenu.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/configurer_forums_contenu.php
+
+		-
+			message: '#^Function appliquer_modifs_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_contenu.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_contenu.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_contenu.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_notifications.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_notifications.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_notifications.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_notifications.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_participants.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_forums_participants.php
+
+		-
+			message: '#^Function appliquer_modifs_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_participants.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_participants.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/configurer_forums_participants.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_participants.php
+
+		-
+			message: '#^Function suivre_invalideur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_participants.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_forums_prives.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/configurer_forums_prives.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/configurer_forums_prives.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 14
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 16
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function calculer_action_auteur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function calculer_cle_action not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function calculer_notes not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function deplacer_fichier_upload not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function fixer_extension_document not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function generer_url_public not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 13
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function inclure_balise_dynamique not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function safehtml not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function session_set not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function spip_touch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function typo not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function vider_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function calculer_notes not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function inclure_balise_dynamique not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function propre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function safehtml not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function tester_url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function typo not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function vider_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/forum_prive.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_administrations.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_administrations.php
+
+		-
+			message: '#^Function effacer_meta not found\.$#'
+			identifier: function.notFound
+			count: 12
+			path: forum_administrations.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_administrations.php
+
+		-
+			message: '#^Function maj_plugin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_administrations.php
+
+		-
+			message: '#^Function sql_drop_table not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_administrations.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_autoriser.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: forum_autoriser.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_autoriser.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_autoriser.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_autoriser.php
+
+		-
+			message: '#^Function generer_url_public not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: forum_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: forum_ieconfig.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 12
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function afficher_plus_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function autoriser_exception not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function icone_verticale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function objet_associable not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function objet_trouver_liens not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function optimiser_sansref not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function singulier_ou_pluriel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_table_exists not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: forum_pipelines.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/article_accepter_forums_publics.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function appliquer_traitement_champ not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function extraire_balises not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function generer_objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function lang_select not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function textebrut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function typo not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/email_notification_forum.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/forum.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/forum.php
+
+		-
+			message: '#^Function extraire_multi not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function generer_objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/forum.php
+
+		-
+			message: '#^Function objet_test_si_publie not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function recherche_en_base not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/forum.php
+
+		-
+			message: '#^Function supprimer_numero not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function collecter_requests not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function mot_associer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function session_get not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function sinon not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/forum_insert.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function notifications_envoyer_mails not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function notifications_nettoyer_emails not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumposte.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function notifications_envoyer_mails not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function notifications_nettoyer_emails not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function session_get not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: notifications/forumvalide.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: prive/modeles/forum_fonctions.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: prive/modeles/forum_fonctions.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/modeles/forum_fonctions.php
+
+		-
+			message: '#^Function _q not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function calculer_argument_precedent not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function calculer_boucle not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function calculer_critere_externe_init not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function champ_sql not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: public/forum.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: public/forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function interprete_argument_balise not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function kwote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function rindex_pile not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: public/forum.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: public/forum.php
+
+		-
+			message: '#^Function generer_objet_url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/generer_url_ecrire_forum.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/generer_url_ecrire_forum.php
+
+		-
+			message: '#^Function objet_test_si_publie not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/generer_url_ecrire_forum.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/generer_url_forum.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/generer_url_forum.php
+

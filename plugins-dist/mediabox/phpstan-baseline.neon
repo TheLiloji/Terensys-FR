@@ -1,0 +1,164 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_mediabox.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/configurer_mediabox.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_mediabox.php
+
+		-
+			message: '#^Function effacer_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_mediabox.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/configurer_mediabox.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_mediabox.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/mediabox.php
+
+		-
+			message: '#^Function attribut_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/mediabox.php
+
+		-
+			message: '#^Function chercher_filtre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/mediabox.php
+
+		-
+			message: '#^Function creer_chemin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/mediabox.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_ieconfig.php
+
+		-
+			message: '#^Cannot unset offset ''maxHeight''\|''maxWidth''\|''minHeight''\|''minWidth''\|''opacite''\|''skin''\|''slideshow_speed''\|''speed''\|''transition'' on array\{colorbox\: non\-empty\-array\<''maxHeight''\|''maxWidth''\|''minHeight''\|''minWidth''\|''opacite''\|''skin''\|''slideshow_speed''\|''speed''\|''transition'', mixed\>\}\.$#'
+			identifier: unset.offset
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function direction_css not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function ecrire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function html2unicode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function lien_article_virtuel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function produire_fond_statique not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function timestamp not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function unicode2charset not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+
+		-
+			message: '#^Function url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: mediabox_pipelines.php
+

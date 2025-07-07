@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:spip="http://trac.rezo.net/trac/spip-zone/browser/_squelettes_/atom/" xml:lang="fr">
+	<title>Mon site SPIP</title>
+	<link href="http://localhost/spip/"/>
+	<link rel="self" type="application/atom+xml" href="http://localhost/spip/spip.php?page=atom"/>
+	<id>http://localhost/spip/</id>
+	<generator uri="http://www.spip.net/" version="1.9.3 dev [9214]">SPIP</generator>
+	<updated>2007-05-13T21:34:21Z</updated>
+
+
+
+
+
+	<entry xml:lang="fr">
+		<title>delenda carthago</title>
+		<id>http://localhost/spip/article1</id>
+		<link rel="alternate" type="text/html" href="http://localhost/spip/spip.php?article1"/>
+		<link rel="replies" type="application/atom+xml" href="http://localhost/spip/spip.php?action=rss&amp;op=forum&amp;args=id_article-1&amp;cle=a34607d2&amp;fmt=atom"/>
+		<published>2007-05-13T21:33:24Z</published>
+		<updated>2007-05-13T21:33:05Z</updated>
+		<author><name>Caton l ancien</name><uri>http://localhost/spip/spip.php?auteur2</uri></author>
+		<author><name>Caton le jeune</name><uri>http://localhost/spip/spip.php?auteur3</uri></author>
+	
+		<category scheme="http://localhost/spip/rubrique" term="rub1" label="Nouvelle rubrique"/>
+		<category term="http://localhost/spip/rubrique2" label="Nouvelle rubrique"/> <!-- l'attribut scheme n'est pas obligatoire -->
+		<category scheme="http://localhost/spip/rubrique" term="http://localhost/spip/toto" label="Nouvelle rubrique4"/>
+	
+	
+		<summary type="html">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. &lt;br /&gt;Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril (...)
+
+</summary>
+
+ <content type="html">&lt;div class='rss_chapo'&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt;&lt;/div&gt;
+		&lt;div class='rss_texte'&gt;&lt;p&gt;Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt; &lt;p&gt;Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&lt;/p&gt; &lt;p&gt;Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&lt;/p&gt;&lt;/div&gt;
+		
+		</content>
+			<link rel="enclosure" href="http://localhost/spip/IMG/txt/test-3.txt" length="272" type="text/plain" />
+		
+	</entry>
+
+
+</feed>

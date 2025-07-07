@@ -1,0 +1,45 @@
+<BOUCLE_principale(RUBRIQUES) {id_rubrique}>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terensys - #TITRE</title>
+    <INCLURE{fond=inclure/head}/>
+    [<link rel="stylesheet" href="(#CHEMIN{assets/css/rubrique_recrutement.css}|direction_css|timestamp)" type="text/css" />]
+</head>
+<body>
+    <header>
+        <INCLURE{fond=inclure/nav,env} />
+    </header>
+
+    <main id="main">
+        <div id="recrutement-container">
+            <div class="main-container">
+                <img src="/plugins/auto/terensys/squelettes/assets/images/franck.png" alt="franck">
+
+                <div class="description">
+                    <BOUCLE_articles(ARTICLES) {id_rubrique} {!par date}>
+                            #TEXTE
+                            [(#TYPE|=={link}|oui)
+                                <a class="button" href="#URL" target="_blank">#LABEL</a>
+                            ]
+                    </BOUCLE_articles>
+
+                    <div class="elipse elipse-middle"></div>
+                </div>
+
+                <img src="/plugins/auto/terensys/squelettes/assets/images/bernard.png" alt="franck">
+            </div>
+
+            <div class="elipse elipse-left"></div>
+            <div class="elipse elipse-right"></div>
+        </div>
+    </main>
+
+    <footer>
+        <INCLURE{fond=inclure/footer} />
+    </footer>
+</body>
+</html>
+</BOUCLE_principale>

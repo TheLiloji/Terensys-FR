@@ -1,0 +1,540 @@
+<BOUCLE_objet(DATA){source tableau, #OBJETS}{cle=#CLE}>
+
+[(#SET{datalist_aide,[(#CHEMIN_IMAGE{datalist-16.png}|balise_img
+	|inserer_attribut{title,<:fabrique:datalist_aide:>}
+	|inserer_attribut{class,datalist_aide})]})]
+
+	<div class="accordion-boxes" id="accordion_[(#CLE|plus{1})]">
+
+		[(#BOITE_OUVRIR{<a href="#renseigner[(#CLE|plus{1})]"><:fabrique:legend_pre_construire:></a>,'simple mini active'})]
+		<div id="renseigner[(#CLE|plus{1})]">
+			<div class='editer-groupe'>
+			[(#SAISIE{tables_sql, objets/#CLE/renseigner_avec_table,
+				label=<:fabrique:label_charger_depuis_table_sql:>,
+				explication=<:fabrique:label_charger_depuis_table_sql_explication:>,
+				attention=<:fabrique:label_charger_depuis_table_sql_attention:>})]
+			</div>
+			<input type='submit' name='f_action[renseigner_objet][#CLE]' class='submit btn_secondaire right action' value='<:fabrique:bouton_renseigner_objet|attribut_html:/>'
+			onclick="fabrique_remove_required(jQuery(this).closest('.onglet-content'))"
+			/>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#nommer[(#CLE|plus{1})]"><:fabrique:legend_description:></a>,'simple mini'})]
+		<div id="nommer[(#CLE|plus{1})]" class='sous_parties'>
+			<div class='editer-groupe'>
+			[(#SAISIE{input, objets/#CLE/nom,
+				label=<:fabrique:label_nom_pluriel:>,
+				explication=<:fabrique:label_nom_pluriel_explication:>,
+				obligatoire=oui})]
+
+			[(#SAISIE{input, objets/#CLE/nom_singulier,
+				label=<:fabrique:label_nom_singulier:>,
+				explication=<:fabrique:label_nom_singulier_explication:>})]
+
+			[(#SAISIE{radio, objets/#CLE/genre,
+				label=<:fabrique:label_genre:>,
+				explication=<:fabrique:label_genre_explication:>,
+				data=[(#ARRAY{
+					masculin,<:fabrique:label_genre_masculin:>,
+					feminin,<:fabrique:label_genre_feminin:>})],
+				defaut=masculin})]
+			</div>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#imager[(#CLE|plus{1})]"><:fabrique:legend_logo:></a>,'simple mini'})]
+		<div id="imager[(#CLE|plus{1})]" class='sous_parties'>
+			<div class='editer-groupe'>
+			[(#REM) valeur vide pour eviter une notice car sinon, la valeur recue est un tableau ]
+			[(#SAISIE{input, objets/#CLE/logo/0,
+				label=<:fabrique:label_logo:>, type=file, valeur=''})]
+			</div>
+
+			[(#ENV{objets/#CLE/logo/0/fichier}|oui)
+				<div class='center'>
+					[(#ENV{objets/#CLE/logo/0/fichier}|fabrique_miniature_image{128})]
+					<input type='submit' name='f_action\[supprimer_logo\]\[objets/#CLE/logo/0\]' class='submit btn_danger btn_mini right action' value='<:fabrique:bouton_supprimer_logo|attribut_html:/>' />
+				</div>
+			]
+
+			<fieldset>
+				<legend class='legend'><:fabrique:legend_logo_specifiques:></legend>
+				<p class='explication'><:fabrique:legend_logo_specifiques_explication:></p>
+				<div class='editer-groupe'>
+				<BOUCLE_logos(DATA){liste 32,24,16,12}>
+					[(#REM) valeur vide pour eviter une notice car sinon, la valeur recue est un tableau ]
+					[(#SAISIE{input, objets/#_objet:CLE/logo/#VALEUR, label=<:fabrique:label_logo_taille{taille=#VALEUR}:>, type=file, valeur=''})]
+					[(#ENV{[objets/#_objet:CLE/logo/(#VALEUR)/fichier]}|oui)
+						<div class='center'>
+						[(#ENV{[objets/#_objet:CLE/logo/(#VALEUR)/fichier]}|fabrique_miniature_image{#VALEUR})]
+							<input type='submit' name='f_action\[supprimer_logo\]\[objets/#_objet:CLE/logo/#VALEUR\]' class='submit btn_danger btn_mini right action' value='<:fabrique:bouton_supprimer_logo|attribut_html:/>' />
+						</div>
+					]
+				</BOUCLE_logos>
+				</div>
+			</fieldset>
+
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#particulariser[(#CLE|plus{1})]"><:fabrique:legend_table:></a>,'simple mini'})]
+		<div id="particulariser[(#CLE|plus{1})]" class='sous_parties'>
+
+			<div class='editer-groupe'>
+			[(#SAISIE{input, objets/#CLE/table,
+				label=<:fabrique:label_table:>,
+				explication=<:fabrique:label_table_explication:>,
+				attention=<:fabrique:label_table_attention:>,
+				obligatoire=oui})]
+			</div>
+
+			<div class='parties' data-tab='#CLE'>
+				<div class="group" id='objet#CLE-table_options'>
+					<h4><a href="#objet#CLE-table_options"><:fabrique:legend_tables_hors_normes:></a></h4>
+					<div>
+						<p class='explication'><:fabrique:explication_tables_hors_normes:></p>
+
+						<div class='editer-groupe'>
+						[(#SAISIE{input, objets/#CLE/cle_primaire,
+							label=<:fabrique:label_cle_primaire:>,
+							explication=<:fabrique:label_cle_primaire_explication:>,
+							attention=<:fabrique:label_cle_primaire_attention:><br /><:fabrique:champ_auto_rempli:>})]
+
+						[(#SAISIE{input, objets/#CLE/cle_primaire_sql,
+							label=<:fabrique:label_cle_primaire_sql:>,
+							explication=<:fabrique:label_cle_primaire_sql_explication:>,
+							attention=<:fabrique:label_cle_primaire_sql_attention:><br /><:fabrique:champ_auto_rempli:>})]
+
+						[(#SAISIE{input, objets/#CLE/table_type,
+							label=<:fabrique:label_table_type:>,
+							explication=<:fabrique:label_table_type_explication:>,
+							attention=<:fabrique:label_table_type_attention:><br /><:fabrique:champ_auto_rempli:>})]
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#structurer[(#CLE|plus{1})]"><:fabrique:legend_champs:></a>,'simple mini'})]
+		<div id="structurer[(#CLE|plus{1})]" class='sous_parties'>
+
+			[(#SET{defaut_titre,''})]
+			[(#SET{defaut_lang,''})]
+			[(#SET{defaut_date,''})]
+			<datalist id="champs_#CLE">
+				<BOUCLE_list_champs(DATA){source tableau, #CHAMPS}>
+				<option label="#CHAMP" value="#CHAMP"/>
+				[(#CHAMP|in_array{#LISTE{nom,titre}}|oui) #SET{defaut_titre,#CHAMP} ]
+				[(#CHAMP|in_array{#LISTE{lang}}|oui) #SET{defaut_lang,#CHAMP} ]
+				[(#CHAMP|in_array{#LISTE{date_publication,date_creation,date}}|oui) #SET{defaut_date,#CHAMP} ]
+				</BOUCLE_list_champs>
+			</datalist>
+			[(#REM) si explicitement pas de date, ne pas définir le champ. ]
+			[(#ENV{objets/#CLE/champ_date_ignore}|oui) #SET{defaut_date,''} ]
+
+
+			[(#SET{id_objet,[(#ENV{objets/#CLE/id_objet}|sinon{id_objet})]})]
+			<p class='notice'><:fabrique:avertissement_champs{id_objet=#GET{id_objet}}:></p>
+			<B_champs>
+			<div class='parties accordion-boxes accordion-sortable' data-tab='#CLE'>
+				<BOUCLE_champs(DATA){source tableau,(#CHAMPS|sinon{#ARRAY})}>
+				[(#BOITE_OUVRIR{[<h4><a href="#[objet#_objet:CLE-champ(#CLE)]"><code>#(#CHAMP|sinon{''}|strtoupper|sinon{#CLE})</code></a>[<span class="sort-handle">(#CHEMIN_IMAGE{deplacer-16.svg}|balise_img)</span>]</h4>],simple mini}
+				|replace{'^<div ',[<div id="objet#_objet:CLE-champ(#CLE)" ]})]
+				<div>
+					<div class='editer-groupe'>
+					[(#SAISIE{input, objets/#_objet:CLE/champs/#CLE/nom,
+						label=<:fabrique:label_libelle:>,
+						explication=<:fabrique:label_libelle_champ_explication:>,
+						obligatoire=oui})]
+
+					[(#SAISIE{input, objets/#_objet:CLE/champs/#CLE/champ,
+						label=<:fabrique:label_colonne_sql:>,
+						explication=<:fabrique:label_colonne_sql_explication:>,
+						obligatoire=oui})]
+
+					[(#SAISIE{input, objets/#_objet:CLE/champs/#CLE/sql,
+						label=<:fabrique:label_definition_sql:>,
+						list=definitions_sql, inserer_fin=#GET{datalist_aide},
+						obligatoire=oui})]
+
+					[(#REM)
+						Cette saisie possede par defaut les caracteristiques cochees
+						mais si on les decoche, et qu'on valide, pour notre cas,
+						objet/cle/champs/cle/caracteristique devient alors NULL (et non pas array())
+						et la saisie remet logiquement les valeurs par defaut.
+						Pour eviter cela, on ne met les valeurs par defaut que sur la creation du champ
+					]
+					[(#SET{defaut,[(#ENV{objets/#_objet:CLE/champs/#CLE}|non|?{#LISTE{editable,versionne},#LISTE})]})]
+					[(#SAISIE{checkbox, objets/#_objet:CLE/champs/#CLE/caracteristiques,
+						label=<:fabrique:label_caracteristiques:>,
+						defaut=#GET{defaut},
+						data=[(#ARRAY{
+							editable,<:fabrique:label_champ_est_editable:>,
+							versionne,<:fabrique:label_champ_est_versionne:>,
+							obligatoire,<:fabrique:label_champ_est_obligatoire:>})]})]
+
+					[(#SAISIE{input, objets/#_objet:CLE/champs/#CLE/recherche,
+						label=<:fabrique:label_recherche:>,
+						explication=<:fabrique:label_recherche_explication:>})]
+					</div>
+
+					<fieldset>
+						<legend class='legend'><:fabrique:legend_saisie:></legend>
+						<div class='editer-groupe'>
+						[(#SAISIE{input, objets/#_objet:CLE/champs/#CLE/saisie,
+							label=<:fabrique:label_saisie:>,
+							explication=<:fabrique:label_saisie_explication:>,
+							list=saisies, inserer_fin=#GET{datalist_aide}})]
+
+						[(#SAISIE{input, objets/#_objet:CLE/champs/#CLE/explication,
+							label=<:fabrique:label_explication:>})]
+
+						[(#SAISIE{textarea, objets/#_objet:CLE/champs/#CLE/saisie_options,
+							label=<:fabrique:label_saisie_options:>,
+							explication=<:fabrique:label_saisie_options_explication:>,
+							rows=3, conteneur_class=pleine_largeur})]
+						</div>
+					</fieldset>
+
+					<input type='submit' name='f_action[supprimer_champ][#_objet:CLE][#CLE]' class='submit btn_danger btn_mini left action noscroll' value='<:fabrique:bouton_supprimer_champ|attribut_html:/>'
+					       onclick="fabrique_remove_required(jQuery(this).closest('.box'))"
+					/>
+				</div>
+				#BOITE_FERMER
+				</BOUCLE_champs>
+			</div>
+			</B_champs>
+			<input type='submit' name='f_action[ajouter_champ][#CLE]' class='submit btn_secondaire right action noscroll' value='<:fabrique:bouton_ajouter_champ|attribut_html:/>' />
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#excepter[(#CLE|plus{1})]"><:fabrique:legend_champs_speciaux:></a>,'simple mini'})]
+		<div id="excepter[(#CLE|plus{1})]" class='sous_parties'>
+
+			<fieldset>
+				<legend class='legend'><:fabrique:legend_champs_sql:></legend>
+				<div class='editer-groupe'>
+				[(#SAISIE{input, objets/#CLE/champ_titre,
+					label=<:fabrique:label_champ_titre:>,
+					explication=<:fabrique:label_champ_titre_explication:>,
+					list=champs_#CLE, defaut=#GET{defaut_titre}, inserer_fin=#GET{datalist_aide}})]
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend class='legend'><:fabrique:legend_langues_et_traductions:></legend>
+				<div class='editer-groupe'>
+				[(#SAISIE{checkbox, objets/#CLE/langues,
+					label=<:fabrique:label_champ_langues:>,
+					explication=<:fabrique:label_champ_langues_explication:>,
+					data=[(#ARRAY{
+						lang,<:fabrique:label_champ_lang_et_langue_choisie:>,
+						id_trad,<:fabrique:label_champ_id_trad:>})]})]
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend class='legend'><:fabrique:legend_date_publication:></legend>
+				<div class='editer-groupe'>
+				[(#SAISIE{input, objets/#CLE/champ_date,
+					label=<:fabrique:label_champ_date_publication:>,
+					explication=<:fabrique:label_champ_date_publication_explication:>,
+					list=champs_date, defaut=#GET{defaut_date}, inserer_fin=#GET{datalist_aide}})]
+
+				[(#SAISIE{case, objets/#CLE/champ_date_ignore,
+					label=<:fabrique:label_champ_date_publication_ignore:>,
+					label_case=<:fabrique:label_champ_date_publication_ignore_case:>,
+					defaut=''})]
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend class='legend'><:fabrique:legend_statut:></legend>
+				<div class='editer-groupe'>
+				[(#SAISIE{oui_non, objets/#CLE/statut,
+					label=<:fabrique:label_champ_statut:>,
+					explication=<:fabrique:label_champ_statut_explication:>})]
+				</div>
+			</fieldset>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#traduire[(#CLE|plus{1})]"><:fabrique:legend_chaines_langues:></a>,'simple mini'})]
+		<div id="traduire[(#CLE|plus{1})]" class='en_colonne'>
+				[(#SET{langue_objets,#ENV{objets/#CLE/nom,''}|trim|fabrique_mb_strtolower})]
+				[(#SET{langue_type,#ENV{objets/#CLE/nom_singulier,''}|trim|fabrique_mb_strtolower|sinon{#GET{objets,''}|substr{0,-1}}})]
+				[(#SET{langue_mobjets,#GET{langue_objets}|fabrique_mb_strtoupper|ucfirst})]
+				[(#SET{langue_mtype,#GET{langue_type}|fabrique_mb_strtoupper|ucfirst})]
+
+				[(#SET{objets,#ENV{objets/#CLE/table,''}|trim|replace{^spip_,''}|fabrique_mb_strtolower})]
+				[(#SET{type,#ENV{objets/#CLE/table_type,''}|trim|fabrique_mb_strtolower})]
+				[(#SET{mobjets,#GET{objets}|fabrique_mb_strtoupper|ucfirst})]
+				[(#SET{mtype,#GET{type}|fabrique_mb_strtoupper|ucfirst})]
+			<B_chaines>
+			<div class='editer-groupe'>
+			<BOUCLE_chaines(DATA){si #ENV{objets/#CLE/nom}}{liste
+				titre_objets,
+				titre_page_objets,
+				titre_objet,
+				info_aucun_objet,
+				info_1_objet,
+				info_nb_objets,
+				icone_creer_objet,
+				icone_modifier_objet,
+				titre_logo_objet,
+				titre_langue_objet,
+				texte_definir_comme_traduction_objet,
+				titre_\objets_lies_objet,
+				titre_objets_rubrique,
+				info_objets_auteur,
+				retirer_lien_objet,
+				retirer_tous_liens_objets,
+				ajouter_lien_objet,
+				texte_ajouter_objet,
+				texte_creer_associer_objet,
+				texte_changer_statut_objet,
+				supprimer_objet,
+				confirmer_supprimer_objet,
+			}>
+			[(#SAISIE{input, objets/#_objet:CLE/chaines/#VALEUR,
+				label=[(#VALEUR|cle_de_langue{#ARRAY{objet,#GET{objets},type,#GET{type}}})],
+				conteneur_class=pleine_largeur,
+				defaut=[(#VAL{fabrique:chaine_}|concat{#VALEUR|replace{'\[\\\]',''}}|concat{#_objet:GENRE|=={feminin}|?{_feminin}}|_T{[(#ARRAY{
+						objets,#GET{langue_objets},
+						mobjets,[(#GET{langue_objets}|ucfirst)],
+						type,#GET{langue_type},
+						mtype,[(#GET{langue_type}|ucfirst)]})]})]})]
+			</BOUCLE_chaines>
+			</div>
+			<div class='clear'>
+				<input type='submit' name='f_action[reinitialiser_chaines][#CLE]' class='submit btn_danger btn_mini left action' value='<:fabrique:bouton_reinitialiser_chaines|attribut_html:/>' />
+			</div>
+			</B_chaines>
+			<p class='notice'><:fabrique:valider_nom_objet_avant:></p>
+			<//B_chaines>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#lierdirectement[(#CLE|plus{1})]"><:fabrique:legend_liaisons_directes:></a>,'simple mini'})]
+		<div id="lierdirectement[(#CLE|plus{1})]" class='sous_parties'>
+			<fieldset>
+				<legend class='legend'><:fabrique:legend_rubriques:></legend>
+				<div class='editer-groupe'>
+				[(#SAISIE{checkbox, objets/#CLE/rubriques,
+					label=<:fabrique:label_champ_rubriques:>,
+					explication=<:fabrique:label_champ_rubriques_explication:>,
+					data=[(#ARRAY{
+						id_rubrique,<:fabrique:label_champ_id_rubrique:>,
+						id_secteur,<:fabrique:label_champ_id_secteur:>,
+						vue_rubrique,<:fabrique:label_champ_vue_rubrique:>,
+						statut_rubrique,<:fabrique:label_champ_statut_rubrique:>,
+						plan,<:fabrique:label_champ_plan_rubrique:>})]})]
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend class='legend'><:fabrique:legend_liaison_directe_autre_objet:></legend>
+				<div class='editer-groupe'>
+					[(#SAISIE{selection, objets/#CLE/liaison_directe,
+						label=<:fabrique:label_liaison_directe:>,
+						explication=<:fabrique:label_liaison_directe_explication:>,
+						data=[(#ENV{objets}|fabrique_lister_objets_editoriaux{#ENV{objets/#CLE/liaison_directe, #ARRAY}, #LISTE{#TABLE,spip_rubriques}})],
+						conteneur_class=saisie_choisir_objets})]
+				</div>
+			</fieldset>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#lierindirectement[(#CLE|plus{1})]"><:fabrique:legend_liaisons_indirectes:></a>,'simple mini'})]
+		<div id="lierindirectement[(#CLE|plus{1})]" class='sous_parties'>
+			<fieldset>[(#SET{o,[(#GET{objets}|sinon{objets})]})]
+				<legend class='legend'><:fabrique:legend_liaisons_objet_liens{objet=#GET{o}}:></legend>
+				<div class='editer-groupe'>
+				[(#SAISIE{oui_non, objets/#CLE/table_liens,
+					label=<:fabrique:label_table_liens:>})]
+
+				[(#SAISIE{checkbox, objets/#CLE/vue_liens,
+					label=<:fabrique:label_vue_liens:>,
+					explication=<:fabrique:label_vue_liens_explication:>,
+					data=[(#ENV{objets}|fabrique_lister_objets_editoriaux{#ENV{objets/#CLE/vue_liens, #ARRAY}, #LISTE{#TABLE}})],
+					conteneur_class=saisie_choisir_objets})]
+
+				[(#SAISIE{oui_non, objets/#CLE/afficher_liens,
+					label=<:fabrique:label_afficher_liens:>,
+					explication=<:fabrique:label_afficher_liens_explication:>})]
+				</div>
+
+
+				<div class='parties accordion-boxes'>
+					[(#BOITE_OUVRIR{<a href="#objet#CLE-inserer-roles"><:fabrique:legend_roles:></a>,'simple mini'})]
+					<div id="objet#CLE-inserer-roles">
+						<p class='msg-alert experimental'><:fabrique:experimental_explication:></p>
+						<p class='explication'><:fabrique:explication_roles:></p>
+
+						<div class='editer-groupe'>
+							#SET{rows,#ENV{objets/#CLE/roles}|explode{#EVAL{'"\n"'}}|count|max{4}}
+							[(#SAISIE{textarea, objets/#CLE/roles,
+								label=<:fabrique:label_roles:>,
+								explication=<:fabrique:label_roles_explication:>,
+								rows=#GET{rows}, conteneur_class=pleine_largeur})]
+						</div>
+					</div>
+					#BOITE_FERMER
+				</div>
+
+			</fieldset>
+
+			<fieldset>
+				<legend class='legend'><:fabrique:legend_liaisons_auteurs_liens:></legend>
+				<div class='editer-groupe'>
+				[(#SAISIE{oui_non, objets/#CLE/auteurs_liens,
+					label=<:fabrique:label_auteurs_liens:>,
+					explication=<:fabrique:label_auteurs_liens_explication:>})]
+
+				[(#SAISIE{oui_non, objets/#CLE/vue_auteurs_liens,
+					label=<:fabrique:label_vue_auteurs_liens:>,
+					explication=<:fabrique:label_vue_auteurs_liens_explication:>})]
+				</div>
+			</fieldset>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#supplementer[(#CLE|plus{1})]"><:fabrique:legend_fichiers_supplementaires:></a>,'simple mini'})]
+		<div id="supplementer[(#CLE|plus{1})]" class='sous_parties'>
+			<div class='editer-groupe'>
+				[(#SET{data,[(#ARRAY{
+					prive/squelettes/contenu/objets.html,prive/squelettes/contenu/objets.html,
+					prive/objets/infos/objet.html,prive/\objets/infos/objet.html,
+					prive/squelettes/contenu/objet.html,prive/squelettes/contenu/objet.html
+				}
+				|tab_cle_de_langue{[(#ARRAY{objet,#GET{objets},type,#GET{type}})]}
+				|tab_wrap{<strong>}
+				|tab_cle_traduite_ajoute_dans_valeur{fichier_echafaudage_})]})]
+
+				[(#SAISIE{checkbox, objets/#CLE/fichiers/echafaudages,
+					label=<:fabrique:label_fichiers_echafaudes:>,
+					explication=<:fabrique:explication_fichiers_echafaudes:>,
+					data=#GET{data}})]
+
+
+				[(#SET{data,[(#ARRAY{
+					action/supprimer_objet.php,action/supprimer_objet.php,
+				}
+				|tab_cle_de_langue{[(#ARRAY{objet,#GET{objets},type,#GET{type}})]}
+				|tab_wrap{<strong>}
+				|tab_cle_traduite_ajoute_dans_valeur{fichier_explicite_})]})]
+
+				[(#SAISIE{checkbox, objets/#CLE/fichiers/explicites,
+					label=<:fabrique:label_fichiers_explicites:>,
+					explication=<:fabrique:explication_fichiers_explicites:>,
+					data=#GET{data}})]
+
+				[(#SET{t_lobjet,#VAL{fabrique:saisies_objets}|_T{#ARRAY{saisie,#LOBJET|sinon{''}}}})]
+				[(#SAISIE{checkbox, objets/#CLE/saisies,
+					label=<:fabrique:label_saisies:>,
+					explication=<:fabrique:label_saisies_explication:>,
+					data=[(#ARRAY{objets,#GET{t_lobjet}})]})]
+
+			</div>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#autoriser[(#CLE|plus{1})]"><:fabrique:legend_autorisations:></a>,'simple mini'})]
+		<div id="autoriser[(#CLE|plus{1})]" class='sous_parties'>
+
+			<div class='explication'>
+				<p><:fabrique:legend_autorisations_explication:></p>
+				<B_types_autorisations>
+					<dl>
+				<BOUCLE_types_autorisations(DATA){liste
+					toujours,
+					auteur_objet,
+					auteur_objet_statut,
+					redacteur,
+					administrateur_restreint_objet,
+					administrateur_restreint,
+					administrateur,
+					webmestre,
+					jamais}>
+						<dt>[(#VAL{fabrique:autorisation_}|concat{#VALEUR}|_T)]</dt>
+						<dl>[(#VAL{fabrique:autorisation_}|concat{#VALEUR}|concat{_explication}|_T)]</dl>
+				</BOUCLE_types_autorisations>
+					</dl>
+				</B_types_autorisations>
+			</div>
+
+			<B_autorisations>
+			<div class='editer-groupe'>
+			<BOUCLE_autorisations(DATA){si #ENV{objets/#CLE/nom}}{liste
+				objets_voir,
+				objet_creer,
+				objet_voir,
+				objet_modifier,
+				objet_supprimer,
+				associerobjet,
+			}>
+			[(#SET{defaut,[(#VAL{fabrique:autorisation_}|concat{[(#VALEUR|fabrique_autorisation_defaut)]}|_T)]})]
+			[(#SET{defaut,[(#VAL{fabrique:autorisation_defaut}|_T{#ARRAY{defaut,#GET{defaut}}})]})]
+			[(#SET{choix,[(#ARRAY{
+				'',#GET{defaut},
+				toujours,<:fabrique:autorisation_toujours:>,
+				auteur_objet,<:fabrique:autorisation_auteur_objet:>,
+				auteur_objet_statut,<:fabrique:autorisation_auteur_objet_statut:>,
+				redacteur,<:fabrique:autorisation_redacteur:>,
+				administrateur_restreint_objet,<:fabrique:autorisation_administrateur_restreint_objet:>,
+				administrateur_restreint,<:fabrique:autorisation_administrateur_restreint:>,
+				administrateur,<:fabrique:autorisation_administrateur:>,
+				webmestre,<:fabrique:autorisation_webmestre:>,
+				jamais,<:fabrique:autorisation_jamais:>})]})]
+
+			[(#REM) Pas de choix "Auteur de l'objet" à la création… ou sur la vue liste ]
+			[(#VALEUR|in_any{#LISTE{objets_voir,objet_creer}}|oui)
+				[(#SET{choix,#GET{choix}|array_diff_key{#LISTE{auteur_objet,auteur_objet_statut}|array_flip}})]
+			]
+
+			[(#SAISIE{selection, objets/#_objet:CLE/autorisations/#VALEUR,
+				label=[(#VALEUR|cle_de_langue{#ARRAY{objet,#GET{objets},type,#GET{type}}})],
+				cacher_option_intro=oui,
+				data=#GET{choix}})]
+			</BOUCLE_autorisations>
+			</div>
+			<div class='clear'>
+				<input type='submit' name='f_action[reinitialiser_autorisations][#CLE]' class='submit btn_danger btn_mini left action' value='<:fabrique:bouton_reinitialiser_autorisations|attribut_html:/>' />
+			</div>
+			</B_autorisations>
+			<p class='notice'><:fabrique:valider_nom_objet_avant:></p>
+			<//B_autorisations>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#enrichir[(#CLE|plus{1})]"><:fabrique:legend_options:></a>,'simple mini'})]
+		<div id="enrichir[(#CLE|plus{1})]" class='sous_parties'>
+			<div class='editer-groupe'>
+			[(#REM)
+				Cette saisie possede par defaut les boutons edition et outils rapide
+				mais si on les decoche, et qu'on valide, pour notre cas,
+				objet/cle/boutons devient alors NULL (et non pas array())
+				et la saisie remet logiquement les valeurs par defaut.
+				Pour eviter cela, on ne met les valeurs par defaut que sur la creation de l'objet
+			]
+			[(#SET{defaut,[(#ENV{objets/#CLE}|non|?{#LISTE{menu_edition,outils_rapides},#LISTE})]})]
+			[(#SAISIE{checkbox, objets/#CLE/boutons,
+				label=<:fabrique:label_boutons:>,
+				explication=<:fabrique:label_boutons_explication:>,
+				defaut=#GET{defaut},
+				data=[(#ARRAY{
+					menu_edition,<:fabrique:bouton_menu_edition:>,
+					outils_rapides,<:fabrique:bouton_outils_rapides:>})]})]
+			</div>
+		</div>
+		#BOITE_FERMER
+
+		[(#BOITE_OUVRIR{<a href="#supprimer[(#CLE|plus{1})]"><:fabrique:legend_suppression:></a>,'simple mini'})]
+		<div id="supprimer[(#CLE|plus{1})]">
+			<input type='submit' name='f_action[supprimer_objet][#CLE]' class='submit btn_danger left action' value='<:fabrique:bouton_supprimer_objet|attribut_html:/>'
+			       onclick="fabrique_remove_required(jQuery(this).closest('.onglet-content'))" />
+		</div>
+		#BOITE_FERMER
+
+	</div>
+
+</BOUCLE_objet>

@@ -1,0 +1,16 @@
+<paquet
+	prefix="dist"
+	categorie="squelette"
+	version="4.2.6"
+	etat="stable"
+	compatibilite="[4.2.0;4.*]"
+	logo="icon/skel.svg"
+>
+
+	<nom>Dist</nom>
+	<!-- Squelettes par défaut de SPIP 4.0 -->
+
+	<auteur>Collectif SPIP</auteur>
+
+	<licence lien="http://www.gnu.org/licenses/gpl-3.0.html">GNU/GPL</licence>
+</paquet>

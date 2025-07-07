@@ -1,0 +1,163 @@
+<h1 class="grostitre">Documentation du plugin Terensys</h1>
+<div class="nettoyeur"></div>
+
+
+
+
+[(#BOITE_OUVRIR)]
+<h2>Présentation</h2>
+<p>Le plugin <strong>Terensys</strong> permet de gérer des objets éditoriaux personnalisés dans SPIP appelés « articles éditoriaux ».</p>
+<p>Ces objets sont des blocs qui seront affichés en page d'accueil.</p>
+Ils peuvent être créés, édités, supprimés et triés par glisser-déposer depuis l'interface privée de SPIP.<br>
+Il seront affichés en page d'accueil selon leur ordre.</p>
+<p>Divers objets éditoriaux sont associés à ces articles.</p>
+[(#BOITE_FERMER)]
+
+
+[(#BOITE_OUVRIR)]
+<h2>Articles éditoriaux</h2>
+<p>Un article éditorial est initialement composé de :</p>
+<ul class="spip">
+    <li>Un titre</li>
+    <li>Un type</li>
+</ul>
+
+<p>En fonction du type choisi, différents champs sont disponibles.</p>
+[(#BOITE_FERMER)]
+
+
+[(#BOITE_OUVRIR)]
+<h2>Les types d'articles</h2>
+<ul class="spip">
+    [(#BOITE_OUVRIR{'','sobre'})]
+    <li>
+        <h3>Texte avec image</h3>
+        <p>Les champs :</p>
+        <ul class="spip">
+            <li>Texte</li>
+            <li>Document</li>
+        </ul>
+        <p>Affiche un article accompagné d'une image.</p>
+    </li>
+    <img src="#CHEMIN_IMAGE{doc/texte-image.png}" alt="texte-image">
+    [(#BOITE_FERMER)]
+    [(#BOITE_OUVRIR{'','sobre'})]
+    <li>
+        <h3>Texte avec image et action</h3>
+        <p>Les champs :</p>
+        <ul class="spip">
+            <li>Texte</li>
+            <li>Document</li>
+            <li>Redirection</li>
+            <li>Label</li>
+        </ul>
+        <p>Affiche un article accompagné d'une image et d'un bouton redirigeant vers l'url de redirection.<br>Le label permet de renseigner le texte à l'intérieur du bouton.</p>
+    </li>
+    <img src="#CHEMIN_IMAGE{doc/texte-image-action.png}" alt="texte-image-action">
+    [(#BOITE_FERMER)]
+    [(#BOITE_OUVRIR{'','sobre'})]
+    <li>
+        <h3>Texte</h3>
+        <p>Les champs :</p>
+        <ul class="spip">
+            <li>Texte</li>
+        </ul>
+        <p>Affiche un article simple composé uniquement d'un titre et d'un texte.</p>
+    </li>
+    [(#BOITE_FERMER)]
+    [(#BOITE_OUVRIR{'','sobre'})]
+    <li>
+        <h3>Map</h3>
+        <p>Une fois créé, une carte vierge s'affiche. Il faut ensuite, depuis la page d'édition de l'article, ajouter des clients.<br>Une fois les clients ajoutés, des points, situés aux adresses des clients, seront affichés sur la carte.</p> 
+    </li>
+    <img src="#CHEMIN_IMAGE{doc/map-edition.png}" alt="Map édition">
+    <img src="#CHEMIN_IMAGE{doc/map.png}" alt="Map">
+    [(#BOITE_FERMER)]
+    [(#BOITE_OUVRIR{'','sobre'})]
+    <li>
+        <h3>Carrousel</h3>
+        <p>Affiche un carrousel. Une fois créé, il faut, depuis la page d'édition de l'article, ajouter des clients.</p>
+    </li>
+    <img src="#CHEMIN_IMAGE{doc/carrousel-edition.png}" alt="Carrosuel édition">
+    <img src="#CHEMIN_IMAGE{doc/carrousel.png}" alt="Carrosuel">
+    [(#BOITE_FERMER)]
+    [(#BOITE_OUVRIR{'','sobre'})]
+    <li>
+        <h3>4 Blocs</h3>
+        <p>Les champs :</p>
+        <ul class="spip">
+            <li>Articles</li>
+        </ul>
+        <p>Affiche 4 articles courts sous forme de 4 blocs disposés en carré. Il faut obligatoirement selectionner exactement 4 articles.</p>
+    </li>
+    <img src="#CHEMIN_IMAGE{doc/4-blocs-edition.png}" alt="4 blocs édition">
+    <img src="#CHEMIN_IMAGE{doc/4-blocs.png}" alt="4 blocs">
+    [(#BOITE_FERMER)]
+    [(#BOITE_OUVRIR{'','sobre'})]
+    <li>
+        <h3>Partenaire</h3>
+        <p>Affiche les logos des partenaires avec leur description. Une fois créé, il faut, depuis la page d'édition de l'article, ajouter des partenaires.</p>
+    </li>
+    <img src="#CHEMIN_IMAGE{doc/partenaires-edition.png}" alt="Partenaires édition">
+    <img src="#CHEMIN_IMAGE{doc/partenaires.png}" alt="Partenaires">
+    [(#BOITE_FERMER)]
+    [(#BOITE_OUVRIR{'','sobre'})]
+    <li>
+        <h3>Image avec cartes</h3>
+        <p>Les champs :</p>
+        <ul class="spip">
+            <li>Sous titre</li>
+            <li>Texte</li>
+            <li>Document</li>
+            <li>Redirection</li>
+            <li>Label</li>
+        </ul>
+        <p>Affiche un article accompagné d'une image et de cartes de l'équipe à côté.</p>
+        <p>Les champs ont les mêmes usages que ceux du Texte avec image et action</p>
+    </li>
+    <img src="#CHEMIN_IMAGE{doc/cartes.png}" alt="Image avec cartes">
+    [(#BOITE_FERMER)]
+</ul>
+[(#BOITE_FERMER)]
+
+[(#BOITE_OUVRIR)]
+<h2>Les Clients</h2>
+<p>Les Clients sont d'autres objets éditoriaux personnalisés.</p>
+<p>Ils sont composés de :</p>
+<ul class="spip">
+    <li>Un nom</li>
+    <li>Une adresse</li>
+    <li>Un logo</li>
+    <li>Un article associé</li>
+    <li>une URL</li>
+</ul>
+<p>L'adresse permet d'afficher le client sur la carte. Le logo peut être affiché dans le carrousel avec une redirection vers l'URL lors d'un clique sur celui-ci.</p>
+<p>L'article associé est celui vers lequel on va aller lors d'un clique sur le client dans la page <code>Références</code>.</p>
+<p>Les clients sont utilisés par la <code>Carte</code>, et la page <code>Références</code>.</p>
+[(#BOITE_FERMER)]
+
+[(#BOITE_OUVRIR)]
+<h2>Les Partenaires</h2>
+<p>Les Partenaires sont d'autres objets éditoriaux personnalisés.</p>
+<p>Ils sont composés de :</p>
+<ul class="spip">
+    <li>Un Nom</li>
+    <li>Une description</li>
+    <li>Un logo</li>
+    <li>Un article associé</li>
+</ul>
+<p>Le tout va être utilisé par l'article éditorial <code>Partenaire</code>.</p>
+[(#BOITE_FERMER)]
+
+[(#BOITE_OUVRIR)]
+<h2>Les Personnes</h2>
+<p>Les Personnes sont d'autres objets éditoriaux personnalisés.</p>
+<p>Ils sont composés de :</p>
+<ul class="spip">
+    <li>Un Nom</li>
+    <li>Une fonction</li>
+    <li>Un texte</li>
+    <li>Une image</li>
+</ul>
+<p>Le tout va être utilisé par l'article éditorial <code>Image avec cartes</code> et par la page <code>Équipe</code>.</p>
+[(#BOITE_FERMER)] 

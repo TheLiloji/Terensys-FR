@@ -1,0 +1,75 @@
+<div class='ajax' id="formulaire_forum">
+[(#REM)
+	Bloc de previsualisation du forum envoye
+
+	Si on valide la previsu, on n'envoie pas en ajax car, si le post reussit
+	il faudra certainement redessiner toute la page pour afficher le nouveau
+	forum
+
+][<form action="#ENV{action}#formulaire_forum" method="post" class="noajax">
+	<div>
+	#ACTION_FORMULAIRE
+	<input type='hidden' name='titre' value="#ENV{titre}" />
+	<input type='hidden' name='texte' value="#ENV{texte}" />
+	<input type='hidden' name='url_site' value="#ENV{url_site}" />
+	<input type='hidden' name='nom_site' value="#ENV{nom_site}" />
+	[<input type="hidden" name="id_forum" value="(#ENV{id_forum})" />]
+	(#ENV**{erreurs/previsu})
+	</div>
+</form>]
+<div class="formulaire_spip formulaire_forum">
+
+[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+
+[(#ENV{editable})
+
+<form action="#ENV{action}#formulaire_forum" method="post" enctype='multipart/form-data'><div>
+	#ACTION_FORMULAIRE
+	[<input type="hidden" name="id_forum" value="(#ENV{id_forum})" />]
+
+[(#ENV{config/forums_titre})
+		<input type="hidden" name="titre" id="titre"[ value="(#ENV{titre})"] />
+	]<div class="editer-groupe">
+
+[(#ENV{config/forums_titre}|!={non}|oui)
+	<div class='editer saisie_titre[ (#ENV*{erreurs/titre}|oui)erreur] obligatoire'>
+		<label for="titre"><:forum:forum_titre:></label>
+		[<span class='erreur_message'>(#ENV*{erreurs/titre})</span>]
+		<input type="text" class="text" name="titre" id="titre"[ value="(#ENV{titre})"] size="60" />
+	</div>
+]
+
+[(#ENV{config/forums_texte}|?{
+	<div class='editer saisie_texte[ (#ENV*{erreurs/texte}|oui)erreur] '>
+		<label for='texte'><:forum:forum_texte|typo:></label>
+		[<span class='erreur_message'>(#ENV*{erreurs/texte})</span>]
+		<p class='explication'><:info_creation_paragraphe:></p>
+		<textarea name="texte" id="texte" rows="12" cols="60">[(#ENV{texte})]</textarea>
+	</div>
+})]
+
+[(#ENV{config/forums_urlref}|?{
+	<div class='fieldset'><fieldset>
+	<legend><:forum:forum_lien_hyper:></legend>
+	<p class='explication'><:forum:forum_page_url:></p>
+	<div class="editer-groupe">
+	<div class='editer saisie_nom_site[ (#ENV*{erreurs/nom_site}|oui)erreur]'><label for="nom_site"><:forum:forum_titre:></label>
+	[<span class='erreur_message'>(#ENV*{erreurs/nom_site})</span>]
+	<input type="text" class="text" name="nom_site" id="nom_site" size="40" value="[(#ENV{nom_site})]" /></div>
+	<div class='editer saisie_url_site[ (#ENV*{erreurs/url_site}|oui)erreur]'><label for="url_site"><:forum:forum_url:></label>
+	[<span class='erreur_message'>(#ENV*{erreurs/url_site})</span>]
+	<input type="text" class="text" name="url_site" id="url_site" style="text-align: left;" dir="ltr" size="40" placeholder="https://" value="[(#ENV{url_site})]" /></div>
+	</div></fieldset></div>
+})]
+	</div>
+
+	<p class="boutons"><input type="submit" class="btn submit" name="previsualiser_message" value="<:forum:forum_voir_avant:>" />[
+	(#ENV{forcer_previsu}|=={non}|et{#ENV*{erreurs/previsu}|non}|oui)<input type="submit" class="btn submit" name="envoyer_message" value="<:forum:forum_envoyer:>" />]</p>
+
+</div>
+</form>
+
+]
+</div>
+</div>

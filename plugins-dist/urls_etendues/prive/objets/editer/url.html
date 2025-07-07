@@ -1,0 +1,20 @@
+[(#OBJET|urls_is_url_editable{#ID_OBJET}|oui)
+<div class="editer_urls">
+	[
+		#SET{auth,#AUTORISER{modifierurl,#OBJET,#ID_OBJET}}
+		[(#GET{auth}|oui)
+		<button class="btn btn_link"
+		title="Modifier l'URL"
+		onclick="jQuery(this).closest('.editer_urls').find('.edition').toggle('fast').closest('.editer_urls').delay(300).toggleClass('open');return false;"
+						><span class="btn btn_mini edit btn_secondaire"><:bouton_modifier:></span>]
+		[(#GET{auth}|non)<span class='btn btn_link'>]
+			<span class="url" id="url-#OBJET-#ID_OBJET">(#ID_OBJET|generer_objet_url{#OBJET,'','',#EVAL{true}}|url_absolue)</span>[(#GET{auth}|?{</button>,</span>})]]
+	[(#AUTORISER{modifier,#OBJET,#ID_OBJET})
+	<div class="edition">
+		<div class="ajax">
+			#FORMULAIRE_EDITER_URL_OBJET{#OBJET,#ID_OBJET}
+		</div>
+	</div>
+	]
+</div>
+]

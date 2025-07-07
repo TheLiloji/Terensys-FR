@@ -1,0 +1,176 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/porte_plume_previsu.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/porte_plume_previsu.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 32
+			path: barre_outils/edition.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: barre_outils/forum.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function echappe_retour not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function find_all_in_path not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function html2unicode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function propre not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function protocole_implicite not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function safehtml not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function unicode2charset not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_ieconfig.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: porte_plume_pipelines.php
+
+		-
+			message: '#^Function direction_css not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_pipelines.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: porte_plume_pipelines.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: porte_plume_pipelines.php
+
+		-
+			message: '#^Function lang_dir not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_pipelines.php
+
+		-
+			message: '#^Function produire_fond_statique not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: porte_plume_pipelines.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_pipelines.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: porte_plume_pipelines.php
+
+		-
+			message: '#^Function timestamp not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: porte_plume_pipelines.php
+

@@ -1,0 +1,536 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function spip_htmlspecialchars not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: engine/textwheel.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: engine/textwheelruleset.php
+
+		-
+			message: '#^Function yaml_decode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: engine/textwheelruleset.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/autoliens.php
+
+		-
+			message: '#^Function echappe_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/autoliens.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function attribut_html not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/lien.php
+
+		-
+			message: '#^Function charset2unicode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function echappe_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function email_valide not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function entites_html not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/lien.php
+
+		-
+			message: '#^Function html2unicode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function html5_permis not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 13
+			path: inc/lien.php
+
+		-
+			message: '#^Function objet_test_si_publie not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function quote_amp not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function sql_get_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function supprimer_numero not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function supprimer_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function traduire_nom_langue not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function traiter_modeles not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function unicode2charset not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/lien.php
+
+		-
+			message: '#^Function url_de_base not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/lien.php
+
+		-
+			message: '#^Instantiated class Spip\\Texte\\Collecteur\\Liens not found\.$#'
+			identifier: class.notFound
+			count: 3
+			path: inc/lien.php
+
+		-
+			message: '#^Instantiated class Spip\\Texte\\Collecteur\\Modeles not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: inc/lien.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/notes.php
+
+		-
+			message: '#^Function code_echappement not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/notes.php
+
+		-
+			message: '#^Function couper not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/notes.php
+
+		-
+			message: '#^Function inc_notes_dist\(\) should return array\|string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: inc/notes.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/notes.php
+
+		-
+			message: '#^Function supprimer_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/notes.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/ressource-mini.php
+
+		-
+			message: '#^Function PtoBR not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/ressource.php
+
+		-
+			message: '#^Function echappe_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/ressource.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/ressource.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/texte.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function aide_lang_dir not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/texte.php
+
+		-
+			message: '#^Function alterner not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/texte.php
+
+		-
+			message: '#^Function corriger_caracteres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function echappe_html not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/texte.php
+
+		-
+			message: '#^Function echappe_retour not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/texte.php
+
+		-
+			message: '#^Function echappe_retour_modeles not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function echapper_faux_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function echapper_html_suspect not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/texte.php
+
+		-
+			message: '#^Function entites_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function erreur_squelette not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/texte.php
+
+		-
+			message: '#^Function extraire_idiome not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function extraire_multi not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function html5_permis not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function http_img_pack not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/texte.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/texte.php
+
+		-
+			message: '#^Function inserer_attribut not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/texte.php
+
+		-
+			message: '#^Function lang_typo not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: inc/texte.php
+
+		-
+			message: '#^Function safehtml not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/texte.php
+
+		-
+			message: '#^Function spip_htmlspecialchars not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/texte.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/texte.php
+
+		-
+			message: '#^Function textebrut not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/texte.php
+
+		-
+			message: '#^Function traiter_modeles not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Instantiated class Spip\\Texte\\Collecteur\\Liens not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Instantiated class Spip\\Texte\\Collecteur\\Modeles not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: inc/texte.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/textwheel.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/textwheel.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/textwheel.php
+
+		-
+			message: '#^Function purger_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/textwheel.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/textwheel.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/textwheel.php
+
+		-
+			message: '#^Function code_echappement not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: wheels/spip/backticks.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: wheels/spip/backticks.php
+
+		-
+			message: '#^Function spip_balisage_code not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: wheels/spip/backticks.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: wheels/spip/echappe-js.php
+
+		-
+			message: '#^Function spip_htmlspecialchars not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: wheels/spip/echappe-js.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: wheels/spip/spip-listes.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: wheels/spip/spip-tableaux.php
+
+		-
+			message: '#^Function attribut_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: wheels/spip/spip.php
+
+		-
+			message: '#^Function definir_puce not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: wheels/spip/spip.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: wheels/spip/spip.php
+
+		-
+			message: '#^Function traiter_math not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: wheels/spip/spip.php
+

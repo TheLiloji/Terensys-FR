@@ -1,0 +1,43 @@
+<traduction
+	module="adminmots"
+	id="adminmots--mots-f7db7"
+	gestionnaire="salvatore"
+	url="https://trad.spip.net"
+	source="https://git.spip.net/spip/mots.git"
+	reference="fr">
+	<langue code="ar" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=ar" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
+	</langue>
+	<langue code="de" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=de" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="klaus++" lien="https://trad.spip.net/auteur/klaus" />
+		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
+	</langue>
+	<langue code="en" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=en" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
+	</langue>
+	<langue code="eo" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=eo" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="gpl" lien="https://trad.spip.net/auteur/gpl" />
+		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
+	</langue>
+	<langue code="es" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=es" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="comcinco" lien="https://trad.spip.net/auteur/comcinco-7293" />
+	</langue>
+	<langue code="fr" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=fr" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
+	<langue code="fr_tu" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=fr_tu" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
+	</langue>
+	<langue code="it" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=it" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="Alberto" lien="https://trad.spip.net/auteur/alberto" />
+	</langue>
+	<langue code="mg" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=mg" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="iBesorongola" lien="https://trad.spip.net/auteur/ibesorongola" />
+	</langue>
+	<langue code="nl" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=nl" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="Hanjo" lien="https://trad.spip.net/auteur/hanjo" />
+		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
+	</langue>
+	<langue code="pt_br" url="https://trad.spip.net/tradlang_module/adminmots?lang_cible=pt_br" total="24" traduits="24" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="RealET" lien="https://trad.spip.net/auteur/realet" />
+		<traducteur nom="Ricardo Porto" lien="https://trad.spip.net/auteur/ricardo-porto" />
+	</langue>
+</traduction>

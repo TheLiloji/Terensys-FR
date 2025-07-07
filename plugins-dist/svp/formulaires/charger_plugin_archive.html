@@ -1,0 +1,36 @@
+<div class='formulaire_spip formulaire_#FORM'>
+<h3 class='titrem'><:svp:titre_form_charger_plugin_archive:></h3>
+
+[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+
+	<form method="post" action="#SELF"><div>
+		#ACTION_FORMULAIRE
+		[<p class='notice'>(#ENV*{erreurs/confirmer})
+			<p class='boutons'><input class='btn submit' type="submit" name='confirmer' value="<:svp:bouton_confirmer:>" /></p>
+		</p>]
+
+		<p class='explication'><:svp:telecharger_archive_plugin_explication:></p>
+		<div class="editer-groupe">
+			<div class="editer editer_password obligatoire[(#ENV{erreurs/password}|oui) erreur]">
+				<label for="password"><:entree_mot_passe:></label>
+				[<span class="erreur_message">(#ENV*{erreurs/password})</span>]
+				<input type="password" name="password" id="password" value="#ENV{password}" class="text" />
+				<p class='explication'><:svp:explication_mot_passe:></p>
+			</div>
+			<div class="editer editer_archive pleine_largeur obligatoire[(#ENV{erreurs/archive}|oui) erreur]">
+				<label for="archive"><:svp:label_archive:></label>
+				[<span class="erreur_message">(#ENV*{erreurs/archive})</span>]
+				<input type="text" name="archive" id="archive" value="#ENV{archive}" class="text" />
+			</div>
+			<div class="editer editer_destination[(#ENV{erreurs/destination}|oui) erreur]">
+				<label for="destination"><:svp:label_destination:></label>
+				[<span class="erreur_message">(#ENV*{erreurs/destination})</span>]
+				<input type="text" name="destination" id="destination" value="#ENV{destination}" class="text" />
+				<p class='explication'><:svp:explication_destination:></p>
+			</div>
+		</div>
+		<p class='boutons'><input class='btn submit' type="submit" value="<:bouton_telecharger:>" /></p>
+	</div></form>
+
+</div>

@@ -1,0 +1,680 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function extraire_multi not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_url.php
+
+		-
+			message: '#^Function match_langue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/editer_url.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/editer_url.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: action/editer_url.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 21
+			path: action/editer_url.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_url.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: action/editer_url.php
+
+		-
+			message: '#^Function supprimer_numero not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function supprimer_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function translitteration not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_url.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_url.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_url.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_url.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/supprimer_url.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_url.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_url.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/urls_actualiser.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/urls_actualiser.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/urls_actualiser.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/urls_actualiser.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/configurer_urls.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_urls.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_urls.php
+
+		-
+			message: '#^Function find_all_in_path not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_urls.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_urls_arbo_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_urls_propres_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: formulaires/editer_url_objet.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_url_objet.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/editer_url_objet.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_url_objet.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/contenu/configurer_urls_fonctions.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function changer_langue not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/arbo.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/arbo.php
+
+		-
+			message: '#^Function charger_fonction_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function extraire_multi not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function get_spip_script not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: urls/arbo.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 11
+			path: urls/arbo.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/arbo.php
+
+		-
+			message: '#^Function sql_in_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: urls/arbo.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function textebrut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/arbo.php
+
+		-
+			message: '#^Function urls_liste_objets not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function urls_transition_retrouver_anciennes_url_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function urls_transition_retrouver_anciennes_url_propres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/arbo.php
+
+		-
+			message: '#^Function charger_fonction_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/html.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/html.php
+
+		-
+			message: '#^Function nettoyer_url_page not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/html.php
+
+		-
+			message: '#^Function urls_transition_retrouver_anciennes_url_propres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/html.php
+
+		-
+			message: '#^Function charger_fonction_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/libres.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function charger_fonction_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/propres.php
+
+		-
+			message: '#^Function get_spip_script not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/propres.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: urls/propres.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: urls/propres.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/propres.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function urls_liste_objets not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function urls_transition_retrouver_anciennes_url_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/propres.php
+
+		-
+			message: '#^Function charger_fonction_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/propres2.php
+
+		-
+			message: '#^Function charger_fonction_url not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/propres_qs.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/simple.php
+
+		-
+			message: '#^Function charger_fonction_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/simple.php
+
+		-
+			message: '#^Function get_spip_script not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/simple.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls/simple.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/simple.php
+
+		-
+			message: '#^Function nettoyer_url_page not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/simple.php
+
+		-
+			message: '#^Function urls_transition_retrouver_anciennes_url_propres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/simple.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_administrations.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls_administrations.php
+
+		-
+			message: '#^Function effacer_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_administrations.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_administrations.php
+
+		-
+			message: '#^Function maj_plugin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_administrations.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls_administrations.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_administrations.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_administrations.php
+
+		-
+			message: '#^Function sql_drop_table not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_administrations.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls_administrations.php
+
+		-
+			message: '#^Function sql_free not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls_administrations.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: urls_administrations.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: urls_administrations.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: urls_administrations.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: urls_autoriser.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_autoriser.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_autoriser.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_autoriser.php
+
+		-
+			message: '#^Function generer_objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_fonctions.php
+
+		-
+			message: '#^Function objet_test_si_publie not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_fonctions.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_fonctions.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_ieconfig.php
+
+		-
+			message: '#^Function objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_pipeline.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls_pipeline.php
+

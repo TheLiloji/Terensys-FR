@@ -1,0 +1,20 @@
+<BOUCLE_contenu_plugin(PLUGINS) {id_plugin=#ENV{id}}{0, 1}>
+<div class="champ contenu_titre[ (#NOM*|strlen|?{'',vide})]">
+	<div class="label"><:info_nom:></div>
+	<div dir="#LANG_DIR" class="titre">#NOM</div>
+</div>
+<div class="champ contenu_soustitre[ (#PREFIXE*|strlen|?{'',vide})]">
+	<div class="label"><:label_prefixe:></div>
+	<div dir="#LANG_DIR" class="soustitre">[(#PREFIXE|strtolower)]</div>
+</div>
+[<div class="champ contenu_descriptif[ (#SLOGAN*|strlen|?{'',vide})]">
+	<div dir="#LANG_DIR" class="texte">(#SLOGAN)</div>
+</div>]
+<!--affiche_milieu-->
+<BOUCLE_description_vmax(PAQUETS) {id_plugin}{version=#VMAX*}>
+[<div class="champ contenu_texte[ (#DESCRIPTION*|strlen|?{'',vide})]">
+	<div class="label"><:svp:label_plugin_description{version=#VERSION}:></div>
+	<div dir="#LANG_DIR" class="texte">(#DESCRIPTION)</div>
+</div>]
+</BOUCLE_description_vmax>
+</BOUCLE_contenu_plugin>

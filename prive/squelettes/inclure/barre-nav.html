@@ -1,0 +1,177 @@
+#SET{contexte,#EVAL{definir_barre_contexte()}}
+#SET{boutons,#GET{contexte}|definir_barre_boutons{1}|trier_boutons_enfants_par_favoris_alpha}
+#SET{boutons_infos_perso, #VAL{infos_perso}|definir_barre_onglets}
+<div id="bando_haut" class="bando-haut" role="navigation">
+
+	[(#REM) Liens d'évitement ]
+	<div id="bando_liens_rapides" class="bando-evitement">
+		<div class="largeur">
+			<p class="menu-simple menu-simple_evitement">
+				<a class="menu-simple__item" href="#conteneur" onclick="return focus_zone('#conteneur')">Aller au contenu</a>
+				<a class="menu-simple__item" href="#bando_navigation" onclick="return focus_zone('#bando_navigation')">Aller &agrave; la navigation</a>
+				<a class="menu-simple__item" href="#recherche" onclick="return focus_zone('#rapides .formulaire_recherche')">Aller &agrave; la recherche</a>
+			</p>
+		</div>
+	</div>
+
+	[(#REM) Bandeau identité ]
+	<div id="bando_identite" class="bando-id">
+		<div class="largeur">
+			[(#REM) Identité et contenu du site ]
+			<ul class="deroulant deroulant_infos_site" data-racine>
+				<li class="deroulant__item">
+					<a
+						class="deroulant__lien"
+						href="#URL_SITE_SPIP"
+					>
+						[(#CHEMIN_IMAGE{favicon-spip.png}|balise_img{'', picto picto_identite, 24})]
+						<span class="libelle">[(#NOM_SITE_SPIP|couper{35})]</span>
+					</a>
+
+					<ul class="deroulant__sous-menu" data-profondeur="1">
+						<li class="deroulant__item">
+							<a
+								class="deroulant__lien voir"
+								href="#URL_SITE_SPIP"
+							>
+								[(#CHEMIN_IMAGE{voir-ligne-24.png}|balise_img{'', picto picto_preview, 24})]
+								<span class="libelle"><:icone_visiter_site:></span>
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="deroulant__item deroulant__item_plan plan_site" data-racine>
+					<a
+						class="deroulant__lien"
+						href="#URL_ECRIRE{plan}"
+						id="boutonbandeautoutsite"
+						title="<:public:plan_site:>"
+						data-racine
+					>
+						[(#CHEMIN_IMAGE{plan_site-24.png}|balise_img{<:public:plan_site:>,picto picto_plan})]
+					</a>
+					[(#REM|menu_rubriques)]
+				</li>
+				<B_creer>
+				<li class="deroulant__item">
+					<a class="deroulant__lien bando2_creer" href="#URL_ECRIRE{navigation, menu=outils_rapides}">
+						[(#CHEMIN_IMAGE{creer-24.png}|balise_img{'', picto picto_creer})]
+						<span class="libelle"><:icone_outils_rapides:></span>
+					</a>
+
+					<ul class="deroulant__sous-menu" data-profondeur="1">
+						<BOUCLE_creer(DATA){source table, #GET{boutons}} {cle=outils_rapides}>
+						<BOUCLE_creersous(DATA){source table, #VALEUR{sousmenu}}{par position}>
+						[<li class="deroulant__item">
+							<a
+								href="[(#VALEUR{url}|sinon{#CLE}|bandeau_creer_url{#VALEUR{urlArg},#GET{contexte}})]"
+								title="[(#VALEUR{libelle}|_T|attribut_html)]"
+								class="deroulant__lien bando2_#CLE"><span class="libelle">(#VALEUR{libelle}|_T)</span></a>
+						</li>]
+						</BOUCLE_creersous></BOUCLE_creer>
+					</ul>
+				</li>
+				</B_creer>
+			</ul>
+
+			[(#REM) La recherche au milieu ]
+			#FORMULAIRE_RECHERCHE_ECRIRE
+
+			<BOUCLE_collaborer(DATA){source table, #GET{boutons}} {cle=outils_collaboratifs}>
+			<B_collaborersous>
+			<ul class="deroulant deroulant_collaborer collaborer">
+			<BOUCLE_collaborersous(DATA){source table, #VALEUR{sousmenu}}>
+				[<li class="deroulant__item deroulant__item_collaborer">
+					<a
+						href="[(#VALEUR{url}|sinon{#CLE}|bandeau_creer_url{#VALEUR{urlArg},#GET{contexte}})]"
+						title="[(#VALEUR{libelle}|_T|attribut_html)]"
+						class="deroulant__lien bando2_#CLE"><span class="libelle">(#VALEUR{libelle}|_T)</span></a>
+				</li>]
+			</BOUCLE_collaborersous>
+			</ul>
+			</B_collaborersous>
+			</BOUCLE_collaborer>
+
+			[(#REM) Identité de la personne connectée ]
+			<ul class="deroulant deroulant_infos_perso" data-racine>
+				[(#PLUGIN{aide}|oui)<li class="deroulant__item deroulant__item_aide">
+					<a
+						class="deroulant__lien popin" target="_blank"
+						href="#URL_ECRIRE{aide,var_lang=#LANG}"
+					>
+						<span class="libelle"><:icone_aide_ligne:></span>
+					</a>
+				</li>]
+				<li class="deroulant__item">
+					<a
+						class="deroulant__lien"
+						title="<:icone_informations_personnelles|attribut_html:> \(<:auteur|attribut_html:> ##SESSION{id_auteur}\)"
+						href="#URL_ECRIRE{infos_perso}"
+					>
+						[(#CHEMIN_IMAGE{auteur-24.png}|balise_img{'', picto picto_auteur})]
+						<span class="libelle">[(#SESSION{nom}|trim|sinon{#SESSION{login}}|typo|couper{30})]</span>
+					</a>
+
+					<ul class="deroulant__sous-menu" data-profondeur="1">
+						<BOUCLE_infos_perso(DATA){source table, #GET{boutons_infos_perso}}{par position}{cle!=infos_perso}>
+						[<li class="deroulant__item">
+							<a
+								href="[(#VALEUR{url}|sinon{#CLE|generer_url_ecrire})]"
+								class="deroulant__lien bando2_#CLE"
+							>
+								[(#VALEUR{icone}|balise_img{'', picto picto_#CLE})]
+								<span class="libelle">(#VALEUR{libelle}|_T)[(#CLE|=={configurer_langage}|oui)[ - (#LANG|traduire_nom_langue)]]</span>
+							</a>
+						</li>]
+						</BOUCLE_infos_perso>
+						<li class="deroulant__item">
+							<a class="deroulant__lien" href="[(#VAL{logout}|generer_url_action{logout=prive})]">
+								[(#CHEMIN_IMAGE{auteur-5poubelle-24.png}|balise_img{'', picto picto_logout})]
+								<span class="libelle"><:icone_deconnecter:></span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	[(#REM) Menu de navigation principale ]
+	<div id="bando_navigation" class="bando-nav">
+		<div class="largeur">
+			<B_boutons>
+				<ul class="deroulant deroulant_navigation" data-racine>
+					<BOUCLE_boutons(DATA)
+						{source tableau, #GET{boutons}}
+						{cle!=outils_rapides}
+						{cle!=outils_collaboratifs}
+					>
+					[<li class="deroulant__item" data-racine>
+						(#CLE|=={menu_accueil}|ou{#VALEUR{sousmenu}}|?{' ',#SET{li,''}}) #SET{li,'</li>'}
+						<a class="deroulant__lien" href="[(#VALEUR{url}|sinon{#CLE}|bandeau_creer_url{#VALEUR{urlArg},#GET{contexte}})]" id="bando1_#CLE" data-racine>
+							[(#VALEUR{icone}|balise_svg{'',picto picto_main[ picto_(#CLE|replace{_,-})]})]
+							[<span class="libelle">(#VALEUR{libelle}|_T)</span>]
+						</a>
+						][(#REM)
+						permettra d'ajouter une classe sur les entrées non favorites
+						si le menu a des entrées favorites, pour faciliter le stylage CSS
+						][(#SET{has_favoris,0})]
+						<B_sous>
+						<ul class="deroulant__sous-menu[ (#TOTAL_BOUCLE|>{20}|oui)cols-2]" data-profondeur="1">
+							<BOUCLE_sous(DATA){source table, #VALEUR{sousmenu}}>
+							[(#VALEUR{favori}|oui)#SET{has_favoris,1}]
+							[<li class="deroulant__item[ (#VALEUR{favori}|?{deroulant__item_favori,[(#GET{has_favoris}|?{deroulant__item_non-favori})]})]" data-profondeur="1">
+								<a class="deroulant__lien bando2_#CLE" href="[(#VALEUR{url}|sinon{#CLE}|bandeau_creer_url{#VALEUR{urlArg},#GET{contexte}})]" data-profondeur="1">
+									<span class="libelle">(#VALEUR{libelle}|_T)</span>
+								</a>
+							</li>]
+							</BOUCLE_sous>
+						</ul>
+						</B_sous>
+					#GET{li}
+					</BOUCLE_boutons>
+				</ul>
+			</B_boutons>
+		</div>
+	</div>
+</div>

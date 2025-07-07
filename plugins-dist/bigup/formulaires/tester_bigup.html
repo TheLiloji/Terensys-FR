@@ -1,0 +1,82 @@
+<div class="formulaire_spip formulaire_#FORM">
+
+	<h3 class="titrem">Test de CVT avec upload de fichiers</h3>
+
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+
+
+	<div class="explication">
+		Ce formulaire vise à montrer le fonctionnement d'un CVT traditionnel,
+		auquel on ajoute des champs de type fichier.
+
+		L'upload se fait indépendamment de la soumission du formulaire.
+	</div>
+
+	<form method="post" action="#ENV{action}" enctype="multipart/form-data">
+	<div>
+		#ACTION_FORMULAIRE
+		<input type="submit" class="submit hidden" value="<:bouton_enregistrer|attribut_html:>" />
+
+		<div class='editer-groupe'>
+			[(#SAISIE{input, titre,
+				label=Titre,
+				obligatoire=oui})]
+
+			[(#REM)
+				Calcul du token d'autorisation avec la balise \#SAISIE native :
+
+				* Soit on transmet les arguments 'form' et 'formulaire_args'
+				  (et la balise BIGUP_TOKEN pourra se calculer dans la saisies/bigup.html).
+				  - Exemple : \#SAISIE{bigup, nom, form, formulaire_args, ...
+
+				* Soit on transmet l'argument 'token' en le faisant calculer ici,
+				  (dans ce cas il faut lui indiquer les paramètres name et multiple).
+				  - Exemple : \#SAISIE{bigup, nom, token=#BIGUP_TOKEN{nom}, ...
+				  - Exemple : \#SAISIE{bigup, nom, token=#BIGUP_TOKEN{nom, multiple}, ...
+
+				Sinon utiliser la balise \#SAISIE_FICHIER qui ajoute automatiquement form et formulaire_args.
+			]
+
+			[(#SAISIE_FICHIER{bigup, file,
+				label=Un seul fichier possible})]
+
+			[(#SAISIE_FICHIER{bigup, images,
+				label=Plusieurs fichiers images (par mime/type),
+				accept=image/*,
+				multiple=oui})]
+
+			[(#SAISIE_FICHIER{bigup, images2,
+				label=Plusieurs images avec previsu,
+				previsualiser=oui,
+				accept=image/*,
+				multiple=oui})]
+
+			[(#SAISIE_FICHIER{bigup, extension,
+				label=Plusieurs fichiers pdf (par extension),
+				multiple=oui,
+				accept=.pdf})]
+
+			[(#SAISIE_FICHIER{bigup, animaux/chats/noir,
+				label=1 chat noir (sous tableaux unique) })]
+
+			[(#SAISIE_FICHIER{bigup, animaux/chats/blancs,
+				label=des chats blancs (sous tableaux multiple),
+				multiple=oui})]
+
+			[(#SAISIE_FICHIER{bigup, animaux/chats//gris,
+				label=des chats gris (sous tableaux multiple),
+				multiple=oui})]
+
+			[(#SAISIE_FICHIER{bigup, lapins/,
+				label=Name tableau mais pas multiple,
+				multiple=non})]
+
+		</div>
+
+		<div class="boutons">
+			<input type="submit" class="submit" value="<:bouton_enregistrer|attribut_html:>" />
+		</div>
+	</div>
+	</form>
+</div>

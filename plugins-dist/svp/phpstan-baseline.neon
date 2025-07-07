@@ -1,0 +1,1706 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/actionner.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/actionner.php
+
+		-
+			message: '#^Function attribut_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Function find_in_theme not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/actionner.php
+
+		-
+			message: '#^Function generer_action_auteur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: action/actionner.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Function redirige_par_entete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Function session_get not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Function session_set not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actionner.php
+
+		-
+			message: '#^Instantiated class Spip\\Afficher\\Minipage\\Admin not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: action/actionner.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actualiser_depot.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actualiser_depot.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/actualiser_depot.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actualiser_depot.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/actualiser_depot.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/actualiser_depot.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function redirige_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_depot.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_depot.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_depot.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/supprimer_depot.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_depot.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_depot.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/teleporter.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/teleporter.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/teleporter.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/teleporter.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/teleporter.php
+
+		-
+			message: '#^Function supprimer_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/teleporter.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/svp_declarer.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/svp_declarer.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function actualise_plugins_actifs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function debut_droite not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function debut_gauche not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function fin_gauche not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function fin_page not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function gros_titre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function message_alerte not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function parametre_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function plugin_donne_erreurs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function plugin_installes_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function redirige_formulaire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function self not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function spip_attend_invalidation_opcode_cache not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: exec/admin_plugin.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/admin_plugin.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 15
+			path: formulaires/admin_plugin.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/admin_plugin.php
+
+		-
+			message: '#^Function decoder_contexte_ajax not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/admin_plugin.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: formulaires/admin_plugin.php
+
+		-
+			message: '#^Function refuser_traiter_formulaire_ajax not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/admin_plugin.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/admin_plugin.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function auth_controler_password_auteur_connecte not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/ajouter_depot.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/charger_plugin.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 21
+			path: formulaires/charger_plugin.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/charger_plugin.php
+
+		-
+			message: '#^Function decoder_contexte_ajax not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/charger_plugin.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: formulaires/charger_plugin.php
+
+		-
+			message: '#^Function self not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/charger_plugin.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/charger_plugin.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: formulaires/charger_plugin_archive.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: formulaires/charger_plugin_archive.php
+
+		-
+			message: '#^Function auth_controler_password_auteur_connecte not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/charger_plugin_archive.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/charger_plugin_archive.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/charger_plugin_archive.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/charger_plugin_archive.php
+
+		-
+			message: '#^Function joli_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/charger_plugin_archive.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/charger_plugin_archive.php
+
+		-
+			message: '#^Function formulaires_editer_objet_charger not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_depot.php
+
+		-
+			message: '#^Function formulaires_editer_objet_traiter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_depot.php
+
+		-
+			message: '#^Function formulaires_editer_objet_verifier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_depot.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_depot.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/inc-admin_plugin_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/svp_actualiser_depots.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/svp_actualiser_depots.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/svp_actualiser_depots.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 17
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function affdate_heure not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function ecrire_plugin_actifs not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function generer_url_action not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 17
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function lire_metas not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function message_alerte_fermer not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function message_alerte_ouvrir not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function parametre_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function self not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 11
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 23
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function supprimer_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Function wrap not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_actionner.php
+
+		-
+			message: '#^Call to function unset\(\) contains undefined variable \$conflit\.$#'
+			identifier: unset.variable
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Call to function unset\(\) contains undefined variable \$erreur\.$#'
+			identifier: unset.variable
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Call to function unset\(\) contains undefined variable \$id\.$#'
+			identifier: unset.variable
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Call to function unset\(\) contains undefined variable \$present\.$#'
+			identifier: unset.variable
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function encoder_contexte_ajax not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function extraire_multi not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function plugin_version_compatible not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function spip_version_compare not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 18
+			path: inc/svp_decider.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function filtrer_entites not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function spip_version_compare not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 15
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 8
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_demarrer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 11
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_insertq_multi not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_preferer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 33
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_terminer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/svp_depoter_distant.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function lire_fichier_langue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function liste_plugin_files not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function plugin_version_compatible not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function spip_timer not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function spip_version_compare not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_demarrer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_insertq_multi not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_preferer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_terminer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/svp_depoter_local.php
+
+		-
+			message: '#^Function creer_chemin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_outiller.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_outiller.php
+
+		-
+			message: '#^Function spip_version_compare not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: inc/svp_outiller.php
+
+		-
+			message: '#^Function unicode2charset not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_outiller.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function lire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function plugin_version_compatible not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function spip_xml_aplatit not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function spip_xml_decompose_tag not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function spip_xml_parse not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_phraser.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_plugin.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_plugin.php
+
+		-
+			message: '#^Function extraire_multi not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function liste_des_champs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function liste_plugin_actifs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function plugin_version_compatible not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function recherche_en_base not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function spip_version_compare not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/svp_rechercher.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: plugins/fusion_paquet.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: plugins/fusion_plugin.php
+
+		-
+			message: '#^Function spip_version_compare not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/fusion_plugin.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: plugins/infos_plugin.php
+
+		-
+			message: '#^Function charset2unicode not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/infos_plugin.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: plugins/infos_plugin.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/infos_plugin.php
+
+		-
+			message: '#^Function spip_xml_aplatit not found\.$#'
+			identifier: function.notFound
+			count: 12
+			path: plugins/infos_plugin.php
+
+		-
+			message: '#^Function spip_xml_parse not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/infos_plugin.php
+
+		-
+			message: '#^Function tester_url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/infos_plugin.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/preparer_sql_paquet.php
+
+		-
+			message: '#^Function spip_version_compare not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/preparer_sql_paquet.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: plugins/preparer_sql_plugin.php
+
+		-
+			message: '#^Function spip_version_compare not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/preparer_sql_plugin.php
+
+		-
+			message: '#^Function textebrut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: plugins/preparer_sql_plugin.php
+
+		-
+			message: '#^Instantiated class Spip\\Texte\\Collecteur\\Multis not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: plugins/preparer_sql_plugin.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/navigation/svp_admin_plugin_fonctions.php
+
+		-
+			message: '#^Function effacer_meta not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_administrations.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: svp_administrations.php
+
+		-
+			message: '#^Function maj_plugin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_administrations.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_administrations.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_administrations.php
+
+		-
+			message: '#^Function sql_demarrer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_administrations.php
+
+		-
+			message: '#^Function sql_drop_table not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: svp_administrations.php
+
+		-
+			message: '#^Function sql_preferer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: svp_administrations.php
+
+		-
+			message: '#^Function sql_terminer_transaction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_administrations.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_administrations.php
+
+		-
+			message: '#^Function PtoBR not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function calculer_liste not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function extraire_multi not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function generer_objet_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function generer_url_ecrire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function generer_url_public not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function importer_charset not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function plugin_etat_en_clair not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function propre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_ieconfig.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: svp_pipelines.php
+
+		-
+			message: '#^Function direction_css not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_pipelines.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_pipelines.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_pipelines.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: svp_pipelines.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: teleporter/git.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: teleporter/http.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: teleporter/http.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: teleporter/http.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: teleporter/http.php
+
+		-
+			message: '#^Function recuperer_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: teleporter/http.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: teleporter/http.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: teleporter/http.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: teleporter/http_deballe_tgz.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: teleporter/http_deballe_tgz.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: teleporter/http_deballe_tgz.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: teleporter/http_deballe_tgz.php
+
+		-
+			message: '#^Function supprimer_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: teleporter/http_deballe_tgz.php
+
+		-
+			message: '#^Instantiated class Spip\\Archives\\SpipArchives not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: teleporter/http_deballe_tgz.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: teleporter/http_deballe_zip.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: teleporter/http_deballe_zip.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: teleporter/http_deballe_zip.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: teleporter/http_deballe_zip.php
+
+		-
+			message: '#^Function supprimer_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: teleporter/http_deballe_zip.php
+
+		-
+			message: '#^Instantiated class Spip\\Archives\\SpipArchives not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: teleporter/http_deballe_zip.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: teleporter/svn.php
+

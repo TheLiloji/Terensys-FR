@@ -1,0 +1,122 @@
+[(#ENV{exec}|=={rubriques}|oui)
+	[(#SET{defaut_tri,#ARRAY{
+		rang,1,
+		titre,1,
+		date,-1,
+		id_rubrique,1,
+		points,-1
+	}})]
+	#SET{activer_rang, #VAL{rubriques}|in_array{#RANG_LISTE_OBJETS} }
+	[(#VAL{rang}|setenv{par})] #SET{tri,rang}
+	<B_liste_rubriques>
+	#ANCRE_PAGINATION
+	<div class="liste-objets rubriques">
+	<table class="spip liste" data-objet="rubriques">
+		[<caption><strong class="caption">(#ENV*{titre,#GRAND_TOTAL|singulier_ou_pluriel{info_1_rubrique,info_nb_rubriques}})</strong></caption>]
+		<thead>
+			<tr class="first_row">
+				<th class="rang" scope="col">[(#TRI{rang,<span title="<:rang:lien_trier_rang|attribut_html:>"><:rang:info_rang_abbr:></span>,ajax})]</th>
+				<th class='picto' scope='col'></th>
+				<th class='titre' scope='col'>[(#TRI{titre,<:info_titre|label_nettoyer:>,ajax})]</th>
+				<th class="date" scope="col">[(#TRI{date,<:date:/>,ajax})]</th> 
+				<th class="id" scope="col">[(#TRI{id_rubrique,<:info_numero_abbreviation:/>,ajax})]</th>
+			</tr>
+		</thead>
+		<tbody>
+		<BOUCLE_liste_rubriques(RUBRIQUES){id_parent}{!cacher == on} {par rang}{id_mot?}{id_auteur?}{where?}{statut?}{recherche?}{tri #ENV{par,num titre},#GET{defaut_tri}}{par titre}{pagination #ENV{nb,10}}>
+			<tr data-id_objet="#ID_RUBRIQUE" class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
+				<td class="rang">[(#RANG).]</td>
+				<td class='picto'>[(#CHEMIN_IMAGE{rubrique-16.png}|balise_img)]</td>
+				<td class="titre principale">[(#LOGO_RUBRIQUE|image_reduire{20,26})]<a href="[(#ID_RUBRIQUE|generer_objet_url{rubrique})]" title="<:info_numero_abbreviation|attribut_html:/> #ID_RUBRIQUE">#TITRE</a></td>
+				<td class="date secondaire">[(#DATE|affdate_jourcourt)]</td> 
+				<td class="id">[(#AUTORISER{modifier,rubrique,#ID_RUBRIQUE}|?{
+					<a href="[(#URL_ECRIRE{rubrique_edit,id_rubrique=#ID_RUBRIQUE})]">#ID_RUBRIQUE</a>,
+					#ID_RUBRIQUE
+				})]</td>
+			</tr>
+		</BOUCLE_liste_rubriques>
+		</tbody>
+	</table>
+	[<nav role="navigation" class="pagination">(#PAGINATION{prive})</nav>]
+	</div>
+	</B_liste_rubriques>[
+	<div class="liste-objets rubriques caption-wrap"><strong class="caption">(#ENV*{sinon,''})</strong></div>
+	]<//B_liste_rubriques>
+
+	<INCLURE{fond=prive/objets/contenu/rubriques-cachees}>
+]
+
+[(#ENV{exec}|=={rubrique}|oui)
+	[(#ID_RUBRIQUE|afficher_enfant_rub|image_reduire{245,0})]
+]
+
+[(#AUTORISER{creerrubriquedans,rubrique,#ID_RUBRIQUE}|oui)
+	[(#ID_RUBRIQUE|?{
+	[(#URL_ECRIRE{rubrique_edit,new=oui&id_parent=#ID_RUBRIQUE}|icone_verticale{<:icone_creer_sous_rubrique:>,rubrique,new,right clearright})]
+	,
+	[(#URL_ECRIRE{rubrique_edit,new=oui}|icone_verticale{<:icone_creer_rubrique:>,secteur,new,right clearright})]
+		})]
+]
+<div class="nettoyeur"></div>
+[(#ID_RUBRIQUE|oui)
+
+	[(#REM)
+
+		Les articles a valider
+	]
+	[
+		[(#BOITE_OUVRIR{<:texte_en_cours_validation:>,'basic note'})]
+		(#PIPELINE{rubrique_encours,#ARRAY{args,#ARRAY{type,rubrique,id_objet,#ID_RUBRIQUE},data,#INCLURE{fond=prive/objets/liste/articles,chaine_titre_singulier=info_1_article_propose,chaine_titre_pluriel=info_nb_articles_proposes,statut=prop,id_rubrique,par=date,ajax,env}}})
+		#BOITE_FERMER
+	]
+
+	[(#REM)
+
+		Les articles en cours de redaction, limités à ceux du visiteur si pas autorisé à publier dans la rubrique
+	]
+	<INCLURE{
+		fond=prive/objets/liste/articles,
+		chaine_titre_singulier=info_1_article_redac,
+		chaine_titre_pluriel=info_nb_articles_redacs,
+		id_auteur=#AUTORISER{publierdans,rubrique,#ID_RUBRIQUE}|?{'',#SESSION{id_auteur}},
+		statut=prepa,
+		id_rubrique,
+		par=date,
+		ajax,
+		env,
+	}>
+
+	[(#REM)
+
+		Les articles publiés
+	]
+	<INCLURE{
+		fond=prive/objets/liste/articles,
+		chaine_titre_singulier=info_1_article_publie,
+		chaine_titre_pluriel=info_nb_articles_publies,
+		statut=publie,
+		id_rubrique,
+		par=date,
+		ajax,
+		env,
+	}>
+
+	[(#REM)
+
+		Les articles refusés
+	]
+	<INCLURE{
+		fond=prive/objets/liste/articles,
+		chaine_titre_singulier=info_1_article_refuse,
+		chaine_titre_pluriel=info_nb_articles_refuses,
+		statut=refuse,
+		id_rubrique,
+		par=date,
+		ajax,
+		env,
+	}>
+]
+<BOUCLE_verifierrub(RUBRIQUES){id_rubrique}{statut==.*}{si #AUTORISER{creerarticledans,rubrique,#ID_RUBRIQUE}}{0,1}>
+	[(#URL_ECRIRE{article_edit,new=oui}|parametre_url{id_rubrique,#ENV{id_rubrique}}|icone_verticale{<:icone_ecrire_article:>,article,new,right})]
+	<div class="nettoyeur"></div>
+</BOUCLE_verifierrub>

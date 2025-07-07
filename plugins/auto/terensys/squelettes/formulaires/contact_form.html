@@ -1,0 +1,14 @@
+
+<div class="container">
+    [<img src="(#CHEMIN{assets/images/contact.webp})" alt="contact">]
+    <form id="contact-form" class="contact-form" method="post" action="#ENV{action}#formulaire_contact_form#ENV{id}">
+        #ACTION_FORMULAIRE{#ENV{action}}
+        <h3>Contactez-nous</h3>
+        <div class="inputs">
+            <input type="text" name="email_message_auteur" value="#ENV{email_message_auteur}" placeholder="Votre email" required>
+            <input type="text" name="sujet_message_auteur" value="#ENV{sujet_message_auteur}" placeholder="Sujet" required>
+            <textarea name="texte_message_auteur" placeholder="Votre message" rows="10" required>#ENV{texte_message_auteur}</textarea>
+        </div>
+        <button id="submit-contact-button" class="button" type="submit">Envoyer</button>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+[(#ENV{fermer}|non)
+[(#SET{titre,#VAL{compagnon:c_accueil_bienvenue}|_T{#ARRAY{nom,#SESSION{nom}}}})]
+[(#SET{action,#URL_ACTION_AUTEUR{compagnon,compris/#ID,#SELF|parametre_url{fermer,oui}}})]
+[(#SET{fermer,#CHEMIN_IMAGE{fermer-16.svg}|balise_svg{<:bouton_fermer:>,close}})]
+[(#BOITE_OUVRIR{[(#CHEMIN_IMAGE{compagnon-picto-xx.svg}|balise_svg{'',picto-compagnon}) ][(#GET{titre})][(#BOUTON_ACTION{#GET{fermer},#GET{action},btn_link ajax})],compagnon})]
+
+<p><:compagnon:c_accueil_texte:></p>
+<p><:compagnon:c_accueil_texte_revenir:></p>
+
+[(#ENV{_all}|non)
+<div class="compagnon_helper">
+	<p><:compagnon:bouton_tout_compris_explication:></p>
+	[(#BOUTON_ACTION{<:compagnon:bouton_tout_compris:>,#URL_ACTION_AUTEUR{compagnon,compris/all,#SELF|parametre_url{_all,oui}},ajax})]
+</div>]
+[(#ENV{_all}|oui)<script> ajaxReload('contenu');</script>]
+
+#BOITE_PIED
+	<span class="target" data-target="#bando1_menu_accueil"></span>
+	[(#BOUTON_ACTION{[(#VAL|ok_aleatoire)],#URL_ACTION_AUTEUR{compagnon,compris/#ID,#SELF|parametre_url{fermer,oui}},ajax})]
+#BOITE_FERMER
+]

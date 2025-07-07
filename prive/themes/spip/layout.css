@@ -1,0 +1,354 @@
+/**
+ * ======
+ * Layout
+ * ======
+ *
+ * Organisation :
+ *
+ * 1. Layout général de la page
+ *    1.1. Disposition par défaut
+ *    1.x. Autres dispositions : pleine largeur, etc.
+ * 2. Utilitaires
+ * 3. Grenier / à ranger
+ *
+ * Breakpoints : 780px / 960px / 1200px
+ *
+ * Markup :
+ *
+ * body
+ *   #bando_haut
+ *     #bando_xxx (x4)
+ *       .largeur
+ *   #page
+ *     .largeur
+ *       #haut
+ *       #conteneur[.<disposition>]
+ *         #navigation
+ *         #extra
+ *         #contenu
+ *   #pied
+ *     .largeur
+ */
+
+
+/**
+ * ============
+ * 0. Variables
+ * ============
+ */
+
+
+:root {
+	/* Gouttière horizontale */
+	--spip-layout-gap: 10px; /* clamp(10px, 2vw, 25px); */
+	/* Largeur max de la page, */
+	--spip-layout-page-width: 1480px;
+	/* Largeur des colonnes */
+	--spip-layout-column-width: 25%;
+	/* Largeur limitée afin que les textes fassent environ 70 caractères max par ligne */
+	--spip-layout-text-width: 75ch;
+	/* Largeur limitée de certains formulaires */
+	--spip-layout-form-width: 50em;
+	/* Largeur réellement disponible, en tenant compte des gouttières */
+	--spip-vw: calc(var(--spip-layout-page-width) - (var(--spip-layout-gap) * 2));
+}
+@media (min-width: 720px) {
+	:root {
+		--spip-layout-gap: 20px;
+	}
+}
+@media (min-width: 1200px) {
+	:root {
+		--spip-layout-gap: 25px;
+		--spip-layout-column-width: 20%; /* 3 colonnes donc plus petit */
+	}
+}
+
+
+/**
+ * ============================
+ * 1. Layout général de la page
+ * ============================
+ */
+
+
+html, body {
+	width: 100%;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+.largeur {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: var(--spip-layout-page-width);
+	margin-inline: auto;
+	padding-inline: var(--spip-layout-gap);
+}
+#haut {
+	margin-block-start: var(--spip-spacing-y);
+}
+/* Coller le footer en bas */
+body {
+	display: flex;
+	flex-flow: column;
+}
+#page {
+	overflow: initial !important; /* Sinon aucun élément en position sticky ne fonctionne */
+	flex-grow: 1;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+}
+
+
+/**
+ * 1.1. Contenu central : disposition par défaut
+ * =============================================
+ */
+
+/**
+ * Mobiles : 1 seule colonne
+ */
+#conteneur {
+	display: flex;
+	flex-flow: column;
+}
+#contenu {
+	order: 2;
+	overflow-x: scroll; /* Tableaux qui dépassent : ne pas faire scroller toute la page */
+	min-width: 0; /* Fix grid avec tableaux qui dépassent */
+}
+#navigation {
+	order: 1;
+	overflow-wrap: break-word;
+}
+#extra {
+	order: 3;
+	overflow-wrap: break-word;
+}
+/* Safeguard pour placer des éléments en sticky dans les 3 blocs principaux : .ajaxbloc doit prendre toute la hauteur du parent */
+#contenu > .ajaxbloc:only-child,
+#navigation > .ajaxbloc:only-child,
+#extra > .ajaxbloc:only-child {
+	height: 100%;
+}
+
+/**
+ * Écrans moyens : 2 colonnes
+ */
+@media (min-width: 720px) {
+	#conteneur {
+		display: grid;
+		column-gap: var(--spip-layout-gap); /* pas de gap sur les rows pour l'instant, car les éléments à l'intérieur ont déjà des marges basses en général */
+		grid-template-rows: auto 1fr;
+		grid-template-columns:
+			var(--spip-layout-column-width) /* navigation & extra */
+			1fr;                            /* contenu */
+		grid-template-areas:
+			"navigation contenu"
+			"extra      contenu";
+	}
+	#contenu {
+		grid-area: contenu;
+		overflow-x: initial;
+	}
+	#navigation {
+		grid-area: navigation;
+	}
+	#extra {
+		grid-area: extra;
+	}
+}
+
+/**
+ * Écrans larges : 3 colonnes
+ */
+@media (min-width: 1200px) {
+	#conteneur {
+		grid-template-columns:
+			var(--spip-layout-column-width)  /* navigation */
+			1fr                              /* contenu */
+			var(--spip-layout-column-width); /* extra */
+		grid-template-areas:
+			"navigation contenu extra"
+			"navigation contenu extra";
+	}
+}
+
+
+/**
+ * 1.2. Disposition : pleine-largeur
+ * ===================================
+ * Pas de contenus complémentaires #nav ni #extra
+ * Nb : pleine_largeur conservé un temps pour rétro-compat
+ */
+#conteneur:is(.layout-full-width, .layout-pleine-largeur, .layout-pleine_largeur) {
+	grid-template-areas: "contenu";
+	grid-template-columns: 1fr;
+}
+#conteneur:is(.layout-full-width, .layout-pleine-largeur, .layout-pleine_largeur) #navigation,
+#conteneur:is(.layout-full-width, .layout-pleine-largeur, .layout-pleine_largeur) #extra  {
+	display: none;
+}
+/* Limiter la largeur de certains éléments */
+#conteneur:is(.layout-full-width, .layout-pleine-largeur, .layout-pleine_largeur) .formulaire_spip {
+	max-width: var(--spip-layout-form-width);
+	margin-inline: auto;
+}
+
+/**
+ * 1.3. Disposition : complements-gauche
+ * =======================================
+ * Contenus complémentaires #nav et #extra à gauche
+ */
+@media (min-width: 1200px) {
+	#conteneur.layout-aside-inline-start,
+	#conteneur.layout-complements-gauche {
+		grid-template-areas:
+			"navigation contenu"
+			"extra      contenu";
+		grid-template-columns: var(--spip-layout-column-width) 1fr;
+	}
+}
+
+/**
+ * 1.4. Disposition : complements-droite
+ * =======================================
+ * Contenus complémentaires #nav et #extra à droite
+ */
+@media (min-width: 1200px) {
+	#conteneur.layout-aside-inline-end,
+	#conteneur.layout-complements-droite {
+		grid-template-areas:
+			"contenu navigation"
+			"contenu extra";
+		grid-template-columns: 1fr var(--spip-layout-column-width);
+	}
+}
+
+/**
+ * 1.5. Disposition : complements-bas
+ * ====================================
+ * Contenus complémentaires #nav et #extra sous le contenu principal
+ */
+ @media (min-width: 1200px) {
+	#conteneur.layout-aside-block-end,
+	#conteneur.layout-complements-bas {
+		grid-template-areas:
+			"contenu contenu"
+			"navigation extra";
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/**
+ * 1.6. Disposition : complements-bas-inverse
+ * ============================================
+ * Contenus complémentaires #nav et #extra sous le contenu principal
+ */
+ @media (min-width: 1200px) {
+	#conteneur.layout-aside-block-end-reverse,
+	#conteneur.layout-complements-bas-inverse {
+		grid-template-areas:
+			"contenu contenu"
+			"extra navigation";
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/**
+ * 1.7. Disposition : fluide
+ * ===========================
+ * Idem disposition de base, sauf que le contenu principal prend tout l'espace disponible.
+ * Un peu touchy pour détecter si les blocs sont vides ou pas :
+ * en général ils contiennent un .ajaxbloc, mais il peut y avoir des exceptions.
+ * Il faut donc prendre en compte ces 2 cas à chaque fois.
+ */
+ @media (min-width: 1200px) {
+	/* extra est vide */
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > *)),
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > .ajaxbloc > *)) {
+		grid-template-areas: "navigation contenu";
+		grid-template-columns: var(--spip-layout-column-width) 1fr;
+	}
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > *))             #extra,
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > .ajaxbloc > *)) #extra {
+		display: none;
+	}
+	/* navigation est vide */
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#navigation > *)),
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#navigation > .ajaxbloc > *)) {
+		grid-template-areas: "contenu extra";
+		grid-template-columns: 1fr var(--spip-layout-column-width);
+	}
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#navigation > *))             #navigation,
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#navigation > .ajaxbloc > *)) #navigation {
+		display: none;
+	}
+	/* extra et navigation sont vides */
+	/* comme en pleine largeur, limiter la largeur de certains éléments */
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > *)):not(:has(#navigation > *)),
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > .ajaxbloc > *)):not(:has(#navigation > *)),
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > *)):not(:has(#navigation > .ajaxbloc > *)),
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > .ajaxbloc > *)):not(:has(#navigation > .ajaxbloc > *)) {
+		grid-template-areas: "contenu";
+		grid-template-columns: 1fr;
+	}
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > *)):not(:has(#navigation > *))                         .formulaire_spip,
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > .ajaxbloc > *)):not(:has(#navigation > *))             .formulaire_spip,
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > *)):not(:has(#navigation > .ajaxbloc > *))             .formulaire_spip,
+	:is(#conteneur.layout-fluide, #conteneur.layout-fluid):not(:has(#extra > .ajaxbloc > *)):not(:has(#navigation > .ajaxbloc > *)) .formulaire_spip {
+		max-width: var(--spip-layout-form-width);
+		margin-inline: auto;
+	}
+}
+
+
+/**
+ * ==============
+ * 2. Utilitaires
+ * ==============
+ * Classes utilitaires applicables à n'importe quel élément
+ */
+
+
+.centered {
+	margin: 0 auto;
+	text-align: center; /* Vraiment nécessaire ? */
+}
+
+
+/**
+ * =====================
+ * 3. Grenier + à ranger
+ * =====================
+ */
+
+
+/* ??? */
+.table_page {
+	max-width: var(--spip-layout-page-width);
+	/* min-width: 960px; */ /* pour > 720px  */
+	margin-inline: auto;
+	margin-block-start: 1em;
+	clear: both;
+	text-align: start;
+}
+
+/* Messages alertes old school, ex. : crash de la bdd */
+.wrap-messages-alertes {
+	padding: 5px 10px;
+	background-color: var(--spip-color-gray-lighter);
+}
+@media (min-width: 960px) {
+	.wrap-messages-alertes {
+		padding: 5px 20px;
+	}
+}
+.messages-alertes {
+	max-width: var(--spip-layout-page-width);
+	/* min-width: 960px; */ /* pour > 720px  */
+	margin-inline: auto;
+	text-align: end;
+	clear: both;
+}

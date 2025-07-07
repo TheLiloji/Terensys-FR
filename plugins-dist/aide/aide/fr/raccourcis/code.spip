@@ -1,0 +1,52 @@
+SPIP offre différents raccourcis pour afficher du code informatique dans les pages.
+
+{{{Code en ligne}}}
+
+Le raccourci `` `...` `` («backtick», comme en Markdown) est utilisé pour intégrer du code dans le flux de texte.
+
+<aide:code>
+La variable `$x = true;` est un booleen.
+</aide:code>
+
+----
+
+En alternative, il existe le raccourci `<code>...</code>`.
+
+
+{{{Block de code}}}
+
+Pour publier des extraits de code informatique de plusieurs lignes, le triple backtick est utilisé (comme en Markdown). Cela permet de bien restituer les indentations en début de ligne.
+
+<aide:code>
+```
+<ul>
+	<li>The only one</li>
+</ul>
+```
+</aide:code>
+
+
+Il est possible de préciser le langage de programmation utilisé :
+
+<aide:code>
+```html
+<h1>Titre</h1>
+```
+</aide:code>
+
+
+----
+
+En alternative, il existe le raccourci `<cadre>...</cadre>` ou `<cadre class='html’>...</cadre>`.
+
+
+{{{Court-circuiter les raccourcis SPIP}}}
+
+Dans certains cas, il peut être utile d’indiquer à SPIP que certaines parties d’un document ne doivent pas être «traitées» par le filtre des raccourcis typographiques: lorsque vous ne voulez pas corriger la typographie par exemple. Vous pouvez encadrer le contenu de la balise `<HTML>...</HTML>`.
+
+<aide:code>
+Ce {{texte}} est transformé; parfait!
+<HTML>Ce {{texte}} reste ainsi; attention!</HTML>
+</aide:code>
+
+Noter l’absence d’espaces avant le point-virgule et le point d’exclamation.

@@ -1,0 +1,20 @@
+[(#AUTORISER{configurer,_plugins}|sinon_interdire_acces)]
+
+<INCLURE{fond=prive/squelettes/inclure/svp_onglets, env}>
+
+<div class="ajax noscroll">
+	#FORMULAIRE_ADMIN_PLUGIN{#ENV{voir},#ENV{verrouille},#ENV{id_paquet}}
+</div>
+<script>
+	jQuery(function(){
+		jQuery('#contenu .svp_retour').each(function(){
+			if (jQuery('.msg-alert__close', this).length == 0) {
+				jQuery('.msg-alert__text', this)
+					.append("[(#CHEMIN_IMAGE{fermer-16.png}|balise_img{'',msg-alert__close})]")
+					.on('click',function(){
+						jQuery(this).parents('.msg-alert').fadeOut('fast', function() { $(this).remove(); });
+					});
+			}
+		});
+	});
+</script>

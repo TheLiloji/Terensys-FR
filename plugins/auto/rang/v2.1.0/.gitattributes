@@ -1,0 +1,27 @@
+* text=auto !eol
+action/trier_items.php -text
+formulaires/configurer_rang.html -text
+formulaires/configurer_rang.php -text
+inc/rang_api.php -text
+lang/paquet-rang_fr.php -text
+lang/rang_fr.php -text
+/paquet.xml -text
+prive/objets/liste/articles.html -text
+prive/objets/liste/mots-admin.html -text
+prive/objets/liste/mots.html -text
+prive/objets/liste/mots_associer-select-unseul.html -text
+prive/objets/liste/mots_associer-select.html -text
+prive/objets/liste/mots_lies.html -text
+prive/objets/liste/syndic.html -text
+prive/squelettes/contenu/configurer_rang.html -text
+prive/squelettes/inclure/rang.html -text
+prive/style_prive_plugin_rang.html -text
+prive/themes/spip/images/draggable-16.png -text
+prive/themes/spip/images/rang-128.png -text
+prive/themes/spip/images/rang-32.png -text
+prive/themes/spip/images/rang-64.png -text
+/rang_administrations.php -text
+/rang_autorisations.php -text
+/rang_fonctions.php -text
+/rang_pipelines.php -text
+/todo.md -text

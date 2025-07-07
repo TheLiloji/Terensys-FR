@@ -1,0 +1,9 @@
+<BOUCLE_text (DOCUMENTS types_documents) {id_document=#ENV{id,#ENV{id_document}}} {tout}
+>[(#SET{legende,#INCLURE{fond=modeles/document_legende, env}|trim})][(#REM)
+][<div
+  class="[(#ID_DOCUMENT|medias_modele_document_standard_classes{text})]"[ 
+  (#ID_DOCUMENT|medias_modele_document_standard_attributs{text})
+]><figure class="spip_doc_inner"><pre>(#FICHIER|contenu_document{#ENV{charset,auto}}|echapper_tags)</pre>
+[(#GET{legende})
+]</figure></div>
+]</BOUCLE_text>

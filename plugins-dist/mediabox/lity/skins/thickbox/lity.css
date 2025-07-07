@@ -1,0 +1,192 @@
+.box_mediabox:before {
+	background: #000;
+	opacity:0.9;
+}
+
+.box_mediabox .lity-container {
+	box-shadow: none;
+	padding:10px;
+	padding-bottom:80px;
+}
+.box_mediabox .lity-content {
+}
+.box_mediabox .lity-content:after {
+	left:-10px;
+	right:-10px;
+	top:-10px;
+	bottom:-80px;
+	border:10px solid #fff;
+	border-bottom-width: 80px;
+	background: #f8f8f8;
+	box-shadow: none;
+}
+
+/* focus */
+.box_mediabox button[class*="lity-"]:focus{
+	outline: 2px dotted #ccc;
+}
+
+/* Close button */
+.lity-close,
+.lity-close:hover,
+.lity-close:active,
+.lity-close:focus {
+	position: absolute;
+	top:auto;
+	bottom:40px;
+	right: 10px;
+	width: 2rem;
+	height: 2rem;
+	margin-right: -0.125rem;
+	line-height: 0.5rem;
+	font-size: 3rem;
+	background: transparent;
+	text-shadow: none;
+	color: #888;
+	overflow:hidden;
+}
+.lity-close:hover,
+.lity-close:active,
+.lity-close:focus {
+	color: #666;
+}
+
+/* Group navigation */
+.lity-group-caption {
+	display: flex;
+	position: absolute;
+	bottom:10px;
+	left: 10px;
+	align-items: center;
+	color:#888;
+}
+.lity-group-caption .lity-group-current {
+	order:1;
+	font-weight: bold;
+	display: block;
+	margin-right:0.5em;
+	color:#000;
+}
+.lity-loading .lity-group-caption {
+	position: static;
+}
+.lity-loading .lity-group-caption .lity-group-current {
+	display: block;
+	position: absolute;
+	left:50%;
+	margin-left: -2.125em;
+	width: 4.5em;
+	right: auto;
+	text-align: center;
+	top:50%;
+	margin-top:-1.5em;
+	color: #fff;
+}
+
+/* start stop */
+.lity-loading .lity-group-start-stop {
+	display: none;
+}
+.lity-group-start-stop {
+	order:2;
+	display: block;
+	width: 2rem;
+	text-align: center;
+}
+.lity-group-start-stop button {
+	display: block;
+	border: 0;
+	padding: 0 0.5em;
+	margin: 0;
+	background: none;
+	color:inherit;
+}
+.lity-group-start-stop button b {
+	margin: auto;
+}
+
+.lity-group-start-stop .lity-start {
+	font-size: 1px;
+	text-indent: -5px;
+	display: block;
+	border: 0.5rem solid transparent;
+	border-left-color: #888;
+	width: 1rem;
+	height: 1rem;
+}
+.lity-group-start-stop .lity-start:active,
+.lity-group-start-stop .lity-start:hover,
+.lity-group-start-stop .lity-start:focus {
+	border-left-color: #666;
+}
+
+.lity-group-start-stop .lity-stop {
+	display: none;
+}
+.lity-slideshow .lity-group-start-stop .lity-start {
+	display: none;
+}
+.lity-slideshow .lity-group-start-stop .lity-stop {
+	display: block;
+	font-size: 1px;
+	text-indent: -5px;
+	width: 0.7rem;
+	height: 0.7rem;
+	background: #888;
+}
+.lity-group-start-stop .lity-stop:active,
+.lity-group-start-stop .lity-stop:hover,
+.lity-group-start-stop .lity-stop:focus {
+	background: #666;
+}
+
+
+/* Next, prev */
+.lity-group-next-prev {
+	order:3;
+}
+.lity-next, .lity-previous {
+	border:0;
+	padding: 0 0.5em;
+	display: inline-block;
+	cursor: pointer;
+	color:inherit;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background: transparent;
+}
+.lity-next[disabled], .lity-previous[disabled] {
+	visibility: hidden;
+}
+.lity-next:active, .lity-previous:active,
+.lity-next:hover, .lity-previous:hover,
+.lity-next:focus, .lity-previous:focus {
+	color: #666;
+}
+
+.lity-next b, .lity-previous b {
+	display: inline-block;
+	font-weight: bold;
+}
+
+/* Caption */
+.lity-image-caption {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin-bottom: -2rem;
+	padding-right: 3rem;
+	min-height: 1.5rem;
+	height: 1.5rem;
+	overflow: hidden;
+}
+.lity-image-caption.expanded {
+	background: #fff;
+	height: auto;
+}

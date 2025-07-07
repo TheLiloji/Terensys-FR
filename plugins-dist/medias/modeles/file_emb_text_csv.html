@@ -1,0 +1,10 @@
+<BOUCLE_tous (DOCUMENTS types_documents) {id_document=#ID} {tout}
+>[(#SET{legende,#INCLURE{fond=modeles/document_legende, env}|trim})][(#REM)
+]<div
+  class="[(#ID_DOCUMENT|medias_modele_document_standard_classes{text})]"[ 
+  (#ID_DOCUMENT|medias_modele_document_standard_attributs{text})
+]><figure class="spip_doc_inner">
+[(#FICHIER|contenu_document{#ENV{charset,auto}}|appliquer_filtre{#MIME_TYPE})]
+[(#GET{legende})
+]</figure></div>
+</BOUCLE_tous>

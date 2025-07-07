@@ -1,0 +1,2360 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function set_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function spip_livrer_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function verifier_cle_action not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/acceder_document.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function copier_document not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function corriger_extension not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function deplacer_fichier_upload not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function effacer_repertoire_temporaire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function set_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 12
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function supprimer_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function tester_url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function translitteration not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Instantiated class Spip\\Archives\\SpipArchives not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: action/ajouter_documents.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/changer_mode_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/changer_mode_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/changer_mode_document.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/changer_mode_document.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/copier_local.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/copier_local.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/copier_local.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/copier_local.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/copier_local.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/copier_local.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/copier_local.php
+
+		-
+			message: '#^Function tester_url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/copier_local.php
+
+		-
+			message: '#^Function valider_url_distante not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/copier_local.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function objet_qualifier_liens not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/desordonner_liens_documents.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function depublier_branche_rubrique_if not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function objet_dissocier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function suivre_invalideur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function supprimer_lien_document\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/dissocier_document.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_document.php
+
+		-
+			message: '#^Function calculer_rubriques_if not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_document.php
+
+		-
+			message: '#^Function collecter_requests not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_document.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: action/editer_document.php
+
+		-
+			message: '#^Function objet_associer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function objet_dissocier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function objet_modifier_champs not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function objet_trouver_liens not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/editer_document.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_document.php
+
+		-
+			message: '#^Function sql_insertq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function suivre_invalideur not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/editer_document.php
+
+		-
+			message: '#^Function tester_url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/editer_document.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function objet_associable not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/ordonner_liens_documents.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function objet_dissocier not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/supprimer_tous_orphelins.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_tous_orphelins.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_tous_orphelins.php
+
+		-
+			message: '#^Function sql_get_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_tous_orphelins.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: action/supprimer_tous_orphelins.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/supprimer_tous_orphelins.php
+
+		-
+			message: '#^Function action_tourner_post invoked with 1 parameter, 2 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function deplacer_fichier_upload not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/tourner.php
+
+		-
+			message: '#^Function filtrer not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/tourner.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: action/tourner.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function set_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function spip_getimagesize not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: action/tourner.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function supprimer_timestamp not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function taille_image not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/tourner.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_brises.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_brises.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_brises.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: action/verifier_documents_brises.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_brises.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_brises.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_brises.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_liens.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_liens.php
+
+		-
+			message: '#^Function objet_optimiser_liens not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: action/verifier_documents_liens.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: base/medias.php
+
+		-
+			message: '#^Function objet_optimiser_liens not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function sql_insertq_multi not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: base/medias.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/configurer_documents.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_documents.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/configurer_documents.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function _image_extensions_acceptees_en_entree not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 21
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function affdate not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function formulaires_editer_objet_charger not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function formulaires_editer_objet_traiter not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function formulaires_editer_objet_verifier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function recup_date not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function tester_url_absolue not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/editer_document.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/illustrer_document.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/illustrer_document.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/illustrer_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/illustrer_document.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/illustrer_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: formulaires/illustrer_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/illustrer_document.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/illustrer_document.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function attribut_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function corriger_extension not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function date_interface not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function determine_upload not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function effacer_repertoire_temporaire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function joli_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function preg_files not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function set_request not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function singulier_ou_pluriel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function taille_en_octets not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function translitteration not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: formulaires/joindre_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/medias_nettoyer_repertoire_upload.php
+
+		-
+			message: '#^Function purger_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: genie/medias_nettoyer_repertoire_upload.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/determiner_statut_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/determiner_statut_document.php
+
+		-
+			message: '#^Function objet_test_si_publie not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/determiner_statut_document.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/determiner_statut_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/determiner_statut_document.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/determiner_statut_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documenter_objet.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documenter_objet.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documenter_objet.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documenter_objet.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documenter_objet.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documenter_objet.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documenter_objet.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function attribut_html not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/documents.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/documents.php
+
+		-
+			message: '#^Function calculer_cle_action not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function copie_locale not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/documents.php
+
+		-
+			message: '#^Function couper not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function document_spip_externe not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function formats_image_acceptables not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function generer_url_action not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function get_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/documents.php
+
+		-
+			message: '#^Function image_reduire not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/documents.php
+
+		-
+			message: '#^Function importer_charset not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/documents.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: inc/documents.php
+
+		-
+			message: '#^Function inserer_attribut not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/documents.php
+
+		-
+			message: '#^Function is_utf8 not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function spip_file_get_contents not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function spip_getimagesize not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/documents.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/documents.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function supprimer_tags not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function taille_en_octets not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function typo not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/documents.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/getdocument.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/getdocument.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/getdocument.php
+
+		-
+			message: '#^Function taille_en_octets not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/getdocument.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 15
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function _request not found\.$#'
+			identifier: function.notFound
+			count: 11
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function accepte_fichier_upload\(\) should return bool\|int but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function copier_document not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function corriger_extension not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function creer_repertoire_documents not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function determine_upload not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 11
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function preg_files not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function propre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function session_set not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function sous_repertoire not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function valider_url_distante not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Instantiated class Spip\\Archives\\SpipArchives not found\.$#'
+			identifier: class.notFound
+			count: 2
+			path: inc/joindre_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function lister_tables_objets_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function objet_associer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function objet_qualifier_liens not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function objet_trouver_liens not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function traiter_modeles not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/marquer_doublons_doc.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function objet_info not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function recuperer_infos_distantes not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function recuperer_url not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function set_spip_doc not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/renseigner_document.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/verifier_document_mode_image.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/verifier_document_mode_vignette.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 7
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function extraire_attribut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function filtrer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function spip_log not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function spip_unlink not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function supprimer_timestamp not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function taille_en_octets not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function taille_image not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/verifier_taille_document_acceptable.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/vignette.php
+
+		-
+			message: '#^Function find_in_path not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/vignette.php
+
+		-
+			message: '#^Function spip_getimagesize not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/vignette.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_administrations.php
+
+		-
+			message: '#^Function ecrire_meta not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_administrations.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: medias_administrations.php
+
+		-
+			message: '#^Function lister_tables_objets_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_administrations.php
+
+		-
+			message: '#^Function logo_migrer_en_base not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_administrations.php
+
+		-
+			message: '#^Function maj_plugin not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_administrations.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_administrations.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_administrations.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_administrations.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_administrations.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 6
+			path: medias_administrations.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_administrations.php
+
+		-
+			message: '#^Function sql_update not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_administrations.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_administrations.php
+
+		-
+			message: '#^Function _image_extensions_acceptees_en_entree not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 11
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function autoriser_orphelins_supprimer_dist\(\) should return bool but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function sql_getfetsel not found\.$#'
+			identifier: function.notFound
+			count: 5
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_autoriser.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 10
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function attribut_html not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function calculer_boucle not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function charger_filtre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function http_img_pack not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function minipres not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function pipeline not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function session_set not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function spip_strlen not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function sql_fetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function sql_get_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function sql_serveur not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function test_espace_prive not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function textebrut not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function trouve_modele not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: medias_fonctions.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_ieconfig.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function id_table_objet not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 9
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function lire_config not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function objet_associer not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function objet_trouver_liens not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function objet_type not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function recuperer_fond not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function singulier_ou_pluriel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function sql_countsel not found\.$#'
+			identifier: function.notFound
+			count: 3
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function sql_delete not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function sql_fetch not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function sql_in not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 4
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function sql_select not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function sql_updateq not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function table_objet not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function table_objet_sql not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function trouver_objet_exec not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: medias_pipelines.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: metadata/audio.php
+
+		-
+			message: '#^Function autoriser not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: metadata/html.php
+
+		-
+			message: '#^Function ecrire_fichier not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: metadata/html.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: metadata/html.php
+
+		-
+			message: '#^Function safehtml not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: metadata/html.php
+
+		-
+			message: '#^Function spip_file_get_contents not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: metadata/html.php
+
+		-
+			message: '#^Function spip_getimagesize not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: metadata/image.php
+
+		-
+			message: '#^Function charger_fonction not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: metadata/swf.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: metadata/video.php
+
+		-
+			message: '#^Function _T not found\.$#'
+			identifier: function.notFound
+			count: 2
+			path: modeles/document_case_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: modeles/document_case_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: modeles/document_desc_fonctions.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/inclure/ajouter-documents_fonctions.php
+
+		-
+			message: '#^Function sql_allfetsel not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/inclure/mediatheque-navigation_fonctions.php
+
+		-
+			message: '#^Function sql_quote not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: prive/squelettes/inclure/mediatheque-navigation_fonctions.php
+
+		-
+			message: '#^Function chemin_image not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: puce_statut/document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/generer_url_document.php
+
+		-
+			message: '#^Function include_spip not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: urls/generer_url_ecrire_document.php
+

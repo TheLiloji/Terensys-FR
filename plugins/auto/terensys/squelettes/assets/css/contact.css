@@ -1,0 +1,138 @@
+main {
+    position: relative;
+}
+
+.container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    
+    padding: 98px 12px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.container img {
+    width: fit-content;
+    height: 600px;
+
+    border: 2px solid var(--contraste);
+    border-radius: 48px;
+    box-shadow: 0 6px var(--contraste-25);
+}
+
+.contact-form {
+    position: absolute;
+    bottom: 74px;
+    right: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    padding: 24px;
+    max-width: 500px;
+
+    border: 2px solid var(--contraste);
+    border-radius: 24px;
+    background-color: var(--bg-second);
+    box-shadow: 0 6px var(--contraste-25);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inputs input,
+.inputs textarea {
+    padding: 12px 24px;
+    min-width: 450px;
+    max-width: 450px;
+
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--contraste-5);
+
+    font-family: 'Ubuntu';
+    font-size: 1.6em;
+    color: var(--contraste);
+}
+
+.inputs textarea {
+    resize: none;
+}
+
+.inputs input::placeholder,
+.inputs textarea::placeholder {
+    color: var(--contraste);
+    opacity: .5;
+}
+
+.sended {
+    position: absolute;
+    bottom: 48px;
+
+    padding: 12px 24px;
+    border-radius: 48px;
+
+    background-color: var(--neutre);
+    box-shadow: 0 6px 0 var(--contraste-25);
+
+    opacity: 1;
+
+    transform: scale(1) translateY(0);
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(.85,-0.4,.2,1.5);
+}
+
+.hidden {
+    opacity: 0;
+
+    transform: scale(0) translateY(200px);
+    transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(.85,-0.4,.2,1.5);
+}
+
+@media screen and (max-width: 1024px) {
+    .container img {
+        width: fit-content;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container img {
+        width: 100%;
+        height: fit-content;
+    }
+
+    .contact-form {
+        bottom: -96px;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .container img {
+        display: none;
+    }
+
+    .contact-form {
+        position: static;
+
+        max-width: none;
+        width: 100%;
+    }
+
+    .inputs input,
+    .inputs textarea {
+        min-width: 100%;
+    }
+}

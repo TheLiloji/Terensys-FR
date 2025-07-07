@@ -1,0 +1,25 @@
+[(#VAL|barre_outils_css_icones)]
+
+/* roue ajax */
+.ajaxLoad{
+		position:relative;
+}
+.ajaxLoad:after {
+		content:"";
+		display:block;
+		width:5em;
+		height:5em;
+		border:1px solid #eee;
+		background:#fff url('[(#CHEMIN{images/loader.svg}|url_absolue|protocole_implicite)]') center no-repeat;
+		background-size:50%;
+		opacity:0.5;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin-left:-2.5em;
+		margin-top:-2.5em;
+}
+.fullscreen .ajaxLoad:after {
+		position:fixed;
+		left:75%;
+}

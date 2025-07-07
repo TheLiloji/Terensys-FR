@@ -1,0 +1,26 @@
+<B_pluginsdetail><div class="details" id="details_#ID_PAQUET"><BOUCLE_pluginsdetail(PAQUETS plugins){tout}{id_paquet}>
+	<dl class="description">
+		<dd class="desc">
+			[(#DESCRIPTION*|svp_importer_charset|extraire_multi|propre)]
+		</dd>
+		[<dt class="auteurs"><:public:par_auteur:></dt>
+		<dd class="auteurs">(#AUTEUR*|svp_afficher_credits|svp_importer_charset)</dd>]
+		[<dt class="credits"><:plugin_info_credit:></dt>
+		<dd class="credits">(#CREDIT*|svp_afficher_credits|svp_importer_charset)</dd>]
+		[<dt class="licence"><:intitule_licence:></dt>
+		<dd class="licence">(#LICENCE|svp_afficher_credits{','}|svp_importer_charset)</dd>]
+	</dl>
+	[(#AUTORISER{webmestre}|oui)
+	<dl class="tech">
+		<dt><:version:></dt>
+		<dd>#VERSION[ (#CONST{#CONSTANTE}|concat{#SRC_ARCHIVE/}|version_vcs_courante)]</dd>
+		<dt class="etat"><:svp:label_etat:></dt>
+		<dd class="etat">[(#ETAT|svp_afficher_etat)]</dd>
+		<dt><:svp:label_prefixe:></dt>
+		<dd>[(#PREFIXE|strtolower)]</dd>
+		<dt><:repertoire_plugins:></dt>
+		<dd>[(#CONST{#CONSTANTE}|concat{#SRC_ARCHIVE/}|joli_repertoire)]</dd>
+		[<dt><:plugin_info_necessite:></dt>
+		<dd>(#DEPENDANCES|svp_afficher_dependances{necessite, ', ', pluginspip})</dd>]
+	</dl>]
+</BOUCLE_pluginsdetail></div></B_pluginsdetail>

@@ -1,0 +1,12 @@
+
+Vous pouvez créer un lien hypertexte vers la définition d’un terme dans un glossaire externe ; pour un terme donné, il suffit d’insérer au sein de votre texte le raccourci `[?terme]`.
+
+<aide:code>
+{À la recherche du temps perdu} est l’œuvre majeure de [?Marcel Proust]
+</aide:code>
+
+Pensez à cliquer sur le lien pour vérifier que le terme entré (nom propre ou nom commun) est correctement orthographié, et qu’il pointe sur une destination valide.
+
+Le glossaire externe prédéfini est [Wikipedia->https://www.wikipedia.org] qui impose certaines [conventions sur les titres->https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Conventions_sur_les_titres].
+
+Il est possible également [de définir d’autres glossaires externes->https://programmer.spip.net/117].

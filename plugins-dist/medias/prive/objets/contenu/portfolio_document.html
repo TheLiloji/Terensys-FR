@@ -1,0 +1,15 @@
+[(#REM)
+
+  Squelette
+  (c) xxx
+  Distribue sous licence GPL
+
+]
+[
+(#INCLURE{fond=prive/squelettes/inclure/portfolio-documents, env, id_unique='', ajax=documents})
+]
+[(#AUTORISER{joindredocument, #ENV{objet}, #ENV{id_objet}}|oui)
+	[
+	(#INCLURE{fond=prive/squelettes/inclure/ajouter-documents, env, ajax})
+	]
+]
