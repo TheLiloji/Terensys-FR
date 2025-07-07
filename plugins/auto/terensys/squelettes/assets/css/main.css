@@ -826,11 +826,17 @@ main {
 
 /* 4 Blocs */
 
+.main-blocs-container {
+    display: flex;
+    justify-content: center;
+}
+
 .blocs-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 32px;
+    position: relative;
 }
 
 .blocs {
@@ -838,14 +844,34 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     padding-top: 200px;
+    padding-bottom: 200px;
     max-width: 600px;
 }
 
 .section-4-blocs {
-    position: relative;
     text-align: center;
+    padding: 198px 12px 0px 12px;
+}
 
-    padding: 198px 12px;
+.text-container, .text-container-citation {
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.text-container-citation p {
+    max-width: 1000px;
+    text-align: center;
+    padding: 10px;
+}
+
+.text-container p {
+    max-width: 1000px;
+    text-align: justify;
+    padding: 10px;
+    font-size: 1.5rem;
 }
 
 .svg-deco {
@@ -855,13 +881,13 @@ main {
 
 
 .svg-left {
-    transform: translateY(-35%);
-    left: -50px;
+    transform: translateY(-90%);
+    left: -20%;
 }
 
 .svg-right {
-    transform: translateY(-17%);
-    right: -50px;
+    transform: translateY(-70%);
+    right: -20%;
 }
 
 .bloc {

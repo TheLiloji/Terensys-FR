@@ -226,7 +226,7 @@ $data = array (
           ),
           'recherche' => '',
           'saisie' => 'input',
-          'explication' => '',
+          'explication' => 'Séparez plusieurs adresses avec le caractère "|".',
           'saisie_options' => '',
         ),
       ),
