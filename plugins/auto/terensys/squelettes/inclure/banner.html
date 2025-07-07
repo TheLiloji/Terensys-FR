@@ -1,16 +1,29 @@
 <section id="banner">
-    <img class="header" src="/plugins/auto/terensys/squelettes/assets/images/logo-banner.svg" alt="logo-banner">
-
-    <a class="button" href="#articles">Nous découvrir</a>
-    <div class="scroll">
-        <p>scroll pour en savoir plus</p>
-        <span class="material-symbols-rounded">
-            arrow_cool_down
-        </span>
-    </div>
+    <!-- Bouton accès support repositionné en haut à gauche -->
     <a id="support-button" class="button" href="https://projeqtor.terensys.fr/view/main.php#" target="_blank">Accès support
         <span class="material-symbols-rounded">
             contact_support
         </span>
     </a>
+
+    <!-- Logo remonté -->
+    <img class="header" src="/plugins/auto/terensys/squelettes/assets/images/logo-banner.svg" alt="logo-banner">
+
+    <!-- Bouton découvrir remonté -->
+    <a class="button" href="#articles">Nous découvrir</a>
+
+    <!-- Bandeau gris en bas avec carrousel réutilisé -->
+    <div class="banner-carousel-section">
+        <div class="carousel-container" id="bannerMarquee">
+            <div class="carousel-track" id="bannerTrack">
+                <div id="bannerContent">
+                    <BOUCLE_clients_carrousel_primary(CLIENTS)>
+                        <BOUCLE_clients_carrousel_logo_primary(DOCUMENTS) {id_document = #LOGO} {statut IN publie, prop}>
+                            <a href="#URL" target="_blank"><img src="#FICHIER" alt="#NOM"></a>
+                        </BOUCLE_clients_carrousel_logo_primary>
+                    </BOUCLE_clients_carrousel_primary>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

@@ -226,12 +226,6 @@ function balise_FORMULAIRE__contexte($form, $args) {
 	// charger peut passer une action si le formulaire ne tourne pas sur self()
 	// ou une action vide si elle ne sert pas
 	$action = $valeurs['action'] ?? self('&amp;', true);
-	// bug IEx : si action finit par /
-	// IE croit que le <form ... action=../ > est autoferme
-	if (substr($action, -1) == '/') {
-		// on ajoute une ancre pour feinter IE, au pire ca tue l'ancre qui finit par un /
-		$action .= '#';
-	}
 
 	// recuperer la saisie en cours si erreurs
 	// seulement si c'est ce formulaire qui est poste

@@ -249,8 +249,9 @@ if (!defined('_IS_BOT_FRIEND')) {
 				',' . implode('|', array(
 					'antennapod',
 					'facebookexternalhit',
-					'twitterbot',
 					'flipboardproxy',
+					'netnewswire',
+					'twitterbot',
 					'wordpress'
 				)) . ',i',
 				(string)$_SERVER['HTTP_USER_AGENT']
@@ -769,7 +770,7 @@ if (!function_exists('filtre_filtrer_entites_dist')) {
  * Bloque les bots quand le load déborde
  */
 if (!defined('_ECRAN_SECURITE_LOAD')) {
-	define('_ECRAN_SECURITE_LOAD', 4);
+	define('_ECRAN_SECURITE_LOAD', 0);
 }
 
 if (

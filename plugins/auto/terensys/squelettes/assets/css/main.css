@@ -352,7 +352,7 @@ main {
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
+    height: 90vh;
 }
 
 #banner::before {
@@ -388,13 +388,13 @@ main {
     z-index: -5;
 }
 
-#banner img {
+#banner img.header {
     width: 50vw;
 }
 
 #banner .button {
     position: absolute;
-    bottom: 15%;
+    bottom: 25%;
 }
 
 #banner .scroll {
@@ -422,7 +422,7 @@ main {
 }
 
 #banner #support-button {
-    bottom: calc(15% - 6px);
+    top: 5%;
     left: 5%;
     
     height: fit-content;
@@ -432,6 +432,104 @@ main {
 #banner #support-button:hover .material-symbols-rounded {
     color: var(--neutre);
 }
+
+.banner-carousel-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    background: #ffffff;
+    padding: 40px 0 20px 0;
+    z-index: 5;
+    filter: drop-shadow(0 5px rgba(0, 0, 0, 0.20));
+}
+
+/* Zone de dégradé avec blur au-dessus du carrousel */
+.banner-carousel-section::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    
+    background: linear-gradient(to bottom, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.3) 30%,
+        rgba(255, 255, 255, 0.7) 70%,
+        rgba(255, 255, 255, 1) 100%);
+    backdrop-filter: blur(4px);
+    z-index: 6;
+}
+
+
+
+
+
+.banner-carousel-section::after {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 15px solid #ffffff;
+    
+    z-index: 8;
+}
+
+.banner-carousel-section .carousel-container {
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    z-index: 7;
+}
+
+
+
+.banner-carousel-section .carousel-track {
+    display: flex;
+    align-items: center;
+    will-change: transform;
+    white-space: nowrap;
+}
+
+.banner-carousel-section .carousel-track #bannerContent {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.banner-carousel-section .carousel-track a {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.banner-carousel-section .carousel-track img {
+    height: 48px;
+    width: auto;
+    max-width: 140px;
+    margin: 0 24px;
+    filter: opacity(.7) saturate(0);
+    transition: all 250ms ease-in-out;
+    flex-shrink: 0;
+    display: block;
+}
+
+.banner-carousel-section .carousel-track img:hover {
+    filter: opacity(1) saturate(1);
+    transform: scale(1.1);
+}
+
+
 
 .material-symbols-rounded {
     color: var(--contraste);
@@ -1271,9 +1369,8 @@ main {
 
 @media screen and (max-width: 680px) {
     #banner #support-button {
-        top: auto;
-        left: auto;
-        bottom: calc(15% + 55px);
+        top: 12px;
+        left: 12px;
     }
 
     #banner #support-button span {  

@@ -2,6 +2,12 @@
 
 Changelog de SPIP 4.4
 
+## 4.4.4 - 2025-06-10
+
+### Fixed
+
+- !74 Les urls d’actions de formulaires finissant par `/` ajoutaient inutilement une ancre
+
 ## 4.4.3 - 2025-04-08
 
 ### Fixed

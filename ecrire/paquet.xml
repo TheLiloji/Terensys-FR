@@ -1,7 +1,7 @@
 <paquet
 	prefix="spip"
 	categorie="outil"
-	version="4.4.3"
+	version="4.4.4"
 	etat="test"
 	compatibilite="];["
 	schema="2022022303"

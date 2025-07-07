@@ -97,9 +97,11 @@ body {
 	flex-grow: 1;
 	display: flex;
 	flex-flow: column;
-	justify-content: space-between;
+	justify-content: flex-start;
 }
-
+#page>:last-child {
+	margin-top: auto;
+}
 
 /**
  * 1.1. Contenu central : disposition par défaut
