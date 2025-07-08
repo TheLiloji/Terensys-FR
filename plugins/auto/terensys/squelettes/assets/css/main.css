@@ -63,10 +63,14 @@ h4 {
 
 ul {
     list-style: url('/plugins/auto/terensys/squelettes/assets/images/logo-ul.svg') !important;
+    padding-left: 3em;
 }
 
-p,
-a {
+li::marker {
+    font-size: 1.6em;
+}
+
+p, a, li {
     font-size: 1.6em;
     text-align: justify;
     color: var(--contraste);
@@ -299,7 +303,7 @@ main {
 
 #nav #sub-menu {
     position: absolute;
-    top: 50px;
+    top: 48px;
 
     display: none;
     flex-direction: column;
@@ -1212,7 +1216,7 @@ main {
     padding: 10px;
 }
 
-.text-container p {
+.blocs-text-container p {
     max-width: 1000px;
     text-align: justify;
     padding: 10px;
@@ -1958,8 +1962,7 @@ main {
         font-size: 1.8em;
     }
 
-    p,
-    a {
+    p, a, li {
         font-size: 1.6em;
     }
 
@@ -2168,8 +2171,7 @@ main {
         font-size: 1.4em;
     }
 
-    p,
-    a {
+    p, a, li{
         font-size: 1.4em;
     }
 }
