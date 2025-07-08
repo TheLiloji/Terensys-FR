@@ -161,7 +161,7 @@ main {
 
     width: 100vw;
     
-    z-index: 10;
+    z-index: 1000;
 }
 
 #nav {
@@ -657,9 +657,12 @@ main {
     flex-direction: column;
     gap: 24px;
 
+    position: relative;
+    margin-top: -1060px;
     padding: 198px 12px;
     width: 100%;
     max-width: 1200px;
+    z-index: 8;
 }
 
 .box {
@@ -682,7 +685,7 @@ main {
     border: 2px solid var(--contraste);
     box-shadow: 0 6px var(--contraste-25);
 
-    z-index: 0;
+    z-index: 10;
 }
 
 .article-right {
@@ -744,12 +747,13 @@ main {
 
 /* Carrousel */
 #carousel-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 256px;
+    gap: 80px;
 
-    padding: 198px 0 128px 0;
+    padding: 200px 0 128px 0;
     width: 100%;
 }
 
@@ -759,26 +763,33 @@ main {
     display: flex;
     flex-wrap: nowrap;
 
-    padding: 98px 0 48px 0;
+    padding: 450px 0 48px 0;
     width: 100%;
 
     background-color: var(--bg-main);
+    z-index: 1;
 }
 
 .carousel-container .elipse {
     position: absolute;
-    top: -150px;
+    top: -350px;
 
     width: 100%;
     height: 300px;
 
     border-radius: 50%;
     background-color: var(--bg-main);
-    box-shadow: 0 -6px 24px var(--contraste-25);
+    box-shadow: 0 -6px 5px var(--contraste-25);
     z-index: -5;
 }
 
-.carousel-container:hover .carousel {
+.carousel img:hover {
+    filter: opacity(1) saturate(1); 
+    transform: scale(1.05) translateY(-12px);
+    transition: all 150ms ease-in-out;
+}
+
+.carousel.paused {
     animation-play-state: paused;
 }
 
@@ -797,10 +808,18 @@ main {
     transition: all 250ms ease-in-out;
 }
 
-.carousel img:hover {
-    filter: opacity(1) saturate(1); 
-    transform: scale(1.05) translateY(-12px);
-    transition: all 150ms ease-in-out;
+/* Carrousel inverse */
+.carousel-container.carousel-reverse {
+    padding: 180px 0 48px 0;
+    margin-top: -80px;
+}
+
+.carousel-reverse-animation {
+    animation: 25s slide-reverse linear infinite;
+}
+
+.carousel-reverse-animation.paused {
+    animation-play-state: paused;
 }
 
 @keyframes slide {
@@ -813,15 +832,341 @@ main {
     }
 }
 
+@keyframes slide-reverse {
+    from {
+        transform: translateX(-100%);
+    } 
 
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Section avec cercles décoratifs et cartes clients */
+.clients-showcase-section {
+    position: relative;
+    width: 100%;
+    padding: 40px 50px 20px;
+    min-height: 400px;
+}
+
+/* Cercles colorés décoratifs en arrière-plan */
+.decorative-circles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -8;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Différents cercles avec les couleurs de la charte */
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    background: var(--ludique);
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    background: var(--rassurante);
+    top: 20%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.circle-3 {
+    width: 120px;
+    height: 120px;
+    background: var(--neutre);
+    bottom: 30%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.circle-4 {
+    width: 180px;
+    height: 180px;
+    background: var(--ludique);
+    bottom: 10%;
+    right: 5%;
+    animation-delay: 3s;
+}
+
+.circle-5 {
+    width: 100px;
+    height: 100px;
+    background: var(--rassurante);
+    top: 60%;
+    left: 50%;
+    animation-delay: 1.5s;
+}
+
+.circle-6 {
+    width: 140px;
+    height: 140px;
+    background: var(--ludique);
+    top: 5%;
+    left: 40%;
+    animation-delay: 2.5s;
+}
+
+.circle-7 {
+    width: 80px;
+    height: 80px;
+    background: var(--neutre);
+    bottom: 50%;
+    right: 30%;
+    animation-delay: 0.5s;
+}
+
+.circle-8 {
+    width: 160px;
+    height: 160px;
+    background: var(--rassurante);
+    top: 40%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+/* Gros cercles pour couvrir la largeur */
+.circle-big-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--ludique);
+    top: -5%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.circle-big-2 {
+    width: 350px;
+    height: 350px;
+    background: var(--rassurante);
+    bottom: -15%;
+    right: -12%;
+    animation-delay: 4s;
+}
+
+.circle-big-3 {
+    width: 280px;
+    height: 280px;
+    background: var(--neutre);
+    top: 20%;
+    right: -8%;
+    animation-delay: 2s;
+}
+
+/* Petits cercles pour remplir les espaces */
+.circle-small-1 {
+    width: 60px;
+    height: 60px;
+    background: var(--ludique);
+    top: 15%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.circle-small-2 {
+    width: 70px;
+    height: 70px;
+    background: var(--rassurante);
+    bottom: 35%;
+    left: 5%;
+    animation-delay: 3s;
+}
+
+.circle-small-3 {
+    width: 50px;
+    height: 50px;
+    background: var(--neutre);
+    top: 70%;
+    left: 15%;
+    animation-delay: 2.5s;
+}
+
+.circle-small-4 {
+    width: 65px;
+    height: 65px;
+    background: var(--ludique);
+    top: 30%;
+    right: 25%;
+    animation-delay: 4.5s;
+}
+
+.circle-small-5 {
+    width: 55px;
+    height: 55px;
+    background: var(--rassurante);
+    bottom: 15%;
+    left: 70%;
+    animation-delay: 1.5s;
+}
+
+.circle-small-6 {
+    width: 75px;
+    height: 75px;
+    background: var(--neutre);
+    top: 50%;
+    right: 5%;
+    animation-delay: 3.8s;
+}
+
+.circle-small-7 {
+    width: 45px;
+    height: 45px;
+    background: var(--ludique);
+    bottom: 60%;
+    right: 15%;
+    animation-delay: 2.2s;
+}
+
+.circle-small-8 {
+    width: 65px;
+    height: 65px;
+    background: var(--rassurante);
+    top: 80%;
+    right: 35%;
+    animation-delay: 5s;
+}
+
+/* Conteneur des cartes clients - Positionnement libre et aléatoire */
+.clients-cards-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 5%;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 300px;
+}
+
+/* Positionnement aléatoire pour chaque carte avec margins spécifiques */
+.client-card:nth-child(1) { 
+    transform: rotate(-8deg) translateY(30px); 
+    margin: 20px 40px 10px 0px;
+}
+.client-card:nth-child(2) { 
+    transform: rotate(5deg) translateY(10px); 
+    margin: 0px 20px 30px 30px;
+}
+.client-card:nth-child(3) { 
+    transform: rotate(-3deg) translateY(40px); 
+    margin: 15px 0px 20px 50px;
+}
+.client-card:nth-child(4) { 
+    transform: rotate(7deg) translateY(70px); 
+    margin: 40px 60px 10px 20px;
+}
+.client-card:nth-child(5) { 
+    transform: rotate(-5deg) translateY(35px); 
+    margin: 25px 30px 15px 40px;
+}
+.client-card:nth-child(6) { 
+    transform: rotate(4deg) translateY(80px); 
+    margin: 50px 10px 20px 70px;
+}
+
+/* Cartes rectangulaires pour les logos - plus grandes et penchées */
+.client-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 25px 35px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    min-width: 160px;
+    max-width: 280px;
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+
+
+.client-card:hover {
+    transform: translateY(-20px) scale(1.15) rotate(0deg) !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3) !important;
+    background: rgba(255, 255, 255, 1) !important;
+    border: 3px solid rgba(255, 255, 255, 1) !important;
+    z-index: 100 !important;
+    position: relative !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.client-card a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    z-index: 10;
+    position: relative;
+    pointer-events: auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-card a:hover {
+    transform: none !important;
+    z-index: 101 !important;
+    outline: none;
+}
+
+.client-card a:focus {
+    outline: 2px solid var(--ludique);
+    outline-offset: 2px;
+}
+
+.client-card img {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-card:hover img {
+    transform: scale(1.2) !important;
+}
+
+/* Animation de flottement pour les cercles */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+    66% {
+        transform: translateY(-5px) rotate(-3deg);
+    }
+}
 
 .big-title-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
-
     width: 100%;
+    position: relative;
+    z-index: 10;
 }
 
 /* 4 Blocs */
@@ -1273,7 +1618,7 @@ main {
     }
 
     .carousel-container .elipse {
-        top: -75px;
+        top: -250px;
         height: 150px;
         border-radius: 50%;
     }
@@ -1309,6 +1654,110 @@ main {
 
     #footer .text img {
         height: 12.8px;
+    }
+
+    /* Responsive section showcase clients */
+    .clients-showcase-section {
+        padding: 30px 40px 15px;
+        min-height: 350px;
+    }
+
+    .clients-cards-container {
+        padding: 15px 6%;
+        min-height: 280px;
+        max-height: 350px;
+    }
+    
+    /* Garder 3 cartes minimum sur tablettes */
+
+    /* Ajustement positionnement aléatoire tablette */
+    .client-card:nth-child(1) { 
+        transform: rotate(-6deg) translateY(25px); 
+        margin: 15px 30px 8px 0px;
+    }
+    .client-card:nth-child(2) { 
+        transform: rotate(4deg) translateY(8px); 
+        margin: 0px 15px 25px 25px;
+    }
+    .client-card:nth-child(3) { 
+        transform: rotate(-2deg) translateY(35px); 
+        margin: 12px 0px 15px 40px;
+    }
+    .client-card:nth-child(4) { 
+        transform: rotate(5deg) translateY(55px); 
+        margin: 30px 45px 8px 15px;
+    }
+    .client-card:nth-child(5) { 
+        transform: rotate(-4deg) translateY(28px); 
+        margin: 20px 25px 12px 30px;
+    }
+    .client-card:nth-child(6) { 
+        transform: rotate(3deg) translateY(60px); 
+        margin: 40px 8px 15px 50px;
+    }
+
+    .client-card {
+        padding: 20px 25px;
+        min-width: 130px;
+        max-width: 200px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .client-card img {
+        max-height: 65px;
+    }
+
+    #carousel-container {
+        gap: 60px;
+        padding: 40px 0 128px 0;
+    }
+
+    /* Ajustement des cercles décoratifs */
+    .circle-big-1, .circle-big-2, .circle-big-3 {
+        width: 250px;
+        height: 250px;
+    }
+
+    .circle-1, .circle-4, .circle-8 {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circle-2, .circle-6 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .circle-3, .circle-7 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .circle-small-1, .circle-small-2, .circle-small-3, .circle-small-4, 
+    .circle-small-5, .circle-small-6, .circle-small-7, .circle-small-8 {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 2228px) {
+    /* Masquer la 6e carte - garder 5 cartes */
+    .client-card:nth-child(n+6) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1828px) {
+    /* Masquer à partir de la 5e carte - garder 4 cartes */
+    .client-card:nth-child(n+5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    /* Masquer à partir de la 4e carte - garder 3 cartes */
+    .client-card:nth-child(n+4) {
+        display: none;
     }
 }
 
@@ -1354,6 +1803,7 @@ main {
     }
 
     .map-container {
+        margin-top: -350px;
         padding: 128px 12px;
     }
 
@@ -1363,7 +1813,11 @@ main {
 
     #carousel-container {
         gap: 164px;
-        padding: 128px 0;
+        padding: 200px 0 128px 0;
+    }
+    
+    .carousel-container.carousel-reverse {
+        margin-top: -60px;
     }
 
     .blocs {
@@ -1390,6 +1844,93 @@ main {
 
     .cards > li {
         width: calc(50vw - var(--cards)*25px);
+    }
+
+    /* Responsive showcase clients sur mobile */
+    .clients-showcase-section {
+        padding: 20px 30px 10px;
+        min-height: 280px;
+    }
+
+    .clients-cards-container {
+        padding: 10px 4%;
+        min-height: 250px;
+        max-height: 300px;
+    }
+    
+    /* Garder 3 cartes minimum sur mobile */
+
+    .client-card {
+        padding: 15px 20px;
+        min-width: 100px;
+        max-width: 150px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+
+    /* Positionnement aléatoire réduit sur mobile pour 6 cartes */
+    .client-card:nth-child(1) { 
+        transform: rotate(-4deg) translateY(20px); 
+        margin: 10px 20px 5px 0px;
+    }
+    .client-card:nth-child(2) { 
+        transform: rotate(3deg) translateY(5px); 
+        margin: 0px 10px 20px 15px;
+    }
+    .client-card:nth-child(3) { 
+        transform: rotate(-2deg) translateY(25px); 
+        margin: 8px 0px 10px 25px;
+    }
+    .client-card:nth-child(4) { 
+        transform: rotate(4deg) translateY(40px); 
+        margin: 20px 30px 5px 10px;
+    }
+    .client-card:nth-child(5) { 
+        transform: rotate(-3deg) translateY(15px); 
+        margin: 15px 15px 8px 20px;
+    }
+    .client-card:nth-child(6) { 
+        transform: rotate(2deg) translateY(45px); 
+        margin: 30px 5px 10px 35px;
+    }
+
+    .client-card img {
+        max-height: 50px;
+    }
+
+    #carousel-container {
+        gap: 40px;
+        padding: 20px 0 128px 0;
+    }
+    
+    .carousel-container.carousel-reverse {
+        margin-top: -40px;
+    }
+
+    /* Cercles plus petits sur mobile */
+    .circle-big-1, .circle-big-2, .circle-big-3 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circle-1, .circle-4, .circle-8 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .circle-2, .circle-6 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .circle-3, .circle-5, .circle-7 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .circle-small-1, .circle-small-2, .circle-small-3, .circle-small-4, 
+    .circle-small-5, .circle-small-6, .circle-small-7, .circle-small-8 {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -1440,6 +1981,7 @@ main {
     }
 
     .map-container {
+        margin-top: -250px;
         padding: 96px 12px;
     }
 
@@ -1449,7 +1991,11 @@ main {
 
     #carousel-container {
         gap: 128px;
-        padding: 96px 0;
+        padding: 150px 0 96px 0;
+    }
+    
+    .carousel-container.carousel-reverse {
+        margin-top: -50px;
     }
 
     .carousel img {
@@ -1458,7 +2004,7 @@ main {
     }
 
     .carousel-container .elipse {
-        top: -37.5px;
+        top: -175px;
         height: 75px;
     }
 
@@ -1518,6 +2064,94 @@ main {
     #footer #informations {
         flex-direction: column;
         gap: 48px;
+    }
+
+    /* Responsive showcase clients très petits écrans */
+    .clients-showcase-section {
+        padding: 15px 20px 5px;
+        min-height: 220px;
+    }
+
+    .clients-cards-container {
+        padding: 10px 3%;
+        min-height: 200px;
+        max-height: 250px;
+        justify-content: space-around;
+    }
+    
+    /* Garder 3 cartes minimum sur très petits écrans */
+
+    .client-card {
+        padding: 12px 18px;
+        min-width: 90px;
+        max-width: 130px;
+        border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+
+    /* Positionnement minimal sur très petits écrans - arrangement 2x3 */
+    .client-card:nth-child(1) { 
+        transform: rotate(-2deg) translateY(10px); 
+        margin: 5px 15px 3px 0px;
+    }
+    .client-card:nth-child(2) { 
+        transform: rotate(2deg) translateY(10px); 
+        margin: 5px 0px 3px 15px;
+    }
+    .client-card:nth-child(3) { 
+        transform: rotate(-1deg) translateY(5px); 
+        margin: 3px 10px 5px 5px;
+    }
+    .client-card:nth-child(4) { 
+        transform: rotate(2deg) translateY(5px); 
+        margin: 3px 5px 5px 10px;
+    }
+    .client-card:nth-child(5) { 
+        transform: rotate(-2deg) translateY(15px); 
+        margin: 8px 15px 5px 0px;
+    }
+    .client-card:nth-child(6) { 
+        transform: rotate(1deg) translateY(15px); 
+        margin: 8px 0px 5px 15px;
+    }
+
+    .client-card img {
+        max-height: 40px;
+    }
+
+    #carousel-container {
+        gap: 30px;
+        padding: 120px 0 96px 0;
+    }
+    
+    .carousel-container.carousel-reverse {
+        margin-top: -30px;
+    }
+
+    /* Cercles très petits sur petits écrans */
+    .circle-big-1, .circle-big-2, .circle-big-3 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .circle-1, .circle-4, .circle-8 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .circle-2, .circle-6 {
+        width: 60px;
+        height: 60px;
+    }
+
+    .circle-3, .circle-5, .circle-7 {
+        width: 40px;
+        height: 40px;
+    }
+
+    .circle-small-1, .circle-small-2, .circle-small-3, .circle-small-4, 
+    .circle-small-5, .circle-small-6, .circle-small-7, .circle-small-8 {
+        width: 30px;
+        height: 30px;
     }
 }
 

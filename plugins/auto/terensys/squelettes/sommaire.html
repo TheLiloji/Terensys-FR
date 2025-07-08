@@ -110,30 +110,71 @@
             [(#TYPE|=={map}|oui)
                 <div class="map-container">
                     <div class="box">
-                        <h3>#TITRE</h3>
+                        
                         <div id="map"></div>
                         <BOUCLE_clients_map(CLIENTS) {id_articles_editorial}>
                             <BOUCLE_domuments_map(DOCUMENTS) {id_document = #LOGO} {statut IN publie, prop}>
                                 <div class="clients" data-nom="#NOM" data-adresse="#ADRESSE" data-logo="#FICHIER" data-url="#URL"></div>
                             </BOUCLE_domuments_map>
                         </BOUCLE_clients_map>
+                        <h3>#TITRE</h3>
                     </div>
                 </div>
             ]
 
             [(#TYPE|=={carrousel}|oui)
             <div id="carousel-container">
+                
+                
+                <!-- Section avec cercles colorés et logos en rectangles -->
+                <div class="clients-showcase-section">
+                    <!-- Cercles colorés décoratifs en arrière-plan -->
+                    <div class="decorative-circles">
+                        <!-- Gros cercles pour couvrir la largeur -->
+                        <div class="circle circle-big-1"></div>
+                        <div class="circle circle-big-2"></div>
+                        <div class="circle circle-big-3"></div>
+                        
+                        <!-- Cercles moyens -->
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
+                        <div class="circle circle-4"></div>
+                        <div class="circle circle-5"></div>
+                        <div class="circle circle-6"></div>
+                        <div class="circle circle-7"></div>
+                        <div class="circle circle-8"></div>
+                        
+                        <!-- Petits cercles pour remplir -->
+                        <div class="circle circle-small-1"></div>
+                        <div class="circle circle-small-2"></div>
+                        <div class="circle circle-small-3"></div>
+                        <div class="circle circle-small-4"></div>
+                        <div class="circle circle-small-5"></div>
+                        <div class="circle circle-small-6"></div>
+                        <div class="circle circle-small-7"></div>
+                        <div class="circle circle-small-8"></div>
+                    </div>
+                    
+                    <!-- Logos en rectangles par-dessus -->
+                    <div class="clients-cards-container">
+                        <BOUCLE_clients_showcase(CLIENTS) {0,6}>
+                            <BOUCLE_clients_showcase_logo(DOCUMENTS) {id_document = #LOGO} {statut IN publie, prop}>
+                                <div class="client-card">
+                                    <a href="#URL" target="_blank">
+                                        <img src="#FICHIER" alt="#NOM">
+                                    </a>
+                                </div>
+                            </BOUCLE_clients_showcase_logo>
+                        </BOUCLE_clients_showcase>
+                    </div>
+                </div>
+                
                 <div class="big-title-content">
                     <h2 class="header">#TITRE</h2>
                     <hr class="hr-terensys" />
-                    <!-- <BOUCLE_partenaires_random(PARTENAIRES)>
-                        <BOUCLE_partenaires_logo_random(DOCUMENTS) {id_document = #LOGO} {statut IN publie, prop}>
-                            <div class="item">
-                                <img src="#FICHIER" alt="#NOM">
-                            </div>
-                        </BOUCLE_partenaires_logo_random>
-                    </BOUCLE_partenaires_random> -->
                 </div>
+
                 <div class="carousel-container">
                     <div class="carousel">
                         <BOUCLE_clients_carrousel_primary(CLIENTS)>
@@ -151,6 +192,24 @@
                     </div>
 
                     <div class="elipse"></div>
+                </div>
+                
+                <!-- Deuxième carrousel dans le sens inverse -->
+                <div class="carousel-container carousel-reverse">
+                    <div class="carousel carousel-reverse-animation">
+                        <BOUCLE_clients_carrousel_reverse_primary(CLIENTS)>
+                            <BOUCLE_clients_carrousel_logo_reverse_primary(DOCUMENTS) {id_document = #LOGO} {statut IN publie, prop}>
+                                <a href="#URL" target="_blank"><img src="#FICHIER" alt="#NOM"></a>
+                            </BOUCLE_clients_carrousel_logo_reverse_primary>
+                        </BOUCLE_clients_carrousel_reverse_primary>
+                    </div>
+                    <div class="carousel carousel-reverse-animation">
+                        <BOUCLE_clients_carrousel_reverse_secondary(CLIENTS)>
+                            <BOUCLE_clients_carrousel_logo_reverse_secondary(DOCUMENTS) {id_document = #LOGO} {statut IN publie, prop}>
+                                <a href="#URL" target="_blank"><img src="#FICHIER" alt="#NOM"></a>
+                            </BOUCLE_clients_carrousel_logo_reverse_secondary>
+                        </BOUCLE_clients_carrousel_reverse_secondary>
+                    </div>
                 </div>
             </div>
             ]
@@ -278,5 +337,6 @@
     <script src="/plugins/auto/terensys/squelettes/assets/javascript/breves.js"></script>
     <script src="/plugins/auto/terensys/squelettes/assets/javascript/map.js"></script>
     <script src="/plugins/auto/terensys/squelettes/assets/javascript/banner-carousel.js"></script>
+    <script src="/plugins/auto/terensys/squelettes/assets/javascript/carousel-hover.js"></script>
 </body>
 </html>
