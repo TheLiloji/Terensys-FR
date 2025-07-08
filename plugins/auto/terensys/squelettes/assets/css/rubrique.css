@@ -70,9 +70,7 @@ header {
 }
 
 .text-container ul {
-    font-size: 1.6em;
     color: var(--contrast);
-    list-style: inside disc;
 }
 
 #article-container {
