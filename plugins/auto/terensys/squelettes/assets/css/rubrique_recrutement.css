@@ -199,6 +199,13 @@ header {
 }
 
 /* Responsive */
+@media screen and (max-width: 1820px) {
+    /* Masquer les images sticky au même niveau que les ellipses */
+    .sticky-images {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1200px) {
     /* Réduire la taille des images sur écrans moyens */
     .sticky-bernard, .sticky-franck {
@@ -222,11 +229,6 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-    /* Masquer les images sticky et cartes sur mobile */
-    .sticky-images {
-        display: none;
-    }
-    
     #recrutement-container {
         padding: 32px 16px;
         gap: 48px;
