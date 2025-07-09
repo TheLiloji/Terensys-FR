@@ -1306,7 +1306,8 @@ main {
 	transform: rotate(var(--curve));
 	transition: all 0.3s;
 	cursor: pointer;
-	font-size: 11vmin;
+	font-size: 3em;
+    text-align: center;
 	transform-style: preserve-3d;
 }
 
@@ -2127,7 +2128,24 @@ main {
     }
 
     .cards {
-        height: calc(200px + calc(var(--cards) * 20px));
+        height: calc(200px + calc(var(--cards) * 35px));
+    }
+
+    .cards > li {
+        width: 15vh;
+    }
+
+    .inner {
+        padding-top: 6px;
+    }
+
+    .inner .nom {
+        font-size: 50%;
+    }
+
+    .inner .fonction {
+        font-size: 40%;
+        text-align: center;
     }
 
     .partenaire-content {
