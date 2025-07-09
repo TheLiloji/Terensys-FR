@@ -13,24 +13,55 @@
         <INCLURE{fond=inclure/nav,env} />
     </header>
 
+    <!-- Images sticky sur les côtés -->
+    <div class="sticky-images">
+        <img src="/plugins/auto/terensys/squelettes/assets/images/grandBernard.png" alt="Bernard" class="sticky-bernard">
+        <div class="business-card card-bernard">
+            <div class="card-content">
+                <h4>Bernard RIVO</h4>
+                <p>Associé</p>
+            </div>
+        </div>
+        
+        <img src="/plugins/auto/terensys/squelettes/assets/images/grandFranck.png" alt="Franck" class="sticky-franck">
+        <div class="business-card card-franck">
+            <div class="card-content">
+                <h4>Franck ROUTIER</h4>
+                <p>Associé</p>
+            </div>
+        </div>
+    </div>
+
     <main id="main">
         <div id="recrutement-container">
-            <div class="main-container">
-                <img src="/plugins/auto/terensys/squelettes/assets/images/franck.png" alt="franck">
-
-                <div class="description">
-                    <BOUCLE_articles(ARTICLES) {id_rubrique} {!par date}>
-                            #TEXTE
-                            [(#TYPE|=={link}|oui)
-                                <a class="button" href="#URL" target="_blank">#LABEL</a>
-                            ]
-                    </BOUCLE_articles>
-
+            <!-- Texte d'intro 1 -->
+            [(#TEXTAREA_1|oui)
+                <div class="intro-text">
+                    [(#TEXTAREA_1|propre)]
                 </div>
+            ]
 
-                <img src="/plugins/auto/terensys/squelettes/assets/images/bernard.png" alt="franck">
+            <!-- Articles de recrutement (postes) -->
+            <div class="postes-grid">
+                <BOUCLE_articles(ARTICLES) {id_rubrique} {!par date}>
+                    <article class="poste-card">
+                        [(#TEXTE|propre)]
+                        [(#TYPE|=={link}|oui)
+                            <a class="button" href="#URL" target="_blank">#LABEL</a>
+                        ]
+                    </article>
+                </BOUCLE_articles>
             </div>
 
+            <!-- Texte d'intro 2 avec bouton -->
+            [(#TEXTAREA_2|oui)
+                <div class="intro-text">
+                    [(#TEXTAREA_2|propre)]
+                    [(#INPUT_1|et{#INPUT_2}|oui)
+                        <a class="button" href="#INPUT_2" target="_blank">#INPUT_1</a>
+                    ]
+                </div>
+            ]
         </div>
     </main>
 

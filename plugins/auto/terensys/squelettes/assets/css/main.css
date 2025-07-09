@@ -1384,6 +1384,8 @@ main {
     width: 100vw;
     
     background-color: var(--contraste);
+    position: relative;
+    z-index: 2;
 }
 
 #footer p {
