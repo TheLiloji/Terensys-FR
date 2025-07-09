@@ -1,20 +1,20 @@
-// Gestion du hover sur les images du carrousel
 document.addEventListener('DOMContentLoaded', function() {
-    // Sélectionner toutes les images des carrousels
     const carouselImages = document.querySelectorAll('.carousel img');
+    const allCarousels = document.querySelectorAll('.carousel');
     
     carouselImages.forEach(img => {
-        // Trouver le carrousel parent
-        const carousel = img.closest('.carousel');
-        
-        // Événement mouseenter (survol)
         img.addEventListener('mouseenter', function() {
-            carousel.classList.add('paused');
+            // Mettre en pause TOUS les carrousels
+            allCarousels.forEach(carousel => {
+                carousel.classList.add('paused');
+            });
         });
         
-        // Événement mouseleave (sortie du survol)
         img.addEventListener('mouseleave', function() {
-            carousel.classList.remove('paused');
+            // Relancer TOUS les carrousels
+            allCarousels.forEach(carousel => {
+                carousel.classList.remove('paused');
+            });
         });
     });
 }); 
