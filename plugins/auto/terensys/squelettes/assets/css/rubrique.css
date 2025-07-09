@@ -4,8 +4,6 @@ header {
 
     width: 100%;
     height: 90px;
-
-    background-color: var(--bg-main);
     z-index: 5;
 }
 

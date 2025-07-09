@@ -5,7 +5,6 @@ header {
     width: 100%;
     height: 90px;
 
-    background-color: var(--bg-main);
     z-index: 5;
 }
 
@@ -48,80 +47,6 @@ header {
     box-shadow: 0 6px var(--contraste-25);
 }
 
-#recrutement-container .elipse {
-    position: absolute;
-    
-    border-radius: 50%;
-    box-shadow: 0 6px var(--contraste-25);
-
-    z-index: -5;
-}
-
-#recrutement-container .elipse-left {
-    width: 350px;
-    height: 350px;
-
-    bottom: -175px;
-    left: -175px;
-
-    background-color: var(--ludique);
-    
-    animation: 9s elipse-left infinite ease-in-out alternate;
-}
-
-#recrutement-container .elipse-middle {
-    width: 250px;
-    height: 250px;
-
-    top: -75px;
-    right: -75px;
-
-    background-color: var(--neutre);
-
-    animation: 7s elipse-middle infinite ease-in-out alternate;
-}
-
-#recrutement-container .elipse-right {
-    width: 350px;
-    height: 350px;
-
-    top: calc(50% - 175px);
-    right: -175px;
-
-    background-color: var(--rassurante);
-
-    animation: 6s elipse-right infinite ease-in-out alternate;
-}
-
-@keyframes elipse-left {
-    from {
-        transform: translateY(-50px);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes elipse-middle {
-    from {
-        transform: translateX(-35px);
-    }
-
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes elipse-right {
-    from {
-        transform: translateY(-35px);
-    }
-
-    to {
-        transform: translateY(35px);
-    }
-}
 
 @media screen and (max-width: 1240px) {
     .main-container {
@@ -134,29 +59,6 @@ header {
         gap: 24px;
     }
 
-    #recrutement-container .elipse-left {
-        width: 250px;
-        height: 250px;
-    
-        bottom: -125px;
-        left: -125px;
-    }
-    
-    #recrutement-container .elipse-middle {
-        width: 150px;
-        height: 150px;
-    
-        top: -50px;
-        right: -50px;
-    }
-    
-    #recrutement-container .elipse-right {
-        width: 250px;
-        height: 250px;
-    
-        top: calc(50% - 125px);
-        right: -125px;
-    }
 }
 
 @media screen and (max-width: 768px) {
@@ -178,97 +80,10 @@ header {
         max-width: none;
         width: 100%;
     }
-
-    #recrutement-container .elipse-left {
-        top: -125px;
-        left: -125px;
-    }
-    
-    #recrutement-container .elipse-middle {
-        top: -50px;
-        right: calc(50% - 75px);
-    }
-    
-    #recrutement-container .elipse-right {
-        top: calc(250px - 125px);
-        right: -125px;
-    }
-
-    @keyframes elipse-left {
-        from {
-            transform: translateY(-15px);
-        }
-    
-        to {
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes elipse-middle {
-        from {
-            transform: translateX(-35px);
-        }
-    
-        to {
-            transform: translateX(35px);
-        }
-    }
-
-    @keyframes elipse-right {
-        from {
-            transform: translateY(-15px);
-        }
-    
-        to {
-            transform: translateY(15px);
-        }
-    }
 }
 
 @media screen and (max-width: 550px) {
-    #recrutement-container .elipse-left {
-        width: 150px;
-        height: 150px;
 
-        top: -75px;
-        left: -75px;
-    }
-    
-    #recrutement-container .elipse-middle {
-        width: 75px;
-        height: 75px;
-
-        top: -35px;
-        right: calc(50% - 35px);
-    }
-    
-    #recrutement-container .elipse-right {
-        width: 150px;
-        height: 150px;
-
-        top: calc(150px - 75px);
-        right: -75px;
-    }
-
-    @keyframes elipse-middle {
-        from {
-            transform: translateX(-35px);
-        }
-    
-        to {
-            transform: translateX(35px);
-        }
-    }
-
-    @keyframes elipse-right {
-        from {
-            transform: translateY(-15px);
-        }
-        
-        to {
-            transform: translateY(15px);
-        }
-    }
 
     #recrutement-container .description {
         gap: 24px;
