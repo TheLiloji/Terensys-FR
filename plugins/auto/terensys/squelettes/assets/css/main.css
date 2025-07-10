@@ -1522,7 +1522,7 @@ main {
 	counter-increment: cards;
     position: absolute;
 	flex: 0 0 auto;
-	width: calc(22vw - var(--cards) * 1%);
+	width: calc(22vw - var(--cards) * 4%);
 	aspect-ratio: 2/3;
 	transform-origin: 50% 350%;
 	transform: rotate(var(--curve));
@@ -1844,11 +1844,14 @@ main {
         display: none;
     }
     
+    .cards > li {
+        width: 15vw;
+    }
 }
 
 @media screen and (min-width: 1820px) {
     .cards > li {
-        width: calc(22vw - var(--cards) * 4%);;
+        width: calc(22vw - var(--cards) * 4%);
     }
 }
 
@@ -2890,7 +2893,7 @@ main {
 }
 
 
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1820px) {
     .grid-articles-container {
         display: none;
     }
