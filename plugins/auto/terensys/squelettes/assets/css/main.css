@@ -2070,6 +2070,32 @@ main {
         right: 35%;
     }
 
+    /* Masquer quelques cercles sur tablette pour éviter la surcharge */
+    .scroll-circle-12, .scroll-circle-15, .scroll-circle-16 {
+        display: none;
+    }
+
+    /* Repositionner quelques cercles pour éviter qu'ils sortent du cadre */
+    .scroll-circle-1 {
+        top: 15%;
+    }
+
+    .scroll-circle-2 {
+        top: 30%;
+    }
+
+    .scroll-circle-5 {
+        top: 20%;
+    }
+
+    .scroll-circle-9 {
+        top: 10%;
+    }
+
+    .scroll-circle-11 {
+        top: 25%;
+    }
+
     /* Responsive section showcase clients */
     .clients-showcase-section {
         padding: 30px 40px 15px;
@@ -2209,7 +2235,7 @@ main {
 
     #partenaire-container {
         gap: 128px;
-        padding: 128px 12px;
+        padding: 128px 12px 400px 12px;
     }
 
     .partenaire-container {
@@ -2361,6 +2387,54 @@ main {
         right: 32%;
     }
 
+    /* Masquer beaucoup de cercles sur mobile pour éviter la surcharge */
+    .scroll-circle-9, .scroll-circle-10, .scroll-circle-11, 
+    .scroll-circle-12, .scroll-circle-13, .scroll-circle-14, 
+    .scroll-circle-15, .scroll-circle-16 {
+        display: none;
+    }
+
+    /* Repositionner les cercles restants pour qu'ils ne sortent pas du cadre */
+    .scroll-circle-1 {
+        top: 20%;
+        left: 10%;
+    }
+
+    .scroll-circle-2 {
+        top: 35%;
+        right: 15%;
+    }
+
+    .scroll-circle-3 {
+        top: 50%;
+        left: 20%;
+    }
+
+    .scroll-circle-4 {
+        top: 65%;
+        right: 25%;
+    }
+
+    .scroll-circle-5 {
+        top: 25%;
+        left: 55%;
+    }
+
+    .scroll-circle-6 {
+        top: 75%;
+        left: 5%;
+    }
+
+    .scroll-circle-7 {
+        top: 45%;
+        right: 8%;
+    }
+
+    .scroll-circle-8 {
+        top: 80%;
+        right: 20%;
+    }
+
     /* Responsive showcase clients sur mobile */
     .clients-showcase-section {
         padding: 20px 30px 10px;
@@ -2487,7 +2561,8 @@ main {
 
     #partenaire-container {
         gap: 96px;
-        padding: 96px 12px;
+        padding: 96px 12px 400px 12px;
+
     }
 
     .partenaire-container {
