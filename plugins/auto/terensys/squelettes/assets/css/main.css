@@ -896,14 +896,13 @@ main {
     }
 }
 
-/* Section d'animation des cercles au scroll */
 .scroll-circles-section {
     position: absolute;
     width: 100%;
     height: 100vh;
     overflow: hidden;
     z-index: -1;
-    bottom: 95vh;
+    bottom: 140vh;
 }
 
 .scroll-circle {
@@ -2202,6 +2201,11 @@ main {
 }
 
 @media screen and (max-width: 768px) {
+
+    .carousel {
+        display: none;
+    }
+
     .article {
         flex-direction: column;
         gap: 2.4em;
@@ -2251,9 +2255,9 @@ main {
         padding: 24px;
     }
 
-    #carousel-container {
-        gap: 164px;
-        padding: 200px 0 128px 0;
+    .carousel-container {
+        gap: 0px;
+        padding: 0px;
     }
     
     .carousel-container.carousel-reverse {
@@ -2289,6 +2293,7 @@ main {
     /* Responsive mobile pour cercles d'animation au scroll */
     .scroll-circles-section {
         height: 50vh;
+        bottom: 60vh;
     }
 
     .scroll-circle-1 {
