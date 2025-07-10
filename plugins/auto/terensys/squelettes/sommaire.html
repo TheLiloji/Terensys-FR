@@ -300,7 +300,8 @@
                             </div>
                         </div>
                     </div>
-                    <B_personnes_cartes>
+                    [(#CHOIX_CARTES|=={personnes}|oui)
+                        <B_personnes_cartes>
                         <ul class="cards">
                             <BOUCLE_personnes_cartes(PERSONNES) {par rang} {0,6}>
                                 <li>
@@ -320,6 +321,20 @@
                             </style>
                         </ul>
                     </B_personnes_cartes>
+                    ]
+                    [(#CHOIX_CARTES|=={locaux}|oui)
+                    <div class="grid-articles-container">
+                        <BOUCLE_articles_locaux(ARTICLES){id_article IN #LOCAUX|picker_selected{article}}>
+                            #SET{titre_article,#TITRE}
+                            <div class="grid-article">
+                                <BOUCLE_docs(DOCUMENTS){id_article}>
+                                        <p>#GET{titre_article}</p>
+                                        <img src="#URL_DOCUMENT" alt="#TITRE_DOCUMENT" />
+                                </BOUCLE_docs>
+                            </div>
+                        </BOUCLE_articles_locaux>
+                    </div>
+                    ]
                 </div>
             ]
         </BOUCLE_articles_editorials>
