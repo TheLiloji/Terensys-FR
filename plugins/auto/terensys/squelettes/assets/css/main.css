@@ -348,6 +348,51 @@ main {
     font-weight: bold;
 }
 
+/* Logo Animation */
+#banner img.header {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#banner img.header.logo-loaded {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* Animation SVG - État initial invisible */
+#logo-animated #logo-part-1,
+#logo-animated #logo-part-2,
+#logo-animated #logo-part-3,
+#logo-animated #letter-t-1,
+#logo-animated #letter-t-2,
+#logo-animated #letter-e-1,
+#logo-animated #letter-r,
+#logo-animated #letter-e-2,
+#logo-animated #letter-n,
+#logo-animated #letter-s-1,
+#logo-animated #letter-y,
+#logo-animated #letter-s-2 {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Classes pour déclencher l'animation via JavaScript */
+#logo-animated .animate-logo {
+    opacity: 1 !important;
+    transform: translateX(0) scale(1.1) !important;
+    transition: all 0.8s ease-out !important;
+}
+
+#logo-animated .animate-letter {
+    opacity: 1 !important;
+    transform: translateX(0) scale(1.05) !important;
+    transition: all 0.6s ease-out !important;
+}
+
+/* Animation logo terminée - nettoyage CSS */
+
 /* Hero Banner */
 #banner {
     position: relative;
@@ -357,6 +402,8 @@ main {
     align-items: center;
 
     height: 90vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #banner::before {
@@ -392,8 +439,11 @@ main {
     z-index: -5;
 }
 
-#banner img.header {
-    width: 50vw;
+#banner img.header, #banner #logo-animated {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 #banner .button {
@@ -570,7 +620,7 @@ main {
     align-items: center;
     gap: 198px;
 
-    padding: 198px 12px;
+    padding: 198px 12px 500px 12px;
     width: 100%;
 }
 
@@ -846,12 +896,184 @@ main {
     }
 }
 
+/* Section d'animation des cercles au scroll */
+.scroll-circles-section {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+    bottom: 95vh;
+}
+
+.scroll-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid white;
+    opacity: 0;
+    transition: all 0.8s ease-out;
+    z-index: -2;
+    box-shadow: 0 6px var(--contraste-25);
+}
+
+/* Styles des cercles animés au scroll - couleurs identiques aux cercles existants */
+.scroll-circle-1 {
+    width: 120px;
+    height: 120px;
+    background: var(--ludique);
+    top: 10%;
+    left: 15%;
+    transform: translateY(100px);
+}
+
+.scroll-circle-2 {
+    width: 80px;
+    height: 80px;
+    background: var(--rassurante);
+    top: 25%;
+    right: 20%;
+    transform: translateY(120px);
+}
+
+.scroll-circle-3 {
+    width: 150px;
+    height: 150px;
+    background: var(--neutre);
+    top: 45%;
+    left: 25%;
+    transform: translateY(80px);
+}
+
+.scroll-circle-4 {
+    width: 60px;
+    height: 60px;
+    background: var(--ludique);
+    top: 60%;
+    right: 35%;
+    transform: translateY(150px);
+}
+
+.scroll-circle-5 {
+    width: 200px;
+    height: 200px;
+    background: var(--rassurante);
+    top: 15%;
+    left: 60%;
+    transform: translateY(60px);
+}
+
+.scroll-circle-6 {
+    width: 90px;
+    height: 90px;
+    background: var(--neutre);
+    top: 70%;
+    left: 10%;
+    transform: translateY(110px);
+}
+
+.scroll-circle-7 {
+    width: 110px;
+    height: 110px;
+    background: var(--ludique);
+    top: 35%;
+    right: 10%;
+    transform: translateY(90px);
+}
+
+.scroll-circle-8 {
+    width: 70px;
+    height: 70px;
+    background: var(--rassurante);
+    top: 80%;
+    right: 25%;
+    transform: translateY(130px);
+}
+
+.scroll-circle-9 {
+    width: 95px;
+    height: 95px;
+    background: var(--neutre);
+    top: 5%;
+    left: 50%;
+    transform: translateY(85px);
+}
+
+.scroll-circle-10 {
+    width: 140px;
+    height: 140px;
+    background: var(--ludique);
+    top: 55%;
+    left: 5%;
+    transform: translateY(110px);
+}
+
+.scroll-circle-11 {
+    width: 55px;
+    height: 55px;
+    background: var(--rassurante);
+    top: 20%;
+    right: 5%;
+    transform: translateY(95px);
+}
+
+.scroll-circle-12 {
+    width: 180px;
+    height: 180px;
+    background: var(--neutre);
+    top: 75%;
+    left: 45%;
+    transform: translateY(70px);
+}
+
+.scroll-circle-13 {
+    width: 75px;
+    height: 75px;
+    background: var(--ludique);
+    top: 30%;
+    left: 35%;
+    transform: translateY(120px);
+}
+
+.scroll-circle-14 {
+    width: 100px;
+    height: 100px;
+    background: var(--rassurante);
+    top: 65%;
+    right: 15%;
+    transform: translateY(85px);
+}
+
+.scroll-circle-15 {
+    width: 45px;
+    height: 45px;
+    background: var(--neutre);
+    top: 40%;
+    left: 70%;
+    transform: translateY(140px);
+}
+
+.scroll-circle-16 {
+    width: 125px;
+    height: 125px;
+    background: var(--ludique);
+    top: 85%;
+    right: 40%;
+    transform: translateY(75px);
+}
+
+/* Classes d'animation quand visible */
+.scroll-circle.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Section avec cercles décoratifs et cartes clients */
 .clients-showcase-section {
     position: relative;
     width: 100%;
     padding: 40px 50px 20px;
     min-height: 400px;
+    z-index: 1; 
 }
 
 /* Cercles colorés décoratifs en arrière-plan */
@@ -1747,6 +1969,107 @@ main {
         height: 12.8px;
     }
 
+    /* Responsive pour les cercles d'animation au scroll */
+    .scroll-circles-section {
+        height: 60vh;
+    }
+
+    .scroll-circle-1 {
+        width: 80px;
+        height: 80px;
+        left: 10%;
+    }
+
+    .scroll-circle-2 {
+        width: 60px;
+        height: 60px;
+        right: 15%;
+    }
+
+    .scroll-circle-3 {
+        width: 100px;
+        height: 100px;
+        left: 20%;
+    }
+
+    .scroll-circle-4 {
+        width: 45px;
+        height: 45px;
+        right: 30%;
+    }
+
+    .scroll-circle-5 {
+        width: 120px;
+        height: 120px;
+        left: 55%;
+    }
+
+    .scroll-circle-6 {
+        width: 65px;
+        height: 65px;
+        left: 5%;
+    }
+
+    .scroll-circle-7 {
+        width: 75px;
+        height: 75px;
+        right: 5%;
+    }
+
+    .scroll-circle-8 {
+        width: 50px;
+        height: 50px;
+        right: 20%;
+    }
+
+    .scroll-circle-9 {
+        width: 65px;
+        height: 65px;
+        left: 45%;
+    }
+
+    .scroll-circle-10 {
+        width: 90px;
+        height: 90px;
+        left: 3%;
+    }
+
+    .scroll-circle-11 {
+        width: 40px;
+        height: 40px;
+        right: 3%;
+    }
+
+    .scroll-circle-12 {
+        width: 110px;
+        height: 110px;
+        left: 40%;
+    }
+
+    .scroll-circle-13 {
+        width: 55px;
+        height: 55px;
+        left: 30%;
+    }
+
+    .scroll-circle-14 {
+        width: 70px;
+        height: 70px;
+        right: 12%;
+    }
+
+    .scroll-circle-15 {
+        width: 35px;
+        height: 35px;
+        left: 65%;
+    }
+
+    .scroll-circle-16 {
+        width: 85px;
+        height: 85px;
+        right: 35%;
+    }
+
     /* Responsive section showcase clients */
     .clients-showcase-section {
         padding: 30px 40px 15px;
@@ -1935,6 +2258,107 @@ main {
 
     .cards > li {
         width: calc(50vw - var(--cards)*25px);
+    }
+
+    /* Responsive mobile pour cercles d'animation au scroll */
+    .scroll-circles-section {
+        height: 50vh;
+    }
+
+    .scroll-circle-1 {
+        width: 60px;
+        height: 60px;
+        left: 8%;
+    }
+
+    .scroll-circle-2 {
+        width: 40px;
+        height: 40px;
+        right: 12%;
+    }
+
+    .scroll-circle-3 {
+        width: 80px;
+        height: 80px;
+        left: 18%;
+    }
+
+    .scroll-circle-4 {
+        width: 35px;
+        height: 35px;
+        right: 28%;
+    }
+
+    .scroll-circle-5 {
+        width: 90px;
+        height: 90px;
+        left: 50%;
+    }
+
+    .scroll-circle-6 {
+        width: 45px;
+        height: 45px;
+        left: 3%;
+    }
+
+    .scroll-circle-7 {
+        width: 55px;
+        height: 55px;
+        right: 3%;
+    }
+
+    .scroll-circle-8 {
+        width: 38px;
+        height: 38px;
+        right: 18%;
+    }
+
+    .scroll-circle-9 {
+        width: 50px;
+        height: 50px;
+        left: 42%;
+    }
+
+    .scroll-circle-10 {
+        width: 70px;
+        height: 70px;
+        left: 2%;
+    }
+
+    .scroll-circle-11 {
+        width: 30px;
+        height: 30px;
+        right: 2%;
+    }
+
+    .scroll-circle-12 {
+        width: 85px;
+        height: 85px;
+        left: 38%;
+    }
+
+    .scroll-circle-13 {
+        width: 42px;
+        height: 42px;
+        left: 28%;
+    }
+
+    .scroll-circle-14 {
+        width: 55px;
+        height: 55px;
+        right: 10%;
+    }
+
+    .scroll-circle-15 {
+        width: 28px;
+        height: 28px;
+        left: 62%;
+    }
+
+    .scroll-circle-16 {
+        width: 65px;
+        height: 65px;
+        right: 32%;
     }
 
     /* Responsive showcase clients sur mobile */
@@ -2352,3 +2776,4 @@ main {
         display: none;
     }
 }
+
