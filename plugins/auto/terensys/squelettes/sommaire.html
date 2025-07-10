@@ -158,7 +158,7 @@
                     
                     <!-- Logos en rectangles par-dessus -->
                     <div class="clients-cards-container">
-                        <BOUCLE_clients_showcase(CLIENTS) {0,6}>
+                        <BOUCLE_clients_showcase(CLIENTS) {par rang} {0,6}>
                             <BOUCLE_clients_showcase_logo(DOCUMENTS) {id_document = #LOGO} {statut IN publie, prop}>
                                 <div class="client-card">
                                     <a href="#URL" target="_blank">
@@ -324,7 +324,7 @@
                     ]
                     [(#CHOIX_CARTES|=={locaux}|oui)
                     <div class="grid-articles-container">
-                        <BOUCLE_articles_locaux(ARTICLES){id_article IN #LOCAUX|picker_selected{article}}>
+                        <BOUCLE_articles_locaux(ARTICLES) {par rang} {id_article IN #LOCAUX|picker_selected{article}} >
                             #SET{titre_article,#TITRE}
                             <div class="grid-article">
                                 <BOUCLE_docs(DOCUMENTS){id_article}>

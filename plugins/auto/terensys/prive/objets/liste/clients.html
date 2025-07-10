@@ -1,14 +1,19 @@
 [(#SET{defaut_tri,#ARRAY{
+	rang,1,
 	nom,1,
 	id_client,1,
 	points,-1
-}})]<B_liste_clients>
+}})]
+#SET{activer_rang, #VAL{clients}|in_array{#RANG_LISTE_OBJETS} }
+[(#GET{activer_rang}|oui) [(#VAL{rang}|setenv{par})] #SET{tri,rang} ]
+<B_liste_clients>
 #ANCRE_PAGINATION
 <div class="liste-objets clients">
-<table class="spip liste">
+<table class="spip liste" data-objet="clients">
 	[<caption><strong class="caption">(#ENV*{titre,#GRAND_TOTAL|singulier_ou_pluriel{client:info_1_client,client:info_nb_clients}})</strong></caption>]
 	<thead>
 		<tr class="first_row">
+			[(#GET{activer_rang}|oui)<th class="rang" scope="col">[(#TRI{rang,<span title="<:rang:lien_trier_rang|attribut_html:>"><:rang:info_rang_abbr:></span>,ajax})]</th>]
 			<th class="picto" scope="col"></th>
 			<th class="nom" scope="col">[(#TRI{nom,<:client:champ_nom_label:/>,ajax})]</th>
 			<th class="id" scope="col">[(#TRI{id_client,<:info_numero_abbreviation:/>,ajax})]</th>
@@ -16,9 +21,10 @@
 	</thead>
 	<tbody>
 	<BOUCLE_liste_clients(CLIENTS){id_mot?}{id_auteur?}{where?}{recherche?}{tri #ENV{par,num nom},#GET{defaut_tri}}{par nom}{pagination #ENV{nb,10}}>
-		<tr class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
+		<tr [(#GET{activer_rang}|oui)data-id_objet="#ID_CLIENT"] class="[(#COMPTEUR_BOUCLE|alterner{row_odd,row_even})]">
+			[(#GET{activer_rang}|oui)<td class="rang">[(#RANG).]</td>]
 			<td class="picto">[(#CHEMIN_IMAGE{client-16.png}|balise_img)]</td>
-			<td class="nom principale">[(#LOGO_CLIENT|image_reduire{20,26})]<a href="[(#ID_CLIENT|generer_url_entite{client})]" title="<:info_numero_abbreviation|attribut_html:/> #ID_CLIENT">[(#RANG). ]#NOM</a></td>
+			<td class="nom principale">[(#LOGO_CLIENT|image_reduire{20,26})]<a href="[(#ID_CLIENT|generer_url_entite{client})]" title="<:info_numero_abbreviation|attribut_html:/> #ID_CLIENT">#NOM</a></td>
 			<td class="id">[(#AUTORISER{modifier,client,#ID_CLIENT}|?{
 				<a href="[(#URL_ECRIRE{client_edit,id_client=#ID_CLIENT})]">#ID_CLIENT</a>,
 				#ID_CLIENT

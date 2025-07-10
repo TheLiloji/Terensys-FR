@@ -35,7 +35,7 @@ header {
 
 .sticky-bernard {
     position: absolute;
-    left: -20px; /* Coller plus à l'extrémité gauche */
+    left: -100px; /* Coller plus à l'extrémité gauche */
     bottom: 0; /* Ancrer en bas de l'écran */
     height: 100vh; /* Prendre toute la hauteur */
     width: auto;
@@ -46,7 +46,7 @@ header {
 
 .sticky-franck {
     position: absolute;
-    right: -20px; /* Coller plus à l'extrémité droite */
+    right: -100px; /* Coller plus à l'extrémité droite */
     bottom: 0; /* Ancrer en bas de l'écran */
     height: 100vh; /* Prendre toute la hauteur */
     width: auto;
@@ -112,10 +112,8 @@ header {
     text-align: center;
     padding: 24px;
     line-height: 1.6;
-    background-color: var(--bg-main);
     position: relative;
     z-index: 3; /* Au-dessus des images sticky */
-    border-radius: 16px;
     margin: 24px 0;
 }
 
@@ -125,6 +123,10 @@ header {
 
 .intro-text p {
     margin-bottom: 16px;
+    padding: 16px 20px;
+    background: #fffdf875;
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
 }
 
 .intro-text .button {
@@ -198,21 +200,14 @@ header {
     color: white !important;
 }
 
-/* Responsive */
-@media screen and (max-width: 1820px) {
-    /* Masquer les images sticky au même niveau que les ellipses */
+@media screen and (max-width: 1719px) {
     .sticky-images {
         display: none;
     }
 }
 
 @media screen and (max-width: 1200px) {
-    /* Réduire la taille des images sur écrans moyens */
-    .sticky-bernard, .sticky-franck {
-        height: 90vh;
-    }
-    
-    /* Ajuster la position des cartes */
+
     .business-card {
         bottom: 25%;
         font-size: 13px;
