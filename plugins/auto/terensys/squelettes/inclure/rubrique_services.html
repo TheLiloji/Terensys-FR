@@ -49,17 +49,56 @@
                 </B_articles>
             </div>
 
-            <B_sous_rubriques>
-                <div class="menu-container">
-                    <h3>Nos rubriques</h3>
-                    <div class="menu">
-                        <BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre}{!par date}>
-                            <a href="#URL_RUBRIQUE">#TITRE</a>
-                        </BOUCLE_sous_rubriques>
-                    </div>
-                </div>
-                </B_sous_rubriques>
-            <//B_sous_rubriques>
+            <div class="menu-container">
+                <BOUCLE_secteur(HIERARCHIE){tout}{id_rubrique}{racine}{0,1}>
+                    <B_rubriques>
+                        <div class="sous-menu-container">
+                            <h3>#TITRE</h3>
+                            <div class="menu">
+                                <BOUCLE_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
+                                    <a href="#URL_RUBRIQUE">#TITRE</a>
+                                </BOUCLE_rubriques>
+                            </div>
+                        </div>
+                    </B_rubriques>
+                        <div class="sous-menu-container">
+                            <h3>#TITRE</h3>
+                            <div class="menu">
+                                <BOUCLE_articles_rubrique(ARTICLES) {id_rubrique} {!par date} {0,10}>
+                                    <a href="#URL_ARTICLE">#TITRE</a>
+                                </BOUCLE_articles_rubrique>
+                            </div>
+                        </div>
+                    <//B_rubriques>
+                    <!-- 1. Sous-rubrique active en premier -->
+                    <BOUCLE_sous_rubrique_active(RUBRIQUES) {id_parent} {id_rubrique=#ENV{id_rubrique}}>
+                        <h3>#TITRE</h3>
+                        <B_articles_rubrique_active>
+                            <div class="sous-menu-container">
+                                <div class="menu">
+                                    <BOUCLE_articles_rubrique_active(ARTICLES) {id_rubrique} {!par date} {0,10}>
+                                        <a href="#URL_ARTICLE">#TITRE</a>
+                                    </BOUCLE_articles_rubrique_active>
+                                </div>
+                            </div>
+                        </B_articles_rubrique_active>
+                    </BOUCLE_sous_rubrique_active>
+
+                    <!-- 2. Les autres sous-rubriques -->
+                    <BOUCLE_autres_sous_rubriques(RUBRIQUES) {id_parent} {id_rubrique != #ENV{id_rubrique}} {par num titre, titre}>
+                        <h3>#TITRE</h3>
+                        <B_articles_autres>
+                            <div class="sous-menu-container">
+                                <div class="menu">
+                                    <BOUCLE_articles_autres(ARTICLES) {id_rubrique} {!par date} {0,10}>
+                                        <a href="#URL_ARTICLE">#TITRE</a>
+                                    </BOUCLE_articles_autres>
+                                </div>
+                            </div>
+                        </B_articles_autres>
+                    </BOUCLE_autres_sous_rubriques>
+                </BOUCLE_secteur>
+            </div>
         </div>
     </main>
 
