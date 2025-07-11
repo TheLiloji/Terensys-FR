@@ -1892,33 +1892,13 @@ main {
 }
 
 
-/* Ajustements pour écrans très larges */
-@media screen and (min-width: 1820px) {
+@media screen and (min-width: 1820px) and (max-width: 2228px){
     .cards-section {
-        gap: 80px;
-        max-width: 1400px;
-        margin: 0 auto;
+        gap: 15%;
     }
 
-    .cards-section .article {
-        max-width: 600px;
-    }
-    
-    .content-texte {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-}
-
-/* Ajustements pour écrans ultra-larges */
-@media screen and (min-width: 2400px) {
-    .cards-section {
-        gap: 120px;
-        max-width: 1600px;
-    }
-    
-    .content-texte {
-        max-width: 1200px;
+    .article {
+        width: 30%;
     }
 }
 
@@ -2973,13 +2953,6 @@ main {
     }
 }
 
-/* Ajustements pour écrans avec petite hauteur *
-
-/* Ajustements pour écrans avec très petite hauteur */
-
-
-
-/* Ajustements pour écrans avec grande hauteur */
 @media screen and (max-height: 1500px) {
     .scroll-circles-section {
         bottom: 70vh;
@@ -2987,7 +2960,6 @@ main {
     
 }
 
-/* Ajustements pour écrans avec grande hauteur */
 @media screen and (max-height: 1280px) {
     .scroll-circles-section {
         bottom: 100vh;
