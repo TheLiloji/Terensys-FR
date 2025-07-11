@@ -1892,13 +1892,33 @@ main {
 }
 
 
-@media screen and (min-width: 1820px) and (max-width: 2228px){
+/* Ajustements pour écrans très larges */
+@media screen and (min-width: 1820px) {
     .cards-section {
-        gap: 15%;
+        gap: 80px;
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
-    .article {
-        width: 30%;
+    .cards-section .article {
+        max-width: 600px;
+    }
+    
+    .content-texte {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* Ajustements pour écrans ultra-larges */
+@media screen and (min-width: 2400px) {
+    .cards-section {
+        gap: 120px;
+        max-width: 1600px;
+    }
+    
+    .content-texte {
+        max-width: 1200px;
     }
 }
 
@@ -2952,6 +2972,7 @@ main {
         display: none;
     }
 }
+
 
 @media screen and (max-height: 1500px) {
     .scroll-circles-section {
