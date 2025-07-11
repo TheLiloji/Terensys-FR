@@ -6,9 +6,40 @@
         <h3>Contactez-nous</h3>
         <div class="inputs">
             <input type="text" name="email_message_auteur" value="#ENV{email_message_auteur}" placeholder="Votre email" required>
-            <input type="text" name="sujet_message_auteur" value="#ENV{sujet_message_auteur}" placeholder="Sujet" required>
+            <select name="sujet_message_auteur" required>
+                <option value="">Sélectionnez un sujet</option>
+                <option value="Recrutement" [(#ENV{sujet_message_auteur}|=={Recrutement}|oui)selected]>Recrutement</option>
+                <option value="Support technique" [(#ENV{sujet_message_auteur}|=={Support technique}|oui)selected]>Support technique</option>
+                <option value="Demande commerciale" [(#ENV{sujet_message_auteur}|=={Demande commerciale}|oui)selected]>Demande commerciale</option>
+                <option value="Partenariat" [(#ENV{sujet_message_auteur}|=={Partenariat}|oui)selected]>Partenariat</option>
+                <option value="Presse / Communication" [(#ENV{sujet_message_auteur}|=={Presse / Communication}|oui)selected]>Presse / Communication</option>
+                <option value="Demande de démo" [(#ENV{sujet_message_auteur}|=={Demande de démo}|oui)selected]>Demande de démo</option>
+                <option value="Autre" [(#ENV{sujet_message_auteur}|=={Autre}|oui)selected]>Autre (à préciser)</option>
+            </select>
+            <input type="text" name="precision_autre" value="#ENV{precision_autre}" placeholder="Précision (si autre)" id="precision-autre" style="display: none;">
             <textarea name="texte_message_auteur" placeholder="Votre message" rows="10" required>#ENV{texte_message_auteur}</textarea>
         </div>
         <button id="submit-contact-button" class="button" type="submit">Envoyer</button>
     </form>
+</div>
+
+<!-- Popup pour Support technique -->
+<div id="support-popup" class="support-popup hidden">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h4>Support technique</h4>
+            <button type="button" class="close-popup" id="close-popup">×</button>
+        </div>
+        <div class="popup-body">
+            <p>Pour un support technique efficace, nous recommandons d'utiliser notre plateforme Projeqtor dédiée.</p>
+            <div class="popup-actions">
+                <a id="projeqtor-button" class="button" href="https://projeqtor.terensys.fr/view/main.php#" target="_blank">Accès Projeqtor
+                    <span class="material-symbols-rounded">
+                        contact_support
+                    </span>
+                </a>
+                <button type="button" class="button secondary" id="continue-form">Continuer avec le formulaire</button>
+            </div>
+        </div>
+    </div>
 </div>

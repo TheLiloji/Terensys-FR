@@ -8,6 +8,12 @@ function formulaires_contact_form_traiter_dist() {
     $adres = _request('email_message_auteur');
     $sujet = _request('sujet_message_auteur');
     $texte = _request('texte_message_auteur');
+    $precision_autre = _request('precision_autre');
+    
+    // Si "Autre" est sélectionné, ajouter la précision au sujet
+    if ($sujet === 'Autre' && !empty($precision_autre)) {
+        $sujet = 'Autre : ' . $precision_autre;
+    }
     
     $facteur = unserialize($GLOBALS['meta']['facteur']);
     $destinataire = $facteur['adresse_envoi_email'];
