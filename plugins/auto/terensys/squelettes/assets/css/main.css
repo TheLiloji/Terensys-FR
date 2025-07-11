@@ -784,16 +784,48 @@ main {
 }
 
 .content-texte {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 96px;
+    gap: 48px;
+    
+    padding: 198px 12px;
+    width: 100%;
+    max-width: 1200px;
+}
 
-    padding: 24px;
+.content-texte h3 {
+    font-size: 3.2rem;
+    color: var(--rassurante);
+    text-align: center;
+    margin: 0;
 }
 
 .content-texte .texte {
-    width: fit-content;
+    width: 100%;
+    max-width: 800px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.content-texte .texte p {
+    margin-bottom: 18px;
+    font-size: 1.6rem;
+    color: var(--contraste);
+    text-align: center;
+}
+
+.content-texte .texte p:first-child {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--rassurante);
+    margin-bottom: 24px;
+}
+
+.content-texte .texte p:last-child {
+    font-style: italic;
+    color: var(--ludique);
+    margin-top: 24px;
 }
 
 .clients {
@@ -1933,6 +1965,23 @@ main {
         max-width: 400px;
     }
     
+    .content-texte {
+        padding: 128px 12px;
+        gap: 32px;
+    }
+
+    .content-texte h3 {
+        font-size: 2.8rem;
+    }
+
+    .content-texte .texte p {
+        font-size: 1.5rem;
+    }
+
+    .content-texte .texte p:first-child {
+        font-size: 1.7rem;
+    }
+    
     .partenaire-content {
         gap: 48px;
     }
@@ -2247,7 +2296,20 @@ main {
     }
 
     .content-texte {
-        gap: 4.8em;
+        padding: 96px 12px;
+        gap: 24px;
+    }
+
+    .content-texte h3 {
+        font-size: 2.4rem;
+    }
+
+    .content-texte .texte p {
+        font-size: 1.4rem;
+    }
+
+    .content-texte .texte p:first-child {
+        font-size: 1.6rem;
     }
 
     .container {
@@ -2576,6 +2638,23 @@ main {
 
     p, a, li {
         font-size: 1.6em;
+    }
+
+    .content-texte {
+        padding: 64px 12px;
+        gap: 20px;
+    }
+
+    .content-texte h3 {
+        font-size: 2rem;
+    }
+
+    .content-texte .texte p {
+        font-size: 1.3rem;
+    }
+
+    .content-texte .texte p:first-child {
+        font-size: 1.5rem;
     }
 
     .container {

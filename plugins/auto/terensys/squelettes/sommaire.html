@@ -63,14 +63,11 @@
             ]
 
             [(#TYPE|=={texte}|oui)
-                <div class="article [(#COMPTEUR_BOUCLE|modulo{2}|?{article-left, article-right})]">
-                    <div class="box header">
-                        <div class="content-texte">
-                            <h3>#TITRE</h3>
-                            <div class="texte">
-                                #TEXTE
-                            </div>
-                        </div>
+                <div class="content-texte">
+                    <h2 class="header">#TITRE</h2>
+                    <hr class="hr-terensys" />
+                    <div class="texte">
+                        #TEXTE
                     </div>
                 </div>
             ]
