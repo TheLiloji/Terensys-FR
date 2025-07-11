@@ -319,25 +319,42 @@
                     </div>
                     [(#CHOIX_CARTES|=={personnes}|oui)
                         <B_personnes_cartes>
-                        <ul class="cards">
-                            <BOUCLE_personnes_cartes(PERSONNES) {par rang} {0,6}>
-                                <li>
-                                    <div class="inner">
-                                        <BOUCLE_document_cartes(DOCUMENTS) {id_document = #IMAGE} {statut IN publie, prop}>
-                                            <img src="#FICHIER" alt="#NOM">
-                                        </BOUCLE_document_cartes>
-                                        <p class="nom">#NOM</p>
-                                        <p class="fonction">#FONCTION</p>
-                                    </div>
-                                </li>
-                            </BOUCLE_personnes_cartes>
+                            <div class="cards-wrapper">
+                                <BOUCLE_personnes_cartes(PERSONNES) {par rang}>
+                                    [(#COMPTEUR_BOUCLE|modulo{6}|=={1}|oui)
+                                        [(#COMPTEUR_BOUCLE|>{1}|oui)</ul>]    
+                                        <ul class="cards">
+                                    ]
+                                    <li>
+                                        <div class="inner">
+                                            <BOUCLE_document_cartes(DOCUMENTS) {id_document = #IMAGE} {statut IN publie, prop}>
+                                                <img src="#FICHIER" alt="#NOM">
+                                            </BOUCLE_document_cartes>
+                                            <p class="nom">#NOM</p>
+                                            <p class="fonction">#FONCTION</p>
+                                        </div>
+                                    </li>
+                                </BOUCLE_personnes_cartes>
+                                </ul>
+                            </div>
                             <style>
                                 .cards-section {
                                     --cards: [(#TOTAL_BOUCLE)];
                                 }
                             </style>
-                        </ul>
-                    </B_personnes_cartes>
+                        </B_personnes_cartes>
+                        <script>
+                            document.querySelectorAll('.cards').forEach(ul => {
+                                const cards = ul.children;
+                                ul.style.setProperty('--cards', cards.length);
+                                Array.from(cards).forEach((li, i) => {
+                                    li.style.setProperty('--index', i);
+                                });
+                            });
+                            const wrapper = document.querySelector('.cards-wrapper');
+                            const lignes = wrapper.querySelectorAll('.cards').length;
+                            wrapper.style.setProperty('--rows', lignes);
+                        </script>
                     ]
                     [(#CHOIX_CARTES|=={locaux}|oui)
                     <div class="grid-articles-container">

@@ -1,7 +1,3 @@
-document.querySelectorAll(".cards > li").forEach((el, index) => {
-    el.style.setProperty("--index", index);
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const marquee = document.getElementById("brevesMarquee");
     const track = document.getElementById("brevesTrack");
