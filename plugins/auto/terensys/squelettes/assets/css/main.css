@@ -903,7 +903,7 @@ main {
     height: 100vh;
     overflow: hidden;
     z-index: -1;
-    bottom: 140vh;
+    bottom: 90vh;
 }
 
 .scroll-circle {
