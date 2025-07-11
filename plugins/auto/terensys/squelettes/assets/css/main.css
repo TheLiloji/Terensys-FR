@@ -45,6 +45,7 @@ h2 {
     font-size: 6.4em;
     font-weight: bold;
     color: var(--rassurante);
+    text-align: center;
 }
 
 h3 {
@@ -1522,7 +1523,7 @@ main {
 	counter-increment: cards;
     position: absolute;
 	flex: 0 0 auto;
-	width: calc(20vw - var(--cards)*35px);
+	width: calc(22vw - var(--cards) * 4%);
 	aspect-ratio: 2/3;
 	transform-origin: 50% 350%;
 	transform: rotate(var(--curve));
@@ -1835,11 +1836,27 @@ main {
 
 @media screen and (max-width: 1820px) {
 
+    .cards-section {
+        flex-direction: column-reverse;
+        gap: 24px;
+    }
+
     .elipse-deco{
         display: none;
     }
     
+    .cards > li {
+        width: 15vw;
+    }
 }
+
+@media screen and (min-width: 1820px) {
+    .cards > li {
+        width: calc(22vw - var(--cards) * 4%);
+    }
+}
+
+
 
 
 @media screen and (max-width: 1500px) {
@@ -1881,22 +1898,31 @@ main {
 }
 
 @media screen and (max-width: 1200px) {
-    .cards-section {
-        flex-direction: column-reverse;
-        gap: 24px;
-    }
-
     .cards-section .content {
         right: 12px;
     }
 
     .cards {
-        height: calc(500px + calc(var(--cards) * 20px));
+        height: calc(200px + calc(var(--cards) * 35px));
     }
 
     .cards > li {
-        width: calc(35vw - var(--cards)*35px);
+        width: 22vw;
     }
+
+    .inner {
+        padding-top: 6px;
+    }
+
+    .inner .nom {
+        font-size: 50%;
+    }
+
+    .inner .fonction {
+        font-size: 40%;
+        text-align: center;
+    }
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -2202,6 +2228,9 @@ main {
 
 @media screen and (max-width: 768px) {
 
+    .svg-deco {
+        display: none;
+    }
     .carousel {
         display: none;
     }
@@ -2286,8 +2315,25 @@ main {
         padding: 128px 12px 0 12px;
     }
 
+    .cards {
+        height: calc(200px + calc(var(--cards) * 35px));
+    }
+
     .cards > li {
-        width: calc(50vw - var(--cards)*25px);
+        width: 22vw;
+    }
+
+    .inner {
+        padding-top: 6px;
+    }
+
+    .inner .nom {
+        font-size: 50%;
+    }
+
+    .inner .fonction {
+        font-size: 40%;
+        text-align: center;
     }
 
     /* Responsive mobile pour cercles d'animation au scroll */
@@ -2637,7 +2683,7 @@ main {
     }
 
     .cards > li {
-        width: 15vh;
+        width: 22vw;
     }
 
     .inner {
@@ -2851,7 +2897,7 @@ main {
 }
 
 
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1820px) {
     .grid-articles-container {
         display: none;
     }
