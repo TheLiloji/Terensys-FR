@@ -45,6 +45,7 @@ h2 {
     font-size: 6.4em;
     font-weight: bold;
     color: var(--rassurante);
+    text-align: center;
 }
 
 h3 {
@@ -2202,6 +2203,9 @@ main {
 
 @media screen and (max-width: 768px) {
 
+    .svg-deco {
+        display: none;
+    }
     .carousel {
         display: none;
     }
