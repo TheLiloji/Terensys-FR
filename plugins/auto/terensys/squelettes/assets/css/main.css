@@ -166,7 +166,7 @@ main {
 
     width: 100vw;
     
-    z-index: 70;
+    z-index: 1000;
 }
 
 #nav {
@@ -788,7 +788,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 48px;
-    
+
     padding: 198px 12px;
     width: 100%;
     max-width: 1200px;
@@ -1892,18 +1892,14 @@ main {
 }
 
 
-/* Ajustements pour écrans très larges */
-@media screen and (min-width: 1820px) {
+@media screen and (min-width: 1820px) and (max-width: 2228px){
     .cards-section {
-        gap: 80px;
-        max-width: 1400px;
-        margin: 0 auto;
+        gap: 15%;
     }
 
-    .cards-section .article {
-        max-width: 600px;
+    .article {
+        width: 30%;
     }
-    
     .content-texte {
         max-width: 1000px;
         margin: 0 auto;
