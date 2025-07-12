@@ -166,7 +166,7 @@ main {
 
     width: 100vw;
     
-    z-index: 1000;
+    z-index: 70;
 }
 
 #nav {
@@ -2983,7 +2983,7 @@ main {
 
 @media screen and (max-height: 1280px) {
     .scroll-circles-section {
-        bottom: 100vh;
+        bottom: 120vh;
     }
     
 }
