@@ -26,8 +26,16 @@ function createMobileBlockOverlay() {
                 <div class="contact-item">
                     <span class="material-symbols-outlined">mail</span>
                     <div>
-                        <strong>Nous contacter</strong>
-                        <a href="#" onclick="window.location.href = window.location.origin + '/spip.php?page=contact'; return false;">Via notre formulaire de contact</a>
+                        <strong>Nous écrire</strong>
+                        <a href="mailto:contact@terensys.com">contact@terensys.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="material-symbols-outlined">phone</span>
+                    <div>
+                        <strong>Nous appeler</strong>
+                        <a href="tel:+33473742500">04 73 74 25 00</a>
                     </div>
                 </div>
                 
@@ -39,14 +47,7 @@ function createMobileBlockOverlay() {
                     </div>
                 </div>
                 
-                <div class="contact-item">
-                    <span class="material-symbols-outlined">public</span>
-                    <div>
-                        <strong>Nous suivre</strong>
-                        <a href="https://www.linkedin.com/company/terensys/?originalSubdomain=fr" target="_blank">LinkedIn</a>
-                        <a href="https://x.com/terensys" target="_blank">X (Twitter)</a>
-                    </div>
-                </div>
+
             </div>
             
             <div class="mobile-block-footer">
