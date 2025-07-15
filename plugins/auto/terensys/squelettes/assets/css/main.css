@@ -1907,12 +1907,7 @@ main {
 }
 
 /* Ajustements pour écrans ultra-larges */
-@media screen and (min-width: 2400px) {
-    .cards-section {
-        gap: 120px;
-        max-width: 1600px;
-    }
-    
+@media screen and (min-width: 2400px) {  
     .content-texte {
         max-width: 1200px;
     }
