@@ -1907,6 +1907,10 @@ main {
         max-width: 1000px;
         margin: 0 auto;
     }
+    
+    .cards-section .content {
+        right: -400px;
+    }
 }
 
 /* Ajustements pour écrans ultra-larges */
