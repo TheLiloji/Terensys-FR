@@ -1628,6 +1628,9 @@ main {
   height: calc(30vh * var(--rows));
 }
 
+.cards-wrapper a {
+    text-decoration: none;
+}
 
 
 /* Footer */

@@ -326,13 +326,15 @@
                                         <ul class="cards">
                                     ]
                                     <li>
-                                        <div class="inner">
-                                            <BOUCLE_document_cartes(DOCUMENTS) {id_document = #IMAGE} {statut IN publie, prop}>
-                                                <img src="#FICHIER" alt="#NOM">
-                                            </BOUCLE_document_cartes>
-                                            <p class="nom">#NOM</p>
-                                            <p class="fonction">#FONCTION</p>
-                                        </div>
+                                        <a href="#URL_RUBRIQUE{8}">
+                                            <div class="inner">
+                                                <BOUCLE_document_cartes(DOCUMENTS) {id_document = #IMAGE} {statut IN publie, prop}>
+                                                    <img src="#FICHIER" alt="#NOM">
+                                                </BOUCLE_document_cartes>
+                                                <p class="nom">#NOM</p>
+                                                <p class="fonction">#FONCTION</p>
+                                            </div>
+                                        </a>
                                     </li>
                                 </BOUCLE_personnes_cartes>
                                 </ul>
