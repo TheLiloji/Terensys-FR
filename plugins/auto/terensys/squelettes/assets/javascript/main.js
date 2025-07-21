@@ -29,3 +29,38 @@ if (window.addEventListener) {
     addEventListener("scroll", checkForVisibility, false);
 }
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.cards > li');
+
+    let activeCard = null;
+
+    cards.forEach(card => {
+        card.addEventListener('touchstart', function (e) {
+            if (activeCard && activeCard !== card) {
+                activeCard.classList.remove('tapped');
+                activeCard = null;
+            }
+
+            if (!card.classList.contains('tapped')) {
+                card.classList.add('tapped');
+                activeCard = card;
+                e.preventDefault(); // empêche le lien de se déclencher immédiatement
+            } else {
+                const link = card.querySelector('a');
+                if (link) link.click();
+            }
+        });
+    });
+
+    // Clic ailleurs = désélection
+    document.addEventListener('touchstart', function (e) {
+        if (
+            activeCard &&
+            !e.target.closest('.cards > li')
+        ) {
+            activeCard.classList.remove('tapped');
+            activeCard = null;
+        }
+    });
+});

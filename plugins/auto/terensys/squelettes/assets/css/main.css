@@ -1595,6 +1595,22 @@ main {
     translate: 0px -100px 1px;
 }
 
+.cards > li:hover {
+    z-index: 999 !important;
+}
+
+.cards > li.tapped {
+    z-index: 999 !important;
+}
+
+.cards > li.tapped .inner{
+    animation: hoverEffect 1s ease-in-out infinite alternate forwards;
+    transform: translateY(-40%) scale(1.2) rotate(calc(var(--curve) * -1));
+    transition-duration: 0.2s, 0s;
+    translate: 0px -100px 1px;
+}
+
+
 
 @keyframes hoverEffect {
 	from {
@@ -2663,6 +2679,10 @@ main {
     }
 
     p, a, li {
+        font-size: 1.6em;
+    }
+
+    .cards-section li {
         font-size: 1.6em;
     }
 
