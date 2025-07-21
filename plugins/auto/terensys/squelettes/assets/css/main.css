@@ -938,9 +938,8 @@ main {
     position: absolute;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
     z-index: -1;
-    bottom: 90vh;
+    bottom: 60%;
 }
 
 .scroll-circle {
@@ -2078,11 +2077,6 @@ main {
         height: 12.8px;
     }
 
-    /* Responsive pour les cercles d'animation au scroll */
-    .scroll-circles-section {
-        height: 60vh;
-    }
-
     .scroll-circle-1 {
         width: 80px;
         height: 80px;
@@ -2416,12 +2410,6 @@ main {
         width: 22vw;
     }
 
-
-    .scroll-circles-section {
-        height: 50vh;
-        bottom: 60vh;
-    }
-
     .scroll-circle-1 {
         width: 60px;
         height: 60px;
@@ -2519,11 +2507,11 @@ main {
     }
 
     /* Masquer beaucoup de cercles sur mobile pour éviter la surcharge */
-    .scroll-circle-9, .scroll-circle-10, .scroll-circle-11, 
+    /* .scroll-circle-9, .scroll-circle-10, .scroll-circle-11, 
     .scroll-circle-12, .scroll-circle-13, .scroll-circle-14, 
     .scroll-circle-15, .scroll-circle-16 {
         display: none;
-    }
+    } */
 
     /* Repositionner les cercles restants pour qu'ils ne sortent pas du cadre */
     .scroll-circle-1 {
@@ -3000,23 +2988,24 @@ main {
     }
 }
 
-
-@media screen and (max-height: 1500px) {
+@media screen and (max-width: 750px) {
     .scroll-circles-section {
-        bottom: 70vh;
+        bottom: 50%;
     }
-    
+
+    .scroll-circle-9 {
+        display: none;
+    }
 }
 
-@media screen and (max-height: 1280px) {
+@media screen and (min-width: 750px) and (max-width: 1920px) {
     .scroll-circles-section {
-        bottom: 90vh;
+        bottom: 60%;
     }
-    
 }
 
-@media screen and (max-height: 980px) {
+@media screen and (min-width: 1920px) and (max-width: 2228px) {
     .scroll-circles-section {
-        bottom: 160vh;
+        bottom: 75%;
     }
 }
