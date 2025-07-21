@@ -28,10 +28,7 @@ function loadSVGInline() {
                 if (svg) {
                     // Conserver les classes et styles de l'image
                     svg.className = logoImg.className;
-                    svg.style.width = '50%';
-                    svg.style.height = 'auto';
-                    svg.style.display = 'block';
-                    svg.style.margin = '0 auto';
+                    
                     
                     // Remplacer l'image par le SVG
                     logoImg.parentNode.replaceChild(svg, logoImg);

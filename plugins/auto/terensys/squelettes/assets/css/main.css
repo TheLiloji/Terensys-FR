@@ -2073,10 +2073,6 @@ main {
         width: 100%;
     }
 
-    #footer .text img {
-        height: 12.8px;
-    }
-
     .scroll-circle-1 {
         width: 80px;
         height: 80px;
@@ -2306,6 +2302,19 @@ main {
 
 @media screen and (max-width: 768px) {
 
+    #banner #logo-animated {
+        width: 100%;
+    }
+
+    .blocs-text-container p {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+
+    .bloc .title {
+        font-size: 1.6rem;
+    }
+
     .svg-deco {
         display: none;
     }
@@ -2382,14 +2391,16 @@ main {
     
     .carousel-container.carousel-reverse {
         margin-top: -60px;
+        padding: 20px 0 48px 0;
     }
 
     .blocs {
-        padding-top: 128px;
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
 
     .section-4-blocs {
-        padding: 128px 12px;
+        padding: 96px 12px 0 12px;
     }
 
     .svg-left {
@@ -2644,7 +2655,7 @@ main {
 
 @media screen and (max-width: 680px) {
     #banner #support-button {
-        top: 12px;
+        top: 12%;
         left: 12px;
     }
 
@@ -2667,7 +2678,7 @@ main {
     }
 
     p, a, li {
-        font-size: 1.6em;
+        font-size: 1.1rem;
     }
 
     .cards-section li {
@@ -2684,11 +2695,11 @@ main {
     }
 
     .content-texte .texte p {
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
 
     .content-texte .texte p:first-child {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .container {
@@ -2737,12 +2748,8 @@ main {
         height: 75px;
     }
 
-    .blocs {
-        padding-top: 96px;
-    }
-
     .section-4-blocs {
-        padding: 96px 12px;
+        padding: 96px 12px 0 12px;
     }
 
     .blocs {
@@ -2902,16 +2909,12 @@ main {
         font-size: 3.6em;
     }
 
-    h3 {
-        font-size: 1.8em;
-    }
-
     h4 {
         font-size: 1.4em;
     }
 
     p, a, li{
-        font-size: 1.4em;
+        font-size: 1.1rem;
     }
 }
 
@@ -2990,7 +2993,7 @@ main {
 
 @media screen and (max-width: 750px) {
     .scroll-circles-section {
-        bottom: 50%;
+        bottom: 40%;
     }
 
     .scroll-circle-9 {
