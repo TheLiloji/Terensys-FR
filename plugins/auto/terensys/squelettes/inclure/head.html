@@ -4,6 +4,52 @@
 <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<!-- Meta description et mots-clés -->
+<meta name="description" content="[(#DESCRIPTIF|sinon{#INTRODUCTION{150}}|textebrut)]" />
+<meta name="keywords" content="[(#MOTS|table_valeur{titre}|implode{', '})]" />
+<meta name="author" content="#NOM_SITE_SPIP" />
+
+<!-- Open Graph pour Facebook -->
+<meta property="og:type" content="[(#ENV{type,website})]" />
+<meta property="og:title" content="[(#TITRE|sinon{#NOM_SITE_SPIP}|textebrut)]" />
+<meta property="og:description" content="[(#DESCRIPTIF|sinon{#INTRODUCTION{150}}|textebrut)]" />
+<meta property="og:url" content="[(#SELF|url_absolue)]" />
+<meta property="og:site_name" content="#NOM_SITE_SPIP" />
+<meta property="og:locale" content="#LANG" />
+<BOUCLE_logo(DOCUMENTS) {id_article} {mode=image} {0,1}>
+<meta property="og:image" content="[(#URL|url_absolue)]" />
+<meta property="og:image:width" content="#LARGEUR" />
+<meta property="og:image:height" content="#HAUTEUR" />
+</BOUCLE_logo>
+<//B_logo>
+<meta property="og:image" content="[(#CHEMIN{images/logo-terensys-og.png}|url_absolue)]" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<//B_logo>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="[(#TITRE|sinon{#NOM_SITE_SPIP}|textebrut)]" />
+<meta name="twitter:description" content="[(#DESCRIPTIF|sinon{#INTRODUCTION{150}}|textebrut)]" />
+<BOUCLE_logo_twitter(DOCUMENTS) {id_article} {mode=image} {0,1}>
+<meta name="twitter:image" content="[(#URL|url_absolue)]" />
+</BOUCLE_logo_twitter>
+<//B_logo_twitter>
+<meta name="twitter:image" content="[(#CHEMIN{images/logo-terensys-og.png}|url_absolue)]" />
+<//B_logo_twitter>
+
+<!-- Données structurées JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "[(#ENV{schema_type,Organization})]",
+  "name": "#NOM_SITE_SPIP",
+  "url": "#URL_SITE_SPIP",
+  "description": "[(#DESCRIPTIF_SITE_SPIP|textebrut)]",
+  "logo": "[(#CHEMIN{images/logo-terensys.png}|url_absolue)]"
+}
+</script>
+
 [(#REM) 
       On appelle les feuilles de style 
       dans l'ordre de la methode daisy http://daisy.tetue.net/img/daisy-nomenclature.png   

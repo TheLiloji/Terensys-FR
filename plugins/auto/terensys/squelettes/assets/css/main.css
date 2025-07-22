@@ -10,7 +10,7 @@
     --neutre: #e0ded9;
     --neutre-50: #e0ded980;
     --rassurante: #004554;
-    --ludique: #fc5757;
+    --ludique: #d63031; /* Couleur plus foncée pour améliorer le contraste (ratio 4.5:1) */
     --contraste: #1c1c1b;
     --contraste-50: #1c1c1b80;
     --contraste-25: #1c1c1b40;

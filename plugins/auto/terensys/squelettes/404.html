@@ -16,19 +16,48 @@
 	
 	<main id="main">
 		<div class="center-content">
-			<div class="cartouche">
-				<h1>[(#ENV{status, 404}|intval)]</h1>
+			<div class="error-404-container" style="text-align: center; padding: 80px 20px; max-width: 600px; margin: 0 auto;">
+				<div class="error-code" style="font-size: 120px; font-weight: bold; color: #e74c3c; margin-bottom: 20px; line-height: 1;">
+					[(#ENV{status, 404}|intval)]
+				</div>
+				<h1 style="font-size: 2.5em; margin-bottom: 20px; color: #2c3e50;">
+					Page non trouvée
+				</h1>
+				<div class="error-message" style="font-size: 1.2em; color: #7f8c8d; margin-bottom: 40px; line-height: 1.6;">
+					[(#ENV{erreur}|non)
+					[(#ENV{fond_erreur}|=={article}|oui)<p>L'article que vous recherchez n'existe pas ou a été supprimé.</p>]
+					[(#ENV{fond_erreur}|=={rubrique}|oui)<p>La rubrique que vous recherchez n'existe pas ou a été supprimée.</p>]
+					[(#ENV{fond_erreur}|=={breve}|oui)<p>La brève que vous recherchez n'existe pas ou a été supprimée.</p>]
+					[(#ENV{fond_erreur}|=={auteur}|oui)<p>L'auteur que vous recherchez n'existe pas.</p>]
+					[(#ENV{fond_erreur}|=={site}|oui)<p>Le site que vous recherchez n'existe pas.</p>]
+					[(#ENV{fond_erreur}|=={forum}|oui)<p>Le message de forum que vous recherchez n'existe pas.</p>]
+					[(#ENV{fond_erreur}|non)<p>La page que vous recherchez semble introuvable. Vérifiez l'adresse ou utilisez les liens ci-dessous.</p>]
+					]
+					[<p>(#ENV{erreur})</p>]
+				</div>
+				
+				<div class="error-actions" style="margin-bottom: 40px;">
+					<a href="#URL_SITE_SPIP" style="display: inline-block; background: #3498db; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; margin: 0 10px; transition: background 0.3s;" onmouseover="this.style.background='#2980b9'" onmouseout="this.style.background='#3498db'">
+						Retour à l'accueil
+					</a>
+					<a href="javascript:history.back()" style="display: inline-block; background: #95a5a6; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; margin: 0 10px; transition: background 0.3s;" onmouseover="this.style.background='#7f8c8d'" onmouseout="this.style.background='#95a5a6'">
+						Page précédente
+					</a>
+				</div>
+				
+				<div class="suggested-pages" style="text-align: left; background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #3498db;">
+					<h3 style="margin-bottom: 20px; color: #2c3e50;">Pages suggérées :</h3>
+					<ul style="list-style: none; padding: 0;">
+						<BOUCLE_articles_populaires(ARTICLES) {statut=publie} {par popularite} {inverse} {0,5}>
+						<li style="margin-bottom: 10px;">
+							<a href="#URL_ARTICLE" style="color: #3498db; text-decoration: none; display: block; padding: 8px 0; border-bottom: 1px solid #ecf0f1;" onmouseover="this.style.color='#2980b9'" onmouseout="this.style.color='#3498db'">
+								#TITRE
+							</a>
+						</li>
+						</BOUCLE_articles_populaires>
+					</ul>
+				</div>
 			</div>
-			[(#ENV{erreur}|non)
-			[(#ENV{fond_erreur}|=={article}|oui)<div class="chapo"><p><:aucun_article:></p></div>]
-			[(#ENV{fond_erreur}|=={rubrique}|oui)<div class="chapo"><p><:aucune_rubrique:></p></div>]
-			[(#ENV{fond_erreur}|=={breve}|oui)<div class="chapo"><p><:aucune_breve:></p></div>]
-			[(#ENV{fond_erreur}|=={auteur}|oui)<div class="chapo"><p><:aucun_auteur:></p></div>]
-			[(#ENV{fond_erreur}|=={site}|oui)<div class="chapo"><p><:aucun_site:></p></div>]
-			[(#ENV{fond_erreur}|=={forum}|oui)<div class="chapo"><p><:forum:aucun_message_forum:></p></div>]
-			]
-			[<div class="chapo"><p>(#ENV{erreur})</p></div>]
-	
 		</div>
 	</main>
 

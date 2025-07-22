@@ -1,12 +1,41 @@
 #CACHE{3600}
 [(#HTTP_HEADER{Content-type: text/xml[; charset=(#CHARSET)]})]<?xml version="1.0" encoding="#CHARSET"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <BOUCLE_articles(ARTICLES) {tout} {par date} {inverse}>
+    <!-- Page d'accueil -->
+    <url>
+        <loc>[(#URL_SITE_SPIP|url_absolue)]</loc>
+        <lastmod>[(#DATE|date_iso)]</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Articles -->
+    <BOUCLE_articles(ARTICLES) {statut=publie} {par date} {inverse}>
         <url>
-          <loc>#URL_ARTICLE</loc>
-          <lastmod>#DATE</lastmod>
-          <changefreq>monthly</changefreq>
-          <priority>0.5</priority>
+            <loc>[(#URL_ARTICLE|url_absolue)]</loc>
+            <lastmod>[(#DATE_MODIF|sinon{#DATE}|date_iso)]</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.8</priority>
         </url>
-        </BOUCLE_articles>        
+    </BOUCLE_articles>
+    
+    <!-- Rubriques -->
+    <BOUCLE_rubriques(RUBRIQUES) {statut=publie}>
+        <url>
+            <loc>[(#URL_RUBRIQUE|url_absolue)]</loc>
+            <lastmod>[(#DATE_MODIF|sinon{#DATE}|date_iso)]</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+    </BOUCLE_rubriques>
+    
+    <!-- Brèves -->
+    <BOUCLE_breves(BREVES) {statut=publie}>
+        <url>
+            <loc>[(#URL_BREVE|url_absolue)]</loc>
+            <lastmod>[(#DATE_MODIF|sinon{#DATE}|date_iso)]</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.4</priority>
+        </url>
+    </BOUCLE_breves>
 </urlset>
