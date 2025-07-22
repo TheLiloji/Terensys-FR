@@ -4,6 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+[(#REM) Open Graph Meta Tags]
+<meta property="og:site_name" content="[(#NOM_SITE_SPIP|attribut_html)]" />
+<meta property="og:type" content="[(#ENV{og_type,website})]" />
+<meta property="og:title" content="[(#ENV{og_title,#TITRE|sinon{#NOM_SITE_SPIP}}|attribut_html)]" />
+<meta property="og:description" content="[(#ENV{og_description,#DESCRIPTIF|sinon{#NOM_SITE_SPIP - Solutions digitales pour entreprises}}|attribut_html|couper{160})]" />
+<meta property="og:url" content="[(#ENV{og_url,#URL_SITE_SPIP}|url_absolue)]" />
+[(#ENV{og_image}|oui)<meta property="og:image" content="[(#ENV{og_image}|url_absolue)]" />]
+[<meta property="og:image" content="(#LOGO_SITE_SPIP|extraire_attribut{src}|url_absolue)" />]
+<meta property="og:locale" content="#LANG" />
+
+[(#REM) Twitter Card Meta Tags]
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="[(#ENV{og_title,#TITRE|sinon{#NOM_SITE_SPIP}}|attribut_html)]" />
+<meta name="twitter:description" content="[(#ENV{og_description,#DESCRIPTIF|sinon{#NOM_SITE_SPIP - Solutions digitales pour entreprises}}|attribut_html|couper{160})]" />
+[(#ENV{og_image}|oui)<meta name="twitter:image" content="[(#ENV{og_image}|url_absolue)]" />]
+[<meta name="twitter:image" content="(#LOGO_SITE_SPIP|extraire_attribut{src}|url_absolue)" />]
+
+[(#REM) SEO Meta Tags]
+<meta name="description" content="[(#ENV{og_description,#DESCRIPTIF|sinon{#NOM_SITE_SPIP - Solutions digitales pour entreprises}}|attribut_html|couper{160})]" />
+[<link rel="canonical" href="(#ENV{canonical_url,#SELF}|url_absolue)" />]
+
 [(#REM) 
       On appelle les feuilles de style 
       dans l'ordre de la methode daisy http://daisy.tetue.net/img/daisy-nomenclature.png   

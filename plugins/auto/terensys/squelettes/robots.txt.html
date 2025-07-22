@@ -1,0 +1,28 @@
+#HTTP_HEADER{Content-Type: text/plain; charset=#CHARSET}
+
+# robots.txt
+# @url: #URL_SITE_SPIP
+[# @generator: SPIP (#SPIP_VERSION|header_silencieux)]
+# @template: #SQUELETTE
+
+User-agent: *
+Allow: /
+Allow: /local/cache-css/
+Allow: /local/cache-js/
+Allow: /prive/javascript/jquery.js
+Allow: /prive/javascript/jquery.form.js
+Allow: /prive/javascript/jquery.autosave.js
+Allow: /prive/javascript/jquery.placeholder-label.js
+Allow: /prive/javascript/ajaxCallback.js
+Allow: /plugins/auto/terensys/squelettes/assets/
+Allow: /plugins-dist/mediabox/
+Allow: /plugins-dist/porte_plume/css/
+Disallow: /ecrire/
+Disallow: /lib/
+Disallow: /config/
+Disallow: /spip.php?action=*
+Disallow: /spip.php?page=login*
+Disallow: /*.api/
+Crawl-delay: 1
+
+Sitemap: #URL_SITE_SPIP/sitemap.xml

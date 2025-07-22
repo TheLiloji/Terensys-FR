@@ -1,12 +1,30 @@
 #CACHE{3600}
 [(#HTTP_HEADER{Content-type: text/xml[; charset=(#CHARSET)]})]<?xml version="1.0" encoding="#CHARSET"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <BOUCLE_articles(ARTICLES) {tout} {par date} {inverse}>
+    [(#REM) Home page]
+    <url>
+        <loc>#URL_SITE_SPIP/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    [(#REM) Articles with proper filtering]
+    <BOUCLE_articles(ARTICLES) {tout} {statut=publie} {par date} {inverse}>
         <url>
-          <loc>#URL_ARTICLE</loc>
-          <lastmod>#DATE</lastmod>
+          <loc>[(#URL_ARTICLE|url_absolue)]</loc>
+          <lastmod>[(#DATE_MODIF|date_iso)]</lastmod>
           <changefreq>monthly</changefreq>
-          <priority>0.5</priority>
+          <priority>0.8</priority>
         </url>
-        </BOUCLE_articles>        
+    </BOUCLE_articles>
+    
+    [(#REM) Rubriques (sections)]
+    <BOUCLE_rubriques(RUBRIQUES) {par date} {inverse}>
+        <url>
+          <loc>[(#URL_RUBRIQUE|url_absolue)]</loc>
+          <lastmod>[(#DATE_MODIF|date_iso)]</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.6</priority>
+        </url>
+    </BOUCLE_rubriques>
 </urlset>

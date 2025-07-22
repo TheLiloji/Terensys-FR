@@ -15,6 +15,15 @@
 
 RewriteEngine On
 
+################ WWW REDIRECTION ######################
+# Redirect www to non-www to avoid duplicate content
+RewriteCond %{HTTP_HOST} ^www\.terensys\.fr$ [NC]
+RewriteRule ^(.*)$ https://terensys.fr/$1 [R=301,L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://terensys.fr/$1 [R=301,L]
+
 ################ PERFORMANCE OPTIMIZATIONS ######################
 
 # Enable gzip compression for text-based files
@@ -264,7 +273,7 @@ RewriteRule ^sitemap[.]xml$      spip.php?page=sitemap.xml [QSA,L]
 # voir https://www.spip.net/fr_article3226.html
 # Pour que le serveur http renvoie les erreurs 404 vers SPIP, supprimer le '#'
 
-# ErrorDocument 404 /spip.php?page=404
+ErrorDocument 404 /spip.php?page=404
 
 #
 ###
