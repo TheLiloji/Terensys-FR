@@ -3,10 +3,64 @@
 <html dir="#LANG_DIR" lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js">
 <head>
 	<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Terensys - [(#TITRE|couper{20}|textebrut)...]</title>
-        <INCLURE{fond=inclure/head}/>
-        [<link rel="stylesheet" href="(#CHEMIN{assets/css/rubrique.css}|direction_css|timestamp)" type="text/css" />]
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- SEO Meta Tags -->
+	<title>[(#TITRE|couper{60}|textebrut)] - [(#NOM_SITE_SPIP|textebrut)]</title>
+	[<meta name="description" content="(#INTRODUCTION{155}|sinon{#CHAPO|couper{155}}|sinon{[(#TITRE|textebrut)] - Article publié le [(#DATE|affdate)] sur #NOM_SITE_SPIP[ par (#LESAUTEURS|supprimer_tags)].}|attribut_html)" />]
+	[<meta name="keywords" content="(#MOTS|implode{', '}|sinon{terensys, solutions numériques, article})" />]
+	[<meta name="author" content="(#LESAUTEURS|supprimer_tags|attribut_html)" />]
+	<meta name="robots" content="index, follow">
+	<meta name="language" content="#LANG">
+	<meta name="revisit-after" content="7 days">
+	
+	<!-- Canonical URL -->
+	[<link rel="canonical" href="(#URL_ARTICLE|url_absolue)" />]
+	
+	<!-- Open Graph Meta Tags -->
+	<meta property="og:site_name" content="[(#NOM_SITE_SPIP|attribut_html)]">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="[(#TITRE|attribut_html)]">
+	<meta property="og:description" content="[(#INTRODUCTION{155}|sinon{#CHAPO|couper{155}}|attribut_html)]">
+	<meta property="og:url" content="[(#URL_ARTICLE|url_absolue)]">
+	<meta property="og:locale" content="#LANG">
+	[<meta property="article:published_time" content="(#DATE|date_iso)" />]
+	[<meta property="article:modified_time" content="(#DATE_MODIF|date_iso)" />]
+	[<meta property="article:author" content="(#LESAUTEURS|supprimer_tags|attribut_html)" />]
+	[(#LOGO_ARTICLE|extraire_attribut{src}|oui)[<meta property="og:image" content="(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)" />]]
+	
+	<!-- Twitter Card Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@terensys">
+	<meta name="twitter:title" content="[(#TITRE|attribut_html)]">
+	<meta name="twitter:description" content="[(#INTRODUCTION{155}|sinon{#CHAPO|couper{155}}|attribut_html)]">
+	[(#LOGO_ARTICLE|extraire_attribut{src}|oui)[<meta name="twitter:image" content="(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)" />]]
+	
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"headline": "[(#TITRE|attribut_html)]",
+		"description": "[(#INTRODUCTION{155}|sinon{#CHAPO|couper{155}}|attribut_html)]",
+		"author": {
+			"@type": "Person",
+			"name": "[(#LESAUTEURS|supprimer_tags|attribut_html)]"
+		},
+		"publisher": {
+			"@type": "Organization",
+			"name": "[(#NOM_SITE_SPIP|attribut_html)]",
+			"url": "[(#URL_SITE_SPIP|url_absolue)]"
+		},
+		"datePublished": "[(#DATE|date_iso)]",
+		[<"dateModified": "(#DATE_MODIF|date_iso)",>]
+		"url": "[(#URL_ARTICLE|url_absolue)]"
+		[(#LOGO_ARTICLE|extraire_attribut{src}|oui)[,"image": "(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)"]]
+	}
+	</script>
+	
+	<INCLURE{fond=inclure/head}/>
+	[<link rel="stylesheet" href="(#CHEMIN{assets/css/rubrique.css}|direction_css|timestamp)" type="text/css" />]
 </head>
 <body>
     <header>

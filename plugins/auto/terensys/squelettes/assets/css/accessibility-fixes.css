@@ -1,0 +1,137 @@
+/*
+ * Corrections d'accessibilité pour Terensys
+ * Résolution des problèmes de contraste identifiés par WooRank
+ */
+
+/* Correction du contraste pour les noms des personnes */
+.inner .nom {
+    /* Couleur plus foncée pour améliorer le contraste (ratio 4.5:1 minimum) */
+    color: #d63447 !important; /* Rouge plus foncé que #fc5757 */
+    
+    /* Alternative : utiliser la couleur rassurante si le rouge n'est pas obligatoire */
+    /* color: var(--rassurante) !important; */
+}
+
+/* Amélioration du contraste général pour les textes importants */
+.inner .fonction {
+    color: var(--contraste) !important;
+    font-weight: 500;
+}
+
+/* Correction pour les liens avec problèmes de contraste */
+a:hover {
+    color: var(--rassurante) !important;
+}
+
+/* États de focus améliorés pour l'accessibilité */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--ludique);
+    outline-offset: 2px;
+}
+
+/* Amélioration du contraste pour les éléments interactifs */
+.button:hover {
+    background-color: var(--rassurante) !important;
+    color: white !important;
+}
+
+/* Correction pour les textes sur fond coloré */
+.error-404-button {
+    background: var(--rassurante) !important;
+    color: white !important;
+    border: none;
+}
+
+.error-404-button:hover {
+    background: #d63447 !important; /* Rouge foncé avec bon contraste */
+}
+
+/* Skip link pour l'accessibilité */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--rassurante);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 0 0 4px 4px;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Amélioration de la lisibilité des petits textes */
+small {
+    font-size: 1.4rem !important;
+    color: var(--contraste) !important;
+}
+
+/* Correction pour les éléments avec mauvais contraste sur mobile */
+@media (max-width: 768px) {
+    .inner .nom {
+        color: #b12a37 !important; /* Encore plus foncé sur mobile */
+        font-size: 1.4rem !important;
+        font-weight: 700 !important;
+    }
+    
+    /* Amélioration de la taille minimale des zones tactiles */
+    button,
+    .button,
+    a {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Mode sombre (si supporté) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-main: #1a1a1a;
+        --bg-second: #2d2d2d;
+        --contraste: #ffffff;
+        --neutre: #404040;
+    }
+    
+    .inner .nom {
+        color: #ff6b7a !important; /* Rouge clair pour le mode sombre */
+    }
+}
+
+/* Amélioration pour les utilisateurs avec réduction des mouvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Amélioration du contraste pour le texte sur images */
+.inner img + p {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Correction spécifique pour Zaccharie BERNARD et Alix De Barbuat mentionnés par WooRank */
+p.nom {
+    color: #b12a37 !important; /* Ratio de contraste amélioré */
+    font-weight: 700 !important;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 4px;
+    border-radius: 3px;
+}

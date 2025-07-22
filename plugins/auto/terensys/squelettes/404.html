@@ -5,35 +5,152 @@
 <html dir="#LANG_DIR" lang="#LANG" class="[(#LANG_DIR)][ (#LANG)] no-js">
 <head>
 	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
-	<title><:pass_erreur:> [(#ENV{status, 404}|textebrut)] - [(#NOM_SITE_SPIP|textebrut)]</title>
-	<INCLURE{fond=inclure/head,robots=none} />
+	<title>Page non trouvée (404) - [(#NOM_SITE_SPIP|textebrut)]</title>
+	<meta name="description" content="La page que vous recherchez n'existe pas ou a été déplacée. Découvrez nos services et solutions sur [(#NOM_SITE_SPIP|textebrut)].">
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="canonical" href="[(#URL_SITE_SPIP|url_absolue)]">
+	
+	<!-- Open Graph pour 404 -->
+	<meta property="og:title" content="Page non trouvée - [(#NOM_SITE_SPIP|attribut_html)]">
+	<meta property="og:description" content="La page que vous recherchez n'existe pas. Découvrez nos services et solutions sur [(#NOM_SITE_SPIP|attribut_html)].">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="[(#URL_SITE_SPIP|url_absolue)]">
+	
+	<INCLURE{fond=inclure/head} />
+	
+	<style>
+		.error-404-container {
+			text-align: center;
+			padding: 60px 20px;
+			min-height: 60vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.error-404-number {
+			font-size: 120px;
+			font-weight: bold;
+			color: #FC5757;
+			line-height: 1;
+			margin-bottom: 20px;
+		}
+		.error-404-title {
+			font-size: 32px;
+			color: #004554;
+			margin-bottom: 20px;
+		}
+		.error-404-message {
+			font-size: 18px;
+			color: #666;
+			margin-bottom: 40px;
+			max-width: 600px;
+		}
+		.error-404-actions {
+			display: flex;
+			gap: 20px;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.error-404-button {
+			background: #004554;
+			color: white;
+			padding: 12px 24px;
+			border-radius: 5px;
+			text-decoration: none;
+			transition: background 0.3s;
+		}
+		.error-404-button:hover {
+			background: #FC5757;
+		}
+		.error-404-search {
+			margin-top: 40px;
+			max-width: 400px;
+			width: 100%;
+		}
+		.error-404-search input {
+			width: 100%;
+			padding: 12px;
+			border: 2px solid #ddd;
+			border-radius: 5px;
+			font-size: 16px;
+		}
+		@media (max-width: 768px) {
+			.error-404-number { font-size: 80px; }
+			.error-404-title { font-size: 24px; }
+			.error-404-actions { flex-direction: column; align-items: center; }
+		}
+	</style>
 </head>
 <body class="pas_surlignable page_404">
 <div class="page">
 
-	<INCLURE{fond=inclure/header} />
 	<INCLURE{fond=inclure/nav,env} />
 	
-	<main id="main">
-		<div class="center-content">
-			<div class="cartouche">
-				<h1>[(#ENV{status, 404}|intval)]</h1>
-			</div>
+	<main id="main" role="main">
+		<div class="error-404-container">
+			<div class="error-404-number">404</div>
+			<h1 class="error-404-title">Page non trouvée</h1>
+			
 			[(#ENV{erreur}|non)
-			[(#ENV{fond_erreur}|=={article}|oui)<div class="chapo"><p><:aucun_article:></p></div>]
-			[(#ENV{fond_erreur}|=={rubrique}|oui)<div class="chapo"><p><:aucune_rubrique:></p></div>]
-			[(#ENV{fond_erreur}|=={breve}|oui)<div class="chapo"><p><:aucune_breve:></p></div>]
-			[(#ENV{fond_erreur}|=={auteur}|oui)<div class="chapo"><p><:aucun_auteur:></p></div>]
-			[(#ENV{fond_erreur}|=={site}|oui)<div class="chapo"><p><:aucun_site:></p></div>]
-			[(#ENV{fond_erreur}|=={forum}|oui)<div class="chapo"><p><:forum:aucun_message_forum:></p></div>]
+				[(#ENV{fond_erreur}|=={article}|oui)
+					<p class="error-404-message">Désolé, cet article n'existe pas ou n'est plus disponible.</p>
+				]
+				[(#ENV{fond_erreur}|=={rubrique}|oui)
+					<p class="error-404-message">Désolé, cette rubrique n'existe pas ou n'est plus disponible.</p>
+				]
+				[(#ENV{fond_erreur}|=={breve}|oui)
+					<p class="error-404-message">Désolé, cette brève n'existe pas ou n'est plus disponible.</p>
+				]
+				[(#ENV{fond_erreur}|=={auteur}|oui)
+					<p class="error-404-message">Désolé, cet auteur n'existe pas ou n'est plus disponible.</p>
+				]
+				[(#ENV{fond_erreur}|=={site}|oui)
+					<p class="error-404-message">Désolé, ce site n'existe pas ou n'est plus disponible.</p>
+				]
+				[(#ENV{fond_erreur}|!={article|rubrique|breve|auteur|site}|oui)
+					<p class="error-404-message">
+						La page que vous recherchez n'existe pas ou a été déplacée. 
+						Elle a peut-être été supprimée, ou vous avez tapé une adresse incorrecte.
+					</p>
+				]
 			]
-			[<div class="chapo"><p>(#ENV{erreur})</p></div>]
-	
+			[<p class="error-404-message">(#ENV{erreur})</p>]
+			
+			<div class="error-404-actions">
+				<a href="[(#URL_SITE_SPIP)]" class="error-404-button">
+					🏠 Retour à l'accueil
+				</a>
+				<a href="[(#URL_SITE_SPIP)]contact/" class="error-404-button">
+					📧 Nous contacter
+				</a>
+				<a href="javascript:history.back()" class="error-404-button">
+					← Page précédente
+				</a>
+			</div>
+			
+			<div class="error-404-search">
+				#FORMULAIRE_RECHERCHE
+			</div>
 		</div>
 	</main>
 
 	<INCLURE{fond=inclure/footer,self=#SELF} />
 
 </div><!--.page-->
+
+<script>
+// Tracking 404 pour analytics
+if (typeof gtag !== 'undefined') {
+	gtag('event', 'page_view', {
+		'page_title': 'Error 404',
+		'page_location': window.location.href
+	});
+}
+
+// Log d'erreur optionnel
+console.log('404 Error - Page not found:', window.location.href);
+</script>
+
 </body>
 </html>

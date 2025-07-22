@@ -1,18 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="#LANG" dir="#LANG_DIR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#NOM_SITE_SPIP</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+    [<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|sinon{#NOM_SITE_SPIP[ - #SLOGAN_SITE_SPIP] : spécialiste en solutions numériques, découvrez nos services et notre expertise pour votre transformation digitale.}|couper{155}|attribut_html)" />]
+    [<meta name="keywords" content="terensys, solutions numériques, transformation digitale, consulting IT, développement" />]
+    [<meta name="author" content="(#NOM_SITE_SPIP|attribut_html)" />]
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="#LANG">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL pour éviter le contenu dupliqué -->
+    <link rel="canonical" href="[(#URL_SITE_SPIP|url_absolue)]">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="[(#NOM_SITE_SPIP|attribut_html)]">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="[(#NOM_SITE_SPIP|attribut_html)][ - (#SLOGAN_SITE_SPIP|attribut_html)]">
+    <meta property="og:description" content="[(#DESCRIPTIF_SITE_SPIP|sinon{#NOM_SITE_SPIP[ - #SLOGAN_SITE_SPIP] : spécialiste en solutions numériques, découvrez nos services et notre expertise pour votre transformation digitale.}|couper{155}|attribut_html)]">
+    <meta property="og:url" content="[(#URL_SITE_SPIP|url_absolue)]">
+    <meta property="og:locale" content="#LANG">
+    [<meta property="og:image" content="(#CHEMIN{plugins/auto/terensys/squelettes/assets/images/terensys-og-image.jpg}|url_absolue)" />]
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@terensys">
+    <meta name="twitter:title" content="[(#NOM_SITE_SPIP|attribut_html)][ - (#SLOGAN_SITE_SPIP|attribut_html)]">
+    <meta name="twitter:description" content="[(#DESCRIPTIF_SITE_SPIP|sinon{#NOM_SITE_SPIP[ - #SLOGAN_SITE_SPIP] : spécialiste en solutions numériques, découvrez nos services et notre expertise pour votre transformation digitale.}|couper{155}|attribut_html)]">
+    [<meta name="twitter:image" content="(#CHEMIN{plugins/auto/terensys/squelettes/assets/images/terensys-og-image.jpg}|url_absolue)" />]
+    
+    <!-- Preconnect pour les performances -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    
     <INCLURE{fond=inclure/head} />
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
-    <script src="//unpkg.com/leaflet-gesture-handling"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-    <script src="//unpkg.com/@sjaakp/leaflet-search/dist/leaflet-search.js"></script>
+    
+    <!-- Favicon optimisé -->
+    <link rel="icon" href="[(#CHEMIN{favicon.ico})]" type="image/x-icon">
+    <link rel="shortcut icon" href="[(#CHEMIN{favicon.ico})]" type="image/x-icon">
+    <link rel="apple-touch-icon" href="[(#CHEMIN{plugins/auto/terensys/squelettes/assets/images/apple-touch-icon.png})]">
+    
+    <!-- Leaflet CSS avec preload -->
+    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+    
+    <!-- Leaflet JS avec defer -->
+    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Autres CSS avec preload -->
+    <link rel="preload" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="//unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"></noscript>
+    
+    <link rel="preload" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"></noscript>
+    
+    <!-- JS avec defer pour les performances -->
+    <script defer src="//unpkg.com/leaflet-gesture-handling"></script>
+    <script defer src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script defer src="//unpkg.com/@sjaakp/leaflet-search/dist/leaflet-search.js"></script>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "[(#NOM_SITE_SPIP|attribut_html)]",
+        "url": "[(#URL_SITE_SPIP|url_absolue)]",
+        "logo": "[(#CHEMIN{plugins/auto/terensys/squelettes/assets/images/terensys-logo.png}|url_absolue)]",
+        "description": "[(#DESCRIPTIF_SITE_SPIP|sinon{Spécialiste en solutions numériques et transformation digitale}|attribut_html)]",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "url": "[(#URL_SITE_SPIP|url_absolue)]contact/"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/terensys",
+            "https://twitter.com/terensys"
+        ]
+    }
+    </script>
 </head>
 <body>
     <header>

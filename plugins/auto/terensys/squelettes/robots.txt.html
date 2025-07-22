@@ -1,0 +1,70 @@
+#HTTP_HEADER{Content-Type: text/plain; charset=#CHARSET}
+
+# robots.txt pour Terensys
+# @url: #URL_SITE_SPIP
+[# @generator: SPIP (#SPIP_VERSION|header_silencieux)]
+# @template: #SQUELETTE
+
+User-agent: *
+
+# Autorisations explicites pour les ressources essentielles
+Allow: /plugins/auto/terensys/squelettes/assets/
+Allow: /plugins-dist/*/css/
+Allow: /plugins-dist/*/js/
+Allow: /prive/javascript/jquery.js
+Allow: /prive/javascript/jquery.form.js
+Allow: /prive/javascript/jquery.autosave.js
+Allow: /prive/javascript/jquery.placeholder-label.js
+Allow: /prive/javascript/ajaxCallback.js
+Allow: /local/cache-css/
+Allow: /local/cache-js/
+Allow: /IMG/
+Allow: /rien.gif
+Allow: /favicon.ico
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Dossiers à ne pas indexer (mais ressources autorisées)
+Noindex: /local/
+Noindex: /tmp/
+Noindex: /config/
+
+# Pages d'administration et techniques
+Disallow: /ecrire/
+Disallow: /lib/
+Disallow: /prive/squelettes/
+Disallow: /prive/themes/
+Disallow: /spip.php?action=*
+Disallow: /spip.php?page=login*
+Disallow: /spip.php?page=logout*
+Disallow: /spip.php?page=forum*
+Disallow: /*.api/
+
+# Paramètres dynamiques à éviter
+Disallow: /*?cible=*
+Disallow: /*?var_mode=*
+Disallow: /*?var_recherche=*
+Disallow: /*?var_lang=*
+
+# Optimisations pour différents bots
+User-agent: Googlebot
+Crawl-delay: 1
+Allow: /plugins/auto/terensys/squelettes/assets/
+
+User-agent: Bingbot
+Crawl-delay: 2
+Allow: /plugins/auto/terensys/squelettes/assets/
+
+User-agent: Slurp
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Crawl-delay: 0
+Allow: /plugins/auto/terensys/squelettes/assets/
+
+User-agent: Twitterbot
+Crawl-delay: 0
+Allow: /plugins/auto/terensys/squelettes/assets/
+
+# Sitemap principal
+Sitemap: #URL_SITE_SPIP/sitemap.xml
