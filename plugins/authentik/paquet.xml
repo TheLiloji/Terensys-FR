@@ -1,0 +1,18 @@
+<paquet
+    prefix="authentik"
+    version="1.0.0"
+    categorie="auth"
+    compatibilite="[4.0.0;4.*]"
+    etat="test"
+>
+  <nom>Authentik OIDC</nom>
+  <auteur>Terensys</auteur>
+
+
+  <pipeline nom="init" inclure="authentik_pipelines.php" />
+  <pipeline nom="exec_init" inclure="authentik_pipelines.php" />
+  <pipeline nom="insert_head" inclure="authentik_pipelines.php" />
+  <pipeline nom="recuperer_fond" inclure="authentik_pipelines.php" />
+
+
+</paquet>
