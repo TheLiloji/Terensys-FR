@@ -4,7 +4,7 @@
 <head>
 	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
 	<title>[(#TITRE|couper{80}|textebrut) - ][(#NOM_SITE_SPIP|textebrut)]</title>
-	[<meta name="description" content="(#INTRODUCTION{150}|attribut_html)" />]
+	[<meta name="description" content="(#INTRODUCTION{155}|sinon{#TEXTE|couper{155}}|sinon{Brève : [(#TITRE|textebrut)] - Actualité publiée le [(#DATE|affdate)] sur #NOM_SITE_SPIP.}|attribut_html)" />]
 	[<link rel="canonical" href="(#URL_BREVE|url_absolue{#URL_SITE_SPIP})" />]
 	<INCLURE{fond=inclure/head} />
 	[(#REM) Lien vers le flux RSS des breves ]

@@ -1,12 +1,65 @@
 #CACHE{3600}
 [(#HTTP_HEADER{Content-type: text/xml[; charset=(#CHARSET)]})]<?xml version="1.0" encoding="#CHARSET"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <BOUCLE_articles(ARTICLES) {tout} {par date} {inverse}>
-        <url>
-          <loc>#URL_ARTICLE</loc>
-          <lastmod>#DATE</lastmod>
-          <changefreq>monthly</changefreq>
-          <priority>0.5</priority>
-        </url>
-        </BOUCLE_articles>        
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+[(#REM) Page d'accueil ]
+<url>
+    <loc>[(#URL_SITE_SPIP|url_absolue)]</loc>
+    <lastmod>[(#DATE|date{c})]</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+</url>
+
+[(#REM) Rubriques principales ]
+<BOUCLE_rubriques(RUBRIQUES){racine}{par titre}>
+<url>
+    <loc>[(#URL_RUBRIQUE|url_absolue)]</loc>
+    [<lastmod>(#DATE_MODIF|date{c})</lastmod>]
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+</BOUCLE_rubriques>
+
+[(#REM) Sous-rubriques ]
+<BOUCLE_sous_rubriques(RUBRIQUES){!racine}{par titre}>
+<url>
+    <loc>[(#URL_RUBRIQUE|url_absolue)]</loc>
+    [<lastmod>(#DATE_MODIF|date{c})</lastmod>]
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+</url>
+</BOUCLE_sous_rubriques>
+
+[(#REM) Articles ]
+<BOUCLE_articles(ARTICLES){statut=publie}{par date_modif}{inverse}{0,1000}>
+<url>
+    <loc>[(#URL_ARTICLE|url_absolue)]</loc>
+    [<lastmod>(#DATE_MODIF|date{c})</lastmod>]
+    <changefreq>monthly</changefreq>
+    <priority>[(#DATE|age{86400}|?{0.6,0.5})]</priority>
+    
+    [(#REM) Traductions alternatives ]
+    <BOUCLE_traductions(ARTICLES){traduction}{statut=publie}>
+    <xhtml:link rel="alternate" hreflang="[(#LANG)]" href="[(#URL_ARTICLE|url_absolue)]" />
+    </BOUCLE_traductions>
+</url>
+</BOUCLE_articles>
+
+[(#REM) Brèves ]
+<BOUCLE_breves(BREVES){statut=publie}{par date}{inverse}{0,500}>
+<url>
+    <loc>[(#URL_BREVE|url_absolue)]</loc>
+    [<lastmod>(#DATE_MODIF|date{c})</lastmod>]
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+</url>
+</BOUCLE_breves>
+
+[(#REM) Pages spéciales ]
+<url>
+    <loc>[(#URL_SITE_SPIP|url_absolue)]contact/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+</url>
+
 </urlset>

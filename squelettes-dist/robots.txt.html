@@ -6,19 +6,48 @@
 # @template: #SQUELETTE
 
 User-agent: *
-Allow:    /local/cache-css/
-Allow:    /local/cache-js/
+Allow: /local/cache-css/
+Allow: /local/cache-js/
+Allow: /IMG/
+Allow: /rien.gif
+Allow: /favicon.ico
+
+# Dossiers à ne pas indexer
 Noindex: /local/
 Noindex: /plugins-dist/
 Noindex: /plugins/
 Noindex: /squelettes-dist/
 Noindex: /squelettes/
+Noindex: /tmp/
+
+# Pages d'administration et techniques
 Disallow: /ecrire/
 Disallow: /lib/
 Disallow: /prive/
 Disallow: /spip.php?action=*
 Disallow: /spip.php?page=login*
+Disallow: /spip.php?page=logout*
+Disallow: /spip.php?page=recherche*
+Disallow: /spip.php?page=forum*
 Disallow: /*.api/
+
+# Paramètres dynamiques à éviter
+Disallow: /*?cible=*
+Disallow: /*?var_mode=*
+Disallow: /*?var_recherche=*
+
+# Optimisations pour différents bots
+User-agent: Googlebot
 Crawl-delay: 1
 
+User-agent: Bingbot
+Crawl-delay: 2
+
+User-agent: Slurp
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Crawl-delay: 0
+
+# Sitemap principal
 Sitemap: #URL_SITE_SPIP/sitemap.xml

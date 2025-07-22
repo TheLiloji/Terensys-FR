@@ -1,270 +1,137 @@
-##############################################################
-# Fichier .htaccess                               SPIP v 4.4 #
-#                                                            #
-# Permet de controler les URLs et la version de php utilisee #
-# Compatible avec les URLs 'html', 'propres' et 'propres2'   #
-#                                                            #
-# Pour utiliser ce fichier renommez-le '.htaccess' dans le   #
-# repertoire racine du site, en veillant a ne pas ecraser un #
-# .htaccess personnalise qui s'y trouverait deja             #
-#                                                            #
-# Attention certains hebergeurs desactivent tout ou partie   #
-# des fonctions du fichier .htaccess ; celui-ci est donc     #
-# indicatif - en cas de difficulte voir sur les forums SPIP  #
-##############################################################
+# Configuration Apache pour Terensys
+# Résolution des problèmes WooRank
 
+# ========================================
+# REDIRECTIONS 301 (Résolution problème WooRank)
+# ========================================
+
+# Force la redirection vers www (évite le contenu dupliqué)
 RewriteEngine On
+RewriteCond %{HTTP_HOST} ^terensys\.fr [NC]
+RewriteRule ^(.*)$ https://www.terensys.fr/$1 [R=301,L]
 
-################ PERFORMANCE OPTIMIZATIONS ######################
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^(www\.)?terensys\.fr [NC]
+RewriteRule ^(.*)$ https://www.terensys.fr/$1 [R=301,L]
 
-# Enable gzip compression for text-based files
+# ========================================
+# SÉCURITÉ
+# ========================================
+
+# Bloquer l'accès aux fichiers sensibles
+<Files "composer.json">
+    Require all denied
+</Files>
+<Files "composer.lock">
+    Require all denied
+</Files>
+<Files ".htaccess">
+    Require all denied
+</Files>
+<FilesMatch "\.(md|txt|log)$">
+    Require all denied
+</FilesMatch>
+
+# ========================================
+# PERFORMANCE ET CACHE
+# ========================================
+
+# Compression GZIP
 <IfModule mod_deflate.c>
-    # Compress text, HTML, CSS, JavaScript, XML, JSON
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
     AddOutputFilterByType DEFLATE text/xml
     AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE text/javascript
     AddOutputFilterByType DEFLATE application/xml
     AddOutputFilterByType DEFLATE application/xhtml+xml
     AddOutputFilterByType DEFLATE application/rss+xml
-    AddOutputFilterByType DEFLATE application/atom+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
-    AddOutputFilterByType DEFLATE application/x-httpd-php
-    AddOutputFilterByType DEFLATE application/x-httpd-fastphp
-    AddOutputFilterByType DEFLATE application/json
     AddOutputFilterByType DEFLATE image/svg+xml
-
-    # Don't compress already compressed files
-    SetEnvIfNoCase Request_URI \
-        \.(?:gif|jpe?g|png|zip|gz|rar|bz2|7z|mp3|mp4|avi|mov|flv|wmv)$ no-gzip dont-vary
-    SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
 </IfModule>
 
-# Alternative gzip compression for older Apache versions
-<IfModule mod_gzip.c>
-    mod_gzip_on Yes
-    mod_gzip_dechunk Yes
-    mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
-    mod_gzip_item_include handler ^cgi-script$
-    mod_gzip_item_include mime ^text/.*
-    mod_gzip_item_include mime ^application/x-javascript.*
-    mod_gzip_item_exclude mime ^image/.*
-    mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
-</IfModule>
-
-# Enable Brotli compression if available
-<IfModule mod_brotli.c>
-    AddOutputFilterByType BROTLI_COMPRESS text/plain
-    AddOutputFilterByType BROTLI_COMPRESS text/html
-    AddOutputFilterByType BROTLI_COMPRESS text/xml
-    AddOutputFilterByType BROTLI_COMPRESS text/css
-    AddOutputFilterByType BROTLI_COMPRESS text/javascript
-    AddOutputFilterByType BROTLI_COMPRESS application/xml
-    AddOutputFilterByType BROTLI_COMPRESS application/xhtml+xml
-    AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
-    AddOutputFilterByType BROTLI_COMPRESS application/javascript
-    AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
-    AddOutputFilterByType BROTLI_COMPRESS application/json
-    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
-</IfModule>
-
-################ CONFIGURATION ######################
-
-### Configuration sous-repertoire
-
-# Calcule automatiquememt le RewriteBase (qui permet de faire fonctionner
-# les belles URLs). De la sorte, un meme site peut etre affiche en racine
-# ou dans un sous repertoire sans devoir modifier la ligne RewriteBase.
-RewriteCond %{REQUEST_URI}::$1 ^(/.+)/(.*)::\2$
-RewriteRule ^(.*) - [E=BASE:%1]
-
-# En alternative aux 2 lignes precedentes (a commenter dans ce cas),
-# vous pouvez indiquer un RewriteBase specifique
-#RewriteBase /
-
-###
-
-
-################ REGLAGES PERSONNALISES ######################
-# Inscrivez ci-dessous vos reglages supplementaires
-
-
-
-############# GESTIONS DES ACCES FICHIERS #####################
-###
-
-# bloquer les acces aux fichiers caches (.svn, .git, etc)
-RewriteCond %{REQUEST_URI} !^/.well-known/
-RewriteRule "(^|/)\." - [R=404,NC,L]
-# bloquer les informations Composer
-RedirectMatch 404 ^/composer\.(json|lock|phar)$
-
-# Block source maps in production
-<Files "*.map">
-    Order allow,deny
-    Deny from all
-</Files>
-
-# Si le fichier ou repertoire demande existe
-# ignorer toutes les regles qui suivent
-<IfModule mod_headers.c>
-	RewriteCond %{REQUEST_FILENAME} -f
-	RewriteRule \.pdf$ - [skip=100]
-	RewriteCond %{REQUEST_FILENAME} -f
-	RewriteRule ^IMG/ - [env=sandbox:sandbox,skip=100]
-	Header add Content-Security-Policy "sandbox" env=sandbox
-</IfModule>
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule "." - [skip=100]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule "." - [skip=100]
-#
-###
-
-################ GESTIONS DES URLS SPIP #######################
-###
-
-###
-# Compatibilite avec les URLS "html" (pour transition sympa)
-# voir fichier ecrire/urls/html.php
-RewriteRule ^rubrique([0-9]+)(\.html)?$	spip.php?page=rubrique&id_rubrique=$1 [QSA,L]
-RewriteRule ^article([0-9]+)(\.html)?$	spip.php?page=article&id_article=$1 [QSA,L]
-RewriteRule ^breve([0-9]+)(\.html)?$	spip.php?page=breve&id_breve=$1 [QSA,L]
-RewriteRule ^mot([0-9]+)(\.html)?$		spip.php?page=mot&id_mot=$1 [QSA,L]
-RewriteRule ^auteur([0-9]+)(\.html)?$	spip.php?page=auteur&id_auteur=$1 [QSA,L]
-RewriteRule ^site([0-9]+)(\.html)?$	spip.php?page=site&id_syndic=$1 [QSA,L]
-
-# Fin compatibilite
-###
-
-###
-# ping http://site/1234 => article1234
-
-RewriteRule ^([1-9][0-9]*)$     spip.php?action=redirect&type=article&status=301&id=$1 [QSA,L]
-
-#
-###
-
-###
-# APIs
-# http://site/xmlrpc.api
-# http://site/atom.api/articles/1234
-# https://site/offline.api.sw.js
-
-RewriteRule ^(ecrire/)?([\w]+)\.api([/.](.*))?$ spip.php?action=api_$2&arg=$4 [QSA,L]
-
-# Fin des APIs
-###
-
-###
-# URLs "propres", "propres2", "libres", "arbo"
-
-RewriteRule ^[^\.]+(\.html)?$		spip.php [QSA,E=url_propre:$0,L]
-
-# Fin URLs "propres" et "propres2"
-###
-
-###
-# Divers
-
-###
-# Fichiers "standards" (si absents de la racine)
-#
-RewriteRule ^robots[.]txt$      spip.php?page=robots.txt [QSA,L]
-RewriteRule ^favicon[.]ico$      spip.php?page=favicon.ico [QSA,L]
-RewriteRule ^sitemap[.]xml$      spip.php?page=sitemap.xml [QSA,L]
-##
-
-# Favicon pour itrucs
-# Si vous avez le plugin filtres_images et qu'une méthode de retouche a été configurée, vous pouvez décommenter la ligne ci-dessous.
-#RewriteRule ^apple-touch-icon(-(\d+x\d+))?(-precomposed)?[.]png$	spip.php?page=apple-touch-icon.png&size=$2 [QSA,L]
-
-
-################ COMPREHENSIVE CACHING AND PERFORMANCE ######################
-
+# Cache navigateur
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresDefault "access plus 1 month"
     
-    # HTML pages - short cache for dynamic content
-    ExpiresByType text/html "access plus 0 seconds"
-    ExpiresByType text/php "access plus 0 seconds"
+    # Images
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
     
-    # CSS and JavaScript - long cache with versioning
+    # CSS et JS
     ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/pdf "access plus 1 month"
     ExpiresByType application/javascript "access plus 1 year"
     ExpiresByType application/x-javascript "access plus 1 year"
     ExpiresByType text/javascript "access plus 1 year"
     
-    # Images - long cache
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/jpg "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType image/x-icon "access plus 1 year"
-    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
-    
-    # Fonts - long cache
-    ExpiresByType font/ttf "access plus 1 year"
-    ExpiresByType font/otf "access plus 1 year"
+    # Fonts
     ExpiresByType font/woff "access plus 1 year"
     ExpiresByType font/woff2 "access plus 1 year"
     ExpiresByType application/font-woff "access plus 1 year"
     ExpiresByType application/font-woff2 "access plus 1 year"
-    ExpiresByType application/x-font-ttf "access plus 1 year"
-    ExpiresByType application/x-font-otf "access plus 1 year"
     
-    # Documents and archives
-    ExpiresByType application/pdf "access plus 1 month"
-    ExpiresByType application/zip "access plus 1 month"
-    
-    # Data formats
-    ExpiresByType application/json "access plus 0 seconds"
-    ExpiresByType application/xml "access plus 0 seconds"
-    ExpiresByType text/xml "access plus 0 seconds"
+    # HTML
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType application/xhtml+xml "access plus 1 hour"
 </IfModule>
 
-# Cache control headers for better performance
+# Headers de cache
 <IfModule mod_headers.c>
-    # Remove ETag headers for better caching
-    Header unset ETag
-    FileETag None
-    
-    # Set cache control for static assets
-    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|otf)$">
-        Header set Cache-Control "public, max-age=31536000, immutable"
-        Header set Vary "Accept-Encoding"
+    # Cache pour les ressources statiques
+    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|woff|woff2)$">
+        Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
     
-    # Set cache control for HTML and dynamic content
-    <FilesMatch "\.(html|php)$">
+    # Pas de cache pour les pages dynamiques
+    <FilesMatch "\.(php|html)$">
         Header set Cache-Control "no-cache, must-revalidate"
-        Header set Pragma "no-cache"
     </FilesMatch>
-    
-    # Security headers
+</IfModule>
+
+# ========================================
+# SPIP STANDARD
+# ========================================
+
+# Redirection des URLs SPIP
+RewriteRule ^_?echappe-[8-9a-f]{32}$ index.php [L,QSA]
+RewriteRule ^(_|-)(.*)$ index.php [L,QSA]
+
+# Répertoires privés
+RewriteRule ^(IMG|local|tmp)/ index.php [L,QSA]
+
+# Fichiers avec extension interdite
+RewriteRule \.(ini|log|gz)$ index.php [L,QSA]
+
+# Répertoires administratifs
+RewriteRule ^(ecrire|prive)/ index.php [L,QSA]
+
+# Tout le reste
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L,QSA]
+
+# ========================================
+# OPTIMISATIONS SEO
+# ========================================
+
+# Headers de sécurité
+<IfModule mod_headers.c>
     Header always set X-Content-Type-Options nosniff
     Header always set X-Frame-Options SAMEORIGIN
-    Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    
-    # Preload critical resources
-    <FilesMatch "\.html$">
-        Header add Link "</prive/themes/spip/theme.css>; rel=preload; as=style"
-        Header add Link "</prive/javascript/jquery.js>; rel=preload; as=script"
-    </FilesMatch>
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
-#################################
-# gestion des erreurs 404
-# voir https://www.spip.net/fr_article3226.html
-# Pour que le serveur http renvoie les erreurs 404 vers SPIP, supprimer le '#'
+# Type MIME pour les fichiers spéciaux
+AddType application/atom+xml .atom
+AddType application/rss+xml .rss
+AddType text/xml .xml
 
-# ErrorDocument 404 /spip.php?page=404
-
-#
-###
+# Pages d'erreur personnalisées
+ErrorDocument 404 /spip.php?page=404
