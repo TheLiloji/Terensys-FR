@@ -6,6 +6,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+[(#REM) Métadonnées SEO améliorées ]
+[<meta name="author" content="(#NOM_SITE_SPIP|attribut_html)" />]
+[<meta name="language" content="(#LANG)" />]
+<meta name="revisit-after" content="7 days" />
+
+[(#REM) Open Graph pour les réseaux sociaux ]
+[<meta property="og:site_name" content="(#NOM_SITE_SPIP|attribut_html)" />]
+[<meta property="og:locale" content="(#LANG)" />]
+[(#ENV{og_type}|oui)<meta property="og:type" content="#ENV{og_type}" />]
+[(#ENV{og_type}|non)<meta property="og:type" content="website" />]
+
+[(#REM) Twitter Cards ]
+<meta name="twitter:card" content="summary" />
+[<meta name="twitter:site" content="(#NOM_SITE_SPIP|attribut_html)" />]
+
 [(#REM) Lien vers le flux RSS du site ]
 [<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
 

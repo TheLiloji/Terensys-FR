@@ -4,9 +4,22 @@
 <head>
 	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
 	<title>[(#TITRE|couper{80}|textebrut) - ][(#NOM_SITE_SPIP|textebrut)]</title>
-	[<meta name="description" content="(#INTRODUCTION{150}|attribut_html)" />]
+	[<meta name="description" content="(#INTRODUCTION{155}|sinon{#DESCRIPTIF|couper{155}}|sinon{Rubrique [(#TITRE|textebrut)] sur #NOM_SITE_SPIP - Découvrez nos articles, contenus et actualités dans cette section.}|attribut_html)" />]
+	[<meta name="keywords" content="(#MOTS|implode{', '})" />]
 	[<link rel="canonical" href="(#URL_RUBRIQUE|url_absolue{#URL_SITE_SPIP})" />]
-	<INCLURE{fond=inclure/head} />
+	
+	[(#REM) Open Graph pour rubriques ]
+	[<meta property="og:title" content="(#TITRE|attribut_html)" />]
+	[<meta property="og:description" content="(#INTRODUCTION{155}|sinon{#DESCRIPTIF|couper{155}}|attribut_html)" />]
+	[<meta property="og:url" content="(#URL_RUBRIQUE|url_absolue{#URL_SITE_SPIP})" />]
+	[(#LOGO_RUBRIQUE|extraire_attribut{src}|oui)[<meta property="og:image" content="(#LOGO_RUBRIQUE|extraire_attribut{src}|url_absolue{#URL_SITE_SPIP})" />]]
+	
+	[(#REM) Twitter Cards pour rubriques ]
+	[<meta name="twitter:title" content="(#TITRE|attribut_html)" />]
+	[<meta name="twitter:description" content="(#INTRODUCTION{155}|sinon{#DESCRIPTIF|couper{155}}|attribut_html)" />]
+	[(#LOGO_RUBRIQUE|extraire_attribut{src}|oui)[<meta name="twitter:image" content="(#LOGO_RUBRIQUE|extraire_attribut{src}|url_absolue{#URL_SITE_SPIP})" />]]
+	
+	<INCLURE{fond=inclure/head,og_type=website} />
 	[(#REM) Lien vers le flux RSS des articles la rubrique ]
 	<link rel="alternate" type="application/rss+xml" title="<:syndiquer_rubrique:>" href="[(#URL_PAGE{backend}|parametre_url{id_rubrique,#ID_RUBRIQUE})]" />
 </head>

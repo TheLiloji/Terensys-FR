@@ -3,8 +3,18 @@
 <head>
 	<script type='text/javascript'>/*<![CDATA[*/(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement);/*]]>*/</script>
 	<title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
-	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|attribut_html)" />]
-	<INCLURE{fond=inclure/head} />
+	[<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|sinon{#NOM_SITE_SPIP[ - #SLOGAN_SITE_SPIP] : découvrez nos derniers articles, actualités et contenus exclusifs sur notre site web.}|couper{155}|attribut_html)" />]
+	
+	[(#REM) Open Graph pour la page d'accueil ]
+	[<meta property="og:title" content="(#NOM_SITE_SPIP|attribut_html)[ - (#SLOGAN_SITE_SPIP|attribut_html)]" />]
+	[<meta property="og:description" content="(#DESCRIPTIF_SITE_SPIP|sinon{#NOM_SITE_SPIP[ - #SLOGAN_SITE_SPIP] : découvrez nos derniers articles, actualités et contenus exclusifs sur notre site web.}|couper{155}|attribut_html)" />]
+	[<meta property="og:url" content="(#URL_SITE_SPIP)" />]
+	
+	[(#REM) Twitter Cards pour la page d'accueil ]
+	[<meta name="twitter:title" content="(#NOM_SITE_SPIP|attribut_html)[ - (#SLOGAN_SITE_SPIP|attribut_html)]" />]
+	[<meta name="twitter:description" content="(#DESCRIPTIF_SITE_SPIP|sinon{#NOM_SITE_SPIP[ - #SLOGAN_SITE_SPIP] : découvrez nos derniers articles, actualités et contenus exclusifs sur notre site web.}|couper{155}|attribut_html)" />]
+	
+	<INCLURE{fond=inclure/head,og_type=website} />
 </head>
 
 <body class="pas_surlignable page_sommaire">
