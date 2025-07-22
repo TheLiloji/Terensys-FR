@@ -15,6 +15,61 @@
 
 RewriteEngine On
 
+################ PERFORMANCE OPTIMIZATIONS ######################
+
+# Enable gzip compression for text-based files
+<IfModule mod_deflate.c>
+    # Compress text, HTML, CSS, JavaScript, XML, JSON
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/atom+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/x-httpd-php
+    AddOutputFilterByType DEFLATE application/x-httpd-fastphp
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+
+    # Don't compress already compressed files
+    SetEnvIfNoCase Request_URI \
+        \.(?:gif|jpe?g|png|zip|gz|rar|bz2|7z|mp3|mp4|avi|mov|flv|wmv)$ no-gzip dont-vary
+    SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+</IfModule>
+
+# Alternative gzip compression for older Apache versions
+<IfModule mod_gzip.c>
+    mod_gzip_on Yes
+    mod_gzip_dechunk Yes
+    mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+    mod_gzip_item_include handler ^cgi-script$
+    mod_gzip_item_include mime ^text/.*
+    mod_gzip_item_include mime ^application/x-javascript.*
+    mod_gzip_item_exclude mime ^image/.*
+    mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</IfModule>
+
+# Enable Brotli compression if available
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/plain
+    AddOutputFilterByType BROTLI_COMPRESS text/html
+    AddOutputFilterByType BROTLI_COMPRESS text/xml
+    AddOutputFilterByType BROTLI_COMPRESS text/css
+    AddOutputFilterByType BROTLI_COMPRESS text/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/xml
+    AddOutputFilterByType BROTLI_COMPRESS application/xhtml+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/json
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+</IfModule>
+
 ################ CONFIGURATION ######################
 
 ### Configuration sous-repertoire
@@ -45,6 +100,12 @@ RewriteCond %{REQUEST_URI} !^/.well-known/
 RewriteRule "(^|/)\." - [R=404,NC,L]
 # bloquer les informations Composer
 RedirectMatch 404 ^/composer\.(json|lock|phar)$
+
+# Block source maps in production
+<Files "*.map">
+    Order allow,deny
+    Deny from all
+</Files>
 
 # Si le fichier ou repertoire demande existe
 # ignorer toutes les regles qui suivent
@@ -121,8 +182,81 @@ RewriteRule ^sitemap[.]xml$      spip.php?page=sitemap.xml [QSA,L]
 #RewriteRule ^apple-touch-icon(-(\d+x\d+))?(-precomposed)?[.]png$	spip.php?page=apple-touch-icon.png&size=$2 [QSA,L]
 
 
+################ COMPREHENSIVE CACHING AND PERFORMANCE ######################
+
 <IfModule mod_expires.c>
-	ExpiresByType text/html  "access plus 0 seconds"
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    
+    # HTML pages - short cache for dynamic content
+    ExpiresByType text/html "access plus 0 seconds"
+    ExpiresByType text/php "access plus 0 seconds"
+    
+    # CSS and JavaScript - long cache with versioning
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    
+    # Images - long cache
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+    
+    # Fonts - long cache
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/x-font-ttf "access plus 1 year"
+    ExpiresByType application/x-font-otf "access plus 1 year"
+    
+    # Documents and archives
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/zip "access plus 1 month"
+    
+    # Data formats
+    ExpiresByType application/json "access plus 0 seconds"
+    ExpiresByType application/xml "access plus 0 seconds"
+    ExpiresByType text/xml "access plus 0 seconds"
+</IfModule>
+
+# Cache control headers for better performance
+<IfModule mod_headers.c>
+    # Remove ETag headers for better caching
+    Header unset ETag
+    FileETag None
+    
+    # Set cache control for static assets
+    <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+        Header set Vary "Accept-Encoding"
+    </FilesMatch>
+    
+    # Set cache control for HTML and dynamic content
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+        Header set Pragma "no-cache"
+    </FilesMatch>
+    
+    # Security headers
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options SAMEORIGIN
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Preload critical resources
+    <FilesMatch "\.html$">
+        Header add Link "</prive/themes/spip/theme.css>; rel=preload; as=style"
+        Header add Link "</prive/javascript/jquery.js>; rel=preload; as=script"
+    </FilesMatch>
 </IfModule>
 
 #################################
